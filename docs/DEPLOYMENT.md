@@ -10,12 +10,8 @@ status: living
 # Deployment Guide
 
 1. Prepare environment variables as described in [SETUP](./SETUP.md).
-2. Build the project:
-   ```bash
-   npm run build
-   ```
-3. Start the services:
+2. Start the services:
    ```bash
    npm start
    ```
-4. Monitor logs and health checks.
+3. Monitor logs and health checks.
