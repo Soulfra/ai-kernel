@@ -6,7 +6,8 @@ const EventEmitter = require('events');
 const path = require('path');
 const fs = require('fs');
 const crypto = require('crypto');
-const ensureFileAndDir = require('../../../shared/utils/ensureFileAndDir');
+// Corrected path: shared utils are two levels up from scripts/core
+const ensureFileAndDir = require('../../shared/utils/ensureFileAndDir');
 const https = require('https');
 const http = require('http');
 
