@@ -14,4 +14,5 @@ Key references:
 
 - [System Overview](./architecture/system-overview.md)
 - [Agentic Orchestration](./architecture/agentic-orchestration.md)
+- [Orchestration Agent](./architecture/orchestration-agent.md)
 - [Semantic Implementation](./architecture/semantic-implementation.md)
