@@ -5,7 +5,7 @@
   "main": "scripts/core/semantic-engine.js",
   "scripts": {
     "start": "node scripts/core/semantic-engine.js",
-    "test": "jest test/placeholder.test.js",
+    "test": "jest",
     "lint": "eslint .",
     "format": "prettier --write ."
   },

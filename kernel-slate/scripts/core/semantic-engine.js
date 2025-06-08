@@ -106,7 +106,7 @@ class SemanticEngine {
       await this.validationService.validateRelationship(relationship);
       
       // Add to graph store
-      await this.graphStore.addRelationship(relationship);
+      await this.graphStore.createRelationship(relationship);
       
       // Update relationship manager
       await this.relationshipManager.updateRelationship(relationship);
