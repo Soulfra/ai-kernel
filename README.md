@@ -346,8 +346,8 @@ On backup/restore failure, an entry is added to `project_meta/suggestion_log.md`
 
 ## References
 - [Kernel Reset Doc](./KERNEL_RESET.md)
-- [Kernel Backup+Buildup E2E Checklist](../docs/standards/kernel-backup-e2e-checklist.md)
-- [Self-Healing Logs & File Creation Standard](../docs/standards/self-healing-logs-and-files.md)
+- [Kernel Backup+Buildup E2E Checklist](./docs/standards/kernel-backup-e2e-checklist.md)
+- [Self-Healing Logs & File Creation Standard](./docs/standards/self-healing-logs-and-files.md)
 
 ---
 
