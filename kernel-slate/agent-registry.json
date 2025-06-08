@@ -1,0 +1,61 @@
+{
+  "registry_version": "1.0",
+  "agents": [
+    {
+      "name": "OrchestrationAgent",
+      "type": "core",
+      "path": "scripts/core/orchestration-agent.js",
+      "description": "Coordinates workflow steps across services",
+      "cli": false,
+      "uses": ["Logger", "BaseAgent"]
+    },
+    {
+      "name": "BackupOrchestrator",
+      "type": "core",
+      "path": "scripts/core/backup-orchestrator.js",
+      "description": "Self-healing backup orchestrator",
+      "cli": false,
+      "uses": ["fs", "EventEmitter", "ensureFileAndDir"]
+    },
+    {
+      "name": "GenerateChatSummary",
+      "type": "feature",
+      "path": "scripts/features/generate-chat-summary.js",
+      "description": "Generates a markdown summary of chat clusters",
+      "cli": true,
+      "uses": ["SemanticEngine", "writeClusterSummary"]
+    },
+    {
+      "name": "ChatlogParser",
+      "type": "feature",
+      "path": "scripts/features/chatlog-parser/index.js",
+      "description": "Parses chat logs to extract TODOs and bullet points",
+      "cli": true,
+      "uses": ["parseChatlog", "generateDoc"]
+    },
+    {
+      "name": "UploadServer",
+      "type": "feature",
+      "path": "scripts/features/upload-server.js",
+      "description": "Simple Express server for uploading files",
+      "cli": true,
+      "uses": ["express", "multer"]
+    },
+    {
+      "name": "EnsureFileAndDir",
+      "type": "utility",
+      "path": "shared/utils/ensureFileAndDir.js",
+      "description": "Utility to create files and directories if missing",
+      "cli": false,
+      "uses": ["fs", "path"]
+    },
+    {
+      "name": "GenerateRouteHash",
+      "type": "utility",
+      "path": "shared/utils/generateRouteHash.js",
+      "description": "Creates a deterministic hash for route objects",
+      "cli": false,
+      "uses": ["crypto"]
+    }
+  ]
+}
