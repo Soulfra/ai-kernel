@@ -2,7 +2,7 @@
 title: Documentation Automation
 
 description: Strategies for automating documentation generation from code and chat logs.
-lastUpdated: 2025-06-08T04:36:01Z
+lastUpdated: 2025-07-27T06:00:00Z
 version: 1.0.0
 tags: [automation, documentation]
 status: living
@@ -17,3 +17,8 @@ Automating documentation keeps the knowledge base fresh and reduces manual effor
 3. **Continuous Integration** – Run documentation generation as part of the CI pipeline and fail builds when docs are outdated.
 
 These practices align with the goals outlined in [ESSENTIAL_DOCS](../ESSENTIAL_DOCS.md).
+
+The repository provides a small parser located at
+`scripts/features/chatlog-parser/` which converts exported chat logs into
+Markdown documents. Use this tool to keep discussion summaries synced with the
+codebase.
