@@ -134,7 +134,7 @@ class VectorStore {
       }
       
       // Delete vector
-      await this.index.delete1({
+      await this.index.delete({
         ids: [id]
       });
       
