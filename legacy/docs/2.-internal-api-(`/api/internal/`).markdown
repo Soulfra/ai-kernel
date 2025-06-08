@@ -1,0 +1,9 @@
+# 2. Internal API (`/api/internal/`)
+
+- Component APIs
+- Data structures
+- Event system
+- Message formats
+
+## Deployment Documentation
+

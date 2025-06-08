@@ -1,0 +1,7 @@
+# 2. Organization
+
+- Clear directory structure
+- Consistent naming
+- Version control
+- Regular updates
+

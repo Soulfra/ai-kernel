@@ -1,0 +1,9 @@
+[
+  {
+    "type": "silent_fail",
+    "agent": "CalNarrator.js",
+    "detected_by": "CalBacktestAudit_T10",
+    "time": "2025-05-09T14:51:45.187Z",
+    "trust_delta": -0.02
+  }
+]

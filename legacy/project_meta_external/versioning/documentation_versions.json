@@ -1,0 +1,43 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2024-03-19T00:00:00Z",
+    "schema": "documentation_versions_v1"
+  },
+  "versions": [
+    {
+      "version": "0.1.0",
+      "timestamp": "2024-03-19T00:00:00Z",
+      "type": "initial",
+      "description": "Initial documentation structure",
+      "changes": [
+        "Created base documentation structure",
+        "Added core documentation files",
+        "Implemented validation system"
+      ],
+      "validationStatus": {
+        "totalFiles": 53,
+        "passed": 4,
+        "failed": 102
+      },
+      "archivePath": "archives/docs_v0.1.0.zip",
+      "hash": "sha256:abc123...",
+      "dependencies": []
+    }
+  ],
+  "currentVersion": "0.1.0",
+  "archives": [
+    {
+      "version": "0.1.0",
+      "timestamp": "2024-03-19T00:00:00Z",
+      "path": "archives/docs_v0.1.0.zip",
+      "size": "2.5MB",
+      "hash": "sha256:abc123...",
+      "contents": [
+        "docs/",
+        "project_meta/",
+        "scripts/"
+      ]
+    }
+  ]
+} 

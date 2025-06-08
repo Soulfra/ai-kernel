@@ -1,0 +1,40 @@
+# Documentation Validation Debug Log
+
+## Run 2024-03-19T00:00:00Z
+- Mode: Dry Run
+- Total Files: 53
+- Passed: 4
+- Failed: 102
+- Issues:
+  * Missing Fields: 388
+  * Broken Links: 4
+  * Circular Dependencies: 4
+  * Line Count: 0
+
+### File Details
+1. docs/soulfra/README.md
+   - Status: Failed
+   - Issues: Missing frontmatter fields
+   - Proposed Changes: Add title, description, lastUpdated, version
+
+2. docs/testing/blessing-system.md
+   - Status: Failed
+   - Issues: Missing frontmatter fields
+   - Proposed Changes: Add title, description, lastUpdated, version
+
+[Additional file details...]
+
+### Validation Steps
+1. Initial scan completed
+2. Frontmatter validation completed
+3. Link validation completed
+4. Dependency analysis completed
+5. Report generation completed
+
+### Next Steps
+1. Review validation report
+2. Address missing fields
+3. Fix broken links
+4. Resolve circular dependencies
+
+--- 

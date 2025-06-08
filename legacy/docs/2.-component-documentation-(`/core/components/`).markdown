@@ -1,0 +1,8 @@
+# 2. Component Documentation (`/core/components/`)
+
+- Memory system
+- Viewer system
+- CLI interface
+- Component interfaces
+- Data models
+

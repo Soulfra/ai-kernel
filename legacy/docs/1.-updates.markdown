@@ -1,0 +1,7 @@
+# 1. Updates
+
+- Regular reviews
+- Version tracking
+- Change logging
+- Deprecation notices
+

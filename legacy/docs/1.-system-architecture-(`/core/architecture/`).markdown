@@ -1,0 +1,8 @@
+# 1. System Architecture (`/core/architecture/`)
+
+- System overview
+- Component interaction
+- Data flow
+- Security model
+- Performance architecture
+

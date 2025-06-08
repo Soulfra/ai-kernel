@@ -1,0 +1,123 @@
+{
+  "total": 29,
+  "reflected": 0,
+  "results": [
+    {
+      "daemon": "CalAgentAutoMount.js",
+      "reflected": false
+    },
+    {
+      "daemon": "CalCoderAgent.js",
+      "reflected": false
+    },
+    {
+      "daemon": "CalFinalizer.js",
+      "reflected": false
+    },
+    {
+      "daemon": "CalHashRegistry.js",
+      "reflected": false
+    },
+    {
+      "daemon": "CalInstallerV1.js",
+      "reflected": false
+    },
+    {
+      "daemon": "CalLoopAgentDaemon.js",
+      "reflected": false
+    },
+    {
+      "daemon": "CalLoopGuard.js",
+      "reflected": false
+    },
+    {
+      "daemon": "CalLoopMeshReflector.js",
+      "reflected": false
+    },
+    {
+      "daemon": "CalLoopPulseReporter.js",
+      "reflected": false
+    },
+    {
+      "daemon": "CalLoopRunner.js",
+      "reflected": false
+    },
+    {
+      "daemon": "CalMetaStateManager.js",
+      "reflected": false
+    },
+    {
+      "daemon": "CalNarrator.js",
+      "reflected": false
+    },
+    {
+      "daemon": "CalPathGuardian.js",
+      "reflected": false
+    },
+    {
+      "daemon": "CalPresenceDaemon.js",
+      "reflected": false
+    },
+    {
+      "daemon": "CalPromptRouter.js",
+      "reflected": false
+    },
+    {
+      "daemon": "CalReflectionEchoTrail.js",
+      "reflected": false
+    },
+    {
+      "daemon": "CalReflectionSummarizerV2.js",
+      "reflected": false
+    },
+    {
+      "daemon": "CalShellRecallAgent.js",
+      "reflected": false
+    },
+    {
+      "daemon": "CalWhisperV2.js",
+      "reflected": false
+    },
+    {
+      "daemon": "LLMExecutor.js",
+      "reflected": false
+    },
+    {
+      "daemon": "calctl-boot-verify.js",
+      "reflected": false
+    },
+    {
+      "daemon": "calctl-check-paths.js",
+      "reflected": false
+    },
+    {
+      "daemon": "calctl-core.js",
+      "reflected": false
+    },
+    {
+      "daemon": "calctl-deploy-public.js",
+      "reflected": false
+    },
+    {
+      "daemon": "calctl-doctor.js",
+      "reflected": false
+    },
+    {
+      "daemon": "calctl-heartbeat.js",
+      "reflected": false
+    },
+    {
+      "daemon": "calctl-protect-routes.js",
+      "reflected": false
+    },
+    {
+      "daemon": "calctl-run-selfcheck.js",
+      "reflected": false
+    },
+    {
+      "daemon": "calctl-verify-signatures.js",
+      "reflected": false
+    }
+  ],
+  "timestamp": "2025-05-09T13:00:47.867Z"
+}

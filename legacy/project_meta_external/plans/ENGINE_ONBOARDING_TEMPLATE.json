@@ -1,0 +1,45 @@
+{
+  "title": "Clarity Engine Onboarding Template",
+  "version": "1.0.0",
+  "lastUpdated": "2025-07-27T05:45:00Z",
+  "systemOverview": {
+    "description": "Overview of the living task/plan/ledger system, its purpose, and benefits.",
+    "philosophy": "Why non-recursive, context-rich, and auditable engineering is used."
+  },
+  "coreComponents": [
+    "main_task_log.json",
+    "planFiles (project_meta/plans/TASK_*.md)",
+    "taskLedger (TASK_LEDGER.md)",
+    "archiveSystem",
+    "feedbackApprovalSystem"
+  ],
+  "workflow": {
+    "taskCreation": "How tasks are created and logged.",
+    "planGeneration": "How plan files are generated and updated.",
+    "progressTracking": "How progress, blockers, and completion are tracked.",
+    "archival": "How completed tasks/plans are archived and indexed.",
+    "feedback": "How feedback and approvals are collected and used."
+  },
+  "developerGuide": {
+    "addingFeatures": "How to add new features or scripts.",
+    "queryingLedger": "How to query the ledger and plans.",
+    "contributingFeedback": "How to contribute to the feedback/approval system."
+  },
+  "bestPractices": [
+    "Log all actions and decisions.",
+    "Keep plans atomic and non-recursive.",
+    "Use the system for all work—no side channels.",
+    "Document lessons learned in each plan."
+  ],
+  "faq": [
+    {"question": "How do I resolve a blocked task?", "answer": "Update the plan file with blockers and proposed solutions, then notify the lead."},
+    {"question": "How do I archive a completed plan?", "answer": "Mark as completed, move to archive, and update the ledger."},
+    {"question": "How do I submit feedback or lessons learned?", "answer": "Add to the feedback/lessons section in the plan file."}
+  ],
+  "extensibility": {
+    "ragIntegration": "How to plug in RAG/LLM for querying and suggestions.",
+    "bugTrackerIntegration": "How to integrate with bug trackers and dashboards.",
+    "ciCdIntegration": "How to connect with CI/CD pipelines."
+  },
+  "notes": "Fill out each section with project-specific details before onboarding new developers."
+} 

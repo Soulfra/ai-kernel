@@ -1,0 +1,27 @@
+{
+  "CalLoopRunner.js": {
+    "last_echo": 1746805265275,
+    "hash": "fde5e3f81ba4aa1332631812357db6b4b53310a470a1cf0541ea6f275638c5e8",
+    "status": "ok"
+  },
+  "CalAgentAutoMount.js": {
+    "last_echo": 1746805674519,
+    "hash": "42b1cf2cb2bfe5e4750e15cdd215c0fa00efdba1ee1d3694034f48a15c42de9b",
+    "status": "test"
+  },
+  "CalPresenceDaemon.js": {
+    "last_echo": 1746805956220,
+    "hash": "71bfa5abdd2307baae2d1b5e3b6bb0d7e16beabdd2319a0cc7d0f23a172d3cda",
+    "status": "ok"
+  },
+  "CalNarrator.js": {
+    "last_echo": 1746805959967,
+    "hash": "a8b25155b11c164c2697a0662197668c0bf37eef38b964d1383460a4cc71dae8",
+    "status": "ok"
+  },
+  "CalPromptRouter.js": {
+    "last_echo": 1746805963248,
+    "hash": "40ebc4c643366d888e9f1939571227c64275df500acef97cc2101ea8043ab66a",
+    "status": "ok"
+  }
+}

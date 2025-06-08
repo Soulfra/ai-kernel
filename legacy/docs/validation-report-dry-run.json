@@ -1,0 +1,1985 @@
+{
+  "timestamp": "2025-06-03T00:06:16.378Z",
+  "mode": "dry-run",
+  "initial": {
+    "totalFiles": 53,
+    "passed": 4,
+    "failed": 102,
+    "issues": {
+      "lineCount": 0,
+      "missingFields": 388,
+      "brokenLinks": 4,
+      "circularDeps": 4
+    }
+  },
+  "afterFixes": {
+    "totalFiles": 53,
+    "passed": 4,
+    "failed": 102,
+    "issues": {
+      "lineCount": 0,
+      "missingFields": 388,
+      "brokenLinks": 4,
+      "circularDeps": 4
+    }
+  },
+  "final": {
+    "totalFiles": 53,
+    "passed": 4,
+    "failed": 102,
+    "issues": {
+      "lineCount": 0,
+      "missingFields": 388,
+      "brokenLinks": 4,
+      "circularDeps": 4
+    }
+  },
+  "files": [
+    {
+      "filePath": "docs/DOCUMENTATION_PLAN.md",
+      "lineCount": 110,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required field: version",
+        "Missing required section: Overview",
+        "Missing required section: Implementation",
+        "Missing required section: Maintenance"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/agents/README.md",
+      "lineCount": 165,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required field: version",
+        "Missing required section: Overview",
+        "Missing required section: Implementation",
+        "Missing required section: Maintenance"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/agents.md",
+      "lineCount": 162,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required section: Implementation",
+        "Missing required section: Maintenance"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/api/README.md",
+      "lineCount": 170,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: lastUpdated",
+        "Missing required section: Overview",
+        "Missing required section: Implementation",
+        "Missing required section: Maintenance"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/architecture/README.md",
+      "lineCount": 33,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required field: version"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/architecture.md",
+      "lineCount": 83,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required section: Implementation",
+        "Missing required section: Maintenance"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/authentication/README.md",
+      "lineCount": 33,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required field: version"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/backup/README.md",
+      "lineCount": 33,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required field: version"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/best-practices/README.md",
+      "lineCount": 33,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required field: version"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/clarity-engine/README.md",
+      "lineCount": 38,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required field: version"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/code/README.md",
+      "lineCount": 33,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required field: version"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/compliance/README.md",
+      "lineCount": 33,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required field: version"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/components/README.md",
+      "lineCount": 33,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required field: version"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/conversation_log.md",
+      "lineCount": 80,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required field: version",
+        "Missing required section: Overview",
+        "Missing required section: Implementation",
+        "Missing required section: Maintenance"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/deployment/README.md",
+      "lineCount": 33,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required field: version"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/development/README.md",
+      "lineCount": 123,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: lastUpdated",
+        "Missing required section: Overview",
+        "Missing required section: Implementation",
+        "Missing required section: Maintenance"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/document-generator/README.md",
+      "lineCount": 38,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required field: version"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/documentation/README.md",
+      "lineCount": 33,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required field: version"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/endpoints/README.md",
+      "lineCount": 33,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required field: version"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/examples/README.md",
+      "lineCount": 33,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required field: version"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/implementation/README.md",
+      "lineCount": 33,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required field: version"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/index.md",
+      "lineCount": 34,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required field: version",
+        "Missing required section: Overview",
+        "Missing required section: Implementation",
+        "Circular dependencies found: docs/index.md -> /Users/matthewmauer/Desktop/CLARITY_ENGINE/docs/products/README.md, docs/index.md -> /Users/matthewmauer/Desktop/CLARITY_ENGINE/docs/products/README.md, docs/index.md -> /Users/matthewmauer/Desktop/CLARITY_ENGINE/docs/development/README.md, docs/index.md -> /Users/matthewmauer/Desktop/CLARITY_ENGINE/docs/development/README.md, docs/index.md -> /Users/matthewmauer/Desktop/CLARITY_ENGINE/docs/maintenance/README.md, docs/index.md -> /Users/matthewmauer/Desktop/CLARITY_ENGINE/docs/maintenance/README.md, docs/index.md -> /Users/matthewmauer/Desktop/CLARITY_ENGINE/docs/standards/README.md, docs/index.md -> /Users/matthewmauer/Desktop/CLARITY_ENGINE/docs/standards/README.md, docs/index.md -> /Users/matthewmauer/Desktop/CLARITY_ENGINE/docs/api/README.md, docs/index.md -> /Users/matthewmauer/Desktop/CLARITY_ENGINE/docs/api/README.md, docs/index.md -> /Users/matthewmauer/Desktop/CLARITY_ENGINE/docs/security/README.md, docs/index.md -> /Users/matthewmauer/Desktop/CLARITY_ENGINE/docs/security/README.md, docs/index.md -> /Users/matthewmauer/Desktop/CLARITY_ENGINE/docs/optimization/README.md, docs/index.md -> /Users/matthewmauer/Desktop/CLARITY_ENGINE/docs/optimization/README.md",
+        "Broken links found: ./core/README.md, ./products/README.md, ./maintenance/README.md"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/integration/README.md",
+      "lineCount": 33,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required field: version"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/llm-router/README.md",
+      "lineCount": 38,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required field: version"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/monitoring/README.md",
+      "lineCount": 33,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required field: version"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/operations/README.md",
+      "lineCount": 33,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required field: version"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/optimization/README.md",
+      "lineCount": 139,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required field: version",
+        "Missing required section: Overview",
+        "Missing required section: Implementation",
+        "Missing required section: Maintenance"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/overview/README.md",
+      "lineCount": 33,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required field: version"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/performance/README.md",
+      "lineCount": 33,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required field: version"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/principles/README.md",
+      "lineCount": 33,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required field: version"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/scalability/README.md",
+      "lineCount": 33,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required field: version"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/security/README.md",
+      "lineCount": 33,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required field: version"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/soulfra/README.md",
+      "lineCount": 58,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required field: version",
+        "Missing required section: Overview",
+        "Missing required section: Implementation",
+        "Missing required section: Maintenance"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/soulfra/products/README.md",
+      "lineCount": 36,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required section: Implementation",
+        "Missing required section: Maintenance"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/soulfra/products/clarity-engine.md",
+      "lineCount": 46,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required field: version",
+        "Missing required section: Maintenance"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/soulfra/products/document-generator.md",
+      "lineCount": 49,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required field: version",
+        "Missing required section: Maintenance"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/soulfra/products/llm-router.md",
+      "lineCount": 49,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required field: version",
+        "Missing required section: Maintenance"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/soulfra/products/prd-template.md",
+      "lineCount": 44,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: lastUpdated",
+        "Missing required field: version",
+        "Missing required section: Maintenance"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/soulfra/roadmap/README.md",
+      "lineCount": 47,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required section: Overview",
+        "Missing required section: Implementation",
+        "Missing required section: Maintenance"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/soulfra/technology/README.md",
+      "lineCount": 47,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required field: version",
+        "Missing required section: Overview",
+        "Missing required section: Implementation",
+        "Missing required section: Maintenance"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/standards/README.md",
+      "lineCount": 33,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required field: version"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/standards/documentation-expansion.md",
+      "lineCount": 62,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required field: version",
+        "Missing required section: Implementation",
+        "Missing required section: Maintenance"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/standards/documentation-standards.md",
+      "lineCount": 87,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required field: version",
+        "Missing required section: Overview",
+        "Missing required section: Implementation",
+        "Missing required section: Maintenance"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/standards/documentation-system.md",
+      "lineCount": 92,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required field: version",
+        "Missing required section: Overview",
+        "Missing required section: Implementation",
+        "Missing required section: Maintenance"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/support/README.md",
+      "lineCount": 33,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required field: version"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/templates/core.md",
+      "lineCount": 33,
+      "issues": [],
+      "passed": true
+    },
+    {
+      "filePath": "docs/templates/main-index.md",
+      "lineCount": 82,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required field: version",
+        "Missing required section: Overview"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/templates/product.md",
+      "lineCount": 38,
+      "issues": [],
+      "passed": true
+    },
+    {
+      "filePath": "docs/templates/section-index.md",
+      "lineCount": 27,
+      "issues": [
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required field: version",
+        "Missing required section: Maintenance",
+        "Circular dependencies found: docs/templates/section-index.md -> /Users/matthewmauer/Desktop/CLARITY_ENGINE/docs/development/README.md, docs/templates/section-index.md -> /Users/matthewmauer/Desktop/CLARITY_ENGINE/docs/development/README.md, docs/templates/section-index.md -> /Users/matthewmauer/Desktop/CLARITY_ENGINE/docs/testing/README.md, docs/templates/section-index.md -> /Users/matthewmauer/Desktop/CLARITY_ENGINE/docs/testing/README.md",
+        "Broken links found: ../standards/README.md, ../development/README.md, ../testing/README.md"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/testing/README.md",
+      "lineCount": 33,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required field: version"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/testing/blessing-system.md",
+      "lineCount": 21,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required field: version",
+        "Missing required section: Implementation",
+        "Missing required section: Maintenance"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/testing.md",
+      "lineCount": 214,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required field: version",
+        "Missing required section: Implementation",
+        "Missing required section: Maintenance"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/workflow/README.md",
+      "lineCount": 33,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required field: version"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/DOCUMENTATION_PLAN.md",
+      "lineCount": 110,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required field: version",
+        "Missing required section: Overview",
+        "Missing required section: Implementation",
+        "Missing required section: Maintenance"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/agents/README.md",
+      "lineCount": 165,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required field: version",
+        "Missing required section: Overview",
+        "Missing required section: Implementation",
+        "Missing required section: Maintenance"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/agents.md",
+      "lineCount": 162,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required section: Implementation",
+        "Missing required section: Maintenance"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/api/README.md",
+      "lineCount": 170,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: lastUpdated",
+        "Missing required section: Overview",
+        "Missing required section: Implementation",
+        "Missing required section: Maintenance"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/architecture/README.md",
+      "lineCount": 33,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required field: version"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/architecture.md",
+      "lineCount": 83,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required section: Implementation",
+        "Missing required section: Maintenance"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/authentication/README.md",
+      "lineCount": 33,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required field: version"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/backup/README.md",
+      "lineCount": 33,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required field: version"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/best-practices/README.md",
+      "lineCount": 33,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required field: version"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/clarity-engine/README.md",
+      "lineCount": 38,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required field: version"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/code/README.md",
+      "lineCount": 33,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required field: version"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/compliance/README.md",
+      "lineCount": 33,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required field: version"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/components/README.md",
+      "lineCount": 33,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required field: version"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/conversation_log.md",
+      "lineCount": 80,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required field: version",
+        "Missing required section: Overview",
+        "Missing required section: Implementation",
+        "Missing required section: Maintenance"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/deployment/README.md",
+      "lineCount": 33,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required field: version"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/development/README.md",
+      "lineCount": 123,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: lastUpdated",
+        "Missing required section: Overview",
+        "Missing required section: Implementation",
+        "Missing required section: Maintenance"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/document-generator/README.md",
+      "lineCount": 38,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required field: version"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/documentation/README.md",
+      "lineCount": 33,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required field: version"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/endpoints/README.md",
+      "lineCount": 33,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required field: version"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/examples/README.md",
+      "lineCount": 33,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required field: version"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/implementation/README.md",
+      "lineCount": 33,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required field: version"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/index.md",
+      "lineCount": 34,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required field: version",
+        "Missing required section: Overview",
+        "Missing required section: Implementation",
+        "Circular dependencies found: docs/index.md -> /Users/matthewmauer/Desktop/CLARITY_ENGINE/docs/products/README.md, docs/index.md -> /Users/matthewmauer/Desktop/CLARITY_ENGINE/docs/products/README.md, docs/index.md -> /Users/matthewmauer/Desktop/CLARITY_ENGINE/docs/development/README.md, docs/index.md -> /Users/matthewmauer/Desktop/CLARITY_ENGINE/docs/development/README.md, docs/index.md -> /Users/matthewmauer/Desktop/CLARITY_ENGINE/docs/maintenance/README.md, docs/index.md -> /Users/matthewmauer/Desktop/CLARITY_ENGINE/docs/maintenance/README.md, docs/index.md -> /Users/matthewmauer/Desktop/CLARITY_ENGINE/docs/standards/README.md, docs/index.md -> /Users/matthewmauer/Desktop/CLARITY_ENGINE/docs/standards/README.md, docs/index.md -> /Users/matthewmauer/Desktop/CLARITY_ENGINE/docs/api/README.md, docs/index.md -> /Users/matthewmauer/Desktop/CLARITY_ENGINE/docs/api/README.md, docs/index.md -> /Users/matthewmauer/Desktop/CLARITY_ENGINE/docs/security/README.md, docs/index.md -> /Users/matthewmauer/Desktop/CLARITY_ENGINE/docs/security/README.md, docs/index.md -> /Users/matthewmauer/Desktop/CLARITY_ENGINE/docs/optimization/README.md, docs/index.md -> /Users/matthewmauer/Desktop/CLARITY_ENGINE/docs/optimization/README.md",
+        "Broken links found: ./core/README.md, ./products/README.md, ./maintenance/README.md"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/integration/README.md",
+      "lineCount": 33,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required field: version"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/llm-router/README.md",
+      "lineCount": 38,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required field: version"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/monitoring/README.md",
+      "lineCount": 33,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required field: version"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/operations/README.md",
+      "lineCount": 33,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required field: version"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/optimization/README.md",
+      "lineCount": 139,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required field: version",
+        "Missing required section: Overview",
+        "Missing required section: Implementation",
+        "Missing required section: Maintenance"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/overview/README.md",
+      "lineCount": 33,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required field: version"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/performance/README.md",
+      "lineCount": 33,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required field: version"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/principles/README.md",
+      "lineCount": 33,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required field: version"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/scalability/README.md",
+      "lineCount": 33,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required field: version"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/security/README.md",
+      "lineCount": 33,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required field: version"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/soulfra/README.md",
+      "lineCount": 58,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required field: version",
+        "Missing required section: Overview",
+        "Missing required section: Implementation",
+        "Missing required section: Maintenance"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/soulfra/products/README.md",
+      "lineCount": 36,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required section: Implementation",
+        "Missing required section: Maintenance"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/soulfra/products/clarity-engine.md",
+      "lineCount": 46,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required field: version",
+        "Missing required section: Maintenance"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/soulfra/products/document-generator.md",
+      "lineCount": 49,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required field: version",
+        "Missing required section: Maintenance"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/soulfra/products/llm-router.md",
+      "lineCount": 49,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required field: version",
+        "Missing required section: Maintenance"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/soulfra/products/prd-template.md",
+      "lineCount": 44,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: lastUpdated",
+        "Missing required field: version",
+        "Missing required section: Maintenance"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/soulfra/roadmap/README.md",
+      "lineCount": 47,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required section: Overview",
+        "Missing required section: Implementation",
+        "Missing required section: Maintenance"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/soulfra/technology/README.md",
+      "lineCount": 47,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required field: version",
+        "Missing required section: Overview",
+        "Missing required section: Implementation",
+        "Missing required section: Maintenance"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/standards/README.md",
+      "lineCount": 33,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required field: version"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/standards/documentation-expansion.md",
+      "lineCount": 62,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required field: version",
+        "Missing required section: Implementation",
+        "Missing required section: Maintenance"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/standards/documentation-standards.md",
+      "lineCount": 87,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required field: version",
+        "Missing required section: Overview",
+        "Missing required section: Implementation",
+        "Missing required section: Maintenance"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/standards/documentation-system.md",
+      "lineCount": 92,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required field: version",
+        "Missing required section: Overview",
+        "Missing required section: Implementation",
+        "Missing required section: Maintenance"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/support/README.md",
+      "lineCount": 33,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required field: version"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/templates/core.md",
+      "lineCount": 33,
+      "issues": [],
+      "passed": true
+    },
+    {
+      "filePath": "docs/templates/main-index.md",
+      "lineCount": 82,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required field: version",
+        "Missing required section: Overview"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/templates/product.md",
+      "lineCount": 38,
+      "issues": [],
+      "passed": true
+    },
+    {
+      "filePath": "docs/templates/section-index.md",
+      "lineCount": 27,
+      "issues": [
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required field: version",
+        "Missing required section: Maintenance",
+        "Circular dependencies found: docs/templates/section-index.md -> /Users/matthewmauer/Desktop/CLARITY_ENGINE/docs/development/README.md, docs/templates/section-index.md -> /Users/matthewmauer/Desktop/CLARITY_ENGINE/docs/development/README.md, docs/templates/section-index.md -> /Users/matthewmauer/Desktop/CLARITY_ENGINE/docs/testing/README.md, docs/templates/section-index.md -> /Users/matthewmauer/Desktop/CLARITY_ENGINE/docs/testing/README.md",
+        "Broken links found: ../standards/README.md, ../development/README.md, ../testing/README.md"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/testing/README.md",
+      "lineCount": 33,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required field: version"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/testing/blessing-system.md",
+      "lineCount": 21,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required field: version",
+        "Missing required section: Implementation",
+        "Missing required section: Maintenance"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/testing.md",
+      "lineCount": 214,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required field: version",
+        "Missing required section: Implementation",
+        "Missing required section: Maintenance"
+      ],
+      "passed": false
+    },
+    {
+      "filePath": "docs/workflow/README.md",
+      "lineCount": 33,
+      "issues": [
+        "Missing required field: title",
+        "Missing required field: description",
+        "Missing required field: lastUpdated",
+        "Missing required field: version"
+      ],
+      "passed": false
+    }
+  ],
+  "proposedChanges": [
+    {
+      "filePath": "docs/DOCUMENTATION_PLAN.md",
+      "originalContent": "# Documentation Plan\n\n## Core Principles\n1. **Dynamic**: Documentation should adapt to changes in the system\n2. **Modular**: Each component should be self-contained\n3. **Non-Recursive**: No circular dependencies between documents\n4. **Line Limit**: Each file must be under 250 lines\n5. **Context-Aware**: Documentation should be aware of its relationships\n\n## Documentation Structure\n1. **Core Components**\n   - Architecture\n   - Components\n   - Standards\n   - Testing\n\n2. **Product Documentation**\n   - Clarity Engine\n   - Document Generator\n   - LLM Router\n\n3. **Development**\n   - Workflow\n   - Testing\n   - Deployment\n   - Integration\n\n4. **Maintenance**\n   - Operations\n   - Support\n   - Monitoring\n   - Backup\n\n## Standards\n1. **File Structure**\n   - Each file must have:\n     - Title\n     - Description\n     - Last Updated\n     - Version\n     - Related Components\n     - Dependencies\n\n2. **Content Guidelines**\n   - Clear and concise\n   - Code examples where relevant\n   - Links to related documentation\n   - No circular references\n\n3. **Validation Rules**\n   - Line count check\n   - Required fields check\n   - Link validation\n   - Dependency validation\n\n## Process\n1. **Documentation Generation**\n   - Use templates\n   - Validate against standards\n   - Check for completeness\n   - Update indexes\n\n2. **Review Process**\n   - Technical review\n   - Content review\n   - Link validation\n   - Dependency check\n\n3. **Maintenance**\n   - Regular updates\n   - Version tracking\n   - Change logging\n   - Impact analysis\n\n## Tools\n1. **Generation**\n   - Template system\n   - Validation system\n   - Link checker\n   - Dependency analyzer\n\n2. **Maintenance**\n   - Version control\n   - Change tracking\n   - Impact analysis\n   - Update automation\n\n## Success Metrics\n1. **Quality**\n   - All files under 250 lines\n   - No broken links\n   - Complete coverage\n   - Clear structure\n\n2. **Maintenance**\n   - Easy to update\n   - Clear dependencies\n   - Automated validation\n   - Version tracking\n\n## Next Steps\n1. Review generated documentation\n2. Fix validation issues\n3. Complete missing sections\n4. Implement automated checks\n5. Set up maintenance process\n\n---\n*Last Updated: 2024-07-27T02:45:00Z*\n*Version: 1.0.0* ",
+      "proposedChanges": [
+        {
+          "type": "add_sections",
+          "details": {
+            "addedSections": [
+              "Overview",
+              "Implementation",
+              "Maintenance"
+            ]
+          }
+        }
+      ],
+      "newContent": "# Documentation Plan\n\n## Core Principles\n1. **Dynamic**: Documentation should adapt to changes in the system\n2. **Modular**: Each component should be self-contained\n3. **Non-Recursive**: No circular dependencies between documents\n4. **Line Limit**: Each file must be under 250 lines\n5. **Context-Aware**: Documentation should be aware of its relationships\n\n## Documentation Structure\n1. **Core Components**\n   - Architecture\n   - Components\n   - Standards\n   - Testing\n\n2. **Product Documentation**\n   - Clarity Engine\n   - Document Generator\n   - LLM Router\n\n3. **Development**\n   - Workflow\n   - Testing\n   - Deployment\n   - Integration\n\n4. **Maintenance**\n   - Operations\n   - Support\n   - Monitoring\n   - Backup\n\n## Standards\n1. **File Structure**\n   - Each file must have:\n     - Title\n     - Description\n     - Last Updated\n     - Version\n     - Related Components\n     - Dependencies\n\n2. **Content Guidelines**\n   - Clear and concise\n   - Code examples where relevant\n   - Links to related documentation\n   - No circular references\n\n3. **Validation Rules**\n   - Line count check\n   - Required fields check\n   - Link validation\n   - Dependency validation\n\n## Process\n1. **Documentation Generation**\n   - Use templates\n   - Validate against standards\n   - Check for completeness\n   - Update indexes\n\n2. **Review Process**\n   - Technical review\n   - Content review\n   - Link validation\n   - Dependency check\n\n3. **Maintenance**\n   - Regular updates\n   - Version tracking\n   - Change logging\n   - Impact analysis\n\n## Tools\n1. **Generation**\n   - Template system\n   - Validation system\n   - Link checker\n   - Dependency analyzer\n\n2. **Maintenance**\n   - Version control\n   - Change tracking\n   - Impact analysis\n   - Update automation\n\n## Success Metrics\n1. **Quality**\n   - All files under 250 lines\n   - No broken links\n   - Complete coverage\n   - Clear structure\n\n2. **Maintenance**\n   - Easy to update\n   - Clear dependencies\n   - Automated validation\n   - Version tracking\n\n## Next Steps\n1. Review generated documentation\n2. Fix validation issues\n3. Complete missing sections\n4. Implement automated checks\n5. Set up maintenance process\n\n---\n*Last Updated: 2024-07-27T02:45:00Z*\n*Version: 1.0.0* \n\n## Overview\n\n[Add overview content here]\n\n## Implementation\n\n[Add implementation content here]\n\n## Maintenance\n\n[Add maintenance content here]"
+    },
+    {
+      "filePath": "docs/agents/README.md",
+      "originalContent": "# Agents Guide\n\nThis guide outlines the ClarityEngine agent system architecture and implementation.\n\n## 🤖 Agent Architecture\n\n### 1. Core Components\n- **Agent Types**\n  - Analysis Agents\n  - Processing Agents\n  - Validation Agents\n  - Orchestration Agents\n\n- **Agent Structure**\n  - Input/Output interfaces\n  - State management\n  - Error handling\n  - Logging system\n\n### 2. Communication\n- **Inter-Agent**\n  - Message passing\n  - Event system\n  - State sharing\n  - Error propagation\n\n- **External**\n  - API endpoints\n  - WebSocket connections\n  - File system\n  - Database\n\n## 🔄 Agent Lifecycle\n\n### 1. Initialization\n- **Setup**\n  - Configuration loading\n  - Resource allocation\n  - Dependency resolution\n  - State initialization\n\n- **Validation**\n  - Configuration validation\n  - Resource verification\n  - Dependency checking\n  - Health checks\n\n### 2. Operation\n- **Processing**\n  - Task execution\n  - State management\n  - Error handling\n  - Progress tracking\n\n- **Monitoring**\n  - Performance metrics\n  - Resource usage\n  - Error rates\n  - Success rates\n\n## 🛠️ Agent Development\n\n### 1. Implementation\n- **Base Agent**\n  ```javascript\n  class BaseAgent {\n    constructor(config) {\n      this.config = config;\n      this.state = {};\n    }\n\n    async initialize() {}\n    async process(input) {}\n    async cleanup() {}\n  }\n  ```\n\n- **Specialized Agents**\n  - AnalysisAgent\n  - ProcessingAgent\n  - ValidationAgent\n  - OrchestrationAgent\n\n### 2. Testing\n- **Unit Tests**\n  - Agent initialization\n  - Process methods\n  - Error handling\n  - State management\n\n- **Integration Tests**\n  - Agent communication\n  - Resource management\n  - Error propagation\n  - System integration\n\n## 📊 Agent Management\n\n### 1. Deployment\n- **Configuration**\n  - Environment setup\n  - Resource allocation\n  - Dependency management\n  - Security settings\n\n- **Monitoring**\n  - Performance tracking\n  - Error monitoring\n  - Resource usage\n  - Health checks\n\n### 2. Maintenance\n- **Updates**\n  - Version management\n  - Configuration updates\n  - Dependency updates\n  - Security patches\n\n- **Scaling**\n  - Load balancing\n  - Resource scaling\n  - Performance optimization\n  - Failover handling\n\n## 🔍 Agent Types\n\n### 1. Analysis Agents\n- **Document Analysis**\n  - Content parsing\n  - Structure analysis\n  - Metadata extraction\n  - Quality assessment\n\n- **Code Analysis**\n  - Syntax parsing\n  - Dependency analysis\n  - Quality metrics\n  - Security scanning\n\n### 2. Processing Agents\n- **Content Processing**\n  - Text processing\n  - Image processing\n  - Audio processing\n  - Video processing\n\n- **Data Processing**\n  - Data transformation\n  - Data validation\n  - Data enrichment\n  - Data aggregation\n\n## 📝 Best Practices\n\n### 1. Development\n- Keep agents focused\n- Implement proper error handling\n- Use async/await patterns\n- Follow single responsibility\n\n### 2. Deployment\n- Monitor resource usage\n- Implement health checks\n- Use proper logging\n- Handle errors gracefully ",
+      "proposedChanges": [
+        {
+          "type": "add_fields",
+          "details": {
+            "addedFields": [
+              "title",
+              "description",
+              "lastUpdated",
+              "version"
+            ]
+          }
+        },
+        {
+          "type": "add_sections",
+          "details": {
+            "addedSections": [
+              "Overview",
+              "Implementation",
+              "Maintenance"
+            ]
+          }
+        }
+      ],
+      "newContent": "---\ntitle: Agents Guide\ndescription: Documentation for Agents Guide\nlastUpdated: 2025-06-03T00:06:16.369Z\nversion: 1.0.0\n---\n\n# Agents Guide\n\nThis guide outlines the ClarityEngine agent system architecture and implementation.\n\n## 🤖 Agent Architecture\n\n### 1. Core Components\n- **Agent Types**\n  - Analysis Agents\n  - Processing Agents\n  - Validation Agents\n  - Orchestration Agents\n\n- **Agent Structure**\n  - Input/Output interfaces\n  - State management\n  - Error handling\n  - Logging system\n\n### 2. Communication\n- **Inter-Agent**\n  - Message passing\n  - Event system\n  - State sharing\n  - Error propagation\n\n- **External**\n  - API endpoints\n  - WebSocket connections\n  - File system\n  - Database\n\n## 🔄 Agent Lifecycle\n\n### 1. Initialization\n- **Setup**\n  - Configuration loading\n  - Resource allocation\n  - Dependency resolution\n  - State initialization\n\n- **Validation**\n  - Configuration validation\n  - Resource verification\n  - Dependency checking\n  - Health checks\n\n### 2. Operation\n- **Processing**\n  - Task execution\n  - State management\n  - Error handling\n  - Progress tracking\n\n- **Monitoring**\n  - Performance metrics\n  - Resource usage\n  - Error rates\n  - Success rates\n\n## 🛠️ Agent Development\n\n### 1. Implementation\n- **Base Agent**\n  ```javascript\n  class BaseAgent {\n    constructor(config) {\n      this.config = config;\n      this.state = {};\n    }\n\n    async initialize() {}\n    async process(input) {}\n    async cleanup() {}\n  }\n  ```\n\n- **Specialized Agents**\n  - AnalysisAgent\n  - ProcessingAgent\n  - ValidationAgent\n  - OrchestrationAgent\n\n### 2. Testing\n- **Unit Tests**\n  - Agent initialization\n  - Process methods\n  - Error handling\n  - State management\n\n- **Integration Tests**\n  - Agent communication\n  - Resource management\n  - Error propagation\n  - System integration\n\n## 📊 Agent Management\n\n### 1. Deployment\n- **Configuration**\n  - Environment setup\n  - Resource allocation\n  - Dependency management\n  - Security settings\n\n- **Monitoring**\n  - Performance tracking\n  - Error monitoring\n  - Resource usage\n  - Health checks\n\n### 2. Maintenance\n- **Updates**\n  - Version management\n  - Configuration updates\n  - Dependency updates\n  - Security patches\n\n- **Scaling**\n  - Load balancing\n  - Resource scaling\n  - Performance optimization\n  - Failover handling\n\n## 🔍 Agent Types\n\n### 1. Analysis Agents\n- **Document Analysis**\n  - Content parsing\n  - Structure analysis\n  - Metadata extraction\n  - Quality assessment\n\n- **Code Analysis**\n  - Syntax parsing\n  - Dependency analysis\n  - Quality metrics\n  - Security scanning\n\n### 2. Processing Agents\n- **Content Processing**\n  - Text processing\n  - Image processing\n  - Audio processing\n  - Video processing\n\n- **Data Processing**\n  - Data transformation\n  - Data validation\n  - Data enrichment\n  - Data aggregation\n\n## 📝 Best Practices\n\n### 1. Development\n- Keep agents focused\n- Implement proper error handling\n- Use async/await patterns\n- Follow single responsibility\n\n### 2. Deployment\n- Monitor resource usage\n- Implement health checks\n- Use proper logging\n- Handle errors gracefully \n\n## Overview\n\n[Add overview content here]\n\n## Implementation\n\n[Add implementation content here]\n\n## Maintenance\n\n[Add maintenance content here]"
+    },
+    {
+      "filePath": "docs/agents.md",
+      "originalContent": "# Clarity Engine Agents\n\nThis document provides an overview of all agents in the Clarity Engine system.\n\n| Agent Name | Purpose | Inputs | Outputs | CLI Command | Last Updated |\n|------------|---------|---------|----------|-------------|--------------|\n| Documentation Generator | Generates feature documentation | Feature key, format | Documentation files | `clarity docs <feature>` | 2024-03-19 |\n| Export Manager | Handles feature exports | Feature key, formats | Export files | `clarity export <feature>` | 2024-03-19 |\n| Export Validator | Validates and blesses exports | Feature key, export file | Blessed export | `clarity bless <feature> <exportFile>` | 2024-03-19 |\n| Intent Detector | Analyzes message intent | Message text | Intent classification | `clarity detect-intent` | 2024-03-19 |\n| Webhook Manager | Manages webhook registrations | URL, events, secret | Webhook configuration | `clarity webhook` | 2024-03-19 |\n| Admin Reporter | Generates admin statistics | None | Usage statistics | `clarity admin-summary` | 2024-03-19 |\n\n## Agent Details\n\n### Documentation Generator\n- **Location**: `core/documentation/`\n- **Dependencies**: Feature metadata, templates\n- **Output Location**: `strategist/generated_docs/features/<slug>/`\n\n### Export Manager\n- **Location**: `core/export/`\n- **Supported Formats**: markdown, pdf, html, json\n- **Output Location**: `strategist/exports/<feature>/`\n\n### Export Validator\n- **Location**: `core/validation/`\n- **Validation Rules**: Content completeness, format compliance\n- **Output Location**: `strategist/blessed_exports/<feature>/`\n\n### Intent Detector\n- **Location**: `core/intent/`\n- **Model**: GPT-4\n- **Output**: JSON with intent, tone, confidence\n\n### Webhook Manager\n- **Location**: `core/webhooks/`\n- **Storage**: `vault/hooks/event_hooks.json`\n- **Events**: feature.created, export.completed, etc.\n\n### Admin Reporter\n- **Location**: `core/admin/`\n- **Data Source**: `memory/usage_log.json`\n- **Metrics**: rewrites, vibes, costs, tone usage\n\n## ClarityEngine Agent System\n\n## Overview\n\nThe ClarityEngine agent system consists of specialized AI agents that work together to generate, validate, and manage documentation. Each agent has a specific role and responsibility in the documentation process.\n\n## Agent Types\n\n### 1. QAResponder\n- **Purpose**: Ensures documentation quality and accuracy\n- **Responsibilities**:\n  - Validates documentation completeness\n  - Checks for technical accuracy\n  - Verifies code examples\n  - Ensures consistent formatting\n- **Integration**: Works with DocumentationManager\n\n### 2. PromptArchitect\n- **Purpose**: Designs optimal documentation prompts\n- **Responsibilities**:\n  - Generates documentation templates\n  - Optimizes prompt structure\n  - Maintains tone consistency\n  - Adapts to different documentation types\n- **Integration**: Works with FeatureAnalyzer\n\n### 3. DevOpsAgent\n- **Purpose**: Manages deployment and infrastructure documentation\n- **Responsibilities**:\n  - Documents deployment processes\n  - Maintains infrastructure documentation\n  - Tracks configuration changes\n  - Generates system diagrams\n- **Integration**: Works with ExportManager\n\n### 4. ExporterAgent\n- **Purpose**: Handles documentation export\n- **Responsibilities**:\n  - Converts documentation to various formats\n  - Manages export versioning\n  - Handles export scheduling\n  - Maintains export history\n- **Integration**: Works with DocumentationManager\n\n### 5. BlessAgent\n- **Purpose**: Manages documentation approval\n- **Responsibilities**:\n  - Tracks documentation status\n  - Manages approval workflows\n  - Handles version control\n  - Maintains audit trails\n- **Integration**: Works with all other agents\n\n## Agent Communication\n\n### Message Flow\n```\n[FeatureAnalyzer] → [PromptArchitect] → [QAResponder] → [BlessAgent] → [ExporterAgent]\n```\n\n### State Management\n- Each agent maintains its own state\n- States are synchronized through the Engine Core\n- Changes are logged for audit purposes\n\n## Agent Configuration\n\n### Common Settings\n```javascript\n{\n  \"maxRetries\": 3,\n  \"timeout\": 30000,\n  \"concurrency\": 5,\n  \"logging\": {\n    \"level\": \"info\",\n    \"format\": \"json\"\n  }\n}\n```\n\n### Agent-Specific Settings\nEach agent has its own configuration file in `config/agents/`.\n\n## Error Handling\n\n- Retry mechanisms for transient failures\n- Fallback strategies for critical operations\n- Comprehensive error logging\n- Alert system for critical errors\n\n## Performance Optimization\n\n- Parallel processing where possible\n- Caching of frequently used data\n- Resource usage monitoring\n- Automatic scaling based on load\n\n## Security Considerations\n\n- Agent authentication\n- Role-based access control\n- Audit logging\n- Data encryption\n\n## Monitoring and Maintenance\n\n- Health checks\n- Performance metrics\n- Resource usage tracking\n- Automated backups\n\n## Future Improvements\n\n- Machine learning for better decision making\n- Enhanced error recovery\n- Improved parallel processing\n- Better resource utilization ",
+      "proposedChanges": [
+        {
+          "type": "add_sections",
+          "details": {
+            "addedSections": [
+              "Overview",
+              "Implementation",
+              "Maintenance"
+            ]
+          }
+        }
+      ],
+      "newContent": "# Clarity Engine Agents\n\nThis document provides an overview of all agents in the Clarity Engine system.\n\n| Agent Name | Purpose | Inputs | Outputs | CLI Command | Last Updated |\n|------------|---------|---------|----------|-------------|--------------|\n| Documentation Generator | Generates feature documentation | Feature key, format | Documentation files | `clarity docs <feature>` | 2024-03-19 |\n| Export Manager | Handles feature exports | Feature key, formats | Export files | `clarity export <feature>` | 2024-03-19 |\n| Export Validator | Validates and blesses exports | Feature key, export file | Blessed export | `clarity bless <feature> <exportFile>` | 2024-03-19 |\n| Intent Detector | Analyzes message intent | Message text | Intent classification | `clarity detect-intent` | 2024-03-19 |\n| Webhook Manager | Manages webhook registrations | URL, events, secret | Webhook configuration | `clarity webhook` | 2024-03-19 |\n| Admin Reporter | Generates admin statistics | None | Usage statistics | `clarity admin-summary` | 2024-03-19 |\n\n## Agent Details\n\n### Documentation Generator\n- **Location**: `core/documentation/`\n- **Dependencies**: Feature metadata, templates\n- **Output Location**: `strategist/generated_docs/features/<slug>/`\n\n### Export Manager\n- **Location**: `core/export/`\n- **Supported Formats**: markdown, pdf, html, json\n- **Output Location**: `strategist/exports/<feature>/`\n\n### Export Validator\n- **Location**: `core/validation/`\n- **Validation Rules**: Content completeness, format compliance\n- **Output Location**: `strategist/blessed_exports/<feature>/`\n\n### Intent Detector\n- **Location**: `core/intent/`\n- **Model**: GPT-4\n- **Output**: JSON with intent, tone, confidence\n\n### Webhook Manager\n- **Location**: `core/webhooks/`\n- **Storage**: `vault/hooks/event_hooks.json`\n- **Events**: feature.created, export.completed, etc.\n\n### Admin Reporter\n- **Location**: `core/admin/`\n- **Data Source**: `memory/usage_log.json`\n- **Metrics**: rewrites, vibes, costs, tone usage\n\n## ClarityEngine Agent System\n\n## Overview\n\nThe ClarityEngine agent system consists of specialized AI agents that work together to generate, validate, and manage documentation. Each agent has a specific role and responsibility in the documentation process.\n\n## Agent Types\n\n### 1. QAResponder\n- **Purpose**: Ensures documentation quality and accuracy\n- **Responsibilities**:\n  - Validates documentation completeness\n  - Checks for technical accuracy\n  - Verifies code examples\n  - Ensures consistent formatting\n- **Integration**: Works with DocumentationManager\n\n### 2. PromptArchitect\n- **Purpose**: Designs optimal documentation prompts\n- **Responsibilities**:\n  - Generates documentation templates\n  - Optimizes prompt structure\n  - Maintains tone consistency\n  - Adapts to different documentation types\n- **Integration**: Works with FeatureAnalyzer\n\n### 3. DevOpsAgent\n- **Purpose**: Manages deployment and infrastructure documentation\n- **Responsibilities**:\n  - Documents deployment processes\n  - Maintains infrastructure documentation\n  - Tracks configuration changes\n  - Generates system diagrams\n- **Integration**: Works with ExportManager\n\n### 4. ExporterAgent\n- **Purpose**: Handles documentation export\n- **Responsibilities**:\n  - Converts documentation to various formats\n  - Manages export versioning\n  - Handles export scheduling\n  - Maintains export history\n- **Integration**: Works with DocumentationManager\n\n### 5. BlessAgent\n- **Purpose**: Manages documentation approval\n- **Responsibilities**:\n  - Tracks documentation status\n  - Manages approval workflows\n  - Handles version control\n  - Maintains audit trails\n- **Integration**: Works with all other agents\n\n## Agent Communication\n\n### Message Flow\n```\n[FeatureAnalyzer] → [PromptArchitect] → [QAResponder] → [BlessAgent] → [ExporterAgent]\n```\n\n### State Management\n- Each agent maintains its own state\n- States are synchronized through the Engine Core\n- Changes are logged for audit purposes\n\n## Agent Configuration\n\n### Common Settings\n```javascript\n{\n  \"maxRetries\": 3,\n  \"timeout\": 30000,\n  \"concurrency\": 5,\n  \"logging\": {\n    \"level\": \"info\",\n    \"format\": \"json\"\n  }\n}\n```\n\n### Agent-Specific Settings\nEach agent has its own configuration file in `config/agents/`.\n\n## Error Handling\n\n- Retry mechanisms for transient failures\n- Fallback strategies for critical operations\n- Comprehensive error logging\n- Alert system for critical errors\n\n## Performance Optimization\n\n- Parallel processing where possible\n- Caching of frequently used data\n- Resource usage monitoring\n- Automatic scaling based on load\n\n## Security Considerations\n\n- Agent authentication\n- Role-based access control\n- Audit logging\n- Data encryption\n\n## Monitoring and Maintenance\n\n- Health checks\n- Performance metrics\n- Resource usage tracking\n- Automated backups\n\n## Future Improvements\n\n- Machine learning for better decision making\n- Enhanced error recovery\n- Improved parallel processing\n- Better resource utilization \n\n## Implementation\n\n[Add implementation content here]\n\n## Maintenance\n\n[Add maintenance content here]"
+    },
+    {
+      "filePath": "docs/api/README.md",
+      "originalContent": "# API Guide\n\nThis guide documents the ClarityEngine API system.\n\n## 🔌 API Overview\n\n### 1. Core Principles\n- **RESTful Design**\n  - Resource-based URLs\n  - HTTP method semantics\n  - Stateless operations\n  - Cacheable responses\n\n- **Versioning**\n  - URL-based versioning\n  - Backward compatibility\n  - Deprecation policy\n  - Migration guides\n\n### 2. Authentication\n- **Methods**\n  - JWT authentication\n  - API key authentication\n  - OAuth 2.0\n  - Session management\n\n- **Security**\n  - Token rotation\n  - Rate limiting\n  - IP restrictions\n  - Audit logging\n\n## 📡 Endpoints\n\n### 1. Core Endpoints\n- **Document Management**\n  ```\n  GET    /api/v1/documents\n  POST   /api/v1/documents\n  GET    /api/v1/documents/:id\n  PUT    /api/v1/documents/:id\n  DELETE /api/v1/documents/:id\n  ```\n\n- **Analysis Endpoints**\n  ```\n  POST   /api/v1/analyze\n  GET    /api/v1/analysis/:id\n  POST   /api/v1/analyze/batch\n  GET    /api/v1/analysis/status/:id\n  ```\n\n### 2. Utility Endpoints\n- **System Status**\n  ```\n  GET    /api/v1/health\n  GET    /api/v1/status\n  GET    /api/v1/metrics\n  ```\n\n- **Configuration**\n  ```\n  GET    /api/v1/config\n  PUT    /api/v1/config\n  GET    /api/v1/config/schema\n  ```\n\n## 🔄 Request/Response\n\n### 1. Request Format\n- **Headers**\n  ```\n  Authorization: Bearer <token>\n  Content-Type: application/json\n  Accept: application/json\n  X-API-Key: <key>\n  ```\n\n- **Query Parameters**\n  - Pagination\n  - Filtering\n  - Sorting\n  - Field selection\n\n### 2. Response Format\n- **Success Response**\n  ```json\n  {\n    \"status\": \"success\",\n    \"data\": {},\n    \"meta\": {\n      \"timestamp\": \"2024-03-21T12:00:00Z\",\n      \"version\": \"1.0.0\"\n    }\n  }\n  ```\n\n- **Error Response**\n  ```json\n  {\n    \"status\": \"error\",\n    \"error\": {\n      \"code\": \"ERROR_CODE\",\n      \"message\": \"Error description\",\n      \"details\": {}\n    }\n  }\n  ```\n\n## 🛡️ Rate Limiting\n\n### 1. Limits\n- **Standard Tier**\n  - 100 requests/minute\n  - 1000 requests/hour\n  - 10000 requests/day\n\n- **Premium Tier**\n  - 1000 requests/minute\n  - 10000 requests/hour\n  - 100000 requests/day\n\n### 2. Headers\n- **Rate Limit Headers**\n  ```\n  X-RateLimit-Limit\n  X-RateLimit-Remaining\n  X-RateLimit-Reset\n  ```\n\n## 🔍 Error Handling\n\n### 1. Error Codes\n- **HTTP Status Codes**\n  - 200: Success\n  - 400: Bad Request\n  - 401: Unauthorized\n  - 403: Forbidden\n  - 404: Not Found\n  - 429: Too Many Requests\n  - 500: Internal Server Error\n\n### 2. Error Responses\n- **Validation Errors**\n  - Field-level errors\n  - Constraint violations\n  - Format errors\n  - Required fields\n\n## 📚 SDK Support\n\n### 1. Client Libraries\n- **JavaScript/Node.js**\n  - Installation\n  - Configuration\n  - Usage examples\n  - Error handling\n\n- **Python**\n  - Installation\n  - Configuration\n  - Usage examples\n  - Error handling\n\n### 2. Examples\n- **Common Operations**\n  - Authentication\n  - Document creation\n  - Analysis requests\n  - Error handling ",
+      "proposedChanges": [
+        {
+          "type": "add_fields",
+          "details": {
+            "addedFields": [
+              "title",
+              "description",
+              "lastUpdated",
+              "version"
+            ]
+          }
+        },
+        {
+          "type": "add_sections",
+          "details": {
+            "addedSections": [
+              "Overview",
+              "Implementation",
+              "Maintenance"
+            ]
+          }
+        }
+      ],
+      "newContent": "---\ntitle: API Guide\ndescription: Documentation for API Guide\nlastUpdated: 2025-06-03T00:06:16.369Z\nversion: 1.0.0\n---\n\n# API Guide\n\nThis guide documents the ClarityEngine API system.\n\n## 🔌 API Overview\n\n### 1. Core Principles\n- **RESTful Design**\n  - Resource-based URLs\n  - HTTP method semantics\n  - Stateless operations\n  - Cacheable responses\n\n- **Versioning**\n  - URL-based versioning\n  - Backward compatibility\n  - Deprecation policy\n  - Migration guides\n\n### 2. Authentication\n- **Methods**\n  - JWT authentication\n  - API key authentication\n  - OAuth 2.0\n  - Session management\n\n- **Security**\n  - Token rotation\n  - Rate limiting\n  - IP restrictions\n  - Audit logging\n\n## 📡 Endpoints\n\n### 1. Core Endpoints\n- **Document Management**\n  ```\n  GET    /api/v1/documents\n  POST   /api/v1/documents\n  GET    /api/v1/documents/:id\n  PUT    /api/v1/documents/:id\n  DELETE /api/v1/documents/:id\n  ```\n\n- **Analysis Endpoints**\n  ```\n  POST   /api/v1/analyze\n  GET    /api/v1/analysis/:id\n  POST   /api/v1/analyze/batch\n  GET    /api/v1/analysis/status/:id\n  ```\n\n### 2. Utility Endpoints\n- **System Status**\n  ```\n  GET    /api/v1/health\n  GET    /api/v1/status\n  GET    /api/v1/metrics\n  ```\n\n- **Configuration**\n  ```\n  GET    /api/v1/config\n  PUT    /api/v1/config\n  GET    /api/v1/config/schema\n  ```\n\n## 🔄 Request/Response\n\n### 1. Request Format\n- **Headers**\n  ```\n  Authorization: Bearer <token>\n  Content-Type: application/json\n  Accept: application/json\n  X-API-Key: <key>\n  ```\n\n- **Query Parameters**\n  - Pagination\n  - Filtering\n  - Sorting\n  - Field selection\n\n### 2. Response Format\n- **Success Response**\n  ```json\n  {\n    \"status\": \"success\",\n    \"data\": {},\n    \"meta\": {\n      \"timestamp\": \"2024-03-21T12:00:00Z\",\n      \"version\": \"1.0.0\"\n    }\n  }\n  ```\n\n- **Error Response**\n  ```json\n  {\n    \"status\": \"error\",\n    \"error\": {\n      \"code\": \"ERROR_CODE\",\n      \"message\": \"Error description\",\n      \"details\": {}\n    }\n  }\n  ```\n\n## 🛡️ Rate Limiting\n\n### 1. Limits\n- **Standard Tier**\n  - 100 requests/minute\n  - 1000 requests/hour\n  - 10000 requests/day\n\n- **Premium Tier**\n  - 1000 requests/minute\n  - 10000 requests/hour\n  - 100000 requests/day\n\n### 2. Headers\n- **Rate Limit Headers**\n  ```\n  X-RateLimit-Limit\n  X-RateLimit-Remaining\n  X-RateLimit-Reset\n  ```\n\n## 🔍 Error Handling\n\n### 1. Error Codes\n- **HTTP Status Codes**\n  - 200: Success\n  - 400: Bad Request\n  - 401: Unauthorized\n  - 403: Forbidden\n  - 404: Not Found\n  - 429: Too Many Requests\n  - 500: Internal Server Error\n\n### 2. Error Responses\n- **Validation Errors**\n  - Field-level errors\n  - Constraint violations\n  - Format errors\n  - Required fields\n\n## 📚 SDK Support\n\n### 1. Client Libraries\n- **JavaScript/Node.js**\n  - Installation\n  - Configuration\n  - Usage examples\n  - Error handling\n\n- **Python**\n  - Installation\n  - Configuration\n  - Usage examples\n  - Error handling\n\n### 2. Examples\n- **Common Operations**\n  - Authentication\n  - Document creation\n  - Analysis requests\n  - Error handling \n\n## Overview\n\n[Add overview content here]\n\n## Implementation\n\n[Add implementation content here]\n\n## Maintenance\n\n[Add maintenance content here]"
+    },
+    {
+      "filePath": "docs/architecture.md",
+      "originalContent": "# ClarityEngine System Architecture\n\n## Overview\n\nClarityEngine is built on a modular, agent-based architecture that enables autonomous documentation generation and management. The system is designed to be scalable, maintainable, and extensible.\n\n## Core Components\n\n### 1. Engine Core\n- **DocumentationManager**: Orchestrates the documentation generation process\n- **FeatureAnalyzer**: Analyzes codebases to identify features and their relationships\n- **ExportManager**: Handles documentation export in various formats\n- **QualityController**: Ensures documentation quality and consistency\n\n### 2. Agent System\n- **QAResponder**: Handles documentation QA and validation\n- **PromptArchitect**: Designs and optimizes documentation prompts\n- **DevOpsAgent**: Manages deployment and infrastructure documentation\n- **ExporterAgent**: Handles documentation export processes\n- **BlessAgent**: Manages documentation approval workflows\n\n### 3. API Layer\n- RESTful API endpoints for all major operations\n- Authentication and authorization\n- Rate limiting and request validation\n- WebSocket support for real-time updates\n\n### 4. Frontend\n- React-based single-page application\n- Real-time documentation preview\n- Export management interface\n- User authentication and authorization\n\n## Data Flow\n\n1. **Feature Analysis**\n   ```\n   Codebase → FeatureAnalyzer → Feature Map → DocumentationManager\n   ```\n\n2. **Documentation Generation**\n   ```\n   Feature Map → PromptArchitect → Documentation Draft → QAResponder\n   ```\n\n3. **Export Process**\n   ```\n   Approved Docs → ExporterAgent → Export Formats → ExportManager\n   ```\n\n## Security Architecture\n\n- **Authentication**: JWT-based authentication\n- **Authorization**: Role-based access control\n- **Data Protection**: Encryption at rest and in transit\n- **Audit Logging**: Comprehensive activity logging\n\n## Deployment Architecture\n\n- **Development**: Local development environment\n- **Staging**: Pre-production testing environment\n- **Production**: High-availability production environment\n\n## Integration Points\n\n- **Version Control**: Git integration for documentation versioning\n- **CI/CD**: Automated testing and deployment\n- **Monitoring**: Health checks and performance monitoring\n- **Logging**: Centralized logging system\n\n## Scalability\n\n- Horizontal scaling for API servers\n- Load balancing for high availability\n- Caching layer for improved performance\n- Database sharding for large datasets\n\n## Future Architecture\n\n- Microservices architecture for better scalability\n- Event-driven architecture for real-time updates\n- Machine learning integration for smarter documentation\n- Blockchain integration for documentation verification ",
+      "proposedChanges": [
+        {
+          "type": "add_fields",
+          "details": {
+            "addedFields": [
+              "title",
+              "description",
+              "lastUpdated",
+              "version"
+            ]
+          }
+        },
+        {
+          "type": "add_sections",
+          "details": {
+            "addedSections": [
+              "Overview",
+              "Implementation",
+              "Maintenance"
+            ]
+          }
+        }
+      ],
+      "newContent": "---\ntitle: ClarityEngine System Architecture\ndescription: Documentation for ClarityEngine System Architecture\nlastUpdated: 2025-06-03T00:06:16.369Z\nversion: 1.0.0\n---\n\n# ClarityEngine System Architecture\n\n## Overview\n\nClarityEngine is built on a modular, agent-based architecture that enables autonomous documentation generation and management. The system is designed to be scalable, maintainable, and extensible.\n\n## Core Components\n\n### 1. Engine Core\n- **DocumentationManager**: Orchestrates the documentation generation process\n- **FeatureAnalyzer**: Analyzes codebases to identify features and their relationships\n- **ExportManager**: Handles documentation export in various formats\n- **QualityController**: Ensures documentation quality and consistency\n\n### 2. Agent System\n- **QAResponder**: Handles documentation QA and validation\n- **PromptArchitect**: Designs and optimizes documentation prompts\n- **DevOpsAgent**: Manages deployment and infrastructure documentation\n- **ExporterAgent**: Handles documentation export processes\n- **BlessAgent**: Manages documentation approval workflows\n\n### 3. API Layer\n- RESTful API endpoints for all major operations\n- Authentication and authorization\n- Rate limiting and request validation\n- WebSocket support for real-time updates\n\n### 4. Frontend\n- React-based single-page application\n- Real-time documentation preview\n- Export management interface\n- User authentication and authorization\n\n## Data Flow\n\n1. **Feature Analysis**\n   ```\n   Codebase → FeatureAnalyzer → Feature Map → DocumentationManager\n   ```\n\n2. **Documentation Generation**\n   ```\n   Feature Map → PromptArchitect → Documentation Draft → QAResponder\n   ```\n\n3. **Export Process**\n   ```\n   Approved Docs → ExporterAgent → Export Formats → ExportManager\n   ```\n\n## Security Architecture\n\n- **Authentication**: JWT-based authentication\n- **Authorization**: Role-based access control\n- **Data Protection**: Encryption at rest and in transit\n- **Audit Logging**: Comprehensive activity logging\n\n## Deployment Architecture\n\n- **Development**: Local development environment\n- **Staging**: Pre-production testing environment\n- **Production**: High-availability production environment\n\n## Integration Points\n\n- **Version Control**: Git integration for documentation versioning\n- **CI/CD**: Automated testing and deployment\n- **Monitoring**: Health checks and performance monitoring\n- **Logging**: Centralized logging system\n\n## Scalability\n\n- Horizontal scaling for API servers\n- Load balancing for high availability\n- Caching layer for improved performance\n- Database sharding for large datasets\n\n## Future Architecture\n\n- Microservices architecture for better scalability\n- Event-driven architecture for real-time updates\n- Machine learning integration for smarter documentation\n- Blockchain integration for documentation verification \n\n## Implementation\n\n[Add implementation content here]\n\n## Maintenance\n\n[Add maintenance content here]"
+    },
+    {
+      "filePath": "docs/conversation_log.md",
+      "originalContent": "# CLARITY_ENGINE Development Log\n\n## Vision & Architecture\n\n### Core Components\n1. **Kernel Layer** (Memory-Safe, Schema-Enforced)\n   - Base agent runtime\n   - Memory management\n   - Schema validation\n   - Output blessing\n\n2. **Agent Layer** (Modular, Vertical-Agnostic)\n   - Core agents (Strategist, CopyAlchemist, etc.)\n   - Vertical-specific agents (CookingAgent, MusicAgent, etc.)\n   - All agents follow same patterns but can specialize\n\n3. **App Layer** (Flexible, User-Focused)\n   - Tone shop\n   - Vibe marketplace\n   - Vertical-specific UIs\n   - All built on same core\n\n### Key Innovation Points\n1. **Dynamic Tone System**\n   - Vertical-specific tones\n   - User-defined tones\n   - AI-suggested tones\n   - Consistent validation pattern\n\n2. **Flexible Agent System**\n   - Vertical specialization\n   - Shared core capabilities\n   - Inter-agent learning\n   - No core mutation\n\n3. **Modular App Layer**\n   - Shared core components\n   - Vertical-specific UIs\n   - Consistent UX\n   - Independent scaling\n\n### Target Verticals\n- Cooking\n- Music\n- Art\n- (Extensible to any domain)\n\n## Development Progress\n\n### Current Status\n- Working on getting all tests green\n- Focusing on tone shop tests first\n- Planning to create vertical template\n- Building example vertical implementation\n\n### Test Status\n- Tone Shop Tests: In Progress\n- Agent/Core Tests: Pending\n- CLI Tests: Pending\n\n## Conversation History\n\n### [2024-03-21] Initial Planning\n- Discussed overall vision and architecture\n- Agreed to focus on getting tests green first\n- Planned systematic approach to test fixes\n- Decided to maintain conversation context for future reference\n\n### Next Steps\n1. Fix tone shop tests\n2. Address agent/core tests\n3. Handle CLI tests\n4. Create vertical template\n5. Implement example vertical\n\n## Questions & Context Needed\n- Specific vertical requirements\n- Agent interaction patterns\n- Tone validation rules\n- Memory management details ",
+      "proposedChanges": [
+        {
+          "type": "add_fields",
+          "details": {
+            "addedFields": [
+              "title",
+              "description",
+              "lastUpdated",
+              "version"
+            ]
+          }
+        },
+        {
+          "type": "add_sections",
+          "details": {
+            "addedSections": [
+              "Overview",
+              "Implementation",
+              "Maintenance"
+            ]
+          }
+        }
+      ],
+      "newContent": "---\ntitle: CLARITY_ENGINE Development Log\ndescription: Documentation for CLARITY_ENGINE Development Log\nlastUpdated: 2025-06-03T00:06:16.369Z\nversion: 1.0.0\n---\n\n# CLARITY_ENGINE Development Log\n\n## Vision & Architecture\n\n### Core Components\n1. **Kernel Layer** (Memory-Safe, Schema-Enforced)\n   - Base agent runtime\n   - Memory management\n   - Schema validation\n   - Output blessing\n\n2. **Agent Layer** (Modular, Vertical-Agnostic)\n   - Core agents (Strategist, CopyAlchemist, etc.)\n   - Vertical-specific agents (CookingAgent, MusicAgent, etc.)\n   - All agents follow same patterns but can specialize\n\n3. **App Layer** (Flexible, User-Focused)\n   - Tone shop\n   - Vibe marketplace\n   - Vertical-specific UIs\n   - All built on same core\n\n### Key Innovation Points\n1. **Dynamic Tone System**\n   - Vertical-specific tones\n   - User-defined tones\n   - AI-suggested tones\n   - Consistent validation pattern\n\n2. **Flexible Agent System**\n   - Vertical specialization\n   - Shared core capabilities\n   - Inter-agent learning\n   - No core mutation\n\n3. **Modular App Layer**\n   - Shared core components\n   - Vertical-specific UIs\n   - Consistent UX\n   - Independent scaling\n\n### Target Verticals\n- Cooking\n- Music\n- Art\n- (Extensible to any domain)\n\n## Development Progress\n\n### Current Status\n- Working on getting all tests green\n- Focusing on tone shop tests first\n- Planning to create vertical template\n- Building example vertical implementation\n\n### Test Status\n- Tone Shop Tests: In Progress\n- Agent/Core Tests: Pending\n- CLI Tests: Pending\n\n## Conversation History\n\n### [2024-03-21] Initial Planning\n- Discussed overall vision and architecture\n- Agreed to focus on getting tests green first\n- Planned systematic approach to test fixes\n- Decided to maintain conversation context for future reference\n\n### Next Steps\n1. Fix tone shop tests\n2. Address agent/core tests\n3. Handle CLI tests\n4. Create vertical template\n5. Implement example vertical\n\n## Questions & Context Needed\n- Specific vertical requirements\n- Agent interaction patterns\n- Tone validation rules\n- Memory management details \n\n## Overview\n\n[Add overview content here]\n\n## Implementation\n\n[Add implementation content here]\n\n## Maintenance\n\n[Add maintenance content here]"
+    },
+    {
+      "filePath": "docs/development/README.md",
+      "originalContent": "# Development Guide\n\nThis guide outlines our development practices and tools for the ClarityEngine project.\n\n## 🛠️ Development Environment\n\n### Prerequisites\n- Node.js (v16+)\n- npm (v7+)\n- Git\n\n### Setup\n1. Clone repository\n2. Install dependencies: `npm install`\n3. Copy `.env.example` to `.env`\n4. Configure environment variables\n\n## 📦 Project Structure\n\n```\nclarity-engine/\n├── docs/                  # Documentation\n├── project_meta/         # Project management\n├── scripts/              # Core scripts\n├── tests/               # Test files\n└── core/                # Core functionality\n```\n\n## 🧪 Testing\n\n### Test Structure\n- Unit tests: `tests/unit/`\n- Integration tests: `tests/integration/`\n- E2E tests: `tests/e2e/`\n\n### Running Tests\n```bash\n# Run all tests\nnpm test\n\n# Run specific test suite\nnpm test -- --testPathPattern=tests/unit\n```\n\n### Test Guidelines\n- Keep tests focused and atomic\n- Use descriptive test names\n- Document test setup and teardown\n- Mock external dependencies\n- Follow AAA pattern (Arrange, Act, Assert)\n\n## 📝 Code Style\n\n### General Rules\n- Keep files under 250 lines\n- Use modular, non-recursive design\n- Follow single responsibility principle\n- Document public APIs\n- Use meaningful variable names\n\n### JavaScript/Node.js\n- Use ES6+ features\n- Prefer async/await over callbacks\n- Use destructuring and spread operators\n- Implement error handling\n- Use TypeScript for type safety\n\n## 🔄 Version Control\n\n### Branch Strategy\n- `main`: Production-ready code\n- `develop`: Integration branch\n- Feature branches: `feature/*`\n- Bug fix branches: `fix/*`\n\n### Commit Messages\n```\ntype(scope): description\n\n[optional body]\n\n[optional footer]\n```\n\nTypes:\n- feat: New feature\n- fix: Bug fix\n- docs: Documentation\n- style: Formatting\n- refactor: Code restructuring\n- test: Adding tests\n- chore: Maintenance\n\n## 🚀 Deployment\n\n### Process\n1. Run tests\n2. Update version\n3. Build assets\n4. Deploy to staging\n5. Verify functionality\n6. Deploy to production\n\n### Version Management\n- Follow semantic versioning\n- Update version in `package.json`\n- Document changes in CHANGELOG.md\n\n## 🔍 Code Review\n\n### Process\n1. Create pull request\n2. Run automated checks\n3. Peer review\n4. Address feedback\n5. Merge when approved\n\n### Review Guidelines\n- Check code style\n- Verify test coverage\n- Review documentation\n- Check for security issues\n- Ensure modularity ",
+      "proposedChanges": [
+        {
+          "type": "add_fields",
+          "details": {
+            "addedFields": [
+              "title",
+              "description",
+              "lastUpdated",
+              "version"
+            ]
+          }
+        },
+        {
+          "type": "add_sections",
+          "details": {
+            "addedSections": [
+              "Overview",
+              "Implementation",
+              "Maintenance"
+            ]
+          }
+        }
+      ],
+      "newContent": "---\ntitle: Development Guide\ndescription: Documentation for Development Guide\nlastUpdated: 2025-06-03T00:06:16.369Z\nversion: 1.0.0\n---\n\n# Development Guide\n\nThis guide outlines our development practices and tools for the ClarityEngine project.\n\n## 🛠️ Development Environment\n\n### Prerequisites\n- Node.js (v16+)\n- npm (v7+)\n- Git\n\n### Setup\n1. Clone repository\n2. Install dependencies: `npm install`\n3. Copy `.env.example` to `.env`\n4. Configure environment variables\n\n## 📦 Project Structure\n\n```\nclarity-engine/\n├── docs/                  # Documentation\n├── project_meta/         # Project management\n├── scripts/              # Core scripts\n├── tests/               # Test files\n└── core/                # Core functionality\n```\n\n## 🧪 Testing\n\n### Test Structure\n- Unit tests: `tests/unit/`\n- Integration tests: `tests/integration/`\n- E2E tests: `tests/e2e/`\n\n### Running Tests\n```bash\n# Run all tests\nnpm test\n\n# Run specific test suite\nnpm test -- --testPathPattern=tests/unit\n```\n\n### Test Guidelines\n- Keep tests focused and atomic\n- Use descriptive test names\n- Document test setup and teardown\n- Mock external dependencies\n- Follow AAA pattern (Arrange, Act, Assert)\n\n## 📝 Code Style\n\n### General Rules\n- Keep files under 250 lines\n- Use modular, non-recursive design\n- Follow single responsibility principle\n- Document public APIs\n- Use meaningful variable names\n\n### JavaScript/Node.js\n- Use ES6+ features\n- Prefer async/await over callbacks\n- Use destructuring and spread operators\n- Implement error handling\n- Use TypeScript for type safety\n\n## 🔄 Version Control\n\n### Branch Strategy\n- `main`: Production-ready code\n- `develop`: Integration branch\n- Feature branches: `feature/*`\n- Bug fix branches: `fix/*`\n\n### Commit Messages\n```\ntype(scope): description\n\n[optional body]\n\n[optional footer]\n```\n\nTypes:\n- feat: New feature\n- fix: Bug fix\n- docs: Documentation\n- style: Formatting\n- refactor: Code restructuring\n- test: Adding tests\n- chore: Maintenance\n\n## 🚀 Deployment\n\n### Process\n1. Run tests\n2. Update version\n3. Build assets\n4. Deploy to staging\n5. Verify functionality\n6. Deploy to production\n\n### Version Management\n- Follow semantic versioning\n- Update version in `package.json`\n- Document changes in CHANGELOG.md\n\n## 🔍 Code Review\n\n### Process\n1. Create pull request\n2. Run automated checks\n3. Peer review\n4. Address feedback\n5. Merge when approved\n\n### Review Guidelines\n- Check code style\n- Verify test coverage\n- Review documentation\n- Check for security issues\n- Ensure modularity \n\n## Overview\n\n[Add overview content here]\n\n## Implementation\n\n[Add implementation content here]\n\n## Maintenance\n\n[Add maintenance content here]"
+    },
+    {
+      "filePath": "docs/index.md",
+      "originalContent": "# Documentation Index\n\n## Core Documentation\nCore system documentation and architecture\n\n[View Documentation](./core/README.md)\n\n## Product Documentation\n[View Documentation](./products/README.md)\n\n## Development Documentation\n[View Documentation](./development/README.md)\n\n## Maintenance Documentation\n[View Documentation](./maintenance/README.md)\n\n## Standards & Guidelines\n[View Documentation](./standards/README.md)\n\n## API Documentation\n[View Documentation](./api/README.md)\n\n## Security Documentation\n[View Documentation](./security/README.md)\n\n## Optimization Documentation\nPerformance and scalability documentation\n\n[View Documentation](./optimization/README.md)\n\n\n---\n*Last Updated: 2025-06-02T23:42:45.883Z*\n",
+      "proposedChanges": [
+        {
+          "type": "add_sections",
+          "details": {
+            "addedSections": [
+              "Overview",
+              "Implementation",
+              "Maintenance"
+            ]
+          }
+        },
+        {
+          "type": "fix_links",
+          "details": {
+            "fixedLinks": [
+              {
+                "original": "./core/README.md",
+                "fixed": "workflow/README.md"
+              },
+              {
+                "original": "./products/README.md",
+                "fixed": "workflow/README.md"
+              },
+              {
+                "original": "./maintenance/README.md",
+                "fixed": "workflow/README.md"
+              }
+            ]
+          }
+        },
+        {
+          "type": "fix_dependencies",
+          "details": {
+            "fixedDependencies": [
+              {
+                "original": "./development/README.md",
+                "fixed": "[View Documentation](#view-documentation)"
+              },
+              {
+                "original": "./standards/README.md",
+                "fixed": "[View Documentation](#view-documentation)"
+              },
+              {
+                "original": "./api/README.md",
+                "fixed": "[View Documentation](#view-documentation)"
+              },
+              {
+                "original": "./security/README.md",
+                "fixed": "[View Documentation](#view-documentation)"
+              },
+              {
+                "original": "./optimization/README.md",
+                "fixed": "[View Documentation](#view-documentation)"
+              }
+            ]
+          }
+        }
+      ],
+      "newContent": "# Documentation Index\n\n## Core Documentation\nCore system documentation and architecture\n\n[View Documentation](workflow/README.md)\n\n## Product Documentation\n[View Documentation](workflow/README.md)\n\n## Development Documentation\n[View Documentation](#view-documentation)\n\n## Maintenance Documentation\n[View Documentation](workflow/README.md)\n\n## Standards & Guidelines\n[View Documentation](#view-documentation)\n\n## API Documentation\n[View Documentation](#view-documentation)\n\n## Security Documentation\n[View Documentation](#view-documentation)\n\n## Optimization Documentation\nPerformance and scalability documentation\n\n[View Documentation](#view-documentation)\n\n\n---\n*Last Updated: 2025-06-02T23:42:45.883Z*\n\n\n## Overview\n\n[Add overview content here]\n\n## Implementation\n\n[Add implementation content here]\n\n## Maintenance\n\n[Add maintenance content here]"
+    },
+    {
+      "filePath": "docs/optimization/README.md",
+      "originalContent": "# Optimization Guide\n\nThis guide outlines optimization strategies and best practices for the ClarityEngine system.\n\n## 🚀 Performance Optimization\n\n### 1. Code Optimization\n- **JavaScript/Node.js**\n  - Memory management\n  - Async operations\n  - Event loop optimization\n  - Garbage collection\n\n- **Database**\n  - Query optimization\n  - Index management\n  - Connection pooling\n  - Caching strategies\n\n### 2. Resource Management\n- **Memory**\n  - Memory profiling\n  - Leak detection\n  - Resource cleanup\n  - Buffer management\n\n- **CPU**\n  - Load balancing\n  - Task scheduling\n  - Process management\n  - Thread optimization\n\n## 📈 Scalability\n\n### 1. Horizontal Scaling\n- **Load Distribution**\n  - Load balancer configuration\n  - Service discovery\n  - Health checks\n  - Failover handling\n\n- **Data Distribution**\n  - Sharding strategies\n  - Replication\n  - Data partitioning\n  - Cache distribution\n\n### 2. Vertical Scaling\n- **Resource Allocation**\n  - CPU optimization\n  - Memory management\n  - Disk I/O\n  - Network bandwidth\n\n## 🔄 Caching\n\n### 1. Application Cache\n- **Memory Cache**\n  - Cache invalidation\n  - Cache warming\n  - Cache size management\n  - Cache policies\n\n- **Distributed Cache**\n  - Redis configuration\n  - Memcached setup\n  - Cache synchronization\n  - Failover handling\n\n### 2. Browser Cache\n- **Static Assets**\n  - Asset optimization\n  - Cache headers\n  - CDN integration\n  - Version management\n\n## 📊 Monitoring\n\n### 1. Performance Metrics\n- **System Metrics**\n  - CPU usage\n  - Memory usage\n  - Disk I/O\n  - Network traffic\n\n- **Application Metrics**\n  - Response times\n  - Error rates\n  - Throughput\n  - Resource utilization\n\n### 2. Profiling\n- **Code Profiling**\n  - CPU profiling\n  - Memory profiling\n  - I/O profiling\n  - Network profiling\n\n## 🔧 Optimization Tools\n\n### 1. Development Tools\n- **Profiling Tools**\n  - Node.js profiler\n  - Chrome DevTools\n  - Performance monitoring\n  - Memory analysis\n\n- **Testing Tools**\n  - Load testing\n  - Stress testing\n  - Benchmarking\n  - Performance testing\n\n### 2. Monitoring Tools\n- **System Monitoring**\n  - Resource monitoring\n  - Performance tracking\n  - Alert systems\n  - Log analysis\n\n## 📝 Best Practices\n\n### 1. Code Optimization\n- Use efficient algorithms\n- Implement proper error handling\n- Optimize database queries\n- Implement caching where appropriate\n\n### 2. Resource Management\n- Monitor resource usage\n- Implement cleanup procedures\n- Use connection pooling\n- Implement proper logging\n\n### 3. Performance Testing\n- Regular load testing\n- Performance benchmarking\n- Resource monitoring\n- Optimization validation ",
+      "proposedChanges": [
+        {
+          "type": "add_fields",
+          "details": {
+            "addedFields": [
+              "title",
+              "description",
+              "lastUpdated",
+              "version"
+            ]
+          }
+        },
+        {
+          "type": "add_sections",
+          "details": {
+            "addedSections": [
+              "Overview",
+              "Implementation",
+              "Maintenance"
+            ]
+          }
+        }
+      ],
+      "newContent": "---\ntitle: Optimization Guide\ndescription: Documentation for Optimization Guide\nlastUpdated: 2025-06-03T00:06:16.373Z\nversion: 1.0.0\n---\n\n# Optimization Guide\n\nThis guide outlines optimization strategies and best practices for the ClarityEngine system.\n\n## 🚀 Performance Optimization\n\n### 1. Code Optimization\n- **JavaScript/Node.js**\n  - Memory management\n  - Async operations\n  - Event loop optimization\n  - Garbage collection\n\n- **Database**\n  - Query optimization\n  - Index management\n  - Connection pooling\n  - Caching strategies\n\n### 2. Resource Management\n- **Memory**\n  - Memory profiling\n  - Leak detection\n  - Resource cleanup\n  - Buffer management\n\n- **CPU**\n  - Load balancing\n  - Task scheduling\n  - Process management\n  - Thread optimization\n\n## 📈 Scalability\n\n### 1. Horizontal Scaling\n- **Load Distribution**\n  - Load balancer configuration\n  - Service discovery\n  - Health checks\n  - Failover handling\n\n- **Data Distribution**\n  - Sharding strategies\n  - Replication\n  - Data partitioning\n  - Cache distribution\n\n### 2. Vertical Scaling\n- **Resource Allocation**\n  - CPU optimization\n  - Memory management\n  - Disk I/O\n  - Network bandwidth\n\n## 🔄 Caching\n\n### 1. Application Cache\n- **Memory Cache**\n  - Cache invalidation\n  - Cache warming\n  - Cache size management\n  - Cache policies\n\n- **Distributed Cache**\n  - Redis configuration\n  - Memcached setup\n  - Cache synchronization\n  - Failover handling\n\n### 2. Browser Cache\n- **Static Assets**\n  - Asset optimization\n  - Cache headers\n  - CDN integration\n  - Version management\n\n## 📊 Monitoring\n\n### 1. Performance Metrics\n- **System Metrics**\n  - CPU usage\n  - Memory usage\n  - Disk I/O\n  - Network traffic\n\n- **Application Metrics**\n  - Response times\n  - Error rates\n  - Throughput\n  - Resource utilization\n\n### 2. Profiling\n- **Code Profiling**\n  - CPU profiling\n  - Memory profiling\n  - I/O profiling\n  - Network profiling\n\n## 🔧 Optimization Tools\n\n### 1. Development Tools\n- **Profiling Tools**\n  - Node.js profiler\n  - Chrome DevTools\n  - Performance monitoring\n  - Memory analysis\n\n- **Testing Tools**\n  - Load testing\n  - Stress testing\n  - Benchmarking\n  - Performance testing\n\n### 2. Monitoring Tools\n- **System Monitoring**\n  - Resource monitoring\n  - Performance tracking\n  - Alert systems\n  - Log analysis\n\n## 📝 Best Practices\n\n### 1. Code Optimization\n- Use efficient algorithms\n- Implement proper error handling\n- Optimize database queries\n- Implement caching where appropriate\n\n### 2. Resource Management\n- Monitor resource usage\n- Implement cleanup procedures\n- Use connection pooling\n- Implement proper logging\n\n### 3. Performance Testing\n- Regular load testing\n- Performance benchmarking\n- Resource monitoring\n- Optimization validation \n\n## Overview\n\n[Add overview content here]\n\n## Implementation\n\n[Add implementation content here]\n\n## Maintenance\n\n[Add maintenance content here]"
+    },
+    {
+      "filePath": "docs/soulfra/README.md",
+      "originalContent": "# Soulfra\n\n## Company Overview\n[Company mission, vision, and values]\n\n## Products\n\n### Clarity Engine\n- Documentation and prompt engineering system\n- AI interaction enhancement\n- Automated testing and validation\n- Modular architecture\n\n### Document Generator\n- Template-based generation\n- Context-aware processing\n- Quality assurance\n- Version control\n\n### LLM Router\n- Model selection and routing\n- Performance optimization\n- Cost management\n- Quality monitoring\n\n## Technology Stack\n\n### Core Components\n- Documentation System\n- Prompt Engine\n- Testing Framework\n- Integration Layer\n\n### Infrastructure\n- Cloud Architecture\n- Security Systems\n- Monitoring Tools\n- Analytics Platform\n\n## Development Approach\n\n### Principles\n- Modularity\n- Dynamic Structure\n- Non-Recursive Design\n- LLM Optimization\n\n### Standards\n- Code Quality\n- Documentation\n- Testing\n- Security\n\n## Roadmap\n[Current and future development plans]\n\n## Contact\n[Company contact information] ",
+      "proposedChanges": [
+        {
+          "type": "add_fields",
+          "details": {
+            "addedFields": [
+              "title",
+              "description",
+              "lastUpdated",
+              "version"
+            ]
+          }
+        },
+        {
+          "type": "add_sections",
+          "details": {
+            "addedSections": [
+              "Overview",
+              "Implementation",
+              "Maintenance"
+            ]
+          }
+        }
+      ],
+      "newContent": "---\ntitle: Soulfra\ndescription: Documentation for Soulfra\nlastUpdated: 2025-06-03T00:06:16.373Z\nversion: 1.0.0\n---\n\n# Soulfra\n\n## Company Overview\n[Company mission, vision, and values]\n\n## Products\n\n### Clarity Engine\n- Documentation and prompt engineering system\n- AI interaction enhancement\n- Automated testing and validation\n- Modular architecture\n\n### Document Generator\n- Template-based generation\n- Context-aware processing\n- Quality assurance\n- Version control\n\n### LLM Router\n- Model selection and routing\n- Performance optimization\n- Cost management\n- Quality monitoring\n\n## Technology Stack\n\n### Core Components\n- Documentation System\n- Prompt Engine\n- Testing Framework\n- Integration Layer\n\n### Infrastructure\n- Cloud Architecture\n- Security Systems\n- Monitoring Tools\n- Analytics Platform\n\n## Development Approach\n\n### Principles\n- Modularity\n- Dynamic Structure\n- Non-Recursive Design\n- LLM Optimization\n\n### Standards\n- Code Quality\n- Documentation\n- Testing\n- Security\n\n## Roadmap\n[Current and future development plans]\n\n## Contact\n[Company contact information] \n\n## Overview\n\n[Add overview content here]\n\n## Implementation\n\n[Add implementation content here]\n\n## Maintenance\n\n[Add maintenance content here]"
+    },
+    {
+      "filePath": "docs/soulfra/products/README.md",
+      "originalContent": "# Soulfra Products\n\n## Overview\nSoulfra develops and maintains several interconnected products focused on AI and documentation systems.\n\n## Core Products\n\n### Clarity Engine\n- Documentation and prompt engineering system\n- AI interaction enhancement\n- Automated testing and validation\n- Modular architecture\n\n### Document Generator\n- Template-based generation\n- Context-aware processing\n- Quality assurance\n- Version control\n\n### LLM Router\n- Model selection and routing\n- Performance optimization\n- Cost management\n- Quality monitoring\n\n## Product Integration\n- Shared infrastructure\n- Common standards\n- Unified testing\n- Consistent documentation\n\n## Development Status\n- Current versions\n- Beta features\n- Planned updates\n- Release schedule ",
+      "proposedChanges": [
+        {
+          "type": "add_fields",
+          "details": {
+            "addedFields": [
+              "title",
+              "description",
+              "lastUpdated",
+              "version"
+            ]
+          }
+        },
+        {
+          "type": "add_sections",
+          "details": {
+            "addedSections": [
+              "Overview",
+              "Implementation",
+              "Maintenance"
+            ]
+          }
+        }
+      ],
+      "newContent": "---\ntitle: Soulfra Products\ndescription: Documentation for Soulfra Products\nlastUpdated: 2025-06-03T00:06:16.373Z\nversion: 1.0.0\n---\n\n# Soulfra Products\n\n## Overview\nSoulfra develops and maintains several interconnected products focused on AI and documentation systems.\n\n## Core Products\n\n### Clarity Engine\n- Documentation and prompt engineering system\n- AI interaction enhancement\n- Automated testing and validation\n- Modular architecture\n\n### Document Generator\n- Template-based generation\n- Context-aware processing\n- Quality assurance\n- Version control\n\n### LLM Router\n- Model selection and routing\n- Performance optimization\n- Cost management\n- Quality monitoring\n\n## Product Integration\n- Shared infrastructure\n- Common standards\n- Unified testing\n- Consistent documentation\n\n## Development Status\n- Current versions\n- Beta features\n- Planned updates\n- Release schedule \n\n## Implementation\n\n[Add implementation content here]\n\n## Maintenance\n\n[Add maintenance content here]"
+    },
+    {
+      "filePath": "docs/soulfra/products/clarity-engine.md",
+      "originalContent": "# Clarity Engine - Product Requirements Document\n\n## Overview\nClarity Engine is a documentation and prompt engineering system designed to help users create, maintain, and enhance AI interactions through standardized documentation and testing.\n\n## Core Requirements\n\n### Functional Requirements\n- Documentation generation and management\n- Prompt engineering and optimization\n- Automated testing and validation\n- Modular component architecture\n- LLM integration and routing\n- Version control and tracking\n\n### Technical Requirements\n- Performance: < 2s response time\n- Security: OAuth 2.0, JWT\n- Scalability: Horizontal scaling\n- Integration: REST API, WebSocket\n\n## Implementation\n\n### Architecture\n- Microservices architecture\n- Modular component design\n- Event-driven communication\n- Secure data handling\n\n### Development\n- Node.js/TypeScript stack\n- MongoDB for storage\n- Redis for caching\n- Docker for deployment\n\n## Success Metrics\n- Documentation quality score\n- Test coverage > 80%\n- User satisfaction rating\n- System uptime > 99.9%\n\n## Timeline\n- Phase 1: Core features (2 weeks)\n- Phase 2: Integration (1 week)\n- Phase 3: Testing (1 week)\n- Phase 4: Deployment (1 week) ",
+      "proposedChanges": [
+        {
+          "type": "add_fields",
+          "details": {
+            "addedFields": [
+              "title",
+              "description",
+              "lastUpdated",
+              "version"
+            ]
+          }
+        },
+        {
+          "type": "add_sections",
+          "details": {
+            "addedSections": [
+              "Overview",
+              "Implementation",
+              "Maintenance"
+            ]
+          }
+        }
+      ],
+      "newContent": "---\ntitle: Clarity Engine - Product Requirements Document\ndescription: Documentation for Clarity Engine - Product Requirements Document\nlastUpdated: 2025-06-03T00:06:16.373Z\nversion: 1.0.0\n---\n\n# Clarity Engine - Product Requirements Document\n\n## Overview\nClarity Engine is a documentation and prompt engineering system designed to help users create, maintain, and enhance AI interactions through standardized documentation and testing.\n\n## Core Requirements\n\n### Functional Requirements\n- Documentation generation and management\n- Prompt engineering and optimization\n- Automated testing and validation\n- Modular component architecture\n- LLM integration and routing\n- Version control and tracking\n\n### Technical Requirements\n- Performance: < 2s response time\n- Security: OAuth 2.0, JWT\n- Scalability: Horizontal scaling\n- Integration: REST API, WebSocket\n\n## Implementation\n\n### Architecture\n- Microservices architecture\n- Modular component design\n- Event-driven communication\n- Secure data handling\n\n### Development\n- Node.js/TypeScript stack\n- MongoDB for storage\n- Redis for caching\n- Docker for deployment\n\n## Success Metrics\n- Documentation quality score\n- Test coverage > 80%\n- User satisfaction rating\n- System uptime > 99.9%\n\n## Timeline\n- Phase 1: Core features (2 weeks)\n- Phase 2: Integration (1 week)\n- Phase 3: Testing (1 week)\n- Phase 4: Deployment (1 week) \n\n## Maintenance\n\n[Add maintenance content here]"
+    },
+    {
+      "filePath": "docs/soulfra/products/document-generator.md",
+      "originalContent": "# Document Generator - Product Requirements Document\n\n## Overview\nDocument Generator is a template-based system for creating, maintaining, and validating documentation with AI-assisted content generation and quality assurance.\n\n## Core Requirements\n\n### Functional Requirements\n- Template-based document generation\n- AI-assisted content creation\n- Automated validation and testing\n- Version control integration\n- Cross-reference management\n- Quality metrics tracking\n\n### Technical Requirements\n- Performance: < 1s generation time\n- Security: Role-based access\n- Scalability: Parallel processing\n- Integration: Git, Markdown, HTML\n\n## Implementation\n\n### Architecture\n- Template engine\n- Content processor\n- Validation system\n- Version control\n- Quality checker\n\n### Development\n- Node.js/TypeScript\n- Template engine\n- Markdown parser\n- Git integration\n- AI integration\n\n## Success Metrics\n- Generation speed\n- Content quality\n- Validation success\n- User satisfaction\n- Template reuse\n\n## Timeline\n- Phase 1: Core engine (2 weeks)\n- Phase 2: AI integration (1 week)\n- Phase 3: Validation (1 week)\n- Phase 4: Quality system (1 week) ",
+      "proposedChanges": [
+        {
+          "type": "add_fields",
+          "details": {
+            "addedFields": [
+              "title",
+              "description",
+              "lastUpdated",
+              "version"
+            ]
+          }
+        },
+        {
+          "type": "add_sections",
+          "details": {
+            "addedSections": [
+              "Overview",
+              "Implementation",
+              "Maintenance"
+            ]
+          }
+        }
+      ],
+      "newContent": "---\ntitle: Document Generator - Product Requirements Document\ndescription: Documentation for Document Generator - Product Requirements Document\nlastUpdated: 2025-06-03T00:06:16.373Z\nversion: 1.0.0\n---\n\n# Document Generator - Product Requirements Document\n\n## Overview\nDocument Generator is a template-based system for creating, maintaining, and validating documentation with AI-assisted content generation and quality assurance.\n\n## Core Requirements\n\n### Functional Requirements\n- Template-based document generation\n- AI-assisted content creation\n- Automated validation and testing\n- Version control integration\n- Cross-reference management\n- Quality metrics tracking\n\n### Technical Requirements\n- Performance: < 1s generation time\n- Security: Role-based access\n- Scalability: Parallel processing\n- Integration: Git, Markdown, HTML\n\n## Implementation\n\n### Architecture\n- Template engine\n- Content processor\n- Validation system\n- Version control\n- Quality checker\n\n### Development\n- Node.js/TypeScript\n- Template engine\n- Markdown parser\n- Git integration\n- AI integration\n\n## Success Metrics\n- Generation speed\n- Content quality\n- Validation success\n- User satisfaction\n- Template reuse\n\n## Timeline\n- Phase 1: Core engine (2 weeks)\n- Phase 2: AI integration (1 week)\n- Phase 3: Validation (1 week)\n- Phase 4: Quality system (1 week) \n\n## Maintenance\n\n[Add maintenance content here]"
+    },
+    {
+      "filePath": "docs/soulfra/products/llm-router.md",
+      "originalContent": "# LLM Router - Product Requirements Document\n\n## Overview\nLLM Router is an intelligent system for managing and optimizing LLM interactions, providing model selection, cost management, and performance optimization.\n\n## Core Requirements\n\n### Functional Requirements\n- Model selection and routing\n- Performance optimization\n- Cost management\n- Quality monitoring\n- Fallback handling\n- Usage analytics\n\n### Technical Requirements\n- Performance: < 100ms routing\n- Security: API key management\n- Scalability: Load balancing\n- Integration: Multiple LLM APIs\n\n## Implementation\n\n### Architecture\n- Router core\n- Model registry\n- Performance monitor\n- Cost tracker\n- Analytics engine\n\n### Development\n- Node.js/TypeScript\n- API integrations\n- Analytics system\n- Monitoring tools\n- Cost tracking\n\n## Success Metrics\n- Routing accuracy\n- Cost efficiency\n- Response time\n- Model utilization\n- Error rate\n\n## Timeline\n- Phase 1: Core routing (2 weeks)\n- Phase 2: Analytics (1 week)\n- Phase 3: Optimization (1 week)\n- Phase 4: Monitoring (1 week) ",
+      "proposedChanges": [
+        {
+          "type": "add_fields",
+          "details": {
+            "addedFields": [
+              "title",
+              "description",
+              "lastUpdated",
+              "version"
+            ]
+          }
+        },
+        {
+          "type": "add_sections",
+          "details": {
+            "addedSections": [
+              "Overview",
+              "Implementation",
+              "Maintenance"
+            ]
+          }
+        }
+      ],
+      "newContent": "---\ntitle: LLM Router - Product Requirements Document\ndescription: Documentation for LLM Router - Product Requirements Document\nlastUpdated: 2025-06-03T00:06:16.373Z\nversion: 1.0.0\n---\n\n# LLM Router - Product Requirements Document\n\n## Overview\nLLM Router is an intelligent system for managing and optimizing LLM interactions, providing model selection, cost management, and performance optimization.\n\n## Core Requirements\n\n### Functional Requirements\n- Model selection and routing\n- Performance optimization\n- Cost management\n- Quality monitoring\n- Fallback handling\n- Usage analytics\n\n### Technical Requirements\n- Performance: < 100ms routing\n- Security: API key management\n- Scalability: Load balancing\n- Integration: Multiple LLM APIs\n\n## Implementation\n\n### Architecture\n- Router core\n- Model registry\n- Performance monitor\n- Cost tracker\n- Analytics engine\n\n### Development\n- Node.js/TypeScript\n- API integrations\n- Analytics system\n- Monitoring tools\n- Cost tracking\n\n## Success Metrics\n- Routing accuracy\n- Cost efficiency\n- Response time\n- Model utilization\n- Error rate\n\n## Timeline\n- Phase 1: Core routing (2 weeks)\n- Phase 2: Analytics (1 week)\n- Phase 3: Optimization (1 week)\n- Phase 4: Monitoring (1 week) \n\n## Maintenance\n\n[Add maintenance content here]"
+    },
+    {
+      "filePath": "docs/soulfra/products/prd-template.md",
+      "originalContent": "# Product Requirements Document Template\n\n## Overview\n[Brief product description]\n\n## Core Requirements\n\n### Functional Requirements\n- Key features\n- User interactions\n- System behaviors\n- Integration points\n\n### Technical Requirements\n- Performance metrics\n- Security needs\n- Scalability requirements\n- Integration requirements\n\n## Implementation\n\n### Architecture\n- System design\n- Component structure\n- Data flow\n- Security model\n\n### Development\n- Technology stack\n- Development approach\n- Testing strategy\n- Deployment process\n\n## Success Metrics\n- Performance indicators\n- Quality metrics\n- User satisfaction\n- Business goals\n\n## Timeline\n- Development phases\n- Key milestones\n- Release schedule\n- Review points ",
+      "proposedChanges": [
+        {
+          "type": "add_fields",
+          "details": {
+            "addedFields": [
+              "title",
+              "description",
+              "lastUpdated",
+              "version"
+            ]
+          }
+        },
+        {
+          "type": "add_sections",
+          "details": {
+            "addedSections": [
+              "Overview",
+              "Implementation",
+              "Maintenance"
+            ]
+          }
+        }
+      ],
+      "newContent": "---\ntitle: Product Requirements Document Template\ndescription: Documentation for Product Requirements Document Template\nlastUpdated: 2025-06-03T00:06:16.373Z\nversion: 1.0.0\n---\n\n# Product Requirements Document Template\n\n## Overview\n[Brief product description]\n\n## Core Requirements\n\n### Functional Requirements\n- Key features\n- User interactions\n- System behaviors\n- Integration points\n\n### Technical Requirements\n- Performance metrics\n- Security needs\n- Scalability requirements\n- Integration requirements\n\n## Implementation\n\n### Architecture\n- System design\n- Component structure\n- Data flow\n- Security model\n\n### Development\n- Technology stack\n- Development approach\n- Testing strategy\n- Deployment process\n\n## Success Metrics\n- Performance indicators\n- Quality metrics\n- User satisfaction\n- Business goals\n\n## Timeline\n- Development phases\n- Key milestones\n- Release schedule\n- Review points \n\n## Maintenance\n\n[Add maintenance content here]"
+    },
+    {
+      "filePath": "docs/soulfra/roadmap/README.md",
+      "originalContent": "# Soulfra Roadmap\n\n## Current Focus\n\n### Documentation System\n- Enhanced template system\n- Improved validation\n- Better version control\n- Automated testing\n\n### AI Components\n- LLM optimization\n- Prompt engineering\n- Model routing\n- Performance tuning\n\n### Infrastructure\n- Security enhancements\n- Monitoring improvements\n- Analytics integration\n- Cost optimization\n\n## Future Plans\n\n### Short Term\n- Documentation improvements\n- Testing enhancements\n- Performance optimization\n- Security updates\n\n### Medium Term\n- New features\n- Infrastructure updates\n- Integration expansion\n- Quality improvements\n\n### Long Term\n- Strategic initiatives\n- Platform evolution\n- Market expansion\n- Technology innovation\n\n## Development Cycles\n- Release schedule\n- Feature planning\n- Quality assurance\n- User feedback ",
+      "proposedChanges": [
+        {
+          "type": "add_fields",
+          "details": {
+            "addedFields": [
+              "title",
+              "description",
+              "lastUpdated",
+              "version"
+            ]
+          }
+        },
+        {
+          "type": "add_sections",
+          "details": {
+            "addedSections": [
+              "Overview",
+              "Implementation",
+              "Maintenance"
+            ]
+          }
+        }
+      ],
+      "newContent": "---\ntitle: Soulfra Roadmap\ndescription: Documentation for Soulfra Roadmap\nlastUpdated: 2025-06-03T00:06:16.373Z\nversion: 1.0.0\n---\n\n# Soulfra Roadmap\n\n## Current Focus\n\n### Documentation System\n- Enhanced template system\n- Improved validation\n- Better version control\n- Automated testing\n\n### AI Components\n- LLM optimization\n- Prompt engineering\n- Model routing\n- Performance tuning\n\n### Infrastructure\n- Security enhancements\n- Monitoring improvements\n- Analytics integration\n- Cost optimization\n\n## Future Plans\n\n### Short Term\n- Documentation improvements\n- Testing enhancements\n- Performance optimization\n- Security updates\n\n### Medium Term\n- New features\n- Infrastructure updates\n- Integration expansion\n- Quality improvements\n\n### Long Term\n- Strategic initiatives\n- Platform evolution\n- Market expansion\n- Technology innovation\n\n## Development Cycles\n- Release schedule\n- Feature planning\n- Quality assurance\n- User feedback \n\n## Overview\n\n[Add overview content here]\n\n## Implementation\n\n[Add implementation content here]\n\n## Maintenance\n\n[Add maintenance content here]"
+    },
+    {
+      "filePath": "docs/soulfra/technology/README.md",
+      "originalContent": "# Soulfra Technology\n\n## Core Technology Stack\n\n### Documentation System\n- Markdown processing\n- Template engine\n- Validation framework\n- Version control\n\n### AI Components\n- LLM integration\n- Prompt engineering\n- Model routing\n- Performance optimization\n\n### Infrastructure\n- Cloud architecture\n- Security systems\n- Monitoring tools\n- Analytics platform\n\n## Development Standards\n\n### Code Quality\n- Modular design\n- Dynamic structure\n- Non-recursive patterns\n- LLM optimization\n\n### Documentation\n- Clear structure\n- Consistent format\n- Regular updates\n- Quality checks\n\n### Testing\n- Automated testing\n- Quality assurance\n- Performance monitoring\n- Security validation\n\n## Integration Points\n- Database systems\n- Authentication\n- Payment processing\n- Analytics tracking ",
+      "proposedChanges": [
+        {
+          "type": "add_fields",
+          "details": {
+            "addedFields": [
+              "title",
+              "description",
+              "lastUpdated",
+              "version"
+            ]
+          }
+        },
+        {
+          "type": "add_sections",
+          "details": {
+            "addedSections": [
+              "Overview",
+              "Implementation",
+              "Maintenance"
+            ]
+          }
+        }
+      ],
+      "newContent": "---\ntitle: Soulfra Technology\ndescription: Documentation for Soulfra Technology\nlastUpdated: 2025-06-03T00:06:16.373Z\nversion: 1.0.0\n---\n\n# Soulfra Technology\n\n## Core Technology Stack\n\n### Documentation System\n- Markdown processing\n- Template engine\n- Validation framework\n- Version control\n\n### AI Components\n- LLM integration\n- Prompt engineering\n- Model routing\n- Performance optimization\n\n### Infrastructure\n- Cloud architecture\n- Security systems\n- Monitoring tools\n- Analytics platform\n\n## Development Standards\n\n### Code Quality\n- Modular design\n- Dynamic structure\n- Non-recursive patterns\n- LLM optimization\n\n### Documentation\n- Clear structure\n- Consistent format\n- Regular updates\n- Quality checks\n\n### Testing\n- Automated testing\n- Quality assurance\n- Performance monitoring\n- Security validation\n\n## Integration Points\n- Database systems\n- Authentication\n- Payment processing\n- Analytics tracking \n\n## Overview\n\n[Add overview content here]\n\n## Implementation\n\n[Add implementation content here]\n\n## Maintenance\n\n[Add maintenance content here]"
+    },
+    {
+      "filePath": "docs/standards/documentation-expansion.md",
+      "originalContent": "# Documentation Expansion Guide\n\n## Overview\nThis guide outlines the process for expanding documentation sections while maintaining modularity and staying within the 250-line limit.\n\n## Expansion Triggers\n- Section exceeds 200 lines\n- New major feature added\n- Significant architectural change\n- User feedback indicates need\n\n## Expansion Process\n\n### 1. Assessment\n- Review current content\n- Identify natural breakpoints\n- Plan new structure\n- Check dependencies\n\n### 2. Creation\n- Create new subdirectory\n- Add index.md\n- Split content\n- Update references\n\n### 3. Integration\n- Update main index\n- Add cross-references\n- Validate links\n- Check formatting\n\n## Directory Structure\n```\nsection/\n├── index.md (main overview)\n├── subdirectory1/\n│   ├── index.md\n│   └── specific-topic.md\n└── subdirectory2/\n    ├── index.md\n    └── specific-topic.md\n```\n\n## Best Practices\n- Keep files under 250 lines\n- Maintain clear hierarchy\n- Use consistent naming\n- Update all references\n- Document changes\n\n## Automation\n- Use scripts/validate-docs.js\n- Run tests after expansion\n- Check for broken links\n- Verify formatting\n\n## Review Process\n- Technical review\n- Content review\n- Link validation\n- Format check\n- Final approval ",
+      "proposedChanges": [
+        {
+          "type": "add_fields",
+          "details": {
+            "addedFields": [
+              "title",
+              "description",
+              "lastUpdated",
+              "version"
+            ]
+          }
+        },
+        {
+          "type": "add_sections",
+          "details": {
+            "addedSections": [
+              "Overview",
+              "Implementation",
+              "Maintenance"
+            ]
+          }
+        }
+      ],
+      "newContent": "---\ntitle: Documentation Expansion Guide\ndescription: Documentation for Documentation Expansion Guide\nlastUpdated: 2025-06-03T00:06:16.373Z\nversion: 1.0.0\n---\n\n# Documentation Expansion Guide\n\n## Overview\nThis guide outlines the process for expanding documentation sections while maintaining modularity and staying within the 250-line limit.\n\n## Expansion Triggers\n- Section exceeds 200 lines\n- New major feature added\n- Significant architectural change\n- User feedback indicates need\n\n## Expansion Process\n\n### 1. Assessment\n- Review current content\n- Identify natural breakpoints\n- Plan new structure\n- Check dependencies\n\n### 2. Creation\n- Create new subdirectory\n- Add index.md\n- Split content\n- Update references\n\n### 3. Integration\n- Update main index\n- Add cross-references\n- Validate links\n- Check formatting\n\n## Directory Structure\n```\nsection/\n├── index.md (main overview)\n├── subdirectory1/\n│   ├── index.md\n│   └── specific-topic.md\n└── subdirectory2/\n    ├── index.md\n    └── specific-topic.md\n```\n\n## Best Practices\n- Keep files under 250 lines\n- Maintain clear hierarchy\n- Use consistent naming\n- Update all references\n- Document changes\n\n## Automation\n- Use scripts/validate-docs.js\n- Run tests after expansion\n- Check for broken links\n- Verify formatting\n\n## Review Process\n- Technical review\n- Content review\n- Link validation\n- Format check\n- Final approval \n\n## Implementation\n\n[Add implementation content here]\n\n## Maintenance\n\n[Add maintenance content here]"
+    },
+    {
+      "filePath": "docs/standards/documentation-standards.md",
+      "originalContent": "# Documentation Standards\n\n## Core Principles\n\n### 1. Modularity\n- Each document should be self-contained\n- Maximum file size: 250 lines\n- Clear separation of concerns\n- Minimal cross-references\n\n### 2. Dynamic Structure\n- Content should be easily updatable\n- Version control friendly\n- Automated validation\n- Clear update paths\n\n### 3. Non-Recursive\n- Flat documentation structure\n- Clear parent-child relationships\n- No circular dependencies\n- Explicit references\n\n### 4. LLM Optimization\n- Files under 250 lines for better context\n- Clear section headers\n- Consistent formatting\n- Structured content\n\n## File Organization\n\n### 1. Directory Structure\n- Clear hierarchy\n- Logical grouping\n- Consistent naming\n- Minimal nesting\n\n### 2. File Naming\n- Lowercase with hyphens\n- Descriptive names\n- Consistent extensions\n- Clear purpose\n\n### 3. Content Structure\n- Clear headings\n- Consistent sections\n- Code examples\n- Cross-references\n\n## Documentation Types\n\n### 1. README Files\n- Purpose statement\n- Quick start guide\n- Key features\n- Usage examples\n\n### 2. Technical Docs\n- Implementation details\n- API references\n- Configuration guides\n- Troubleshooting\n\n### 3. Component Docs\n- Overview\n- Architecture\n- Usage\n- Examples\n\n## Quality Standards\n\n### 1. Content\n- Technical accuracy\n- Clear explanations\n- Updated regularly\n- Proper formatting\n\n### 2. Code Examples\n- Working examples\n- Clear comments\n- Proper syntax\n- Best practices\n\n### 3. Cross-References\n- Valid links\n- Clear context\n- Proper paths\n- Updated references ",
+      "proposedChanges": [
+        {
+          "type": "add_fields",
+          "details": {
+            "addedFields": [
+              "title",
+              "description",
+              "lastUpdated",
+              "version"
+            ]
+          }
+        },
+        {
+          "type": "add_sections",
+          "details": {
+            "addedSections": [
+              "Overview",
+              "Implementation",
+              "Maintenance"
+            ]
+          }
+        }
+      ],
+      "newContent": "---\ntitle: Documentation Standards\ndescription: Documentation for Documentation Standards\nlastUpdated: 2025-06-03T00:06:16.373Z\nversion: 1.0.0\n---\n\n# Documentation Standards\n\n## Core Principles\n\n### 1. Modularity\n- Each document should be self-contained\n- Maximum file size: 250 lines\n- Clear separation of concerns\n- Minimal cross-references\n\n### 2. Dynamic Structure\n- Content should be easily updatable\n- Version control friendly\n- Automated validation\n- Clear update paths\n\n### 3. Non-Recursive\n- Flat documentation structure\n- Clear parent-child relationships\n- No circular dependencies\n- Explicit references\n\n### 4. LLM Optimization\n- Files under 250 lines for better context\n- Clear section headers\n- Consistent formatting\n- Structured content\n\n## File Organization\n\n### 1. Directory Structure\n- Clear hierarchy\n- Logical grouping\n- Consistent naming\n- Minimal nesting\n\n### 2. File Naming\n- Lowercase with hyphens\n- Descriptive names\n- Consistent extensions\n- Clear purpose\n\n### 3. Content Structure\n- Clear headings\n- Consistent sections\n- Code examples\n- Cross-references\n\n## Documentation Types\n\n### 1. README Files\n- Purpose statement\n- Quick start guide\n- Key features\n- Usage examples\n\n### 2. Technical Docs\n- Implementation details\n- API references\n- Configuration guides\n- Troubleshooting\n\n### 3. Component Docs\n- Overview\n- Architecture\n- Usage\n- Examples\n\n## Quality Standards\n\n### 1. Content\n- Technical accuracy\n- Clear explanations\n- Updated regularly\n- Proper formatting\n\n### 2. Code Examples\n- Working examples\n- Clear comments\n- Proper syntax\n- Best practices\n\n### 3. Cross-References\n- Valid links\n- Clear context\n- Proper paths\n- Updated references \n\n## Overview\n\n[Add overview content here]\n\n## Implementation\n\n[Add implementation content here]\n\n## Maintenance\n\n[Add maintenance content here]"
+    },
+    {
+      "filePath": "docs/standards/documentation-system.md",
+      "originalContent": "# Documentation System Overview\n\n## Core Principles\n- Modular: Each component is self-contained\n- Dynamic: Easy to update and expand\n- Non-recursive: Clear dependency chains\n- LLM-optimized: Under 250 lines per file\n\n## System Components\n\n### 1. Documentation Router\n- Main index (docs/index.md)\n- Section routers\n- Cross-references\n- Navigation structure\n\n### 2. Validation System\n- Line count monitoring\n- Link validation\n- Format checking\n- Expansion triggers\n\n### 3. Generation System\n- Template engine\n- Content validation\n- Version control\n- Quality checks\n\n### 4. Maintenance System\n- Update procedures\n- Review process\n- Version tracking\n- Change logging\n\n## Documentation Types\n\n### 1. Product Documentation\n- PRDs\n- Feature specs\n- User guides\n- API docs\n\n### 2. Technical Documentation\n- Architecture\n- Components\n- Integration\n- Deployment\n\n### 3. Process Documentation\n- Development\n- Testing\n- Deployment\n- Maintenance\n\n### 4. Reference Documentation\n- Standards\n- Guidelines\n- Best practices\n- Examples\n\n## Automation Tools\n\n### 1. Validation\n- Line count checks\n- Link validation\n- Format verification\n- Structure validation\n\n### 2. Generation\n- Template processing\n- Content validation\n- Version control\n- Quality checks\n\n### 3. Maintenance\n- Update tracking\n- Change logging\n- Version control\n- Review process\n\n## Quality Metrics\n- Completeness\n- Accuracy\n- Consistency\n- Usability\n- Maintainability\n\n## Review Process\n- Technical review\n- Content review\n- User testing\n- Final approval ",
+      "proposedChanges": [
+        {
+          "type": "add_fields",
+          "details": {
+            "addedFields": [
+              "title",
+              "description",
+              "lastUpdated",
+              "version"
+            ]
+          }
+        },
+        {
+          "type": "add_sections",
+          "details": {
+            "addedSections": [
+              "Overview",
+              "Implementation",
+              "Maintenance"
+            ]
+          }
+        }
+      ],
+      "newContent": "---\ntitle: Documentation System Overview\ndescription: Documentation for Documentation System Overview\nlastUpdated: 2025-06-03T00:06:16.373Z\nversion: 1.0.0\n---\n\n# Documentation System Overview\n\n## Core Principles\n- Modular: Each component is self-contained\n- Dynamic: Easy to update and expand\n- Non-recursive: Clear dependency chains\n- LLM-optimized: Under 250 lines per file\n\n## System Components\n\n### 1. Documentation Router\n- Main index (docs/index.md)\n- Section routers\n- Cross-references\n- Navigation structure\n\n### 2. Validation System\n- Line count monitoring\n- Link validation\n- Format checking\n- Expansion triggers\n\n### 3. Generation System\n- Template engine\n- Content validation\n- Version control\n- Quality checks\n\n### 4. Maintenance System\n- Update procedures\n- Review process\n- Version tracking\n- Change logging\n\n## Documentation Types\n\n### 1. Product Documentation\n- PRDs\n- Feature specs\n- User guides\n- API docs\n\n### 2. Technical Documentation\n- Architecture\n- Components\n- Integration\n- Deployment\n\n### 3. Process Documentation\n- Development\n- Testing\n- Deployment\n- Maintenance\n\n### 4. Reference Documentation\n- Standards\n- Guidelines\n- Best practices\n- Examples\n\n## Automation Tools\n\n### 1. Validation\n- Line count checks\n- Link validation\n- Format verification\n- Structure validation\n\n### 2. Generation\n- Template processing\n- Content validation\n- Version control\n- Quality checks\n\n### 3. Maintenance\n- Update tracking\n- Change logging\n- Version control\n- Review process\n\n## Quality Metrics\n- Completeness\n- Accuracy\n- Consistency\n- Usability\n- Maintainability\n\n## Review Process\n- Technical review\n- Content review\n- User testing\n- Final approval \n\n## Overview\n\n[Add overview content here]\n\n## Implementation\n\n[Add implementation content here]\n\n## Maintenance\n\n[Add maintenance content here]"
+    },
+    {
+      "filePath": "docs/templates/main-index.md",
+      "originalContent": "# Clarity Engine Documentation\n\n## Core Documentation\n\n### Project Overview\n- [Soulfra Overview](soulfra/README.md)\n- [Products](soulfra/products/README.md)\n- [Technology Stack](soulfra/technology/README.md)\n- [Roadmap](soulfra/roadmap/README.md)\n\n### Standards & Guidelines\n- [Documentation Standards](standards/documentation-standards.md)\n- [Code Standards](standards/README.md)\n- [Testing Standards](testing/README.md)\n- [Security Standards](security/README.md)\n\n## Component Documentation\n\n### Core Components\n- [Architecture](architecture/README.md)\n- [Agents](agents/README.md)\n- [API](api/README.md)\n- [Testing](testing/README.md)\n\n### Development\n- [Workflow](workflow/README.md)\n- [Development Guide](development/README.md)\n- [Integration](integration/README.md)\n- [Deployment](deployment/README.md)\n\n### Optimization\n- [Performance](optimization/README.md)\n- [Security](security/README.md)\n- [Testing](testing/README.md)\n\n## Product Documentation\n\n### Clarity Engine\n- [Overview](soulfra/products/clarity-engine.md)\n- [Architecture](architecture/README.md)\n- [Components](components/README.md)\n- [API](api/README.md)\n\n### Document Generator\n- [Overview](soulfra/products/document-generator.md)\n- [Templates](templates/README.md)\n- [Processing](processing/README.md)\n- [Validation](validation/README.md)\n\n### LLM Router\n- [Overview](soulfra/products/llm-router.md)\n- [Model Selection](models/README.md)\n- [Routing Logic](routing/README.md)\n- [Performance](optimization/README.md)\n\n## Implementation Guides\n\n### Development\n- [Getting Started](getting-started/README.md)\n- [Best Practices](standards/README.md)\n- [Testing](testing/README.md)\n- [Deployment](deployment/README.md)\n\n### Integration\n- [API Integration](api/README.md)\n- [Database](database/README.md)\n- [Authentication](security/README.md)\n- [Monitoring](monitoring/README.md)\n\n## Maintenance\n\n### Operations\n- [Deployment](deployment/README.md)\n- [Monitoring](monitoring/README.md)\n- [Security](security/README.md)\n- [Backup](backup/README.md)\n\n### Support\n- [Troubleshooting](troubleshooting/README.md)\n- [FAQ](faq/README.md)\n- [Contact](contact/README.md)\n- [Updates](updates/README.md) ",
+      "proposedChanges": [
+        {
+          "type": "add_fields",
+          "details": {
+            "addedFields": [
+              "title",
+              "description",
+              "lastUpdated",
+              "version"
+            ]
+          }
+        },
+        {
+          "type": "add_sections",
+          "details": {
+            "addedSections": [
+              "Overview",
+              "Implementation",
+              "Maintenance"
+            ]
+          }
+        }
+      ],
+      "newContent": "---\ntitle: Clarity Engine Documentation\ndescription: Documentation for Clarity Engine Documentation\nlastUpdated: 2025-06-03T00:06:16.373Z\nversion: 1.0.0\n---\n\n# Clarity Engine Documentation\n\n## Core Documentation\n\n### Project Overview\n- [Soulfra Overview](soulfra/README.md)\n- [Products](soulfra/products/README.md)\n- [Technology Stack](soulfra/technology/README.md)\n- [Roadmap](soulfra/roadmap/README.md)\n\n### Standards & Guidelines\n- [Documentation Standards](standards/documentation-standards.md)\n- [Code Standards](standards/README.md)\n- [Testing Standards](testing/README.md)\n- [Security Standards](security/README.md)\n\n## Component Documentation\n\n### Core Components\n- [Architecture](architecture/README.md)\n- [Agents](agents/README.md)\n- [API](api/README.md)\n- [Testing](testing/README.md)\n\n### Development\n- [Workflow](workflow/README.md)\n- [Development Guide](development/README.md)\n- [Integration](integration/README.md)\n- [Deployment](deployment/README.md)\n\n### Optimization\n- [Performance](optimization/README.md)\n- [Security](security/README.md)\n- [Testing](testing/README.md)\n\n## Product Documentation\n\n### Clarity Engine\n- [Overview](soulfra/products/clarity-engine.md)\n- [Architecture](architecture/README.md)\n- [Components](components/README.md)\n- [API](api/README.md)\n\n### Document Generator\n- [Overview](soulfra/products/document-generator.md)\n- [Templates](templates/README.md)\n- [Processing](processing/README.md)\n- [Validation](validation/README.md)\n\n### LLM Router\n- [Overview](soulfra/products/llm-router.md)\n- [Model Selection](models/README.md)\n- [Routing Logic](routing/README.md)\n- [Performance](optimization/README.md)\n\n## Implementation Guides\n\n### Development\n- [Getting Started](getting-started/README.md)\n- [Best Practices](standards/README.md)\n- [Testing](testing/README.md)\n- [Deployment](deployment/README.md)\n\n### Integration\n- [API Integration](api/README.md)\n- [Database](database/README.md)\n- [Authentication](security/README.md)\n- [Monitoring](monitoring/README.md)\n\n## Maintenance\n\n### Operations\n- [Deployment](deployment/README.md)\n- [Monitoring](monitoring/README.md)\n- [Security](security/README.md)\n- [Backup](backup/README.md)\n\n### Support\n- [Troubleshooting](troubleshooting/README.md)\n- [FAQ](faq/README.md)\n- [Contact](contact/README.md)\n- [Updates](updates/README.md) \n\n## Overview\n\n[Add overview content here]\n\n## Implementation\n\n[Add implementation content here]"
+    },
+    {
+      "filePath": "docs/templates/section-index.md",
+      "originalContent": "# {{title}}\n\n## Overview\n{{content}}\n\n## Table of Contents\n- [Getting Started](#getting-started)\n- [Core Concepts](#core-concepts)\n- [Implementation](#implementation)\n- [Best Practices](#best-practices)\n\n## Getting Started\n[Basic introduction and setup instructions]\n\n## Core Concepts\n[Key concepts and principles]\n\n## Implementation\n[Implementation details and examples]\n\n## Best Practices\n[Guidelines and recommendations]\n\n## Related Resources\n- [Documentation Standards](../standards/README.md)\n- [Development Guide](../development/README.md)\n- [Testing Guide](../testing/README.md) ",
+      "proposedChanges": [
+        {
+          "type": "add_fields",
+          "details": {
+            "addedFields": [
+              "title",
+              "description",
+              "lastUpdated",
+              "version"
+            ]
+          }
+        },
+        {
+          "type": "add_sections",
+          "details": {
+            "addedSections": [
+              "Overview",
+              "Implementation",
+              "Maintenance"
+            ]
+          }
+        },
+        {
+          "type": "fix_dependencies",
+          "details": {
+            "fixedDependencies": [
+              {
+                "original": "../standards/README.md",
+                "fixed": "[Documentation Standards](#documentation-standards)"
+              },
+              {
+                "original": "../development/README.md",
+                "fixed": "[Development Guide](#development-guide)"
+              },
+              {
+                "original": "../testing/README.md",
+                "fixed": "[Testing Guide](#testing-guide)"
+              }
+            ]
+          }
+        }
+      ],
+      "newContent": "---\ntitle: {{title}}\ndescription: Documentation for {{title}}\nlastUpdated: 2025-06-03T00:06:16.374Z\nversion: 1.0.0\n---\n\n# {{title}}\n\n## Overview\n{{content}}\n\n## Table of Contents\n- [Getting Started](#getting-started)\n- [Core Concepts](#core-concepts)\n- [Implementation](#implementation)\n- [Best Practices](#best-practices)\n\n## Getting Started\n[Basic introduction and setup instructions]\n\n## Core Concepts\n[Key concepts and principles]\n\n## Implementation\n[Implementation details and examples]\n\n## Best Practices\n[Guidelines and recommendations]\n\n## Related Resources\n- [Documentation Standards](#documentation-standards)\n- [Development Guide](#development-guide)\n- [Testing Guide](#testing-guide) \n\n## Maintenance\n\n[Add maintenance content here]"
+    },
+    {
+      "filePath": "docs/testing/blessing-system.md",
+      "originalContent": "# Blessing System (Future Concept)\n\n## Overview\nThe Blessing System was an early concept for marking components as \"blessed\" (passed) after validation. This concept has been integrated into our current testing framework as \"passing\" status.\n\n## Current Implementation\n- Components are marked as \"passed\" after successful testing\n- Validation occurs through our automated testing framework\n- Results are tracked in test logs and reports\n\n## Future Considerations\n- Potential for more granular status tracking\n- Integration with quality metrics\n- Automated blessing workflows\n- Performance benchmarks\n\n## Related Components\n- Testing Framework\n- Validation System\n- Quality Assurance\n- Performance Monitoring ",
+      "proposedChanges": [
+        {
+          "type": "add_fields",
+          "details": {
+            "addedFields": [
+              "title",
+              "description",
+              "lastUpdated",
+              "version"
+            ]
+          }
+        },
+        {
+          "type": "add_sections",
+          "details": {
+            "addedSections": [
+              "Overview",
+              "Implementation",
+              "Maintenance"
+            ]
+          }
+        }
+      ],
+      "newContent": "---\ntitle: Blessing System (Future Concept)\ndescription: Documentation for Blessing System (Future Concept)\nlastUpdated: 2025-06-03T00:06:16.374Z\nversion: 1.0.0\n---\n\n# Blessing System (Future Concept)\n\n## Overview\nThe Blessing System was an early concept for marking components as \"blessed\" (passed) after validation. This concept has been integrated into our current testing framework as \"passing\" status.\n\n## Current Implementation\n- Components are marked as \"passed\" after successful testing\n- Validation occurs through our automated testing framework\n- Results are tracked in test logs and reports\n\n## Future Considerations\n- Potential for more granular status tracking\n- Integration with quality metrics\n- Automated blessing workflows\n- Performance benchmarks\n\n## Related Components\n- Testing Framework\n- Validation System\n- Quality Assurance\n- Performance Monitoring \n\n## Implementation\n\n[Add implementation content here]\n\n## Maintenance\n\n[Add maintenance content here]"
+    },
+    {
+      "filePath": "docs/testing.md",
+      "originalContent": "# Testing Documentation\n\n## Overview\n\nThe Clarity Engine uses a comprehensive testing strategy to ensure reliability and maintainability. Our test suite includes unit tests, integration tests, snapshot tests, and end-to-end tests.\n\n## Test Categories\n\n### 1. Unit Tests\n- Core functionality testing\n- Individual component testing\n- Utility function testing\n- Error handling\n- Edge cases\n\n### 2. Integration Tests\n- API endpoint testing\n- Database interactions\n- Service layer integration\n- Middleware testing\n- Authentication flows\n\n### 3. Snapshot Tests\n- UI component rendering\n- CLI command output\n- Documentation generation\n- Configuration validation\n- Error message formatting\n\n### 4. End-to-End Tests\n- User workflows\n- Feature interactions\n- System integration\n- Performance testing\n- Security testing\n\n## Testing Tools\n\n### Primary Tools\n- **Jest**: Test runner and assertion library\n- **React Testing Library**: Component testing\n- **Supertest**: API endpoint testing\n- **Jest Snapshot**: UI and output testing\n- **MSW**: API mocking\n\n### Additional Tools\n- **ESLint**: Code quality and testing rules\n- **Prettier**: Code formatting\n- **Coverage**: Test coverage reporting\n- **Debug**: Test debugging utilities\n\n## Coverage Goals\n\n### Overall Coverage\n- Minimum 80% code coverage\n- 100% coverage for critical paths\n- 90% coverage for core functionality\n\n### Specific Areas\n- API endpoints: 95%\n- Core components: 90%\n- Utility functions: 85%\n- CLI commands: 90%\n- Documentation: 100%\n\n## Running Tests\n\n### Basic Test Commands\n```bash\n# Run all tests\nnpm run test\n\n# Run tests in watch mode\nnpm run test:watch\n\n# Run tests with coverage\nnpm run test:coverage\n\n# Run specific test file\nnpm run test -- path/to/test.js\n\n# Run tests matching pattern\nnpm run test -- -t \"pattern\"\n```\n\n### Debugging Tests\n```bash\n# Run tests in debug mode\nnpm run test:debug\n\n# Run specific test in debug mode\nnpm run test:debug -- path/to/test.js\n```\n\n## Snapshot Testing\n\n### Creating Snapshots\n```bash\n# Create new snapshots\nnpm run test -- -u\n\n# Create snapshot for specific test\nnpm run test -- -u path/to/test.js\n```\n\n### Updating Snapshots\n1. Run the test suite\n2. Review failing snapshots\n3. If changes are intentional:\n   ```bash\n   npm run test -- -u\n   ```\n4. If changes are unintentional:\n   - Debug the component/function\n   - Fix the implementation\n   - Run tests again\n\n### Debugging Failed Snapshots\n\n1. **Identify the Failure**\n   ```bash\n   npm run test -- path/to/failing/test.js\n   ```\n\n2. **Review the Diff**\n   - Check the test output for the diff\n   - Look for unexpected changes\n   - Verify component behavior\n\n3. **Common Issues**\n   - Date/time formatting\n   - Random values\n   - Environment differences\n   - Component state\n\n4. **Fixing Snapshots**\n   ```bash\n   # Update specific snapshot\n   npm run test -- -u path/to/failing/test.js\n\n   # Update all snapshots\n   npm run test -- -u\n   ```\n\n## Best Practices\n\n### Writing Tests\n1. Follow the Arrange-Act-Assert pattern\n2. Use descriptive test names\n3. Test one behavior per test\n4. Mock external dependencies\n5. Clean up after tests\n\n### Component Testing\n1. Test user interactions\n2. Verify accessibility\n3. Check responsive design\n4. Test error states\n5. Validate edge cases\n\n### API Testing\n1. Test all endpoints\n2. Verify error handling\n3. Check authentication\n4. Validate response format\n5. Test rate limiting\n\n### CLI Testing\n1. Test all commands\n2. Verify output format\n3. Check error messages\n4. Test file operations\n5. Validate progress reporting\n\n## Continuous Integration\n\n### GitHub Actions\n- Runs on every push\n- Runs on pull requests\n- Enforces coverage thresholds\n- Reports test results\n- Updates snapshots\n\n### Pre-commit Hooks\n- Run tests before commit\n- Check code formatting\n- Validate snapshots\n- Ensure coverage\n\n## Troubleshooting\n\n### Common Issues\n1. **Snapshot Mismatches**\n   - Check component changes\n   - Verify test environment\n   - Review test data\n\n2. **Test Failures**\n   - Check test environment\n   - Verify dependencies\n   - Review test data\n   - Check for race conditions\n\n3. **Coverage Issues**\n   - Review uncovered code\n   - Add missing tests\n   - Check test organization\n\n### Getting Help\n1. Check test documentation\n2. Review test examples\n3. Consult team members\n4. Check GitHub issues\n5. Review CI logs ",
+      "proposedChanges": [
+        {
+          "type": "add_fields",
+          "details": {
+            "addedFields": [
+              "title",
+              "description",
+              "lastUpdated",
+              "version"
+            ]
+          }
+        },
+        {
+          "type": "add_sections",
+          "details": {
+            "addedSections": [
+              "Overview",
+              "Implementation",
+              "Maintenance"
+            ]
+          }
+        }
+      ],
+      "newContent": "---\ntitle: Testing Documentation\ndescription: Documentation for Testing Documentation\nlastUpdated: 2025-06-03T00:06:16.374Z\nversion: 1.0.0\n---\n\n# Testing Documentation\n\n## Overview\n\nThe Clarity Engine uses a comprehensive testing strategy to ensure reliability and maintainability. Our test suite includes unit tests, integration tests, snapshot tests, and end-to-end tests.\n\n## Test Categories\n\n### 1. Unit Tests\n- Core functionality testing\n- Individual component testing\n- Utility function testing\n- Error handling\n- Edge cases\n\n### 2. Integration Tests\n- API endpoint testing\n- Database interactions\n- Service layer integration\n- Middleware testing\n- Authentication flows\n\n### 3. Snapshot Tests\n- UI component rendering\n- CLI command output\n- Documentation generation\n- Configuration validation\n- Error message formatting\n\n### 4. End-to-End Tests\n- User workflows\n- Feature interactions\n- System integration\n- Performance testing\n- Security testing\n\n## Testing Tools\n\n### Primary Tools\n- **Jest**: Test runner and assertion library\n- **React Testing Library**: Component testing\n- **Supertest**: API endpoint testing\n- **Jest Snapshot**: UI and output testing\n- **MSW**: API mocking\n\n### Additional Tools\n- **ESLint**: Code quality and testing rules\n- **Prettier**: Code formatting\n- **Coverage**: Test coverage reporting\n- **Debug**: Test debugging utilities\n\n## Coverage Goals\n\n### Overall Coverage\n- Minimum 80% code coverage\n- 100% coverage for critical paths\n- 90% coverage for core functionality\n\n### Specific Areas\n- API endpoints: 95%\n- Core components: 90%\n- Utility functions: 85%\n- CLI commands: 90%\n- Documentation: 100%\n\n## Running Tests\n\n### Basic Test Commands\n```bash\n# Run all tests\nnpm run test\n\n# Run tests in watch mode\nnpm run test:watch\n\n# Run tests with coverage\nnpm run test:coverage\n\n# Run specific test file\nnpm run test -- path/to/test.js\n\n# Run tests matching pattern\nnpm run test -- -t \"pattern\"\n```\n\n### Debugging Tests\n```bash\n# Run tests in debug mode\nnpm run test:debug\n\n# Run specific test in debug mode\nnpm run test:debug -- path/to/test.js\n```\n\n## Snapshot Testing\n\n### Creating Snapshots\n```bash\n# Create new snapshots\nnpm run test -- -u\n\n# Create snapshot for specific test\nnpm run test -- -u path/to/test.js\n```\n\n### Updating Snapshots\n1. Run the test suite\n2. Review failing snapshots\n3. If changes are intentional:\n   ```bash\n   npm run test -- -u\n   ```\n4. If changes are unintentional:\n   - Debug the component/function\n   - Fix the implementation\n   - Run tests again\n\n### Debugging Failed Snapshots\n\n1. **Identify the Failure**\n   ```bash\n   npm run test -- path/to/failing/test.js\n   ```\n\n2. **Review the Diff**\n   - Check the test output for the diff\n   - Look for unexpected changes\n   - Verify component behavior\n\n3. **Common Issues**\n   - Date/time formatting\n   - Random values\n   - Environment differences\n   - Component state\n\n4. **Fixing Snapshots**\n   ```bash\n   # Update specific snapshot\n   npm run test -- -u path/to/failing/test.js\n\n   # Update all snapshots\n   npm run test -- -u\n   ```\n\n## Best Practices\n\n### Writing Tests\n1. Follow the Arrange-Act-Assert pattern\n2. Use descriptive test names\n3. Test one behavior per test\n4. Mock external dependencies\n5. Clean up after tests\n\n### Component Testing\n1. Test user interactions\n2. Verify accessibility\n3. Check responsive design\n4. Test error states\n5. Validate edge cases\n\n### API Testing\n1. Test all endpoints\n2. Verify error handling\n3. Check authentication\n4. Validate response format\n5. Test rate limiting\n\n### CLI Testing\n1. Test all commands\n2. Verify output format\n3. Check error messages\n4. Test file operations\n5. Validate progress reporting\n\n## Continuous Integration\n\n### GitHub Actions\n- Runs on every push\n- Runs on pull requests\n- Enforces coverage thresholds\n- Reports test results\n- Updates snapshots\n\n### Pre-commit Hooks\n- Run tests before commit\n- Check code formatting\n- Validate snapshots\n- Ensure coverage\n\n## Troubleshooting\n\n### Common Issues\n1. **Snapshot Mismatches**\n   - Check component changes\n   - Verify test environment\n   - Review test data\n\n2. **Test Failures**\n   - Check test environment\n   - Verify dependencies\n   - Review test data\n   - Check for race conditions\n\n3. **Coverage Issues**\n   - Review uncovered code\n   - Add missing tests\n   - Check test organization\n\n### Getting Help\n1. Check test documentation\n2. Review test examples\n3. Consult team members\n4. Check GitHub issues\n5. Review CI logs \n\n## Implementation\n\n[Add implementation content here]\n\n## Maintenance\n\n[Add maintenance content here]"
+    }
+  ]
+}

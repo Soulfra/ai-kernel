@@ -1,0 +1,58 @@
+[
+  {
+    "agent": "CalLoopRunner.js",
+    "intent": "Run all mounted daemons",
+    "status": "success",
+    "whisper_signature": "vault://looprunner/commit",
+    "echo_hash": "7e07938c2b5cdcabbd03c30b4ce11ecb15a5494d241b3a8468c9edff349f016a",
+    "timestamp": "2025-05-09T15:41:05.314Z"
+  },
+  {
+    "agent": "CalAgentAutoMount.js",
+    "intent": "Mount all verified daemons",
+    "status": "success",
+    "whisper_signature": "vault://autoloader/commit",
+    "echo_hash": "5ce0a9b7f34ebe61edb7e014ad95470e07d85bad1dc4ae3f05ccf94fc7f06e4a",
+    "timestamp": "2025-05-09T15:42:59.225Z"
+  },
+  {
+    "agent": "CalAgentAutoMount.js",
+    "intent": "Test echo + intent",
+    "status": "success",
+    "whisper_signature": "vault://test/gauntlet",
+    "echo_hash": "dacb7d3bb01489227a4e6c0059680c0a5a5bc219b34a6dde04b96221dbab26c1",
+    "timestamp": "2025-05-09T15:47:14.020Z"
+  },
+  {
+    "agent": "CalAgentAutoMount.js",
+    "intent": "Test echo + intent",
+    "status": "success",
+    "whisper_signature": "vault://test/gauntlet",
+    "echo_hash": "1426a44c53fd36d0398f6dd62274de6aad846f3b104461cdfb970b2a35d2bd30",
+    "timestamp": "2025-05-09T15:47:54.519Z"
+  },
+  {
+    "agent": "CalPresenceDaemon.js",
+    "intent": "Track heartbeat + vault",
+    "status": "success",
+    "whisper_signature": "vault://presence/daemon",
+    "echo_hash": "46142e05d2fc4fea54ac5fd155fdc30d3dd432e22e4e358acfe9c8a9224e0d86",
+    "timestamp": "2025-05-09T15:52:36.260Z"
+  },
+  {
+    "agent": "CalNarrator.js",
+    "intent": "Stream reflection logs + echo summaries",
+    "status": "success",
+    "whisper_signature": "vault://narrator/stream",
+    "echo_hash": "9712446cab133d5d7e047e234a07a557c37d007ec1a57e334bbd9ee14b23644c",
+    "timestamp": "2025-05-09T15:52:40.008Z"
+  },
+  {
+    "agent": "CalPromptRouter.js",
+    "intent": "Route whisper to purpose and agent stack",
+    "status": "success",
+    "whisper_signature": "vault://router/intent",
+    "echo_hash": "7562a2440f7d6d6e17209261b99f40abb7d8c47131edd2d366fc7f4faaed270a",
+    "timestamp": "2025-05-09T15:52:43.288Z"
+  }
+]

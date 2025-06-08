@@ -1,0 +1,7 @@
+# 1. Format
+
+- Markdown for all documentation
+- Code examples in JavaScript/TypeScript
+- Diagrams in Mermaid or PlantUML
+- API documentation in OpenAPI/Swagger
+

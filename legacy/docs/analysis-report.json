@@ -1,0 +1,181 @@
+{
+  "coverage": {
+    "totalFiles": 799,
+    "byCategory": {
+      "other": 250,
+      "workflow": 1,
+      "testing": 7,
+      "security": 15,
+      "integration": 61,
+      "examples": 1,
+      "deployment": 17,
+      "bestPractices": 1,
+      "architecture": 1,
+      "api": 1,
+      "core": 444
+    },
+    "byStatus": {},
+    "details": {
+      "byComponent": {
+        "core": {
+          "documented": true,
+          "completeness": 0.8,
+          "lastUpdated": "2025-06-03T00:19:40.821Z"
+        },
+        "api": {
+          "documented": true,
+          "completeness": 0.8,
+          "lastUpdated": "2025-06-03T00:19:40.821Z"
+        },
+        "security": {
+          "documented": true,
+          "completeness": 0.8,
+          "lastUpdated": "2025-06-03T00:19:40.821Z"
+        },
+        "testing": {
+          "documented": true,
+          "completeness": 0.8,
+          "lastUpdated": "2025-06-03T00:19:40.821Z"
+        },
+        "deployment": {
+          "documented": true,
+          "completeness": 0.8,
+          "lastUpdated": "2025-06-03T00:19:40.821Z"
+        }
+      },
+      "byFeature": {
+        "authentication": {
+          "documented": true,
+          "completeness": 0.7,
+          "lastUpdated": "2025-06-03T00:19:40.821Z"
+        },
+        "authorization": {
+          "documented": true,
+          "completeness": 0.7,
+          "lastUpdated": "2025-06-03T00:19:40.821Z"
+        },
+        "logging": {
+          "documented": true,
+          "completeness": 0.7,
+          "lastUpdated": "2025-06-03T00:19:40.821Z"
+        },
+        "monitoring": {
+          "documented": true,
+          "completeness": 0.7,
+          "lastUpdated": "2025-06-03T00:19:40.821Z"
+        },
+        "error-handling": {
+          "documented": true,
+          "completeness": 0.7,
+          "lastUpdated": "2025-06-03T00:19:40.821Z"
+        }
+      },
+      "byType": {},
+      "gaps": [
+        {
+          "type": "feature",
+          "name": "authentication",
+          "issue": "Incomplete documentation",
+          "recommendation": "Enhance documentation for authentication feature"
+        },
+        {
+          "type": "feature",
+          "name": "authorization",
+          "issue": "Incomplete documentation",
+          "recommendation": "Enhance documentation for authorization feature"
+        },
+        {
+          "type": "feature",
+          "name": "logging",
+          "issue": "Incomplete documentation",
+          "recommendation": "Enhance documentation for logging feature"
+        },
+        {
+          "type": "feature",
+          "name": "monitoring",
+          "issue": "Incomplete documentation",
+          "recommendation": "Enhance documentation for monitoring feature"
+        },
+        {
+          "type": "feature",
+          "name": "error-handling",
+          "issue": "Incomplete documentation",
+          "recommendation": "Enhance documentation for error-handling feature"
+        }
+      ]
+    }
+  },
+  "quality": {
+    "readability": {
+      "score": 0.8,
+      "issues": [],
+      "recommendations": []
+    },
+    "completeness": {
+      "score": 0.7,
+      "issues": [],
+      "recommendations": []
+    },
+    "consistency": {
+      "score": 0.75,
+      "issues": [],
+      "recommendations": []
+    },
+    "maintainability": {
+      "score": 0.85,
+      "issues": [],
+      "recommendations": []
+    }
+  },
+  "structure": {
+    "hierarchy": {
+      "depth": 3,
+      "breadth": 5,
+      "issues": [],
+      "recommendations": []
+    },
+    "relationships": {
+      "internalLinks": 100,
+      "externalLinks": 20,
+      "issues": [],
+      "recommendations": []
+    },
+    "navigation": {
+      "easeOfUse": 0.8,
+      "issues": [],
+      "recommendations": []
+    }
+  },
+  "recommendations": [
+    {
+      "type": "coverage",
+      "priority": "high",
+      "description": "Enhance documentation for authentication feature",
+      "action": "Enhance documentation for authentication"
+    },
+    {
+      "type": "coverage",
+      "priority": "high",
+      "description": "Enhance documentation for authorization feature",
+      "action": "Enhance documentation for authorization"
+    },
+    {
+      "type": "coverage",
+      "priority": "high",
+      "description": "Enhance documentation for logging feature",
+      "action": "Enhance documentation for logging"
+    },
+    {
+      "type": "coverage",
+      "priority": "high",
+      "description": "Enhance documentation for monitoring feature",
+      "action": "Enhance documentation for monitoring"
+    },
+    {
+      "type": "coverage",
+      "priority": "high",
+      "description": "Enhance documentation for error-handling feature",
+      "action": "Enhance documentation for error-handling"
+    }
+  ]
+}

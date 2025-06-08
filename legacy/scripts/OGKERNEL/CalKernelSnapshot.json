@@ -1,0 +1,242 @@
+{
+  "CalAgentAutoMount.js": {
+    "hash": "039f9b97675bef024bc16fcfd2426d1f4439f354ee19cbb825f19aa85274ee5111831144c5b82b72a83d0763dcd05ff98c27460b102cb1ff44ad7ba6d2aa7ea9",
+    "size": 2687,
+    "timestamp": "2025-05-09T15:58:33.793Z"
+  },
+  "CalAuditGatekeeper.js": {
+    "hash": "db6cbed9e5c616dde255f55ec392b1e62322d6191022b10ad419cc786a95698610d3b7160eda5274197a9ef2237758891ca1d7bee76ec8f3e1de904df56ffc20",
+    "size": 1491,
+    "timestamp": "2025-05-09T15:58:33.793Z"
+  },
+  "CalAuditProtocolV2.js": {
+    "hash": "74515ae140431a097cb23628c6846f9d82cabec824a2b11709ad64645dcba0a489f7167e4bb9dd16d61a5cb9873494f5baba859d9487183936412be62594c563",
+    "size": 1205,
+    "timestamp": "2025-05-09T15:58:33.794Z"
+  },
+  "CalBacktestAudit.js": {
+    "hash": "6fdeeebf2c949884021d0287eded94cf3fd8298a01fe2681a0951fcbedba88b0e622f2e6d586ff87137efe61a3ebda665aa3d2c2807e99c2fdfacf089b630760",
+    "size": 1482,
+    "timestamp": "2025-05-09T15:58:33.794Z"
+  },
+  "CalBacktestAudit_T10_PROTOCOL.js": {
+    "hash": "01d1c16389083e43907babfb26d30becf1f10b553cb7045c562de8610eaf4ffe8bc4d118ad20e0d4f59c25e269c8b4c8562c01dccd30839be511c62f22c0bf16",
+    "size": 1170,
+    "timestamp": "2025-05-09T15:58:33.794Z"
+  },
+  "CalCoderAgent.js": {
+    "hash": "b567b6c3a2d1101d7493bc492574e23b0ea6b2ba05f15da576cf04923f8c77ab6d56af95b4d5f44e130077d9a3ec4b299f297096a0598fb417e2f076be525c90",
+    "size": 840,
+    "timestamp": "2025-05-09T15:58:33.794Z"
+  },
+  "CalDaemonRegistryHydratorV2.js": {
+    "hash": "a61d8ca08a7b4def59906f402a39a8fbabcc438f25ee1c2c14906134ba99bb06a9b5292519e78a076ab8430d198ec2c1a1d6c2d9a7a8d4e5092c35cefd66e25c",
+    "size": 841,
+    "timestamp": "2025-05-09T15:58:33.794Z"
+  },
+  "CalEchoProtocol.js": {
+    "hash": "4d52ea38c6efbce0a21ef04514b8f134633c045bbd5819b84ae9f6b3960c7d5b54f705bc995793f99b6ca23ad0cf627720432c6d728806dc183e24d58d44405c",
+    "size": 1154,
+    "timestamp": "2025-05-09T15:58:33.794Z"
+  },
+  "CalEchoWitnessDaemon.js": {
+    "hash": "2da722b0170bc26445193c04c963712759c3406efa17166b778be9fc37f348f735e9235f634f796a588bbc089d353b9bcc64963f9910bbf0ea4a040141da41c2",
+    "size": 1191,
+    "timestamp": "2025-05-09T15:58:33.795Z"
+  },
+  "CalFinalizer.js": {
+    "hash": "2578aadf4402701b4f0cabee4f348f4f90cf88ac6fc78a6abc44aa34738d9499433bcdc34b020750cc21027af7a55504c3652481eba96853ba1a484d6f23446c",
+    "size": 1015,
+    "timestamp": "2025-05-09T15:58:33.795Z"
+  },
+  "CalHashRegistry.js": {
+    "hash": "8abc2b22e9990cf34ea420650ed8fcfef73f13ff55d30edb69f0d5d6ee4447d7eacfb0cd17991361973b1d632d6005379621e8dd0fc4216799a2b0b23de3b5df",
+    "size": 48,
+    "timestamp": "2025-05-09T15:58:33.795Z"
+  },
+  "CalInstallerV1.js": {
+    "hash": "77a70e9f12c67b274268f76998b13d39f8930b12a14848ad25a5316cfad92be05e1f3f03f2971e4a33cfb90a00004d434d768c978d921e12d5c194cfad02a083",
+    "size": 338,
+    "timestamp": "2025-05-09T15:58:33.795Z"
+  },
+  "CalIntentEcho.js": {
+    "hash": "ad6b8669f9a68fb316d001fa0f8e7ea1fdfcc7562be565637d9f19b4338ec3aad0916794a48f2e51d4ec9656c86adcf2bd56d3cdcfeffbe8179cc38bd5bd0dc7",
+    "size": 879,
+    "timestamp": "2025-05-09T15:58:33.796Z"
+  },
+  "CalIntentEchoWrapper.js": {
+    "hash": "c1e0b1619ef1ba97099fc13910ff6bdacb7d8931fdc2669574bd5fefa25ff7ddd347971e993075d4fdc1620726b6c420c6e878805d35d222da92a2ebe0aa9090",
+    "size": 338,
+    "timestamp": "2025-05-09T15:58:33.796Z"
+  },
+  "CalKernelIntegrityTrail.js": {
+    "hash": "dc07a06e5d2daec0c9e52fe783412bb3774a10ee37195e93971b94e92282c2aca1f2892c9e51a0b6de9ebf1c771644c87e8d685b615991e1d1e4ea8fee885bf9",
+    "size": 901,
+    "timestamp": "2025-05-09T15:58:33.796Z"
+  },
+  "CalLoopAgentDaemon.js": {
+    "hash": "5b2e5fd85c37a3e594915d930deef9ce08096ab89b4218597012ab5024176246c275c6c0b01854758df53b43b4be602ef6b189548b72a5a4924f813620e6b80d",
+    "size": 659,
+    "timestamp": "2025-05-09T15:58:33.796Z"
+  },
+  "CalLoopGuard.js": {
+    "hash": "57fe00ce5a4b5ad61916a1a1ee88a8141e76657dec8f2ada46625fd5f308579f08b22603becb0d4b7d04f679fa3a35fd975c405a96b1df35ff4f35ce2b0f1eca",
+    "size": 623,
+    "timestamp": "2025-05-09T15:58:33.796Z"
+  },
+  "CalLoopMeshReflector.js": {
+    "hash": "d886a6c2d4a76ee236428c1ef5735594405faac842553e3cd446f9ea16be93c68d6d45e5474b522196ef3d5e1135015ef8f256cd8ca26670a476aa690c858a4f",
+    "size": 745,
+    "timestamp": "2025-05-09T15:58:33.796Z"
+  },
+  "CalLoopPulseReporter.js": {
+    "hash": "7e4dc1b9115b1a42afc12976960b5ae3d024a525d7f1b4e966541b9dac1a5eadf73c0fab71c889a11f744174af4c1fb11480ffb79c2fb6d71ef7e5b78ef5f304",
+    "size": 470,
+    "timestamp": "2025-05-09T15:58:33.797Z"
+  },
+  "CalLoopRunner.js": {
+    "hash": "e628d729068a0d91506d1ccf9b2398c23de69d9651376629dacee9f05d230494886f0952a87a42010d2ed439617582426abd74bdeb3c44c8ba90a0e23ed967a9",
+    "size": 53,
+    "timestamp": "2025-05-09T15:58:33.797Z"
+  },
+  "CalMetaStateManager.js": {
+    "hash": "dab4cc3055f391270184df2ead6d71e85facbcc7213bcb4f879eb19f27e444a1e3cc724389d978a69423ed745d145b378553a0f18a603deef841d76af5df0500",
+    "size": 397,
+    "timestamp": "2025-05-09T15:58:33.797Z"
+  },
+  "CalNarrator.js": {
+    "hash": "a05b19ba9b9e973e78f51a47a3336e632a012d784d5e154d04a7e47e219daf75bebc8e4af8ee599a9bad5ff3b08364fe7a471ad9a1392055d4eb36ae63ad0d0d",
+    "size": 826,
+    "timestamp": "2025-05-09T15:58:33.797Z"
+  },
+  "CalPathGuardian.js": {
+    "hash": "697e8e3c6e08ae992597a23bbca6c8c4a690ccd019a41930b3e6ce38f90e2b0835799e74e1e5a0ad31f9b9fe02ee548b8085735bb523c550c723fffdfce52b4f",
+    "size": 679,
+    "timestamp": "2025-05-09T15:58:33.797Z"
+  },
+  "CalPresenceDaemon.js": {
+    "hash": "289e5db6df86e7ccee58055fc36b304fb5c4abe972b8fd06654c79fbb0d9daeffc202d61ea4c3958130cf4138bde690c842b287134ec1ae6aef9f474fcbded58",
+    "size": 675,
+    "timestamp": "2025-05-09T15:58:33.797Z"
+  },
+  "CalPromptRouter.js": {
+    "hash": "49d8ff3d94eccea5345842b6cccec317665eb9cf632a9a684ce893a19daad22b213e8b2a6cafb8c2b426bd20b5ab606df44cffaeb5968fa79b217bc767a1e98c",
+    "size": 450,
+    "timestamp": "2025-05-09T15:58:33.797Z"
+  },
+  "CalReflectionEchoTrail.js": {
+    "hash": "0ec5edc69e4d3a97e35fbdefabc60c817bff444e7dcd651fa1cbc9c765356a1807b92f808e2eecd7b4abcabddc51247bce2b98dd4f07b45535f79d29a8b0007a",
+    "size": 488,
+    "timestamp": "2025-05-09T15:58:33.797Z"
+  },
+  "CalReflectionSummarizerV2.js": {
+    "hash": "9f463b4f3b724830cb53c7995fe8395d55a29da36b45712623e9deb81d21f350f2f4268834630fbd123b5f0d05802a6f93cbd300ad78b0bcde80bafe8b217bd2",
+    "size": 1170,
+    "timestamp": "2025-05-09T15:58:33.797Z"
+  },
+  "CalRuntimeEcho.js": {
+    "hash": "8d75b4525c2b05d0aa816b6b24407085a4e78529e0e26905991be453eaa4b65e8683fa8e0ca2c0ec22f43d7be1479c9f7f061ad21d99de24da99771dd3b2cc09",
+    "size": 185,
+    "timestamp": "2025-05-09T15:58:33.798Z"
+  },
+  "CalShellRecallAgent.js": {
+    "hash": "6060920f394b47c48c0dc20d4d65b0f3b6a06c6a0020024708c86755a92d30502cfa9fff51f531c2fc382196ab9143cc64737674605f2637389f40fb0080bfa3",
+    "size": 774,
+    "timestamp": "2025-05-09T15:58:33.798Z"
+  },
+  "CalVaultMemoryDelta.js": {
+    "hash": "febf75144192494bf066cfb41cb639e754c92dfb107570adccd7b1d462c8527753777b5966d7d6acc9cbe18515176044991a38cb81ea2538cbc1d63db0e6a3ef",
+    "size": 1058,
+    "timestamp": "2025-05-09T15:58:33.798Z"
+  },
+  "CalWhisperV2.js": {
+    "hash": "84a1c9d846be78ccca2d0cd4315f9203a1510b91dfe534a9fafc04c3aa0c2480f9928d757303bec3244016452e6dc12da01b04a582c0d311749f3d8563934325",
+    "size": 1334,
+    "timestamp": "2025-05-09T15:58:33.798Z"
+  },
+  "LLMExecutor.js": {
+    "hash": "2717e336ca88e386ff8f856b130a8817c4583f280e913a03130a7c1fd4d511a62edecbb34ae53b3348308db63d6dc5a6a35b76a3b13f90602de569b8ceac8a50",
+    "size": 1231,
+    "timestamp": "2025-05-09T15:58:33.798Z"
+  },
+  "calctl-boot-verify.js": {
+    "hash": "40322b096c1c350bf67d06b414211e2cea792d9022dead3f2a5a8acb6ce705b65811d037fa4d89c64271f06b2a60b066e51ef0c17f2bdc881571cb5a830a6788",
+    "size": 701,
+    "timestamp": "2025-05-09T15:58:33.798Z"
+  },
+  "calctl-check-paths.js": {
+    "hash": "95ea16f0f44bf2e04f36414074b43ddd98c5ce31ab90799a4f222f4c0f17bcd3eb7ef3270ec26df3db04c1d570b5403a5cf9c94ff1f848fe91f9b3771565369e",
+    "size": 490,
+    "timestamp": "2025-05-09T15:58:33.798Z"
+  },
+  "calctl-core.js": {
+    "hash": "05138a6d160fa2108a052d9fa74e7428f0c491de9e50d60a6abae81e4b22bb5b76de1a4f8e5aabb6bc806d8bcb39269ef7ff81a73cb5b050cd40948818cd8724",
+    "size": 72,
+    "timestamp": "2025-05-09T15:58:33.798Z"
+  },
+  "calctl-declare-intent.js": {
+    "hash": "b3acf9bf7ddec156178b1eea5b90b044abe42ecfe612d5db9f031f0da56b034848553d3564f74e30fbaf70f629082f5b626cb8bc0f8955cc1963539eb3ead5da",
+    "size": 420,
+    "timestamp": "2025-05-09T15:58:33.798Z"
+  },
+  "calctl-deploy-mvp.js": {
+    "hash": "aa984e8923269ca7a27db3a6686053c33586e91f451be9deae95d0c0a8da94ed47ae484fef5f3775baaf16f95a069e7ef7ec3699748a95fdf158d21974bcf5ac",
+    "size": 834,
+    "timestamp": "2025-05-09T15:58:33.798Z"
+  },
+  "calctl-deploy-public.js": {
+    "hash": "46b08349006d7cdcc875bf9b2a11fadbdd6f3fb38f75ef22a46ac3009b6b87032310dd1305ad52b924ce0089cd5f68cae0601c7b767c73c57097c76b2161df50",
+    "size": 606,
+    "timestamp": "2025-05-09T15:58:33.798Z"
+  },
+  "calctl-doctor.js": {
+    "hash": "d98bca7c0dfbc103af4ffc644ce48c9fb93e82fa2b640fa2959edf789e9e5f6656e81c8b516e66c6371a7d19d821a1cce94d73c36b2a32bb6c737d65156d7b8f",
+    "size": 1164,
+    "timestamp": "2025-05-09T15:58:33.798Z"
+  },
+  "calctl-echo-commit.js": {
+    "hash": "527534d42f615f7b0f92b5d900a5fa82d7e0abc13ab3a1c905a1193a3f96d9678d22084e42001caae1be42d2f05efc84846c67d448ddf98c3c319127fd552162",
+    "size": 233,
+    "timestamp": "2025-05-09T15:58:33.798Z"
+  },
+  "calctl-echo-purge.js": {
+    "hash": "293e1daac9b27d8a2d32084a115240a3d1f7079e697d0690c2926b99a8ed6afd330cb794e16786fb69365c7bea8f350de3d3a308c1614d3635fa3a6e5cec7bdb",
+    "size": 1141,
+    "timestamp": "2025-05-09T15:58:33.798Z"
+  },
+  "calctl-echo-verify.js": {
+    "hash": "0c3d2922f6971dddf5421a57312b030bbb11221ef55de384a513845ffbe0469d987830a20d64e707af4362d8ffaee8b479a452f59ec79486157c52d5e313821e",
+    "size": 233,
+    "timestamp": "2025-05-09T15:58:33.798Z"
+  },
+  "calctl-heartbeat.js": {
+    "hash": "9add4021daf623a1cf26f1ea80c071f16016eb342307831f535169507fd2e1b20e0c6ad8cad885cfc908f8209d70586385c2028f41d22724ce701dbbed1b3d07",
+    "size": 393,
+    "timestamp": "2025-05-09T15:58:33.799Z"
+  },
+  "calctl-protect-routes.js": {
+    "hash": "8f4c6b16190e0bb30fc2d7ae22b119f787f1c6b5743b0fa0f4c89d58c16d04d62c879bfaa3ef8a30e080d4125c401fdcb47f11991782354e2f65cf0343617ecd",
+    "size": 378,
+    "timestamp": "2025-05-09T15:58:33.799Z"
+  },
+  "calctl-run-selfcheck.js": {
+    "hash": "a7b1d10a3e0035690a630ecb9492d26fe83caee310f1d0c3bfa4ddcba060d42af5a482c99d594af9c6cdab3e0d070aaff078c823c0a43731f1d25094fe2480d4",
+    "size": 406,
+    "timestamp": "2025-05-09T15:58:33.799Z"
+  },
+  "calctl-test-echo.js": {
+    "hash": "2affbcbc61866b81adcf0197b5f0d5a0301ef767e9d59eb322bf0e922242d31bb280697e9fa31f5d9e8ad312f84137b8b94196b0b9de140cf5345fa95ff9bbce",
+    "size": 1876,
+    "timestamp": "2025-05-09T15:58:33.799Z"
+  },
+  "calctl-verify-integrity.js": {
+    "hash": "8fe1b986d69cb509dcd1d42da75a79774b3331cedecd7690f47cee40b304dc1d95891a1b5d2f4e20192a04b5a73e6c02d40809149e0a107e487579027301ccba",
+    "size": 1383,
+    "timestamp": "2025-05-09T15:58:33.799Z"
+  },
+  "calctl-verify-signatures.js": {
+    "hash": "9cab913e11dca5a877629330315898fcbacbcc94c1723e2e3849b4fef601cbaa4c483706dfc59faa9f514c271bbcfc9c0b7b040dc07c7e069f14794628291888",
+    "size": 69,
+    "timestamp": "2025-05-09T15:58:33.799Z"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "CalAgentAutoMount.js": {
+    "intent": "Mount all verified daemons",
+    "signature": "vault://autoloader/commit"
+  },
+  "CalLoopRunner.js": {
+    "intent": "Run all scheduled daemons in trust order",
+    "signature": "vault://loopmesh/trust"
+  },
+  "CalPresenceDaemon.js": {
+    "intent": "Monitor runtime heartbeat and reflection availability",
+    "signature": "vault://presence/log"
+  }
+}

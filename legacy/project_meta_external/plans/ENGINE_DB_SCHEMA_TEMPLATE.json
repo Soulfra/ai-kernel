@@ -1,0 +1,89 @@
+{
+  "title": "Clarity Engine DB Schema Template",
+  "version": "1.0.0",
+  "lastUpdated": "2025-07-27T05:45:00Z",
+  "tables": {
+    "tasks": {
+      "fields": {
+        "taskId": "string (primary key)",
+        "description": "string",
+        "status": "string (planned|in-progress|completed|archived)",
+        "priority": "string",
+        "createdDate": "datetime",
+        "lastUpdated": "datetime",
+        "relatedPlanId": "string (foreign key: plans.planId)",
+        "assignedTo": "string (foreign key: users.userId)",
+        "notes": "string"
+      }
+    },
+    "plans": {
+      "fields": {
+        "planId": "string (primary key)",
+        "title": "string",
+        "description": "string",
+        "status": "string (active|archived)",
+        "createdDate": "datetime",
+        "lastUpdated": "datetime",
+        "taskIds": "array of string (foreign key: tasks.taskId)",
+        "changelog": "array of objects {date, change, userId}"
+      }
+    },
+    "ledger": {
+      "fields": {
+        "entryId": "string (primary key)",
+        "taskId": "string (foreign key: tasks.taskId)",
+        "planId": "string (foreign key: plans.planId)",
+        "action": "string",
+        "timestamp": "datetime",
+        "userId": "string (foreign key: users.userId)",
+        "details": "string"
+      }
+    },
+    "feedback": {
+      "fields": {
+        "feedbackId": "string (primary key)",
+        "targetType": "string (task|plan|system)",
+        "targetId": "string",
+        "userId": "string (foreign key: users.userId)",
+        "feedbackType": "string (positive|negative|bug|suggestion)",
+        "message": "string",
+        "timestamp": "datetime",
+        "status": "string (open|resolved|archived)"
+      }
+    },
+    "lessons": {
+      "fields": {
+        "lessonId": "string (primary key)",
+        "sourceType": "string (task|plan|system)",
+        "sourceId": "string",
+        "summary": "string",
+        "details": "string",
+        "timestamp": "datetime",
+        "userId": "string (foreign key: users.userId)"
+      }
+    },
+    "users": {
+      "fields": {
+        "userId": "string (primary key)",
+        "name": "string",
+        "email": "string",
+        "role": "string (admin|developer|reviewer)",
+        "joinedDate": "datetime",
+        "status": "string (active|inactive)"
+      }
+    }
+  },
+  "relationships": [
+    "tasks.relatedPlanId -> plans.planId",
+    "tasks.assignedTo -> users.userId",
+    "plans.taskIds[] -> tasks.taskId",
+    "ledger.taskId -> tasks.taskId",
+    "ledger.planId -> plans.planId",
+    "ledger.userId -> users.userId",
+    "feedback.userId -> users.userId",
+    "feedback.targetId -> tasks.taskId or plans.planId",
+    "lessons.userId -> users.userId",
+    "lessons.sourceId -> tasks.taskId or plans.planId"
+  ],
+  "notes": "Fill out each table/field with project-specific details and adjust types as needed for your chosen DB."
+} 
