@@ -13,4 +13,4 @@ function ensureFileAndDir(filePath, defaultContent = '') {
   }
 }
 
-module.exports = ensureFileAndDir; 
+module.exports = ensureFileAndDir;
