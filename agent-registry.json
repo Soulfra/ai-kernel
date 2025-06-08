@@ -1,0 +1,82 @@
+[
+  {
+    "name": "OrchestrationAgent",
+    "path": "scripts/core/orchestration-agent.js",
+    "type": "core",
+    "cli": false,
+    "entry": "class",
+    "uses": ["SemanticEngine", "logger", "ensureFileAndDir"],
+    "description": "Runs ordered workflow steps and logs to file."
+  },
+  {
+    "name": "SemanticEngine",
+    "path": "scripts/core/semantic-engine.js",
+    "type": "core",
+    "cli": false,
+    "entry": "class",
+    "uses": [
+      "VectorStore",
+      "GraphStore",
+      "EmbeddingService",
+      "ClusteringService",
+      "RelationshipManager",
+      "ValidationService",
+      "Logger"
+    ],
+    "description": "Provides vector, graph, embedding and relationship services."
+  },
+  {
+    "name": "BackupOrchestrator",
+    "path": "scripts/core/backup-orchestrator.js",
+    "type": "core",
+    "cli": true,
+    "entry": "class",
+    "uses": ["ensureFileAndDir", "EventEmitter"],
+    "description": "Self-healing backup and restore manager with audit logs."
+  },
+  {
+    "name": "ChatImporter",
+    "path": "scripts/features/import-chatlog.js",
+    "type": "feature",
+    "cli": true,
+    "entry": "script",
+    "uses": ["parseChatLog", "messagesToConcepts", "SemanticEngine"],
+    "description": "CLI to import chat logs and add concepts to the engine."
+  },
+  {
+    "name": "ChatLogParser",
+    "path": "scripts/features/chatlog-parser/index.js",
+    "type": "feature",
+    "cli": true,
+    "entry": "script",
+    "uses": ["ensureFileAndDir"],
+    "description": "Parses chat logs for TODOs and bullets into Markdown."
+  },
+  {
+    "name": "ClusterUtils",
+    "path": "scripts/features/cluster-utils.js",
+    "type": "feature",
+    "cli": false,
+    "entry": "module",
+    "uses": ["SemanticEngine"],
+    "description": "Utilities to cluster concepts and create summaries."
+  },
+  {
+    "name": "LinkSequential",
+    "path": "scripts/features/link-sequential.js",
+    "type": "feature",
+    "cli": false,
+    "entry": "module",
+    "uses": ["SemanticEngine"],
+    "description": "Links concepts sequentially using follows_from relationships."
+  },
+  {
+    "name": "ChatlogUtils",
+    "path": "scripts/features/chatlog-utils.js",
+    "type": "feature",
+    "cli": false,
+    "entry": "module",
+    "uses": [],
+    "description": "Parses chat exports and converts messages to concepts."
+  }
+]
