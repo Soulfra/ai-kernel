@@ -7,6 +7,14 @@ tags: []
 status: draft
 ---
 
+## About This Document
+
+This file serves as the central registry for all Clarity Engine agents.
+
+- **Registering new agents**: Add a row to the table below with the agent's details and run `node generate-agents-doc.js` to refresh the documentation. The `validate-registry.js` script checks for consistency after any update.
+- **Why we keep a registry**: A single source of truth ensures the orchestrator can discover available capabilities and track changes across the kernel.
+- **How to use it**: Claude or Codex can consult this list to locate each agent's implementation and follow execution paths through the kernel.
+
 
 
 # Clarity Engine Agents
