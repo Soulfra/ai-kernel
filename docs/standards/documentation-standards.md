@@ -44,7 +44,9 @@ docs/
 └── standards/
     ├── documentation-standards.md
     ├── code-standards.md
-    └── testing-standards.md
+    ├── testing-standards.md
+    ├── plugin-guidelines.md
+    └── documentation-automation.md
 ```
 
 ### 3. Required Documentation Types
