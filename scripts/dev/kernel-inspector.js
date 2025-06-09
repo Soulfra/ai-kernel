@@ -144,6 +144,10 @@ function main() {
   const { graph, incoming } = buildGraph(jsFiles);
   const { yamls, files: agentSet } = loadAgentFiles(repoRoot);
   const cliSet = collectCliFiles(jsFiles, repoRoot);
+  const cliTools = checkCliTools(['npm', 'ffmpeg', 'ollama']);
+  const kernelCli = checkKernelCli(repoRoot);
+  const agentStatus = checkAgents(yamls, repoRoot);
+  const unprotected = findUnprotectedRequires(jsFiles, repoRoot);
 
   const flagged = [];
   for (const f of jsFiles) {
@@ -205,6 +209,28 @@ function main() {
   lines.push('\n## Require Errors');
   if (requireErrors.length) {
     for (const r of requireErrors) lines.push(`- ${r.file}: ${r.error}`);
+  } else lines.push('None');
+  lines.push('\n## CLI Tools');
+  for (const [k,v] of Object.entries(cliTools)) lines.push(`- ${k}: ${v ? 'found' : 'missing'}`);
+  if (kernelCli.found) {
+    lines.push('\n## kernel-cli.js Commands');
+    for (const [cmd, ok] of Object.entries(kernelCli.results)) lines.push(`- ${cmd}: ${ok ? 'ok' : 'fail'}`);
+  } else {
+    lines.push('\n## kernel-cli.js not found');
+  }
+  lines.push('\n## Agent Status');
+  if (agentStatus.length) {
+    for (const a of agentStatus) {
+      const filePart = a.file ? ` (${a.file})` : '';
+      const err = a.error ? ` - ${a.error}` : '';
+      lines.push(`- ${a.yaml}${filePart}: ${a.status}${err}`);
+    }
+  } else {
+    lines.push('All agents OK');
+  }
+  lines.push('\n## Unprotected require() calls');
+  if (Object.keys(unprotected).length) {
+    for (const [file, arr] of Object.entries(unprotected)) lines.push(`- ${file}: lines ${arr.join(',')}`);
   } else lines.push('None');
   lines.push('\n## Test Results');
   lines.push(`- npm test: ${report.tests.npmTest ? 'pass' : 'fail'}`);
