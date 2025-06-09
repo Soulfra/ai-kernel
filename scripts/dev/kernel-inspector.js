@@ -10,6 +10,33 @@ try {
   yaml = null;
 }
 
+function checkCliTools(tools) {
+  const missing = [];
+  const results = {};
+  for (const t of tools) {
+    let ok = false;
+    try {
+      const r = spawnSync(t, ['--version'], { encoding: 'utf8' });
+      ok = r.status === 0;
+    } catch {
+      ok = false;
+    }
+    if (!ok) missing.push(t);
+    results[t] = ok;
+  }
+
+  if (missing.length) {
+    try {
+      const repoRoot = path.resolve(__dirname, '..', '..');
+      const logPath = path.join(repoRoot, 'logs', 'kernel-inspector.log');
+      fs.mkdirSync(path.dirname(logPath), { recursive: true });
+      fs.appendFileSync(logPath, `Missing CLI tools: ${missing.join(', ')}\n`);
+    } catch {}
+  }
+
+  return results;
+}
+
 function run(cmd, args, opts = {}) {
   const res = spawnSync(cmd, args, { encoding: 'utf8', ...opts });
   return { status: res.status, stdout: res.stdout, stderr: res.stderr };
