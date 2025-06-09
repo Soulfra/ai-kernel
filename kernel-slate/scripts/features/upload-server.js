@@ -10,9 +10,18 @@ const upload = multer({ dest: path.join(__dirname, "..", "..", "uploads") });
 const PORT = process.env.PORT || 3000;
 const docsDir = path.join(__dirname, "..", "..", "docs");
 const publicDir = path.join(__dirname, "..", "..", "public");
+const rootDir = path.join(__dirname, "..", "..");
 
 app.use("/docs", express.static(docsDir));
 app.use(express.static(publicDir));
+
+app.get("/kernel.json", (req, res) => {
+  const file = path.join(rootDir, "kernel.json");
+  if (!fs.existsSync(file)) {
+    return res.status(404).json({ error: "kernel.json not found" });
+  }
+  res.sendFile(file);
+});
 
 app.post("/upload", upload.single("file"), (req, res) => {
   if (!req.file) return res.status(400).json({ error: "No file uploaded" });
