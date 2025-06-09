@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 const fs = require('fs');
 const path = require('path');
-const yaml = require('js-yaml');
+const requireOrInstall = require('./utils/requireOrInstall');
+const yaml = requireOrInstall('js-yaml');
 const { spawn } = require('child_process');
 
 const repoRoot = path.resolve(__dirname, '../..');

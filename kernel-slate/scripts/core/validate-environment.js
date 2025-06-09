@@ -2,7 +2,8 @@
 const fs = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');
-const yaml = require('js-yaml');
+const requireOrInstall = require('./utils/requireOrInstall');
+const yaml = requireOrInstall('js-yaml');
 require('dotenv').config({ path: path.join(__dirname, '../../.env') });
 
 const repoRoot = path.resolve(__dirname, '../..');
