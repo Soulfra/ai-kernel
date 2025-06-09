@@ -1,0 +1,39 @@
+{
+  "runtime": {
+    "ensureRuntime": "success",
+    "warning": "requirements.txt not found"
+  },
+  "make": {
+    "verify": "error",
+    "prune": "error",
+    "status": "error"
+  },
+  "tests": {
+    "total": 22,
+    "passed": 19,
+    "skipped": 3,
+    "failed": 0
+  },
+  "kernelInspector": {
+    "exited": false
+  },
+  "cli": {
+    "verify": "error",
+    "test": "success",
+    "inspect": "hang",
+    "releaseCheck": "hang",
+    "status": "missing",
+    "prune": "missing",
+    "menu": "missing"
+  },
+  "configFiles": {
+    "installedAgents": true,
+    "kernel": true,
+    "availableAgents": true
+  },
+  "docs": {
+    "kernelStatus": false,
+    "kernelAudit": false,
+    "readme": false
+  }
+}
