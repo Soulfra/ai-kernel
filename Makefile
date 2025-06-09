@@ -3,13 +3,17 @@ run:
 	node kernel-slate/scripts/core/semantic-engine.js &
 
 voice:
-	@node kernel-slate/scripts/features/record-voice-log.js
+        @node kernel-slate/scripts/features/record-voice-log.js
+
+voice-loop:
+        @node kernel-slate/scripts/features/voice-loop.js
 
 report:
         @node kernel-slate/scripts/features/export-trace-report.js
 
 boot:
 	@node kernel-slate/scripts/core/cli-onboard.js
-	@node kernel-slate/scripts/core/validate-environment.js
-	@node kernel-slate/scripts/core/watch-agent-templates.js &
-	@node kernel-slate/scripts/core/agent-loop.js
+        @node kernel-slate/scripts/core/validate-environment.js
+        @node kernel-slate/scripts/core/watch-agent-templates.js &
+        @node kernel-slate/scripts/features/voice-loop.js &
+        @node kernel-slate/scripts/core/agent-loop.js
