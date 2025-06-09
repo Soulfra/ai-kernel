@@ -1,0 +1,482 @@
+[
+  {
+    "source": "decision-trace",
+    "type": "TODO",
+    "file": "docs/agents.md",
+    "snippet": "- **Description:** Parses chat logs to extract TODOs and bullet points",
+    "action": "address TODO",
+    "ref": "docs/agents.md"
+  },
+  {
+    "source": "decision-trace",
+    "type": "question",
+    "file": "docs/architecture/agentic-orchestration.md",
+    "snippet": "// Lifecycle",
+    "action": "add explanation",
+    "ref": "docs/architecture/agentic-orchestration.md"
+  },
+  {
+    "source": "decision-trace",
+    "type": "undocumented",
+    "file": "docs/architecture/orchestration-agent.md",
+    "snippet": "async function example() {",
+    "action": "add description",
+    "ref": "docs/architecture/orchestration-agent.md"
+  },
+  {
+    "source": "decision-trace",
+    "type": "question",
+    "file": "docs/architecture/system-overview.md",
+    "snippet": "// Plugin Lifecycle",
+    "action": "add explanation",
+    "ref": "docs/architecture/system-overview.md"
+  },
+  {
+    "source": "decision-trace",
+    "type": "TODO",
+    "file": "docs/examples/chatlog-parser.md",
+    "snippet": "It scans for TODO items and bullet points, then creates files with YAML",
+    "action": "address TODO",
+    "ref": "docs/examples/chatlog-parser.md"
+  },
+  {
+    "source": "decision-trace",
+    "type": "decision",
+    "file": "docs/standards/conversation-management.md",
+    "snippet": "- Track key decisions",
+    "action": "capture in architecture docs",
+    "ref": "docs/standards/conversation-management.md"
+  },
+  {
+    "source": "decision-trace",
+    "type": "decision",
+    "file": "docs/standards/conversation-management.md",
+    "snippet": "decisions: Decision[];",
+    "action": "capture in architecture docs",
+    "ref": "docs/standards/conversation-management.md"
+  },
+  {
+    "source": "decision-trace",
+    "type": "decision",
+    "file": "docs/standards/conversation-management.md",
+    "snippet": "addDecision(decision: Decision): Promise<void>;",
+    "action": "capture in architecture docs",
+    "ref": "docs/standards/conversation-management.md"
+  },
+  {
+    "source": "decision-trace",
+    "type": "decision",
+    "file": "docs/standards/conversation-management.md",
+    "snippet": "decisions: Decision[];",
+    "action": "capture in architecture docs",
+    "ref": "docs/standards/conversation-management.md"
+  },
+  {
+    "source": "decision-trace",
+    "type": "question",
+    "file": "docs/standards/development-workflow.md",
+    "snippet": "// Artifact Management",
+    "action": "add explanation",
+    "ref": "docs/standards/development-workflow.md"
+  },
+  {
+    "source": "decision-trace",
+    "type": "decision",
+    "file": "scripts/audit/trace-decisions.js",
+    "snippet": "const outputFile = path.join(repoRoot, 'docs', 'decision-trace.md');",
+    "action": "capture in architecture docs",
+    "ref": "scripts/audit/trace-decisions.js"
+  },
+  {
+    "source": "decision-trace",
+    "type": "undocumented",
+    "file": "scripts/audit/trace-decisions.js",
+    "snippet": "function scanFile(filePath) {",
+    "action": "add description",
+    "ref": "scripts/audit/trace-decisions.js"
+  },
+  {
+    "source": "decision-trace",
+    "type": "TODO",
+    "file": "scripts/audit/trace-decisions.js",
+    "snippet": "if (lower.includes('todo')) {",
+    "action": "address TODO",
+    "ref": "scripts/audit/trace-decisions.js"
+  },
+  {
+    "source": "decision-trace",
+    "type": "TODO",
+    "file": "scripts/audit/trace-decisions.js",
+    "snippet": "type: 'TODO',",
+    "action": "address TODO",
+    "ref": "scripts/audit/trace-decisions.js"
+  },
+  {
+    "source": "decision-trace",
+    "type": "TODO",
+    "file": "scripts/audit/trace-decisions.js",
+    "snippet": "action: 'address TODO'",
+    "action": "address TODO",
+    "ref": "scripts/audit/trace-decisions.js"
+  },
+  {
+    "source": "decision-trace",
+    "type": "decision",
+    "file": "scripts/audit/trace-decisions.js",
+    "snippet": "if (lower.includes('decision') || lower.includes('design note') || lower.startsWith('commit')) {",
+    "action": "capture in architecture docs",
+    "ref": "scripts/audit/trace-decisions.js"
+  },
+  {
+    "source": "decision-trace",
+    "type": "decision",
+    "file": "scripts/audit/trace-decisions.js",
+    "snippet": "type: 'decision',",
+    "action": "capture in architecture docs",
+    "ref": "scripts/audit/trace-decisions.js"
+  },
+  {
+    "source": "decision-trace",
+    "type": "undocumented",
+    "file": "scripts/audit/trace-decisions.js",
+    "snippet": "function walkDir(dir) {",
+    "action": "add description",
+    "ref": "scripts/audit/trace-decisions.js"
+  },
+  {
+    "source": "decision-trace",
+    "type": "decision",
+    "file": "scripts/audit/trace-decisions.js",
+    "snippet": "console.log(`Decision trace written to ${outputFile}`);",
+    "action": "capture in architecture docs",
+    "ref": "scripts/audit/trace-decisions.js"
+  },
+  {
+    "source": "decision-trace",
+    "type": "undocumented",
+    "file": "scripts/core/backup-dashboard.js",
+    "snippet": "function color(str, code) { return `\\x1b[${code}m${str}\\x1b[0m`; }",
+    "action": "add description",
+    "ref": "scripts/core/backup-dashboard.js"
+  },
+  {
+    "source": "decision-trace",
+    "type": "undocumented",
+    "file": "scripts/core/backup-dashboard.js",
+    "snippet": "function green(str) { return color(str, 32); }",
+    "action": "add description",
+    "ref": "scripts/core/backup-dashboard.js"
+  },
+  {
+    "source": "decision-trace",
+    "type": "undocumented",
+    "file": "scripts/core/backup-dashboard.js",
+    "snippet": "function red(str) { return color(str, 31); }",
+    "action": "add description",
+    "ref": "scripts/core/backup-dashboard.js"
+  },
+  {
+    "source": "decision-trace",
+    "type": "undocumented",
+    "file": "scripts/core/backup-dashboard.js",
+    "snippet": "function badge(ok) { return ok ? green('✅') : red('❌'); }",
+    "action": "add description",
+    "ref": "scripts/core/backup-dashboard.js"
+  },
+  {
+    "source": "decision-trace",
+    "type": "question",
+    "file": "scripts/core/backup-health-check.js",
+    "snippet": "// Scans backups/, verifies manifests and reports, prints health summary.",
+    "action": "add explanation",
+    "ref": "scripts/core/backup-health-check.js"
+  },
+  {
+    "source": "decision-trace",
+    "type": "undocumented",
+    "file": "scripts/core/backup-orchestrator.js",
+    "snippet": "function getUser() {",
+    "action": "add description",
+    "ref": "scripts/core/backup-orchestrator.js"
+  },
+  {
+    "source": "decision-trace",
+    "type": "undocumented",
+    "file": "scripts/core/backup-orchestrator.js",
+    "snippet": "function hashManifest(manifest) {",
+    "action": "add description",
+    "ref": "scripts/core/backup-orchestrator.js"
+  },
+  {
+    "source": "decision-trace",
+    "type": "undocumented",
+    "file": "scripts/core/backup-orchestrator.js",
+    "snippet": "function postWebhook(url, data) {",
+    "action": "add description",
+    "ref": "scripts/core/backup-orchestrator.js"
+  },
+  {
+    "source": "decision-trace",
+    "type": "undocumented",
+    "file": "scripts/core/backup-orchestrator.js",
+    "snippet": "function logAuditEvent(event) {",
+    "action": "add description",
+    "ref": "scripts/core/backup-orchestrator.js"
+  },
+  {
+    "source": "decision-trace",
+    "type": "undocumented",
+    "file": "scripts/core/backup-orchestrator.js",
+    "snippet": "function logSuggestion(event) {",
+    "action": "add description",
+    "ref": "scripts/core/backup-orchestrator.js"
+  },
+  {
+    "source": "decision-trace",
+    "type": "question",
+    "file": "scripts/core/backup-orchestrator.js",
+    "snippet": "// Write manifest",
+    "action": "add explanation",
+    "ref": "scripts/core/backup-orchestrator.js"
+  },
+  {
+    "source": "decision-trace",
+    "type": "question",
+    "file": "scripts/core/backup-orchestrator.js",
+    "snippet": "// If BACKUP_WEBHOOK_URL is set, posts backup/restore events to that URL.",
+    "action": "add explanation",
+    "ref": "scripts/core/backup-orchestrator.js"
+  },
+  {
+    "source": "decision-trace",
+    "type": "question",
+    "file": "scripts/core/graph-store.js",
+    "snippet": "// Verify connection",
+    "action": "add explanation",
+    "ref": "scripts/core/graph-store.js"
+  },
+  {
+    "source": "decision-trace",
+    "type": "question",
+    "file": "scripts/core/loop-route.js",
+    "snippet": "// Loads JSON from the path specified by LOOP_ROUTE_PATH and exports it.",
+    "action": "add explanation",
+    "ref": "scripts/core/loop-route.js"
+  },
+  {
+    "source": "decision-trace",
+    "type": "undocumented",
+    "file": "scripts/core/loop-route.js",
+    "snippet": "function loadLoopRoute() {",
+    "action": "add description",
+    "ref": "scripts/core/loop-route.js"
+  },
+  {
+    "source": "decision-trace",
+    "type": "undocumented",
+    "file": "scripts/docs/generate-agents-doc.js",
+    "snippet": "function groupByType(agents) {",
+    "action": "add description",
+    "ref": "scripts/docs/generate-agents-doc.js"
+  },
+  {
+    "source": "decision-trace",
+    "type": "undocumented",
+    "file": "scripts/docs/generate-agents-doc.js",
+    "snippet": "function generate() {",
+    "action": "add description",
+    "ref": "scripts/docs/generate-agents-doc.js"
+  },
+  {
+    "source": "decision-trace",
+    "type": "undocumented",
+    "file": "scripts/features/chatlog-parser/from-export.js",
+    "snippet": "function parseJsonExport(obj) {",
+    "action": "add description",
+    "ref": "scripts/features/chatlog-parser/from-export.js"
+  },
+  {
+    "source": "decision-trace",
+    "type": "undocumented",
+    "file": "scripts/features/chatlog-parser/from-export.js",
+    "snippet": "function parseHtmlExport(html) {",
+    "action": "add description",
+    "ref": "scripts/features/chatlog-parser/from-export.js"
+  },
+  {
+    "source": "decision-trace",
+    "type": "TODO",
+    "file": "scripts/features/chatlog-parser/index.js",
+    "snippet": "* Parses chat logs to extract TODOs and bullet points.",
+    "action": "address TODO",
+    "ref": "scripts/features/chatlog-parser/index.js"
+  },
+  {
+    "source": "decision-trace",
+    "type": "undocumented",
+    "file": "scripts/features/chatlog-parser/index.js",
+    "snippet": "function parseChatlog(content) {",
+    "action": "add description",
+    "ref": "scripts/features/chatlog-parser/index.js"
+  },
+  {
+    "source": "decision-trace",
+    "type": "TODO",
+    "file": "scripts/features/chatlog-parser/index.js",
+    "snippet": "return lines.filter(l => l.match(/^(TODO:|[-*] )/i));",
+    "action": "address TODO",
+    "ref": "scripts/features/chatlog-parser/index.js"
+  },
+  {
+    "source": "decision-trace",
+    "type": "undocumented",
+    "file": "scripts/features/chatlog-parser/index.js",
+    "snippet": "function generateDoc(ideas, sourceFile) {",
+    "action": "add description",
+    "ref": "scripts/features/chatlog-parser/index.js"
+  },
+  {
+    "source": "decision-trace",
+    "type": "TODO",
+    "file": "scripts/features/chatlog-parser/index.js",
+    "snippet": "'description: Ideas and TODOs extracted from chat logs.',",
+    "action": "address TODO",
+    "ref": "scripts/features/chatlog-parser/index.js"
+  },
+  {
+    "source": "decision-trace",
+    "type": "TODO",
+    "file": "scripts/features/chatlog-parser/index.js",
+    "snippet": "'# Ideas and TODOs',",
+    "action": "address TODO",
+    "ref": "scripts/features/chatlog-parser/index.js"
+  },
+  {
+    "source": "decision-trace",
+    "type": "TODO",
+    "file": "scripts/features/chatlog-parser/index.js",
+    "snippet": "...ideas.map(i => '- ' + i.replace(/^[-*] /, '').replace(/^TODO:/i, '').trim()),",
+    "action": "address TODO",
+    "ref": "scripts/features/chatlog-parser/index.js"
+  },
+  {
+    "source": "decision-trace",
+    "type": "TODO",
+    "file": "scripts/features/chatlog-parser/README.md",
+    "snippet": "description: Parses chat logs to extract ideas and TODOs and generates Markdown documentation.",
+    "action": "address TODO",
+    "ref": "scripts/features/chatlog-parser/README.md"
+  },
+  {
+    "source": "decision-trace",
+    "type": "TODO",
+    "file": "scripts/features/chatlog-parser/README.md",
+    "snippet": "for TODO items and bullet points, then creates docs with YAML frontmatter",
+    "action": "address TODO",
+    "ref": "scripts/features/chatlog-parser/README.md"
+  },
+  {
+    "source": "decision-trace",
+    "type": "undocumented",
+    "file": "scripts/features/chatlog-utils.js",
+    "snippet": "function parseChatLog(text) {",
+    "action": "add description",
+    "ref": "scripts/features/chatlog-utils.js"
+  },
+  {
+    "source": "decision-trace",
+    "type": "undocumented",
+    "file": "scripts/features/chatlog-utils.js",
+    "snippet": "function messagesToConcepts(messages) {",
+    "action": "add description",
+    "ref": "scripts/features/chatlog-utils.js"
+  },
+  {
+    "source": "decision-trace",
+    "type": "undocumented",
+    "file": "scripts/features/cluster-utils.js",
+    "snippet": "async function clusterConcepts(concepts, engine) {",
+    "action": "add description",
+    "ref": "scripts/features/cluster-utils.js"
+  },
+  {
+    "source": "decision-trace",
+    "type": "undocumented",
+    "file": "scripts/features/cluster-utils.js",
+    "snippet": "function writeClusterSummary(engine, filePath) {",
+    "action": "add description",
+    "ref": "scripts/features/cluster-utils.js"
+  },
+  {
+    "source": "decision-trace",
+    "type": "undocumented",
+    "file": "scripts/features/generate-chat-summary.js",
+    "snippet": "async function run() {",
+    "action": "add description",
+    "ref": "scripts/features/generate-chat-summary.js"
+  },
+  {
+    "source": "decision-trace",
+    "type": "undocumented",
+    "file": "scripts/features/import-chatlog.js",
+    "snippet": "async function run() {",
+    "action": "add description",
+    "ref": "scripts/features/import-chatlog.js"
+  },
+  {
+    "source": "decision-trace",
+    "type": "undocumented",
+    "file": "scripts/features/link-sequential.js",
+    "snippet": "async function linkSequential(concepts, engine) {",
+    "action": "add description",
+    "ref": "scripts/features/link-sequential.js"
+  },
+  {
+    "source": "decision-trace",
+    "type": "question",
+    "file": "tests/core/backup-buildup.e2e.test.js",
+    "snippet": "// After restore, verify all logs exist",
+    "action": "add explanation",
+    "ref": "tests/core/backup-buildup.e2e.test.js"
+  },
+  {
+    "source": "decision-trace",
+    "type": "undocumented",
+    "file": "tests/core/backup-buildup.e2e.test.js",
+    "snippet": "function hashFile(filePath) {",
+    "action": "add description",
+    "ref": "tests/core/backup-buildup.e2e.test.js"
+  },
+  {
+    "source": "decision-trace",
+    "type": "TODO",
+    "file": "tests/features/chatlog-parser.test.js",
+    "snippet": "test('extracts TODOs and bullet points', () => {",
+    "action": "address TODO",
+    "ref": "tests/features/chatlog-parser.test.js"
+  },
+  {
+    "source": "decision-trace",
+    "type": "TODO",
+    "file": "tests/features/chatlog-parser.test.js",
+    "snippet": "const chat = 'Hello\\nTODO: Refactor backup\\n- Add tests\\n* Document\\nNot a todo';",
+    "action": "address TODO",
+    "ref": "tests/features/chatlog-parser.test.js"
+  },
+  {
+    "source": "decision-trace",
+    "type": "TODO",
+    "file": "tests/features/chatlog-parser.test.js",
+    "snippet": "expect(ideas).toEqual(['TODO: Refactor backup', '- Add tests', '* Document']);",
+    "action": "address TODO",
+    "ref": "tests/features/chatlog-parser.test.js"
+  },
+  {
+    "source": "decision-trace",
+    "type": "TODO",
+    "file": "tests/features/chatlog-parser.test.js",
+    "snippet": "const ideas = ['TODO: Refactor backup', '- Add tests'];",
+    "action": "address TODO",
+    "ref": "tests/features/chatlog-parser.test.js"
+  }
+]

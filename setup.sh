@@ -17,3 +17,4 @@ elif [ -f scripts/validate-registry.js ]; then
 elif [ -f legacy/scripts/validate-registry.js ]; then
   node legacy/scripts/validate-registry.js
 fi
+node kernel-slate/scripts/core/validate-environment.js

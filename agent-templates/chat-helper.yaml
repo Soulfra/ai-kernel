@@ -1,0 +1,10 @@
+name: Chat Helper Agent
+description: Provides summarization and response suggestions for chat logs
+file: agents/chat-helper.js
+required_api_keys:
+  - OPENAI_API_KEY
+install: |
+  npm install openai
+usage_hooks:
+  onStart: logUsageStart
+  onMessage: trackMessage

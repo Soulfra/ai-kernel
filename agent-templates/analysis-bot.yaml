@@ -1,0 +1,10 @@
+name: Analysis Bot
+description: Performs static analysis on code and reports issues
+file: agents/analysis-bot.js
+required_api_keys:
+  - GITHUB_TOKEN
+install: |
+  npm install eslint
+usage_hooks:
+  onAnalyze: logAnalysis
+  onReport: sendReport
