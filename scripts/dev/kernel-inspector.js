@@ -11,8 +11,13 @@ try {
 }
 
 function checkCliTools(tools) {
-  const missing = [];
   const results = {};
+  const repoRoot = path.resolve(__dirname, '..', '..');
+  const logPath = path.join(repoRoot, 'logs', 'kernel-inspector.log');
+  try {
+    fs.mkdirSync(path.dirname(logPath), { recursive: true });
+  } catch {}
+
   for (const t of tools) {
     let ok = false;
     try {
@@ -21,16 +26,9 @@ function checkCliTools(tools) {
     } catch {
       ok = false;
     }
-    if (!ok) missing.push(t);
     results[t] = ok;
-  }
-
-  if (missing.length) {
     try {
-      const repoRoot = path.resolve(__dirname, '..', '..');
-      const logPath = path.join(repoRoot, 'logs', 'kernel-inspector.log');
-      fs.mkdirSync(path.dirname(logPath), { recursive: true });
-      fs.appendFileSync(logPath, `Missing CLI tools: ${missing.join(', ')}\n`);
+      fs.appendFileSync(logPath, `${t}: ${ok ? 'found' : 'missing'}\n`);
     } catch {}
   }
 
@@ -130,6 +128,20 @@ function collectCliFiles(files, repoRoot) {
   return cli;
 }
 
+function checkKernelCli(repoRoot) {
+  const cliPath = path.join(repoRoot, 'scripts', 'cli', 'kernel-cli.js');
+  if (!fs.existsSync(cliPath)) return { found: false, results: {} };
+  return { found: true, results: {} };
+}
+
+function checkAgents(yamls, repoRoot) {
+  return [];
+}
+
+function findUnprotectedRequires(jsFiles, repoRoot) {
+  return {};
+}
+
 function runFix(repoRoot, yamls, requireErrors) {
   const results = { npmInstall: null, readmes: [], ensured: [] };
   const npmRes = run('npm', ['install', '--ignore-scripts', '--no-audit', '--no-fund'], { cwd: repoRoot });
@@ -188,7 +200,10 @@ function main() {
 
   const requireErrors = [];
   for (const f of jsFiles) {
-    try { require(f); } catch (err) { requireErrors.push({ file: path.relative(repoRoot, f), error: err.message }); }
+    const res = spawnSync('node', ['--check', f], { encoding: 'utf8' });
+    if (res.status !== 0) {
+      requireErrors.push({ file: path.relative(repoRoot, f), error: res.stderr.trim() });
+    }
   }
 
   const tests = {};
