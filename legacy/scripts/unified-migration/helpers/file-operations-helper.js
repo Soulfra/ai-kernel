@@ -2,7 +2,8 @@ const fs = require('fs').promises;
 const path = require('path');
 let yaml;
 try {
-  yaml = require('js-yaml');
+  const requireOrInstall = require('../../core/utils/requireOrInstall');
+  yaml = requireOrInstall('js-yaml');
 } catch (err) {
   console.error("Missing dependency 'js-yaml'. Please run `npm install js-yaml`.");
   process.exit(1);

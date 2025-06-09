@@ -2,7 +2,8 @@
 const fs = require('fs');
 const path = require('path');
 const { spawnSync } = require('child_process');
-const yaml = require('js-yaml');
+const requireOrInstall = require('../core/utils/requireOrInstall');
+const yaml = requireOrInstall('js-yaml');
 require('../core/ensure-runtime.js').ensureRuntime();
 
 const repoRoot = path.resolve(__dirname, '../..');
