@@ -9,8 +9,8 @@
 - Encountered network error: ENETUNREACH while attempting to connect to GitHub
 
 ## kernel-inspector.js
-- ❌ Failed with error `ReferenceError: checkCliTools is not defined`
+- ❌ Failed with error `ReferenceError: checkKernelCli is not defined`
 
 ## Next Steps
-- Define or import `checkCliTools` in `scripts/dev/kernel-inspector.js`
+- Fix or define `checkKernelCli` in `scripts/dev/kernel-inspector.js`
 - Provide a `requirements.txt` if Python dependencies are required
