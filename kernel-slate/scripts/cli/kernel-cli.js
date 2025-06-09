@@ -80,6 +80,165 @@ async function doctor() {
   return ok ? 0 : 1;
 }
 
+async function shrinkwrap() {
+  const scanDirs = ['scripts', 'docs', 'agents', 'tests', 'legacy', 'logs'];
+  const allFiles = [];
+
+  function findFiles(dir) {
+    const stack = [dir];
+    const out = [];
+    while (stack.length) {
+      const cur = stack.pop();
+      for (const item of fs.readdirSync(cur, { withFileTypes: true })) {
+        const full = path.join(cur, item.name);
+        if (item.isDirectory()) stack.push(full); else out.push(full);
+      }
+    }
+    return out;
+  }
+
+  for (const d of scanDirs) {
+    const abs = path.join(repoRoot, d);
+    if (fs.existsSync(abs)) allFiles.push(...findFiles(abs));
+  }
+
+  function buildReferenceMap(files) {
+    const map = {};
+    const jsFiles = files.filter(f => f.endsWith('.js'));
+    const re = /require\(['"]([^'"]+)['"]\)|import[^'"\n]+['"]([^'"]+)['"]/g;
+    for (const file of jsFiles) {
+      const dir = path.dirname(file);
+      let text;
+      try { text = fs.readFileSync(file, 'utf8'); } catch { continue; }
+      let m;
+      while ((m = re.exec(text))) {
+        const p = m[1] || m[2];
+        if (!p.startsWith('.')) continue;
+        const candidates = [p, `${p}.js`, `${p}.json`, path.join(p, 'index.js')];
+        let resolved = null;
+        for (const c of candidates) {
+          const abs = path.resolve(dir, c);
+          if (fs.existsSync(abs)) { resolved = abs; break; }
+        }
+        if (resolved) {
+          if (!map[resolved]) map[resolved] = new Set();
+          map[resolved].add(file);
+        }
+      }
+    }
+    return map;
+  }
+
+  function loadRegistrations() {
+    const set = new Set();
+    const regFiles = ['agent-registry.json', path.join('kernel-slate', 'agent-registry.json')];
+    for (const f of regFiles) {
+      const fp = path.join(repoRoot, f);
+      if (!fs.existsSync(fp)) continue;
+      try {
+        const data = fs.readFileSync(fp, 'utf8');
+        const json = JSON.parse(data);
+        const arr = Array.isArray(json) ? json : json.agents;
+        for (const a of arr || []) if (a.path) set.add(path.resolve(repoRoot, a.path));
+      } catch {}
+    }
+    return set;
+  }
+
+  const usageMap = buildReferenceMap(allFiles);
+  const registrations = loadRegistrations();
+
+  const cliText = fs.readFileSync(__filename, 'utf8');
+  const cliPaths = new Set();
+  const pathRegex = /['"](scripts[^'"\n]+\.js)['"]/g;
+  let m;
+  while ((m = pathRegex.exec(cliText))) {
+    const abs = path.resolve(repoRoot, m[1]);
+    cliPaths.add(abs);
+  }
+
+  const results = [];
+  for (const file of allFiles) {
+    const rel = path.relative(repoRoot, file);
+    let status = '💤 Dormant';
+    if (rel.startsWith('legacy/')) status = '💀 Legacy-only';
+    if (usageMap[file] || cliPaths.has(file) || registrations.has(file)) status = '✅ Essential';
+    results.push({ file: rel, status });
+  }
+
+  const baseMap = {};
+  for (const r of results.filter(r => r.status === '💤 Dormant')) {
+    const base = path.basename(r.file);
+    if (!baseMap[base]) baseMap[base] = [];
+    baseMap[base].push(r);
+  }
+  for (const base in baseMap) {
+    if (baseMap[base].length > 1) {
+      for (const r of baseMap[base]) r.status = '🧯 Redundant';
+    }
+  }
+
+  fs.writeFileSync(path.join(logsDir, 'bloat-report.json'), JSON.stringify(results, null, 2));
+
+  let md = '# Kernel Bloat Map\n\n| File | Status |\n| --- | --- |\n';
+  for (const r of results) md += `| ${r.file} | ${r.status} |\n`;
+  fs.mkdirSync(path.join(repoRoot, 'docs'), { recursive: true });
+  fs.writeFileSync(path.join(repoRoot, 'docs', 'kernel-bloat-map.md'), md);
+
+  const commands = [];
+  const cmdRe = /case ['"]([^'"]+)['"]:/g;
+  while ((m = cmdRe.exec(cliText))) commands.push(m[1]);
+
+  const docsDir = path.join(repoRoot, 'docs');
+  const docs = fs.existsSync(docsDir) ? findFiles(docsDir).map(f => path.relative(repoRoot, f)) : [];
+
+  const agentList = Array.from(registrations).map(p => path.relative(repoRoot, p));
+
+  const include = ['scripts', 'docs', 'agent.yaml', 'Makefile', 'package.json', path.relative(repoRoot, __filename)];
+  const includedFiles = [];
+  for (const item of include) {
+    const abs = path.join(repoRoot, item);
+    if (!fs.existsSync(abs)) continue;
+    if (fs.statSync(abs).isDirectory()) includedFiles.push(...findFiles(abs)); else includedFiles.push(abs);
+  }
+
+  let totalSize = 0;
+  for (const f of includedFiles) totalSize += fs.statSync(f).size;
+
+  const excluded = results.filter(r => r.status === '💀 Legacy-only' || r.status === '🧯 Redundant');
+
+  const shrinkwrapDoc = [
+    '# Kernel Shrinkwrap',
+    '',
+    '## CLI Commands',
+    commands.map(c => `- ${c}`).join('\n'),
+    '',
+    '## Registered Agents',
+    agentList.map(a => `- ${a}`).join('\n'),
+    '',
+    '## Documentation Files',
+    docs.map(d => `- ${d}`).join('\n'),
+    '',
+    `Included files: ${includedFiles.length}`,
+    `Total size: ${totalSize} bytes`,
+    '',
+    '### Excluded',
+    excluded.map(e => `- ${e.file} (${e.status})`).join('\n')
+  ].join('\n');
+
+  fs.writeFileSync(path.join(repoRoot, 'docs', 'kernel-shrinkwrap.md'), shrinkwrapDoc);
+
+  const runInfo = {
+    timestamp: new Date().toISOString(),
+    included: includedFiles.length,
+    size: totalSize,
+    excluded: excluded.length
+  };
+  fs.writeFileSync(path.join(logsDir, 'shrinkwrap-run.json'), JSON.stringify(runInfo, null, 2));
+  fs.writeFileSync(path.join(logsDir, 'fix-session-log.md'), `shrinkwrap run at ${runInfo.timestamp}\n`);
+  console.log('Shrinkwrap complete');
+}
+
 
 function help() {
   console.log(`Usage: node kernel-cli.js <command> [args]
@@ -95,6 +254,7 @@ Commands:
   reprompt           regenerate fix prompts
   doctor             run diagnostics
   test               run npm test
+  shrinkwrap         audit bloat and generate slim package docs
   install-agent <path>  install specified agent.yaml
   launch-ui          run the Express server`);
 }
@@ -146,6 +306,9 @@ async function main() {
       break;
     case 'release-check':
       await releaseCheck();
+      break;
+    case 'shrinkwrap':
+      await shrinkwrap();
       break;
     case 'run':
       if (arg === 'release-check') {

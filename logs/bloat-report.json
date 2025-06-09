@@ -1,0 +1,2002 @@
+[
+  {
+    "file": "scripts/ui/server.js",
+    "status": "💤 Dormant"
+  },
+  {
+    "file": "scripts/dev/describe-kernel.js",
+    "status": "💤 Dormant"
+  },
+  {
+    "file": "scripts/dev/generate-agent-readme.js",
+    "status": "💤 Dormant"
+  },
+  {
+    "file": "scripts/dev/generate-final-status.js",
+    "status": "💤 Dormant"
+  },
+  {
+    "file": "scripts/dev/kernel-inspector.js",
+    "status": "💤 Dormant"
+  },
+  {
+    "file": "scripts/dev/kernel-status.js",
+    "status": "💤 Dormant"
+  },
+  {
+    "file": "scripts/dev/kernel-validator.js",
+    "status": "💤 Dormant"
+  },
+  {
+    "file": "scripts/dev/log-standards-failures.js",
+    "status": "💤 Dormant"
+  },
+  {
+    "file": "scripts/dev/menu.js",
+    "status": "💤 Dormant"
+  },
+  {
+    "file": "scripts/dev/prune-kernel.js",
+    "status": "💤 Dormant"
+  },
+  {
+    "file": "scripts/dev/register-agent.js",
+    "status": "💤 Dormant"
+  },
+  {
+    "file": "scripts/core/ensure-runtime.js",
+    "status": "✅ Essential"
+  },
+  {
+    "file": "scripts/core/provider-router.js",
+    "status": "💤 Dormant"
+  },
+  {
+    "file": "docs/final-kernel-status.md",
+    "status": "💤 Dormant"
+  },
+  {
+    "file": "legacy/.DS_Store",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/README.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/project_meta_external/.DS_Store",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/project_meta_external/task_logs/documentation_consolidation_tasks.json",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/project_meta_external/task_logs/documentation_tasks.json",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/project_meta_external/task_logs/main_task_log.json",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/project_meta_external/task_logs/refactoring_tasks.json",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/project_meta_external/logs/validation_debug.log",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/project_meta_external/debug_logs/DEBUG_LOG_jest_zzz-file-operations_discovery.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/project_meta_external/debug_logs/orchestration_debug.log",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/.DS_Store",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/active-suggestions.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/analytics-dashboard.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/analyze-dependencies.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/api-server.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/archive-test-results.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/archive_manager.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/auto-heal.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/automate-test-suite-migration.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/backup.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/batch-backup-and-summarize.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/batch-meta-summarize.js",
+    "status": "✅ Essential"
+  },
+  {
+    "file": "legacy/archived/scripts/batch-refill.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/batches.json",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/bootstrap.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/check-deps.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/cluster-error-tracker.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/clusterer.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/consolidate-documentation.js",
+    "status": "✅ Essential"
+  },
+  {
+    "file": "legacy/archived/scripts/consolidate-orchestrators.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/dependency-orchestrator.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/e2e-onboarding-reset.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/e2e-orchestrator.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/editor-config-orchestrator.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/error-clusters.json",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/error-clusters.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/execute-reorganization.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/external_meta_tools.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/external_meta_workflow.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/extractor.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/first-run-onboarding.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/fix-missing-llm.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/gamification-cli.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/generate-batches.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/generate-missing-docs.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/indexer.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/intake-daemon.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/kernel.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/llm-bulkhead.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/llm-health-check.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/load-secrets.js",
+    "status": "✅ Essential"
+  },
+  {
+    "file": "legacy/archived/scripts/magic-list-engine.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/magic-scaffold.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/master-orchestrator.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/master-pipeline.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/mcp-dashboard.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/orchestrator-api.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/orchestrator-test-harness.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/overseer-watchdog.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/pipeline-status.json",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/plugin-loader.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/pre-commit.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/reset-test-env.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/rollback.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/run-docs-validation.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/run-docs.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/run-documentation.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/run-dry-run.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/run-migration-orchestration.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/run-orchestration.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/run-orchestrator-migration.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/run-orchestrator.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/run-project-reorganization.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/run-safe-migration.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/run-tasks.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/run-tests.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/sanitizer-orchestrator.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/semantic-cluster-analytics.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/semantic-cluster-automation.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/semantic-cluster-revive.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/semantic-cluster-suggest-revival.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/semantic-cluster-test.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/semantic-cluster-trending.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/semantic-cluster-vote.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/semantic-clusterer.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/semantic-concept-extractor.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/setup-test-env.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/task-manager.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/test-claude-direct.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/test-documentation-system.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/test-llm-call.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/test-openai-direct.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/test-orchestration-e2e.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/update-context-index.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/update-docs.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/update-finalization-plan.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/update-system-status.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/validate-all.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/validate-di-coverage.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/validate-docs.js",
+    "status": "✅ Essential"
+  },
+  {
+    "file": "legacy/archived/scripts/validate-logging.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/validate-telemetry.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/unified-migration/.DS_Store",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/unified-migration/analyze-dependencies.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/unified-migration/process-duplicates.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/unified-migration/helpers/backup-helper.js",
+    "status": "✅ Essential"
+  },
+  {
+    "file": "legacy/archived/scripts/unified-migration/helpers/file-operations-helper.js",
+    "status": "✅ Essential"
+  },
+  {
+    "file": "legacy/archived/scripts/unified-migration/core/content-standardizer.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/unified-migration/core/dependency-analyzer.js",
+    "status": "✅ Essential"
+  },
+  {
+    "file": "legacy/archived/scripts/unified-migration/core/dependency-reporter.js",
+    "status": "✅ Essential"
+  },
+  {
+    "file": "legacy/archived/scripts/unified-migration/core/dependency-validator.js",
+    "status": "✅ Essential"
+  },
+  {
+    "file": "legacy/archived/scripts/unified-migration/core/document-indexer.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/unified-migration/core/task-manager.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/documentation/enhance-documentation.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/documentation/fix-docs.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/documentation/fix-documentation.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/documentation/generate-docs.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/documentation/manage-documentation.js",
+    "status": "✅ Essential"
+  },
+  {
+    "file": "legacy/archived/scripts/core/README.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/core/agent-orchestrator.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/core/auth-manager.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/core/auto-logger.js",
+    "status": "✅ Essential"
+  },
+  {
+    "file": "legacy/archived/scripts/core/backup-orchestrator.js",
+    "status": "✅ Essential"
+  },
+  {
+    "file": "legacy/archived/scripts/core/compliance-reporter.js",
+    "status": "✅ Essential"
+  },
+  {
+    "file": "legacy/archived/scripts/core/credit-api-stub.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/core/data-flow-diagram.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/core/data-flow-validator.js",
+    "status": "✅ Essential"
+  },
+  {
+    "file": "legacy/archived/scripts/core/debug-orchestrator.js",
+    "status": "✅ Essential"
+  },
+  {
+    "file": "legacy/archived/scripts/core/dependency-orchestrator.js",
+    "status": "✅ Essential"
+  },
+  {
+    "file": "legacy/archived/scripts/core/documentation-orchestrator.js",
+    "status": "✅ Essential"
+  },
+  {
+    "file": "legacy/archived/scripts/core/documentation-orchestrator.js.bak",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/core/dry-run-manager.js",
+    "status": "✅ Essential"
+  },
+  {
+    "file": "legacy/archived/scripts/core/e2e-mesh-integration.test.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/core/finalization-dashboard-updater.js",
+    "status": "✅ Essential"
+  },
+  {
+    "file": "legacy/archived/scripts/core/forced-wrapper.js",
+    "status": "✅ Essential"
+  },
+  {
+    "file": "legacy/archived/scripts/core/lifecycle-orchestrator.js",
+    "status": "✅ Essential"
+  },
+  {
+    "file": "legacy/archived/scripts/core/llm-bulkhead.js",
+    "status": "✅ Essential"
+  },
+  {
+    "file": "legacy/archived/scripts/core/llm-router.js",
+    "status": "✅ Essential"
+  },
+  {
+    "file": "legacy/archived/scripts/core/log-orchestrator.js",
+    "status": "✅ Essential"
+  },
+  {
+    "file": "legacy/archived/scripts/core/mesh-feature-scaffold-orchestrator.js",
+    "status": "✅ Essential"
+  },
+  {
+    "file": "legacy/archived/scripts/core/meta-orchestrator.js",
+    "status": "✅ Essential"
+  },
+  {
+    "file": "legacy/archived/scripts/core/orchestration-manager.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/core/orchestration-router.js",
+    "status": "✅ Essential"
+  },
+  {
+    "file": "legacy/archived/scripts/core/orchestrator-migration.js",
+    "status": "✅ Essential"
+  },
+  {
+    "file": "legacy/archived/scripts/core/orchestrator-migration.test.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/core/overseer-orchestrator.js",
+    "status": "✅ Essential"
+  },
+  {
+    "file": "legacy/archived/scripts/core/planner-orchestrator.js",
+    "status": "✅ Essential"
+  },
+  {
+    "file": "legacy/archived/scripts/core/plugin-batch-runner.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/core/plugin-orchestrator.js",
+    "status": "✅ Essential"
+  },
+  {
+    "file": "legacy/archived/scripts/core/premium-check.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/core/project-reorganization.js",
+    "status": "✅ Essential"
+  },
+  {
+    "file": "legacy/archived/scripts/core/quality-orchestrator.js",
+    "status": "✅ Essential"
+  },
+  {
+    "file": "legacy/archived/scripts/core/security-manager.js",
+    "status": "✅ Essential"
+  },
+  {
+    "file": "legacy/archived/scripts/core/soulfra-backrunner.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/core/soulfra-snowball.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/core/soulfra-standardizer.js",
+    "status": "✅ Essential"
+  },
+  {
+    "file": "legacy/archived/scripts/core/summarizer-orchestrator.js",
+    "status": "✅ Essential"
+  },
+  {
+    "file": "legacy/archived/scripts/core/task-deduplicator.js",
+    "status": "✅ Essential"
+  },
+  {
+    "file": "legacy/archived/scripts/core/task-handlers.js",
+    "status": "✅ Essential"
+  },
+  {
+    "file": "legacy/archived/scripts/core/task-lifecycle-manager.js",
+    "status": "✅ Essential"
+  },
+  {
+    "file": "legacy/archived/scripts/core/task-logger.js",
+    "status": "✅ Essential"
+  },
+  {
+    "file": "legacy/archived/scripts/core/task-orchestrator.js",
+    "status": "✅ Essential"
+  },
+  {
+    "file": "legacy/archived/scripts/core/task-router.js",
+    "status": "✅ Essential"
+  },
+  {
+    "file": "legacy/archived/scripts/core/telemetry-manager.js",
+    "status": "✅ Essential"
+  },
+  {
+    "file": "legacy/archived/scripts/core/test-orchestrator.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/core/validate-crosslinks.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/core/watchdog-orchestrator.js",
+    "status": "✅ Essential"
+  },
+  {
+    "file": "legacy/archived/scripts/core/watcher-orchestrator.js",
+    "status": "✅ Essential"
+  },
+  {
+    "file": "legacy/archived/scripts/core/writer-orchestrator.js",
+    "status": "✅ Essential"
+  },
+  {
+    "file": "legacy/archived/scripts/core/tests/backup-orchestrator.test.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/core/tests/debug-orchestrator.test.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/core/tests/documentation-orchestrator.test.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/core/tests/lifecycle-orchestrator.test.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/core/tests/log-orchestrator.test.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/core/tests/meta-orchestrator.test.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/core/tests/orchestration.test.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/core/tests/quality-orchestrator.test.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/core/tests/snowball.test.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/core/tests/task-orchestrator.test.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/core/tests/task-system.test.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/core/tests/writer-orchestrator.test.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/core/tests/__mocks__/fs.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/CalAgentAutoMount.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/CalAgentCanonical.json",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/CalAuditGatekeeper.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/CalAuditProtocolV2.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/CalBacktestAudit.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/CalBacktestAudit_T10_PROTOCOL.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/CalBacktestResults.json",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/CalCoderAgent.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/CalDaemonRegistry.json",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/CalDaemonRegistryHydratorV2.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/CalEchoProtocol.js",
+    "status": "✅ Essential"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/CalEchoPulse.json",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/CalEchoWitnessDaemon.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/CalFinalizer.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/CalHashRegistry.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/CalInstallerV1.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/CalIntentEcho.js",
+    "status": "✅ Essential"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/CalIntentEcho.json",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/CalIntentEchoWrapper.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/CalKernelIntegrityTrail.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/CalKernelIntegrityTrail.json",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/CalKernelSignatureManifest.json",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/CalKernelSnapshot.json",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/CalLoopAgentDaemon.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/CalLoopGuard.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/CalLoopMeshReflector.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/CalLoopPulseReporter.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/CalLoopRunner.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/CalMetaStateManager.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/CalNarrator.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/CalPathGuardian.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/CalPresenceDaemon.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/CalPromptRouter.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/CalReflectionEchoTrail.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/CalReflectionIntentMap.json",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/CalReflectionSummarizerV2.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/CalRuntimeEcho.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/CalShellRecallAgent.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/CalVaultMemoryDelta.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/CalVaultMemoryDelta.json",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/CalWhisperV2.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/LLMExecutor.js",
+    "status": "✅ Essential"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/cal_memory_summary.json",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/cal_meta_state.json",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/cal_reflection_summary.json",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/calctl-agentmap.json",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/calctl-boot-verify.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/calctl-check-paths.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/calctl-core.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/calctl-declare-intent.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/calctl-deploy-mvp.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/calctl-deploy-public.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/calctl-doctor.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/calctl-echo-commit.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/calctl-echo-purge.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/calctl-echo-verify.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/calctl-heartbeat.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/calctl-protect-routes.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/calctl-run-selfcheck.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/calctl-test-echo.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/calctl-verify-integrity.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/calctl-verify-signatures.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/echo_trail.txt",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/init.trace.json",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/last.status.json",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/last_echo.txt",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/loop.status.json",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/core/CalBacktestResults.json",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/core/CalCoderAgent.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/core/CalDaemonRegistry.json",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/core/CalKernelIntegrityTrail.json",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/core/CalKernelSnapshot.json",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/core/CalLoopAgentDaemon.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/core/CalLoopMeshReflector.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/core/CalNarrator.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/core/CalPromptRouter.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/core/CalReflectionSummarizerV2.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/core/CalShellRecallAgent.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/core/CalSilentFailureLog.json",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/core/LLMExecutor.js",
+    "status": "✅ Essential"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/core/calWhisperTrail.json",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/core/cal_meta_state.json",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/core/calctl-agentmap.json",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/core/calctl-deploy-public.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/core/last.status.json",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/core/last_echo.txt",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/core/loop.status.json",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/core/vault_delta_snapshot.json",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/cal/README.txt",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/CalTier10/CalBacktestAudit.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/CalTier10/CalDaemonRegistryHydratorV2.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/CalTier10/CalEchoInjector.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/CalTier10/CalEpochMemoryRotator.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/CalTier10/CalKernelIntegrityTrail.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/CalTier10/CalKernelVerifier.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/CalTier10/CalMultiAgentSigner.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/CalTier10/CalResurrectionDaemon.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/CalTier10/CalRuntimeEcho.js",
+    "status": "✅ Essential"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/CalTier10/CalRuntimeEchoPatcher.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/CalTier10/CalSilentFailureSentinel.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/CalTier10/CalSilentFailureWhisperDaemon.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/CalTier10/CalTier10_ProtocolHandoff.json",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/CalTier10/CalVaultMemoryDelta.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/scripts/OGKERNEL/CalTier10/CalWhisperChainLog.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/project_meta_external/README.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/project_meta_external/README_EXTERNAL.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/project_meta_external/project_meta_external_filled_v2.zip",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/project_meta_external/versioning/documentation_versions.json",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/project_meta_external/reports/dataFlow_test_report.json",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/project_meta_external/reports/dependency-analysis-2025-06-03.json",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/project_meta_external/reports/dependency-analysis-2025-06-03.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/project_meta_external/reports/dependency-validation-2025-06-03.json",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/project_meta_external/reports/documentation_test_report.json",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/project_meta_external/reports/task-report.json",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/project_meta_external/reports/telemetry_test_report.json",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/project_meta_external/plans/ACTION_PLAN.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/project_meta_external/plans/DOCUMENTATION_CONSOLIDATION_PRD.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/project_meta_external/plans/ENGINE_DB_SCHEMA_TEMPLATE.json",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/project_meta_external/plans/ENGINE_ONBOARDING_TEMPLATE.json",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/project_meta_external/plans/FINALIZATION_PLAN.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/project_meta_external/plans/LOGGING_PLAN.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/project_meta_external/plans/TASK_PLAN_TEMPLATE.json",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/features/.DS_Store",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/features/README.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/features/chatlog-parser/README.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/features/chatlog-parser/index.js",
+    "status": "✅ Essential"
+  },
+  {
+    "file": "legacy/archived/features/chatlog-parser/test/chatlog-parser.test.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/features/backup-orchestrator/test/backup-buildup.e2e.test.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/features/_template/README.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/features/_template/index.js",
+    "status": "✅ Essential"
+  },
+  {
+    "file": "legacy/archived/features/_template/test/template.test.js",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/.DS_Store",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/1.-format.markdown",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/1.-updates.markdown",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/2.-organization.markdown",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/2.-validation.markdown",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/3.-quality.markdown",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/DEVELOPER_ONBOARDING.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/DOCUMENTATION_PLAN.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/DOCUMENTATION_STRUCTURE.json",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/PROJECT_REORGANIZATION.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/RELEASE_CHECKLIST.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/TROUBLESHOOTING.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/USAGE_BATCH_RUNNER.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/agents.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/analysis-report.json",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/api-reference.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/architecture.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/conversation_log.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/documentation-report.json",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/documentation-system.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/enhancement-backlog.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/index.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/knowledge-clustering-system.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/large-docs-report.json",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/onboarding.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/pipeline-contract.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/system-architecture.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/test-run-report.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/testing-guide.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/testing-harness.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/testing.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/validation-failures.json",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/validation-report-dry-run.json",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/validation-report.json",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/validation-rules.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/workflow/README.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/testing/E2E_ONBOARDING_RESET.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/testing/README.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/testing/TEST_SUITE_ORCHESTRATION.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/testing/active-suggestions-e2e.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/testing/blessing-system.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/templates/COMPLIANCE_TEMPLATE.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/templates/MONETIZATION_TEMPLATE.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/templates/ONBOARDING_TEMPLATE.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/templates/PROJECT_HANDOFF_TEMPLATE.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/templates/core.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/templates/main-index.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/templates/product.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/templates/section-index.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/templates/standard-template.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/tasks/task-history.json",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/tasks/tasks.json",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/support/README.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/standards/README.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/standards/active-suggestions.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/standards/backup-buildup-expansion.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/standards/backup-standards.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/standards/documentation-expansion.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/standards/documentation-standards.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/standards/documentation-system.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/standards/e2e-orchestrator.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/standards/forced-wrapper.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/standards/kernel-backup-e2e-checklist.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/standards/magic-list-engine.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/standards/orchestration-patterns.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/standards/overseer-watchdog.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/standards/self-healing-logs-and-files.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/standards/stub-mode.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/standards/testing-and-expansion.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/soulfra/README.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/soulfra/technology/README.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/soulfra/roadmap/README.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/soulfra/products/README.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/soulfra/products/clarity-engine.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/soulfra/products/document-generator.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/soulfra/products/llm-router.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/soulfra/products/prd-template.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/security/README.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/scalability/README.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/principles/README.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/performance/README.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/overview/README.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/orchestration/DEBUG_ORCHESTRATOR.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/orchestration/DOCUMENTATION_ORCHESTRATOR.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/orchestration/DOCUMENTATION_STRUCTURE.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/orchestration/ERROR_CLUSTERING.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/orchestration/LOG_ORCHESTRATOR.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/orchestration/ORCHESTRATION_LAYER.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/orchestration/ORCHESTRATION_ROUTER.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/orchestration/PLANNER_ORCHESTRATOR.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/orchestration/QUALITY_ORCHESTRATOR.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/orchestration/README.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/orchestration/TASK_ORCHESTRATOR.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/orchestration/TELEMETRY_MANAGER.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/orchestration/TEST_ORCHESTRATOR.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/orchestration/WATCHER_DAEMON.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/orchestration/WRITER_ORCHESTRATOR.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/orchestration/backup-orchestrator.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/optimization/README.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/operations/README.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/monitoring/README.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/modules/api.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/modules/automation.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/modules/clustering.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/modules/extraction.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/modules/gamification.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/modules/indexing.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/modules/intake.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/modules/llm-bulkhead.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/modules/logging.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/modules/validation.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/llm-router/README.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/integration/README.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/implementation/README.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/hand-off/SOULFRA_STANDARD_HANDOFF.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/examples/README.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/examples/logging-examples.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/endpoints/README.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/documentation/README.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/document-generator/README.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/diagrams/data-lifecycle.mmd",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/diagrams/module-interaction.mmd",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/diagrams/pipeline-flow.mmd",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/development/README.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/deployment/README.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/components/README.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/components/agent-orchestrator.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/components/meta-orchestrator.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/components/quality-orchestrator.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/components/task-handlers.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/components/orchestration/agent-orchestrator-orchestrator.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/components/orchestration/backup-orchestrator-orchestrator.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/components/orchestration/debug-orchestrator-orchestrator.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/components/orchestration/debug-orchestrator.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/components/orchestration/documentation-orchestrator-orchestrator.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/components/orchestration/error-clustering.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/components/orchestration/lifecycle-orchestrator-orchestrator.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/components/orchestration/log-orchestrator-orchestrator.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/components/orchestration/meta-orchestrator-orchestrator.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/components/orchestration/meta-orchestrator.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/components/orchestration/planner-orchestrator-orchestrator.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/components/orchestration/quality-orchestrator-orchestrator.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/components/orchestration/summarizer-orchestrator-orchestrator.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/components/orchestration/task-orchestrator-orchestrator.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/components/orchestration/task-orchestrator.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/components/orchestration/test-orchestrator-orchestrator.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/components/orchestration/watcher-orchestrator-orchestrator.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/components/orchestration/writer-orchestrator-orchestrator.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/compliance/README.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/code/README.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/clarity-engine/README.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/best-practices/README.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/backup/README.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/authentication/README.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/architecture/FOUR_LAYER_MODEL.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/architecture/README.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/architecture/SYSTEM_LIFECYCLE.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/architecture/TRIANGLE_PATTERN.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/architecture/layer0-soulfra-standard.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/architecture/system-overview.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/api/README.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/agents/README.md",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/3.-testing-framework-(`/implementation/testing/`).markdown",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/3.-development-standards-(`/core/standards/`).markdown",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/2.-operations-(`/deployment/operations/`).markdown",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/2.-internal-api-(`/api/internal/`).markdown",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/2.-component-guides-(`/implementation/components/`).markdown",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/2.-component-documentation-(`/core/components/`).markdown",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/1.-system-architecture-(`/core/architecture/`).markdown",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/1.-setup-guides-(`/implementation/setup/`).markdown",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/1.-public-api-(`/api/public/`).markdown",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "legacy/archived/docs/1.-infrastructure-(`/deployment/infrastructure/`).markdown",
+    "status": "💀 Legacy-only"
+  },
+  {
+    "file": "logs/kernel-closure-confirmed.json",
+    "status": "💤 Dormant"
+  }
+]
