@@ -8,7 +8,8 @@ const TelemetryManager = require('./telemetry-manager');
 const createLogger = require('./auto-logger');
 let yaml;
 try {
-  yaml = require('js-yaml');
+  const requireOrInstall = require('../utils/requireOrInstall');
+  yaml = requireOrInstall('js-yaml');
 } catch (err) {
   console.error("Missing dependency 'js-yaml'. Please run `npm install js-yaml`.");
   process.exit(1);

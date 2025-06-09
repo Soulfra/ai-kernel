@@ -4,7 +4,8 @@ const path = require('path');
 const { spawnSync } = require('child_process');
 let yaml;
 try {
-  yaml = require('js-yaml');
+  const requireOrInstall = require('../core/utils/requireOrInstall');
+  yaml = requireOrInstall('js-yaml');
 } catch {
   yaml = null;
 }
