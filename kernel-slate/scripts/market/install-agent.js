@@ -8,6 +8,7 @@ const usage = require('../payments/track-usage');
 
 const registryFile = path.resolve(__dirname, '../../installed-agents.json');
 const repoRoot = path.resolve(__dirname, '../..');
+const lockFile = path.join(repoRoot, '.agent.lock');
 
 function register(agent) {
   const list = fs.existsSync(registryFile)
@@ -23,25 +24,35 @@ function register(agent) {
 }
 
 async function main() {
-  const file = process.argv[2];
-  if (!file) {
-    console.error('Usage: node install-agent.js <agent.yaml>');
+  if (fs.existsSync(lockFile)) {
+    console.error('Another agent operation is currently running. Exiting.');
     process.exit(1);
   }
-  const fullPath = path.resolve(file);
-  const doc = yaml.load(fs.readFileSync(fullPath, 'utf8'));
-  doc._configPath = fullPath;
-  await stripeUnlock.chargeAgentInstall(doc.name);
-  if (doc.install) {
-    try {
-      execSync(doc.install, { stdio: 'inherit', shell: true });
-    } catch (err) {
-      console.error('Install script failed:', err.message);
+  fs.writeFileSync(lockFile, 'running');
+  try {
+    const file = process.argv[2];
+    if (!file) {
+      console.error('Usage: node install-agent.js <agent.yaml>');
+      fs.unlinkSync(lockFile);
+      process.exit(1);
     }
+    const fullPath = path.resolve(file);
+    const doc = yaml.load(fs.readFileSync(fullPath, 'utf8'));
+    doc._configPath = fullPath;
+    await stripeUnlock.chargeAgentInstall(doc.name);
+    if (doc.install) {
+      try {
+        execSync(doc.install, { stdio: 'inherit', shell: true });
+      } catch (err) {
+        console.error('Install script failed:', err.message);
+      }
+    }
+    register(doc);
+    usage.logInstall(doc.name);
+    console.log(`Installed agent: ${doc.name}`);
+  } finally {
+    if (fs.existsSync(lockFile)) fs.unlinkSync(lockFile);
   }
-  register(doc);
-  usage.logInstall(doc.name);
-  console.log(`Installed agent: ${doc.name}`);
 }
 
 if (require.main === module) {

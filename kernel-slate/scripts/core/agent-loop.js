@@ -10,7 +10,25 @@ const inputDir = path.join(repoRoot, 'input');
 const registryFile = path.join(repoRoot, 'installed-agents.json');
 const logDir = path.join(repoRoot, 'logs');
 const logFile = path.join(logDir, 'agent-loop.log');
+const lockFile = path.join(repoRoot, '.agent.lock');
 if (!fs.existsSync(logDir)) fs.mkdirSync(logDir);
+if (fs.existsSync(lockFile)) {
+  console.error('Agent loop already running. Exiting.');
+  process.exit(1);
+}
+fs.writeFileSync(lockFile, 'running');
+function cleanup() {
+  if (fs.existsSync(lockFile)) fs.unlinkSync(lockFile);
+}
+process.on('exit', cleanup);
+process.on('SIGINT', () => {
+  cleanup();
+  process.exit(0);
+});
+process.on('SIGTERM', () => {
+  cleanup();
+  process.exit(0);
+});
 
 function loadAgents() {
   const registry = fs.existsSync(registryFile)
