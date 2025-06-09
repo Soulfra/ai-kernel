@@ -32,8 +32,50 @@ function run(cmd, opts = {}) {
   }
 }
 
+function runWithOutput(cmd, opts = {}) {
+  try {
+    const out = execSync(cmd, { encoding: 'utf8', cwd: repoRoot, shell: true, ...opts });
+    process.stdout.write(out);
+    appendLog(cmd, out.trim());
+    return { status: 0, output: out };
+  } catch (err) {
+    const out = ((err.stdout || '') + (err.stderr || '')).toString();
+    process.stdout.write(err.stdout || '');
+    process.stderr.write(err.stderr || '');
+    appendLog(cmd, out.trim() || err.message);
+    return { status: err.status || 1, output: out };
+  }
+}
+
+function parsePassedTests(output) {
+  const m = output.match(/Tests:\s+(?:\d+\s+\w+,\s+)?(\d+)\s+passed/);
+  return m ? parseInt(m[1], 10) : null;
+}
+
+async function releaseCheck() {
+  const errors = [];
+  let passed = null;
+
+  const ensure = runWithOutput('node scripts/core/ensure-runtime.js');
+  if (ensure.status !== 0) errors.push('ensure-runtime.js');
+
+  const verify = runWithOutput('make verify');
+  if (verify.status !== 0) errors.push('make verify');
+  const parsed = parsePassedTests(verify.output);
+  if (parsed !== null) passed = parsed;
+
+  const inspect = runWithOutput('node scripts/dev/kernel-inspector.js');
+  if (inspect.status !== 0) errors.push('kernel-inspector.js');
+
+  const ok = ensure.status === 0 && verify.status === 0 && inspect.status === 0;
+  const symbol = ok ? '✅' : '❌';
+  const count = passed !== null ? `${passed} tests passed` : 'test count unknown';
+  const errMsg = errors.length ? ` errors: ${errors.join(', ')}` : '';
+  console.log(`\n${symbol} ${count}${errMsg}`);
+}
+
 function help() {
-  console.log(`Usage: node kernel-cli.js <command> [args]\n\nCommands:\n  init             clone repo and run setup.sh\n  verify           run make verify\n  inspect          run node scripts/dev/kernel-inspector.js\n  test             run npm test\n  install-agent <path>  install specified agent.yaml\n  launch-ui        run the Express server`);
+  console.log(`Usage: node kernel-cli.js <command> [args]\n\nCommands:\n  init             clone repo and run setup.sh\n  verify           run make verify\n  inspect          run node scripts/dev/kernel-inspector.js\n  test             run npm test\n  install-agent <path>  install specified agent.yaml\n  launch-ui        run the Express server\n  run release-check  verify release readiness`);
 }
 
 async function main() {
@@ -62,6 +104,13 @@ async function main() {
       break;
     case 'launch-ui':
       run('node scripts/ui/server.js');
+      break;
+    case 'run':
+      if (arg === 'release-check') {
+        await releaseCheck();
+      } else {
+        help();
+      }
       break;
     default:
       help();
