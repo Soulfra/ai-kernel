@@ -37,6 +37,14 @@ function main() {
 
   const agents = loadAgents();
   const missingVars = new Set();
+  const requiredEnv = [
+    'OPENAI_API_KEY',
+    'STRIPE_API_KEY',
+    'ANTHROPIC_API_KEY',
+    'OLLAMA_MODEL'
+  ];
+
+  ensureEnv(requiredEnv).forEach(k => missingVars.add(k));
   for (const agent of agents) {
     if (!agent.config || !fs.existsSync(agent.config)) continue;
     const doc = yaml.load(fs.readFileSync(agent.config, 'utf8'));
