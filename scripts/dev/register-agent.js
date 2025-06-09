@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 const fs = require('fs');
 const path = require('path');
+require('../core/ensure-runtime.js').ensureRuntime();
 const yaml = require('js-yaml');
 
 function validate(doc) {
