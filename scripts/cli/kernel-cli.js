@@ -94,11 +94,11 @@ Commands:
   status             show git status
   prune              prune unused files
   menu               launch menu interface
+  release-check      verify release readiness
   doctor             run diagnostics
   test               run npm test
   install-agent <path>  install specified agent.yaml
-  launch-ui          run the Express server
-  run release-check  verify release readiness`);
+  launch-ui          run the Express server`);
 }
 
 async function main() {
@@ -128,7 +128,7 @@ async function main() {
       process.exitCode = run('node scripts/dev/prune-kernel.js');
       break;
     case 'menu':
-      console.log('Menu placeholder');
+      run('node scripts/dev/menu.js');
       break;
     case 'doctor':
       await doctor();
@@ -142,6 +142,9 @@ async function main() {
       break;
     case 'launch-ui':
       run('node scripts/ui/server.js');
+      break;
+    case 'release-check':
+      await releaseCheck();
       break;
     case 'run':
       if (arg === 'release-check') {
