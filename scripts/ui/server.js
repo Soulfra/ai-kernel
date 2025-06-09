@@ -119,6 +119,56 @@ app.post('/install', agentUpload.single('file'), (req, res) => {
   run(script, req.file.path, res, 'Install started');
 });
 
+app.get('/usage', (req, res) => {
+  const logs = readJson(usageFile);
+  const stats = {};
+  let totalBilling = 0;
+
+  for (const entry of logs) {
+    const agent = entry.agent || 'unknown';
+    if (!stats[agent]) stats[agent] = { count: 0, tokens: 0, last: '', billing: 0 };
+    stats[agent].count += 1;
+    if (entry.tokens) stats[agent].tokens += entry.tokens;
+    if (entry.timestamp && entry.timestamp > stats[agent].last) stats[agent].last = entry.timestamp;
+    const cost = entry.billing ?? entry.cost;
+    if (typeof cost === 'number') {
+      stats[agent].billing += cost;
+      totalBilling += cost;
+    }
+  }
+
+  const rows = Object.entries(stats)
+    .sort((a, b) => b[1].count - a[1].count)
+    .map(
+      ([agent, d]) =>
+        `<tr><td>${agent}</td><td>${d.count}</td><td>${d.tokens}</td><td>${d.last}</td><td>${d.billing.toFixed ? d.billing.toFixed(2) : d.billing}</td></tr>`
+    )
+    .join('');
+
+  const html = `<!DOCTYPE html>
+  <html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Usage Summary</title>
+    <style>
+      body { font-family: Arial, sans-serif; margin: 40px; }
+      table { border-collapse: collapse; }
+      th, td { border: 1px solid #ccc; padding: 8px; }
+    </style>
+  </head>
+  <body>
+    <h1>Usage Summary</h1>
+    <table>
+      <tr><th>Agent</th><th>Runs</th><th>Tokens</th><th>Last Run</th><th>Billing</th></tr>
+      ${rows}
+    </table>
+    <p>Total Billing: ${totalBilling.toFixed ? totalBilling.toFixed(2) : totalBilling}</p>
+  </body>
+  </html>`;
+
+  res.send(html);
+});
+
 app.listen(PORT, () => {
   console.log(`UI server running at http://localhost:${PORT}`);
 });
