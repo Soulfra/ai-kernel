@@ -232,10 +232,10 @@ npm run format
 
 ## Documentation
 
-- [Architecture](./docs/architecture/)
-- [API](./docs/api/)
-- [Standards](./docs/standards/)
-- [Examples](./docs/examples/)
+- [Architecture](kernel-slate/docs/architecture/)
+- [API](kernel-slate/docs/api/)
+- [Standards](kernel-slate/docs/standards/)
+- [Examples](kernel-slate/docs/examples/)
 
 ## Contributing
 
@@ -346,8 +346,8 @@ On backup/restore failure, an entry is added to `project_meta/suggestion_log.md`
 
 ## References
 - [Kernel Reset Doc](./KERNEL_RESET.md)
-- [Kernel Backup+Buildup E2E Checklist](./docs/standards/kernel-backup-e2e-checklist.md)
-- [Self-Healing Logs & File Creation Standard](./docs/standards/self-healing-logs-and-files.md)
+- [Kernel Backup+Buildup E2E Checklist](kernel-slate/docs/standards/kernel-backup-e2e-checklist.md)
+- [Self-Healing Logs & File Creation Standard](kernel-slate/docs/standards/self-healing-logs-and-files.md)
 
 ---
 

@@ -14,7 +14,7 @@ if (report.cli && report.cli.missing && report.cli.missing.length) {
     failures.push({
       category: 'CLI',
       message: `missing CLI command ${cmd}`,
-      file: 'scripts/cli/kernel-cli.js'
+      file: 'kernel-slate/scripts/cli/kernel-cli.js'
     });
   });
 }
