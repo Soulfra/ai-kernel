@@ -6,7 +6,13 @@ const DebugOrchestrator = require('./debug-orchestrator');
 const TaskOrchestrator = require('./task-orchestrator');
 const TelemetryManager = require('./telemetry-manager');
 const createLogger = require('./auto-logger');
-const yaml = require('js-yaml');
+let yaml;
+try {
+  yaml = require('js-yaml');
+} catch (err) {
+  console.error("Missing dependency 'js-yaml'. Please run `npm install js-yaml`.");
+  process.exit(1);
+}
 const glob = require('glob');
 const matter = require('gray-matter');
 
