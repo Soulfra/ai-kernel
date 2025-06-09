@@ -167,7 +167,7 @@ function runFix(repoRoot, yamls, requireErrors) {
   return results;
 }
 
-function main() {
+async function main() {
   const fix = process.argv.includes('--fix');
   const repoRoot = path.resolve(__dirname, '..', '..');
   const logsDir = path.join(repoRoot, 'logs');
@@ -207,10 +207,10 @@ function main() {
   }
 
   const tests = {};
-  tests.npmTest = run('npm', ['test'], { cwd: repoRoot });
-  tests.ensureRuntime = run('node', [path.join('scripts','core','ensure-runtime.js')], { cwd: repoRoot });
+  tests.npmTest = run('npm', ['test', '--silent'], { cwd: repoRoot, timeout: 5000 });
+  tests.ensureRuntime = run('node', [path.join('scripts','core','ensure-runtime.js')], { cwd: repoRoot, timeout: 5000 });
   if (fs.existsSync(path.join(repoRoot,'Makefile'))) {
-    tests.makeVerify = run('make', ['verify'], { cwd: repoRoot });
+    tests.makeVerify = run('make', ['verify'], { cwd: repoRoot, timeout: 5000 });
   }
 
   const agentYaml = yamls[0];
@@ -298,11 +298,22 @@ function main() {
     lines.push(`- available-agents.json updated: ${installRes.availableUpdated ? 'yes' : 'no'}`);
   }
   fs.writeFileSync(path.join(logsDir,'kernel-report.md'), lines.join('\n'));
+  fs.appendFileSync(path.join(logsDir, 'kernel-inspector.log'), lines.join('\n') + '\n');
   console.log('Wrote logs/kernel-report.md and kernel-inspection.json');
+  console.log('\u2705 inspection complete');
+  process.exit(0);
 }
 
 if (require.main === module) {
-  main();
+  main().catch(err => {
+    try {
+      const repoRoot = path.resolve(__dirname, '..', '..');
+      fs.appendFileSync(path.join(repoRoot, 'logs', 'kernel-inspector.log'), `ERROR: ${err.stack || err}\n`);
+    } catch {}
+    console.error(err);
+    console.log('\u274C inspection failed');
+    process.exit(1);
+  });
 }
 
 module.exports = { main };
