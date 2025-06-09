@@ -19,10 +19,18 @@ boot:
         @node kernel-slate/scripts/core/agent-loop.js
 
 clean:
-        rm -rf logs tmp kernel-slate/logs kernel-slate/tmp \
-               legacy/project_meta_external/logs legacy/project_meta_external/debug_logs \
-               legacy/project_meta_external/task_logs
-        find . -name agent.yaml -execdir rm -f README.md \;
+	rm -rf logs tmp kernel-slate/logs kernel-slate/tmp \
+	legacy/project_meta_external/logs legacy/project_meta_external/debug_logs \
+	legacy/project_meta_external/task_logs
+	find . -name agent.yaml -execdir rm -f README.md \;
+
+legacy-archive:
+	mkdir -p legacy/archived/project_meta_external
+	mv legacy/docs legacy/features legacy/scripts legacy/archived/ 2>/dev/null || true
+	mv legacy/project_meta_external/README.md legacy/project_meta_external/README_EXTERNAL.md \
+	   legacy/project_meta_external/plans legacy/project_meta_external/reports \
+	   legacy/project_meta_external/versioning legacy/project_meta_external/project_meta_external_filled_v2.zip \
+	   legacy/archived/project_meta_external/ 2>/dev/null || true
 
 prune:
         node scripts/dev/prune-kernel.js

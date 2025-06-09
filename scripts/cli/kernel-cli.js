@@ -40,67 +40,50 @@ function run(cmd, opts = {}) {
   }
 }
 
-function help() {
-  console.log(`Usage: node kernel-cli.js <command> [args]\n\nCommands:\n  init             clone repo and run setup.sh\n  verify           run make verify\n  inspect          run node scripts/dev/kernel-inspector.js\n  test             run npm test\n  install-agent <path>  install specified agent.yaml\n  launch-ui        run the Express server\n  status           show repository status`);
-}
-
-function writeStatus(obj) {
-  fs.writeFileSync(statusFile, JSON.stringify(obj, null, 2));
-}
-
-function printStatus() {
-  const res = {};
-  const agentsPath = path.join(repoRoot, 'installed-agents.json');
-  try { res.agents = JSON.parse(fs.readFileSync(agentsPath, 'utf8')); } catch { res.agents = []; }
-
-  if (fs.existsSync(verifyFile)) {
-    try { res.lastVerify = JSON.parse(fs.readFileSync(verifyFile, 'utf8')).timestamp; } catch {}
-  } else if (fs.existsSync(logFile)) {
-    try {
-      const arr = JSON.parse(fs.readFileSync(logFile, 'utf8'));
-      for (let i = arr.length - 1; i >= 0; i--) {
-        const e = arr[i];
-        if (e.command.includes('make verify') && !/\u274c|fail/i.test(e.output)) {
-          res.lastVerify = e.timestamp;
-          break;
-        }
-      }
-    } catch {}
-  }
-  if (!res.lastVerify) res.lastVerify = null;
-
-  const tf = execSync(`find kernel-slate -name '*.test.js' -not -path '*/node_modules/*'`, { cwd: repoRoot, encoding: 'utf8' })
-    .trim()
-    .split('\n')
-    .filter(Boolean);
-  res.testFiles = tf.length;
-
-  let jestResults = null;
-  const jestOut = path.join(logsDir, 'jest_results.json');
+function runWithOutput(cmd, opts = {}) {
   try {
-    execSync(`npm test --prefix kernel-slate -- --json --outputFile=${jestOut}`, { cwd: repoRoot, stdio: 'pipe' });
-    jestResults = JSON.parse(fs.readFileSync(jestOut, 'utf8'));
+    const out = execSync(cmd, { encoding: 'utf8', cwd: repoRoot, shell: true, ...opts });
+    process.stdout.write(out);
+    appendLog(cmd, out.trim());
+    return { status: 0, output: out };
   } catch (err) {
-    try { jestResults = JSON.parse(fs.readFileSync(jestOut, 'utf8')); } catch {}
+    const out = ((err.stdout || '') + (err.stderr || '')).toString();
+    process.stdout.write(err.stdout || '');
+    process.stderr.write(err.stderr || '');
+    appendLog(cmd, out.trim() || err.message);
+    return { status: err.status || 1, output: out };
   }
-  if (jestResults) {
-    res.tests = {
-      passed: jestResults.numPassedTests,
-      failed: jestResults.numFailedTests,
-      total: jestResults.numTotalTests
-    };
-  }
+}
 
-  const calctlPath = path.join(repoRoot, 'legacy', 'scripts', 'OGKERNEL', 'calctl-core.js');
-  res.calctlAvailable = fs.existsSync(calctlPath);
+function parsePassedTests(output) {
+  const m = output.match(/Tests:\s+(?:\d+\s+\w+,\s+)?(\d+)\s+passed/);
+  return m ? parseInt(m[1], 10) : null;
+}
 
-  writeStatus(res);
+async function releaseCheck() {
+  const errors = [];
+  let passed = null;
 
-  console.log(color('Installed agents:', 'cyan'), res.agents.length ? res.agents.join(', ') : 'none');
-  console.log(color('Last verify pass:', 'cyan'), res.lastVerify || 'never');
-  console.log(color('Test files:', 'cyan'), res.testFiles);
-  if (res.tests) console.log(color('Tests:', 'cyan'), `${res.tests.passed} passed, ${res.tests.failed} failed`);
-  console.log(color('CalCTL menu layer:', 'cyan'), res.calctlAvailable ? color('available', 'green') : color('missing', 'red'));
+  const ensure = runWithOutput('node scripts/core/ensure-runtime.js');
+  if (ensure.status !== 0) errors.push('ensure-runtime.js');
+
+  const verify = runWithOutput('make verify');
+  if (verify.status !== 0) errors.push('make verify');
+  const parsed = parsePassedTests(verify.output);
+  if (parsed !== null) passed = parsed;
+
+  const inspect = runWithOutput('node scripts/dev/kernel-inspector.js');
+  if (inspect.status !== 0) errors.push('kernel-inspector.js');
+
+  const ok = ensure.status === 0 && verify.status === 0 && inspect.status === 0;
+  const symbol = ok ? '✅' : '❌';
+  const count = passed !== null ? `${passed} tests passed` : 'test count unknown';
+  const errMsg = errors.length ? ` errors: ${errors.join(', ')}` : '';
+  console.log(`\n${symbol} ${count}${errMsg}`);
+}
+
+function help() {
+  console.log(`Usage: node kernel-cli.js <command> [args]\n\nCommands:\n  init             clone repo and run setup.sh\n  verify           run make verify\n  inspect          run node scripts/dev/kernel-inspector.js\n  test             run npm test\n  install-agent <path>  install specified agent.yaml\n  launch-ui        run the Express server\n  run release-check  verify release readiness`);
 }
 
 async function main() {
@@ -132,8 +115,12 @@ async function main() {
     case 'launch-ui':
       run('node scripts/ui/server.js');
       break;
-    case 'status':
-      printStatus();
+    case 'run':
+      if (arg === 'release-check') {
+        await releaseCheck();
+      } else {
+        help();
+      }
       break;
     default:
       help();
