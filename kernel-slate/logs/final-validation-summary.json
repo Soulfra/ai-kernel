@@ -1,0 +1,11 @@
+{
+  "steps": [
+    {"command": "node kernel-slate/scripts/agents/kernel-doc-sync.js", "result": "pass"},
+    {"command": "node kernel-slate/scripts/agents/semantic-kernel-parser.js", "result": "pass"},
+    {"command": "node kernel-slate/scripts/agents/verify-kernel-standards.js", "result": "fail"},
+    {"command": "make -C kernel-slate verify", "result": "fail"},
+    {"command": "make -C kernel-slate standards", "result": "fail"},
+    {"command": "make -C kernel-slate reprompt", "result": "fail"},
+    {"command": "make -C kernel-slate release-check", "result": "fail"}
+  ]
+}

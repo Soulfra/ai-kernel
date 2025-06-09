@@ -1,0 +1,9 @@
+[
+  {"from":"/docs/","to":"kernel-slate/docs/"},
+  {"from":"/logs/","to":"kernel-slate/logs/"},
+  {"from":"/scripts/agents/","to":"kernel-slate/scripts/agents/"},
+  {"from":"/scripts/cli/","to":"kernel-slate/scripts/cli/"},
+  {"from":"/agent-templates/","to":"kernel-slate/agent-templates/"},
+  {"from":"/Makefile","to":"kernel-slate/Makefile"},
+  {"action":"updated references","details":"script paths and Markdown links"}
+]

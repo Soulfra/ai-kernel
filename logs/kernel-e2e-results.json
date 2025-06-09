@@ -1,5 +1,0 @@
-{
-  "ensure-runtime.js": "passed with warning",
-  "npm test": "passed",
-  "kernel-inspector.js": "failed: ReferenceError: checkKernelCli is not defined"
-}

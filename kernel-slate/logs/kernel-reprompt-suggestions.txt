@@ -1,0 +1,1 @@
+Self-healing sequence failed. Review validation summary and resolve issues before release.
