@@ -18,12 +18,17 @@ boot:
         @node kernel-slate/scripts/features/voice-loop.js &
         @node kernel-slate/scripts/core/agent-loop.js
 
+clean:
+        rm -rf logs tmp kernel-slate/logs kernel-slate/tmp \
+               legacy/project_meta_external/logs legacy/project_meta_external/debug_logs \
+               legacy/project_meta_external/task_logs
+        find . -name agent.yaml -execdir rm -f README.md \;
+
+prune:
+        node scripts/dev/prune-kernel.js
+
 doctor:
-        @node scripts/core/ensure-runtime.js && echo "\xE2\x9C\x85 runtime" || echo "\xE2\x9D\x8C runtime"
-        @if [ -d kernel-slate/node_modules ]; then echo "\xE2\x9C\x85 node_modules"; else echo "\xE2\x9D\x8C node_modules missing"; fi
-        @if [ -f kernel-slate/package.json ]; then echo "\xE2\x9C\x85 package.json"; else echo "\xE2\x9D\x8C package.json missing"; fi
-        @if [ -f kernel-slate/.env ]; then echo "\xE2\x9C\x85 .env"; else echo "\xE2\x9D\x8C .env missing"; fi
-        @npm test --prefix kernel-slate && echo "\xE2\x9C\x85 tests" || echo "\xE2\x9D\x8C tests failed"
+        kernel-cli verify
 
 test:
 	npm test
