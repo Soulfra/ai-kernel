@@ -102,7 +102,33 @@ function collectCliFiles(files, repoRoot) {
   return cli;
 }
 
+function runFix(repoRoot, yamls, requireErrors) {
+  const results = { npmInstall: null, readmes: [], ensured: [] };
+  const npmRes = run('npm', ['install', '--ignore-scripts', '--no-audit', '--no-fund'], { cwd: repoRoot });
+  results.npmInstall = npmRes.status === 0;
+
+  if (yaml) {
+    for (const y of yamls) {
+      const readme = path.join(path.dirname(y), 'README.md');
+      if (!fs.existsSync(readme)) {
+        const r = run('node', [path.join('scripts', 'dev', 'generate-agent-readme.js'), y], { cwd: repoRoot });
+        if (r.status === 0 && fs.existsSync(readme)) {
+          results.readmes.push(path.relative(repoRoot, readme));
+        }
+      }
+    }
+  }
+
+  for (const err of requireErrors) {
+    const r = run('node', [path.join('scripts', 'core', 'ensure-runtime.js')], { cwd: repoRoot });
+    results.ensured.push({ file: err.file, ok: r.status === 0 });
+  }
+
+  return results;
+}
+
 function main() {
+  const fix = process.argv.includes('--fix');
   const repoRoot = path.resolve(__dirname, '..', '..');
   const logsDir = path.join(repoRoot, 'logs');
   fs.mkdirSync(logsDir, { recursive: true });
@@ -155,11 +181,16 @@ function main() {
     installRes.readmeCreated = fs.existsSync(readmePath);
   }
 
+  let fixResults = null;
+  if (fix) {
+    fixResults = runFix(repoRoot, yamls, requireErrors);
+  }
+
   const report = { structure, flagged, requireErrors, tests: {
     npmTest: tests.npmTest.status === 0,
     ensureRuntime: tests.ensureRuntime.status === 0,
     makeVerify: tests.makeVerify ? tests.makeVerify.status === 0 : null
-  }, agentInstall: installRes };
+  }, agentInstall: installRes, fixes: fixResults };
 
   fs.writeFileSync(path.join(logsDir,'kernel-inspection.json'), JSON.stringify(report, null, 2));
 
@@ -179,6 +210,18 @@ function main() {
   lines.push(`- npm test: ${report.tests.npmTest ? 'pass' : 'fail'}`);
   lines.push(`- ensure-runtime.js: ${report.tests.ensureRuntime ? 'pass' : 'fail'}`);
   if (report.tests.makeVerify !== null) lines.push(`- make verify: ${report.tests.makeVerify ? 'pass' : 'fail'}`);
+  if (fixResults) {
+    lines.push('\n## Fix Results');
+    lines.push(`- npm install: ${fixResults.npmInstall ? 'success' : 'fail'}`);
+    if (fixResults.readmes.length) {
+      lines.push('Generated READMEs:');
+      for (const r of fixResults.readmes) lines.push(`- ${r}`);
+    }
+    if (fixResults.ensured.length) {
+      lines.push('Ensured scripts:');
+      for (const e of fixResults.ensured) lines.push(`- ${e.file}: ${e.ok ? 'ok' : 'fail'}`);
+    }
+  }
   if (installRes.agent) {
     lines.push('\n## Agent Installation');
     lines.push(`- Installed: ${installRes.agent}`);
