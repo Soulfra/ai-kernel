@@ -1,6 +1,6 @@
 run:
 	@node kernel-slate/scripts/features/build-timeline-dashboard.js && \
-	node kernel-slate/scripts/core/semantic-engine.js &
+		node kernel-slate/scripts/core/semantic-engine.js &
 
 voice:
 	@node kernel-slate/scripts/features/record-voice-log.js
@@ -49,14 +49,18 @@ verify:
 	@if [ -f package.json ]; then echo "\xE2\x9C\x85 package.json"; else echo "\xE2\x9D\x8C package.json missing"; fi
 	@if [ -f .env ]; then echo "\xE2\x9C\x85 .env"; else echo "\xE2\x9D\x8C .env missing"; fi
 	@if [ -f kernel.json ]; then echo "\xE2\x9C\x85 kernel.json"; else echo "\xE2\x9D\x8C kernel.json missing"; fi
-	@npm test --prefix kernel-slate && echo "\xE2\x9C\x85 tests" || echo "\xE2\x9D\x8C tests failed"
+	@npm test --prefix kernel-slate | tee logs/make-verify-output.log && echo "\xE2\x9C\x85 tests" || echo "\xE2\x9D\x8C tests failed"
 	@node scripts/dev/kernel-inspector.js >> logs/kernel-inspector.log && echo "\xE2\x9C\x85 kernel-inspector" || echo "\xE2\x9D\x8C kernel-inspector"
 
 inspect:
 	node scripts/dev/kernel-inspector.js
 
+
 standards:
-	node scripts/agents/verify-kernel-standards.js
+	node scripts/agents/verify-kernel-standards.js ; node scripts/dev/log-standards-failures.js
+
+release:
+	node scripts/cli/kernel-cli.js release-check
 
 export:
 	zip -r kernel-release.zip . \
