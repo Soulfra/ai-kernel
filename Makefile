@@ -35,3 +35,6 @@ verify:
         @if [ -f .env ]; then echo "\xE2\x9C\x85 .env"; else echo "\xE2\x9D\x8C .env missing"; fi
         @if [ -f kernel.json ]; then echo "\xE2\x9C\x85 kernel.json"; else echo "\xE2\x9D\x8C kernel.json missing"; fi
         @npm test --prefix kernel-slate && echo "\xE2\x9C\x85 tests" || echo "\xE2\x9D\x8C tests failed"
+
+inspect:
+	node scripts/dev/kernel-inspector.js
