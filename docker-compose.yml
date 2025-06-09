@@ -1,0 +1,28 @@
+version: '3.8'
+services:
+  app:
+    build: .
+    command: node kernel-slate/scripts/features/upload-server.js
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./input:/input
+      - ./output:/output
+      - ./voice:/voice
+  agent:
+    build: .
+    command: node kernel-slate/scripts/core/agent-loop.js
+    volumes:
+      - ./input:/input
+      - ./output:/output
+      - ./voice:/voice
+  ollama:
+    image: ghcr.io/ollama/ollama:latest
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama:/root/.ollama
+    profiles:
+      - optional
+volumes:
+  ollama:
