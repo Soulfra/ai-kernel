@@ -4,5 +4,8 @@
   },
   "scripts": {
     "test": "npm --prefix kernel-slate test"
+  },
+  "bin": {
+    "kernel-cli": "scripts/cli/kernel-cli.js"
   }
 }
