@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: kernel-slate-web
+    env: node
+    buildCommand: npm install --prefix kernel-slate
+    startCommand: node scripts/ui/server.js
+  - type: worker
+    name: kernel-slate-loop
+    env: node
+    buildCommand: npm install --prefix kernel-slate
+    startCommand: node kernel-slate/scripts/core/agent-loop.js
+
