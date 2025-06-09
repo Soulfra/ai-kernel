@@ -1,0 +1,1 @@
+A self-healing, AI-assisted development kernel that runs modular agents, codifies system structure, and lets tools like Codex or Claude fix issues directly from logs. Install and manage agents, generate semantic docs, and export every action with full log history.
