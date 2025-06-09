@@ -2,11 +2,19 @@
 const fs = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');
+let chalk = null;
+try { chalk = require('chalk'); } catch {}
 
 const repoRoot = path.resolve(__dirname, '..', '..');
 const logsDir = path.join(repoRoot, 'logs');
 const logFile = path.join(logsDir, 'cli-output.json');
+const statusFile = path.join(logsDir, 'kernel-status.json');
+const verifyFile = path.join(logsDir, 'verify-pass.json');
 fs.mkdirSync(logsDir, { recursive: true });
+
+function color(text, fn) {
+  return chalk && chalk[fn] ? chalk[fn](text) : text;
+}
 
 function appendLog(command, output) {
   let arr = [];
@@ -89,9 +97,11 @@ async function main() {
       run('bash setup.sh', { cwd: path.join(process.cwd(), dir) });
       break;
     }
-    case 'verify':
-      run('make verify');
+    case 'verify': {
+      const code = run('make verify');
+      if (code === 0) fs.writeFileSync(verifyFile, JSON.stringify({ timestamp: new Date().toISOString() }, null, 2));
       break;
+    }
     case 'inspect':
       run('node scripts/dev/kernel-inspector.js');
       break;
