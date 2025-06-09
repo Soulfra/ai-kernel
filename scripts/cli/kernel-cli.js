@@ -72,10 +72,33 @@ async function releaseCheck() {
   const count = passed !== null ? `${passed} tests passed` : 'test count unknown';
   const errMsg = errors.length ? ` errors: ${errors.join(', ')}` : '';
   console.log(`\n${symbol} ${count}${errMsg}`);
+  return ok ? 0 : 1;
+}
+async function doctor() {
+  const ensure = runWithOutput("node scripts/core/ensure-runtime.js");
+  const inspect = runWithOutput("node scripts/dev/kernel-inspector.js");
+  const verify = runWithOutput("timeout 15s make verify");
+  const ok = ensure.status === 0 && inspect.status === 0 && verify.status === 0;
+  console.log(ok ? "✅ doctor passed" : "❌ doctor failed");
+  return ok ? 0 : 1;
 }
 
+
 function help() {
-  console.log(`Usage: node kernel-cli.js <command> [args]\n\nCommands:\n  init             clone repo and run setup.sh\n  verify           run make verify\n  inspect          run node scripts/dev/kernel-inspector.js\n  test             run npm test\n  install-agent <path>  install specified agent.yaml\n  launch-ui        run the Express server\n  run release-check  verify release readiness`);
+  console.log(`Usage: node kernel-cli.js <command> [args]
+
+Commands:
+  init               clone repo and run setup.sh
+  verify             run make verify
+  inspect            run kernel inspector
+  status             show git status
+  prune              prune unused files
+  menu               launch menu interface
+  doctor             run diagnostics
+  test               run npm test
+  install-agent <path>  install specified agent.yaml
+  launch-ui          run the Express server
+  run release-check  verify release readiness`);
 }
 
 async function main() {
@@ -90,10 +113,25 @@ async function main() {
       break;
     }
     case 'verify':
-      run('make verify');
+      process.exitCode = run('make verify');
       break;
     case 'inspect':
-      run('node scripts/dev/kernel-inspector.js');
+      process.exitCode = run('node scripts/dev/kernel-inspector.js');
+      break;
+    case 'status':
+      if (fs.existsSync(path.join(repoRoot, 'scripts', 'dev', 'kernel-status.js')))
+        process.exitCode = run('node scripts/dev/kernel-status.js');
+      else
+        process.exitCode = run('git status --short');
+      break;
+    case 'prune':
+      process.exitCode = run('node scripts/dev/prune-kernel.js');
+      break;
+    case 'menu':
+      console.log('Menu placeholder');
+      break;
+    case 'doctor':
+      await doctor();
       break;
     case 'test':
       run('npm test');
@@ -118,5 +156,8 @@ async function main() {
 }
 
 if (require.main === module) {
-  main();
+  main().catch(err => {
+    console.error(err);
+    process.exit(1);
+  });
 }

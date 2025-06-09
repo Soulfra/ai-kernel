@@ -34,9 +34,11 @@ legacy-archive:
 
 prune:
 	node scripts/dev/prune-kernel.js
+status:
+	git status --short
 
 doctor:
-	kernel-cli verify
+	kernel-cli doctor
 
 test:
 	npm test
@@ -51,8 +53,9 @@ verify:
 	@node scripts/dev/kernel-inspector.js >> logs/kernel-inspector.log && echo "\xE2\x9C\x85 kernel-inspector" || echo "\xE2\x9D\x8C kernel-inspector"
 
 inspect:
-        node scripts/dev/kernel-inspector.js
+	node scripts/dev/kernel-inspector.js
 
 export:
 	zip -r kernel-release.zip . \
 	    -x '*.git*' '*/node_modules/*' '*/logs/*' 'kernel-release.zip'
+
