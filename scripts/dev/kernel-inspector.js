@@ -102,6 +102,82 @@ function collectCliFiles(files, repoRoot) {
   return cli;
 }
 
+function checkCliTools(names) {
+  const out = {};
+  for (const n of names) {
+    const res = spawnSync(n, ['--version'], { encoding: 'utf8' });
+    out[n] = !res.error && res.status === 0;
+  }
+  return out;
+}
+
+function parseCliCommands(file) {
+  const txt = fs.readFileSync(file, 'utf8');
+  const cmds = new Set();
+  const re = /\.command\(['"`]([^'"`\s]+)/g;
+  let m;
+  while ((m = re.exec(txt))) cmds.add(m[1].split(' ')[0]);
+  return Array.from(cmds);
+}
+
+function checkKernelCli(repoRoot) {
+  const cliFile = path.join(repoRoot, 'kernel-cli.js');
+  if (!fs.existsSync(cliFile)) return { found: false };
+  const commands = parseCliCommands(cliFile);
+  const results = {};
+  if (!commands.length) {
+    const r = run('node', [cliFile, '--help'], { cwd: repoRoot });
+    results['--help'] = r.status === 0;
+  } else {
+    for (const c of commands) {
+      const r = run('node', [cliFile, c, '--help'], { cwd: repoRoot });
+      results[c] = r.status === 0;
+    }
+  }
+  return { found: true, results };
+}
+
+function checkAgents(yamls, repoRoot) {
+  const out = [];
+  for (const yf of yamls) {
+    let doc;
+    try { doc = yaml ? yaml.load(fs.readFileSync(yf, 'utf8')) : null; } catch {}
+    const relYaml = path.relative(repoRoot, yf);
+    if (!doc || !doc.file) {
+      out.push({ yaml: relYaml, status: 'invalid_yaml' });
+      continue;
+    }
+    const file = path.resolve(path.dirname(yf), doc.file);
+    const relFile = path.relative(repoRoot, file);
+    if (!fs.existsSync(file)) {
+      out.push({ yaml: relYaml, file: relFile, status: 'missing_file' });
+      continue;
+    }
+    try { require(file); }
+    catch (err) { out.push({ yaml: relYaml, file: relFile, status: 'broken', error: err.message }); }
+  }
+  return out;
+}
+
+function findUnprotectedRequires(files, repoRoot) {
+  const warn = {};
+  for (const f of files) {
+    const lines = fs.readFileSync(f, 'utf8').split(/\r?\n/);
+    const bad = [];
+    for (let i = 0; i < lines.length; i++) {
+      const line = lines[i];
+      if (/require\([^)]*\)/.test(line) &&
+          !/requireOrInstall/.test(line) &&
+          !(lines[i - 1] && /try\s*{/.test(lines[i - 1])) &&
+          !/try\s*{/.test(line)) {
+        bad.push(i + 1);
+      }
+    }
+    if (bad.length) warn[path.relative(repoRoot, f)] = bad;
+  }
+  return warn;
+}
+
 function main() {
   const repoRoot = path.resolve(__dirname, '..', '..');
   const logsDir = path.join(repoRoot, 'logs');
@@ -118,6 +194,10 @@ function main() {
   const { graph, incoming } = buildGraph(jsFiles);
   const { yamls, files: agentSet } = loadAgentFiles(repoRoot);
   const cliSet = collectCliFiles(jsFiles, repoRoot);
+  const cliTools = checkCliTools(['npm', 'ffmpeg', 'ollama']);
+  const kernelCli = checkKernelCli(repoRoot);
+  const agentStatus = checkAgents(yamls, repoRoot);
+  const unprotected = findUnprotectedRequires(jsFiles, repoRoot);
 
   const flagged = [];
   for (const f of jsFiles) {
@@ -155,7 +235,7 @@ function main() {
     installRes.readmeCreated = fs.existsSync(readmePath);
   }
 
-  const report = { structure, flagged, requireErrors, tests: {
+  const report = { structure, flagged, requireErrors, cliTools, kernelCli, agentStatus, unprotected, tests: {
     npmTest: tests.npmTest.status === 0,
     ensureRuntime: tests.ensureRuntime.status === 0,
     makeVerify: tests.makeVerify ? tests.makeVerify.status === 0 : null
@@ -174,6 +254,28 @@ function main() {
   lines.push('\n## Require Errors');
   if (requireErrors.length) {
     for (const r of requireErrors) lines.push(`- ${r.file}: ${r.error}`);
+  } else lines.push('None');
+  lines.push('\n## CLI Tools');
+  for (const [k,v] of Object.entries(cliTools)) lines.push(`- ${k}: ${v ? 'found' : 'missing'}`);
+  if (kernelCli.found) {
+    lines.push('\n## kernel-cli.js Commands');
+    for (const [cmd, ok] of Object.entries(kernelCli.results)) lines.push(`- ${cmd}: ${ok ? 'ok' : 'fail'}`);
+  } else {
+    lines.push('\n## kernel-cli.js not found');
+  }
+  lines.push('\n## Agent Status');
+  if (agentStatus.length) {
+    for (const a of agentStatus) {
+      const filePart = a.file ? ` (${a.file})` : '';
+      const err = a.error ? ` - ${a.error}` : '';
+      lines.push(`- ${a.yaml}${filePart}: ${a.status}${err}`);
+    }
+  } else {
+    lines.push('All agents OK');
+  }
+  lines.push('\n## Unprotected require() calls');
+  if (Object.keys(unprotected).length) {
+    for (const [file, arr] of Object.entries(unprotected)) lines.push(`- ${file}: lines ${arr.join(',')}`);
   } else lines.push('None');
   lines.push('\n## Test Results');
   lines.push(`- npm test: ${report.tests.npmTest ? 'pass' : 'fail'}`);
