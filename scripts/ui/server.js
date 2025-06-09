@@ -13,6 +13,7 @@ const inputDir = path.join(repoRoot, 'input');
 const tmpDir = path.join(repoRoot, 'tmp');
 const agentsFile = path.join(repoRoot, 'installed-agents.json');
 const usageFile = path.join(repoRoot, 'usage.json');
+const marketFile = path.join(repoRoot, 'kernel-slate', 'docs', 'available-agents.json');
 
 // Ensure input directory exists
 fs.mkdirSync(inputDir, { recursive: true });
@@ -41,6 +42,10 @@ function readJson(file) {
   } catch {
     return [];
   }
+}
+
+function slugify(name) {
+  return encodeURIComponent(String(name).toLowerCase().replace(/\s+/g, '-'));
 }
 
 app.get('/', (req, res) => {
@@ -89,6 +94,56 @@ app.get('/', (req, res) => {
   </form>
 </body>
 </html>`;
+  res.send(html);
+});
+
+app.get('/agents/:id', async (req, res) => {
+  const list = readJson(marketFile);
+  const usage = readJson(usageFile);
+  const id = req.params.id;
+  const agent =
+    list.find((a) => slugify(a.name) === id) || list[parseInt(id, 10)] || null;
+  if (!agent) return res.status(404).send('Agent not found');
+
+  const installCount = usage.filter(
+    (u) => u.agent === agent.name && u.action === 'install'
+  ).length;
+  const logs = usage.filter((u) => u.agent === agent.name);
+
+  let yamlSummary = '';
+  if (agent.url && agent.url.includes('github.com')) {
+    const raw = agent.url
+      .replace('github.com/', 'raw.githubusercontent.com/')
+      .replace('/blob/', '/');
+    try {
+      const resp = await fetch(raw);
+      if (resp.ok) yamlSummary = await resp.text();
+    } catch {}
+  } else if (agent.path && fs.existsSync(path.join(repoRoot, agent.path))) {
+    yamlSummary = fs.readFileSync(path.join(repoRoot, agent.path), 'utf8');
+  }
+
+  const html = `<!DOCTYPE html>
+  <html>
+  <head>
+    <meta charset="UTF-8">
+    <title>${agent.name}</title>
+    <style>body{font-family:Arial,sans-serif;margin:40px;}button{margin-right:1em;}</style>
+  </head>
+  <body>
+    <h1>${agent.name}</h1>
+    <p><strong>Install count:</strong> ${installCount}</p>
+    <h2>Usage Logs</h2>
+    <pre>${JSON.stringify(logs, null, 2)}</pre>
+    <h2>YAML Summary</h2>
+    <pre>${yamlSummary}</pre>
+    <div>
+      <button onclick="location.href='/install-agent/${id}'">Install</button>
+      <button onclick="location.href='/inspect-agent/${id}'">Inspect</button>
+      <a href="${agent.url || '#'}" target="_blank"><button>View Docs</button></a>
+    </div>
+  </body>
+  </html>`;
   res.send(html);
 });
 
