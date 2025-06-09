@@ -2,11 +2,11 @@
 const fs = require('fs');
 const path = require('path');
 
-const repoRoot = path.resolve(__dirname, '..', '..');
-const cliFile = path.join(repoRoot, 'scripts', 'cli', 'kernel-cli.js');
-const docsDir = path.join(repoRoot, 'docs');
-const logsDir = path.join(repoRoot, 'logs');
-const agentDir = path.join(repoRoot, 'agent-templates');
+const repoRoot = path.resolve(__dirname, '..', '..', '..');
+const cliFile = path.join(repoRoot, 'kernel-slate', 'scripts', 'cli', 'kernel-cli.js');
+const docsDir = path.join(repoRoot, 'kernel-slate', 'docs');
+const logsDir = path.join(repoRoot, 'kernel-slate', 'logs');
+const agentDir = path.join(repoRoot, 'kernel-slate', 'agent-templates');
 const availFile = path.join(repoRoot, 'kernel-slate', 'docs', 'available-agents.json');
 const reportPath = path.join(logsDir, 'kernel-standards-report.json');
 fs.mkdirSync(logsDir, { recursive: true });

@@ -2,9 +2,9 @@ const fs = require('fs');
 const path = require('path');
 
 const repoRoot = path.resolve(__dirname, '..', '..');
-const reportPath = path.join(repoRoot, 'logs', 'kernel-standards-report.json');
-const failuresPath = path.join(repoRoot, 'logs', 'standards-failures.json');
-const mdPath = path.join(repoRoot, 'docs', 'kernel-standards-status.md');
+const reportPath = path.join(repoRoot, 'kernel-slate', 'logs', 'kernel-standards-report.json');
+const failuresPath = path.join(repoRoot, 'kernel-slate', 'logs', 'standards-failures.json');
+const mdPath = path.join(repoRoot, 'kernel-slate', 'docs', 'kernel-standards-status.md');
 
 const report = JSON.parse(fs.readFileSync(reportPath, 'utf8'));
 const failures = [];
@@ -44,7 +44,7 @@ if (report.docs) {
       failures.push({
         category: 'DOC',
         message: `doc ${file} not referenced in doc-sync-report.json`,
-        file: `docs/${file}`
+        file: `kernel-slate/docs/${file}`
       });
     });
   }
@@ -53,7 +53,7 @@ if (report.docs) {
       failures.push({
         category: 'DOC',
         message: `broken link ${link}`,
-        file: 'docs/README.md'
+        file: 'kernel-slate/docs/README.md'
       });
     });
   }

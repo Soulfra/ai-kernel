@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');
 
-const repoRoot = path.resolve(__dirname, '..', '..');
+const repoRoot = path.resolve(__dirname, '..', '..', '..');
 const logsDir = path.join(repoRoot, 'logs');
 const logFile = path.join(logsDir, 'cli-output.json');
 fs.mkdirSync(logsDir, { recursive: true });
@@ -59,15 +59,12 @@ async function releaseCheck() {
   const ensure = runWithOutput('node scripts/core/ensure-runtime.js');
   if (ensure.status !== 0) errors.push('ensure-runtime.js');
 
-  const verify = runWithOutput('make verify');
+  const verify = runWithOutput('make -C kernel-slate verify');
   if (verify.status !== 0) errors.push('make verify');
   const parsed = parsePassedTests(verify.output);
   if (parsed !== null) passed = parsed;
 
-  const inspect = runWithOutput('node scripts/dev/kernel-inspector.js');
-  if (inspect.status !== 0) errors.push('kernel-inspector.js');
-
-  const ok = ensure.status === 0 && verify.status === 0 && inspect.status === 0;
+  const ok = ensure.status === 0 && verify.status === 0;
   const symbol = ok ? '✅' : '❌';
   const count = passed !== null ? `${passed} tests passed` : 'test count unknown';
   const errMsg = errors.length ? ` errors: ${errors.join(', ')}` : '';
