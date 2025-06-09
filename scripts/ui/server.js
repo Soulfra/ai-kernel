@@ -3,6 +3,7 @@ const multer = require('multer');
 const path = require('path');
 const fs = require('fs');
 const { spawn } = require('child_process');
+const yaml = require('js-yaml');
 
 const PORT = process.env.PORT || 3000;
 const app = express();
@@ -33,6 +34,7 @@ function filter(exts) {
 const chatUpload = multer({ storage, fileFilter: filter(['.txt', '.md', '.json', '.html']) });
 const voiceUpload = multer({ storage, fileFilter: filter(['.wav', '.mp3', '.m4a']) });
 const agentUpload = multer({ storage, fileFilter: filter(['.yaml', '.yml']) });
+const zipUpload = multer({ storage, fileFilter: filter(['.zip']) });
 
 // Utility to safely read JSON
 function readJson(file) {
@@ -92,14 +94,47 @@ app.get('/', (req, res) => {
   res.send(html);
 });
 
-function run(script, file, res, msg) {
+function run(script, file, res, msg, cleanup = []) {
   const proc = spawn('node', [script, file], { stdio: 'inherit' });
   proc.on('close', code => {
     fs.unlinkSync(file);
+    for (const p of cleanup) {
+      fs.rmSync(p, { recursive: true, force: true });
+    }
     if (code === 0) res.send(msg);
     else res.status(500).send('Error running script');
   });
 }
+
+app.get('/usage', (req, res) => {
+  const logs = readJson(usageFile);
+  const rows = logs
+    .map(l => `<tr><td>${l.timestamp || ''}</td><td>${l.agent || ''}</td><td>${l.action || l.provider || ''}</td><td>${l.tokens ?? ''}</td></tr>`)
+    .join('');
+  const table = `<table><tr><th>Timestamp</th><th>Agent</th><th>Action/Provider</th><th>Tokens</th></tr>${rows}</table>`;
+  const html = `<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Usage Summary</title><style>table{border-collapse:collapse}td,th{border:1px solid #ccc;padding:4px}</style></head><body><h1>Usage Summary</h1>${table}</body></html>`;
+  res.send(html);
+});
+
+app.get('/agents/:id', (req, res) => {
+  const agents = readJson(agentsFile);
+  const id = req.params.id;
+  const agent = agents.find(a => a.name === id) || agents[parseInt(id, 10)];
+  if (!agent) return res.status(404).send('Agent not found');
+  const yamlPath = agent.config || agent.file;
+  let yamlText = '';
+  if (yamlPath && fs.existsSync(yamlPath)) {
+    yamlText = fs.readFileSync(yamlPath, 'utf8');
+  }
+  const logs = readJson(usageFile).filter(l => l.agent === agent.name);
+  const installs = logs.filter(l => l.action === 'install').length;
+  const logRows = logs
+    .map(l => `<tr><td>${l.timestamp || ''}</td><td>${l.action || l.provider || ''}</td><td>${l.tokens ?? ''}</td></tr>`)
+    .join('');
+  const logTable = `<table><tr><th>Timestamp</th><th>Action/Provider</th><th>Tokens</th></tr>${logRows}</table>`;
+  const html = `<!DOCTYPE html><html><head><meta charset="UTF-8"><title>${agent.name}</title><style>table{border-collapse:collapse}td,th{border:1px solid #ccc;padding:4px}</style></head><body><h1>${agent.name}</h1><p>Installed on: ${agent.installed || ''}</p><p>Install count: ${installs}</p><h2>Agent YAML</h2><pre>${yamlText}</pre><h2>Logs</h2>${logTable}</body></html>`;
+  res.send(html);
+});
 
 app.post('/upload-chatlog', chatUpload.single('file'), (req, res) => {
   if (!req.file) return res.status(400).send('No file uploaded');
@@ -117,6 +152,42 @@ app.post('/install', agentUpload.single('file'), (req, res) => {
   if (!req.file) return res.status(400).send('No file uploaded');
   const script = path.join(repoRoot, 'kernel-slate', 'scripts', 'market', 'install-agent.js');
   run(script, req.file.path, res, 'Install started');
+});
+
+app.post('/upload', zipUpload.single('file'), (req, res) => {
+  if (!req.file) return res.status(400).send('No file uploaded');
+  const name = req.file.originalname.toLowerCase();
+  const outDir = fs.mkdtempSync(path.join(tmpDir, 'zip-'));
+  const unzip = spawn('unzip', ['-o', req.file.path, '-d', outDir]);
+  unzip.on('close', code => {
+    fs.unlinkSync(req.file.path);
+    if (code !== 0) {
+      fs.rmSync(outDir, { recursive: true, force: true });
+      return res.status(500).send('Failed to unzip file');
+    }
+    if (name.endsWith('.chatlog.zip')) {
+      const files = fs.readdirSync(outDir);
+      const target = files.find(f => ['.txt', '.md', '.json', '.html'].includes(path.extname(f).toLowerCase()));
+      if (!target) {
+        fs.rmSync(outDir, { recursive: true, force: true });
+        return res.status(400).send('No chatlog found in zip');
+      }
+      const script = path.join(repoRoot, 'kernel-slate', 'scripts', 'features', 'chatlog-parser', 'from-export.js');
+      run(script, path.join(outDir, target), res, 'Chatlog processed', [outDir]);
+    } else if (name.endsWith('.agent.zip')) {
+      const files = fs.readdirSync(outDir);
+      const target = files.find(f => ['agent.yaml', 'agent.yml'].includes(f.toLowerCase()) || ['.yaml', '.yml'].includes(path.extname(f).toLowerCase()));
+      if (!target) {
+        fs.rmSync(outDir, { recursive: true, force: true });
+        return res.status(400).send('No agent.yaml found in zip');
+      }
+      const script = path.join(repoRoot, 'kernel-slate', 'scripts', 'market', 'install-agent.js');
+      run(script, path.join(outDir, target), res, 'Install started', [outDir]);
+    } else {
+      fs.rmSync(outDir, { recursive: true, force: true });
+      res.status(400).send('Unsupported zip file');
+    }
+  });
 });
 
 app.listen(PORT, () => {
