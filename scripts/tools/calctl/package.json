@@ -1,0 +1,11 @@
+{
+  "name": "calctl",
+  "version": "1.0.0",
+  "bin": {
+    "calctl": "./CalShell.js"
+  },
+  "main": "CalShell.js",
+  "description": "The official Cal DevSuite CLI — whisper-ready, token-aware, and ritual-safe.",
+  "author": "Soulfra",
+  "license": "SEE LICENSE.trust"
+}

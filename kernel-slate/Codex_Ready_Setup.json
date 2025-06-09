@@ -1,0 +1,29 @@
+{
+  "files_to_create": [
+    {
+      "filename": ".gitignore",
+      "append_lines": [
+        ".env",
+        ".DS_Store",
+        "node_modules/",
+        "__pycache__/",
+        "dist/"
+      ]
+    },
+    {
+      "filename": "package.json",
+      "patch_scripts": {
+        "test": "echo \"No tests yet\" && exit 0"
+      }
+    },
+    {
+      "filename": "setup.sh",
+      "content": "#!/bin/bash\necho \"Setting up the kernel environment...\"\nnpm install || true\npip install -r requirements.txt || echo \"No Python dependencies\"\n",
+      "executable": true
+    },
+    {
+      "filename": "Codex_README.md",
+      "content": "# Codex Setup Guide\n\n## Setup Instructions\n```bash\npip install -r requirements.txt || echo \"no Python deps\"\nnpm install\n./setup.sh || echo \"no setup script\"\nnpm test || echo \"no tests defined\"\n```\n\n## Project Entry Points\n- Backend logic: `legacy/scripts/`\n- Kernel logic: `legacy/scripts/OGKERNEL/`\n- Setup scripts: `setup.sh`\n\n## Notes\nAll secrets should be stored in `.env`, not committed to the repo.\n"
+    }
+  ]
+}
