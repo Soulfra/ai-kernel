@@ -51,17 +51,8 @@ verify:
 	@node scripts/dev/kernel-inspector.js >> logs/kernel-inspector.log && echo "\xE2\x9C\x85 kernel-inspector" || echo "\xE2\x9D\x8C kernel-inspector"
 
 inspect:
-	node scripts/dev/kernel-inspector.js
-
-status:
-	node scripts/dev/kernel-validator.js
-
-menu:
-	@grep -E '^[a-zA-Z0-9_-]+:' Makefile | cut -d: -f1
-
-release:
-	node scripts/cli/kernel-cli.js run release-check
+        node scripts/dev/kernel-inspector.js
 
 export:
-	@rm -f kernel-release.zip
-	zip -r kernel-release.zip . -x 'node_modules/*' '.git/*' 'logs/*'
+	zip -r kernel-release.zip . \
+	    -x '*.git*' '*/node_modules/*' '*/logs/*' 'kernel-release.zip'
