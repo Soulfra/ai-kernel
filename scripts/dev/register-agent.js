@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 const fs = require('fs');
 const path = require('path');
-const yaml = require('js-yaml');
+const requireOrInstall = require('../kernel-slate/scripts/core/utils/requireOrInstall');
+const yaml = requireOrInstall('js-yaml');
 
 
 function validate(doc) {
