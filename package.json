@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "js-yaml": "^4.1.0"
+  },
+  "scripts": {
+    "test": "npm --prefix kernel-slate test"
+  }
+}
