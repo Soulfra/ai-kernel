@@ -298,6 +298,8 @@ async function main() {
     lines.push(`- available-agents.json updated: ${installRes.availableUpdated ? 'yes' : 'no'}`);
   }
   fs.writeFileSync(path.join(logsDir,'kernel-report.md'), lines.join('\n'));
+  const summaryPass = report.tests.npmTest && report.tests.ensureRuntime && (report.tests.makeVerify === null || report.tests.makeVerify);
+  fs.appendFileSync(path.join(logsDir, 'kernel-inspector.log'), `SUMMARY: ${summaryPass ? 'PASS' : 'FAIL'}\n`);
   fs.appendFileSync(path.join(logsDir, 'kernel-inspector.log'), lines.join('\n') + '\n');
   console.log('Wrote logs/kernel-report.md and kernel-inspection.json');
   console.log('\u2705 inspection complete');
