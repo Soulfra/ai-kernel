@@ -1,7 +1,11 @@
 #!/bin/bash
 echo "Setting up the kernel environment..."
 npm install || true
-pip install -r requirements.txt || echo "No Python dependencies"
+if [ -f requirements.txt ]; then
+  pip install -r requirements.txt
+else
+  echo "[\u2713] No Python dependencies found"
+fi
 if [ -f generate-agents-doc.js ]; then
   node generate-agents-doc.js
 elif [ -f scripts/generate-agents-doc.js ]; then
