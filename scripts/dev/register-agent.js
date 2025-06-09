@@ -4,6 +4,18 @@ const path = require('path');
 const requireOrInstall = require('../../kernel-slate/scripts/core/utils/requireOrInstall');
 const yaml = requireOrInstall('js-yaml');
 
+const logsDir = path.resolve(__dirname, '..', '..', 'logs');
+if (!fs.existsSync(logsDir)) fs.mkdirSync(logsDir, { recursive: true });
+
+function logError(err) {
+  try {
+    const dest = path.join(logsDir, 'register-errors.json');
+    fs.writeFileSync(dest, JSON.stringify(err, Object.getOwnPropertyNames(err), 2));
+  } catch (e) {
+    // ignore logging errors
+  }
+}
+
 
 function validate(doc) {
   return doc && doc.name && doc.description && doc.file;
@@ -30,9 +42,14 @@ async function pushToGitHub(owner, repo, dest, content, token, branch = 'main') 
 }
 
 async function main() {
-  const [yamlPath, catArg, usage] = process.argv.slice(2);
+  const args = process.argv.slice(2);
+  const dryIndex = args.indexOf('--dry-run');
+  const dryRun = dryIndex !== -1;
+  if (dryRun) args.splice(dryIndex, 1);
+
+  const [yamlPath, catArg, usage] = args;
   if (!yamlPath || !catArg || !usage) {
-    console.error('Usage: node register-agent.js path/to/agent.yaml <category> <usage-summary>');
+    console.error('Usage: node register-agent.js path/to/agent.yaml <category> <usage-summary> [--dry-run]');
     process.exit(1);
   }
   const full = path.resolve(yamlPath);
@@ -57,7 +74,22 @@ async function main() {
   }
 
   const destPath = `agents/${path.basename(yamlPath)}`;
-  await pushToGitHub(owner, repo, destPath, fs.readFileSync(full), token, branch);
+
+  if (dryRun) {
+    fs.writeFileSync(path.join(logsDir, 'register-dry-run.json'), JSON.stringify({ doc, categories, usage }, null, 2));
+    console.log('[\u2713] Agent validated and logged in dry-run mode');
+  } else {
+    try {
+      await pushToGitHub(owner, repo, destPath, fs.readFileSync(full), token, branch);
+    } catch (err) {
+      logError(err);
+      if (err.code === 'ENETUNREACH') {
+        console.log('[x] GitHub push failed (offline). Skipping upload but registering agent locally.');
+      } else {
+        throw err;
+      }
+    }
+  }
 
   const repoRoot = path.resolve(__dirname, '..', '..');
   const docsFile = path.join(repoRoot, 'kernel-slate/docs/available-agents.json');
@@ -76,6 +108,7 @@ async function main() {
 
 if (require.main === module) {
   main().catch(err => {
+    logError(err);
     console.error(err);
     process.exit(1);
   });
