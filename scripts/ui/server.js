@@ -14,6 +14,7 @@ const inputDir = path.join(repoRoot, 'input');
 const tmpDir = path.join(repoRoot, 'tmp');
 const agentsFile = path.join(repoRoot, 'installed-agents.json');
 const usageFile = path.join(repoRoot, 'usage.json');
+const marketFile = path.join(repoRoot, 'kernel-slate', 'docs', 'available-agents.json');
 
 // Ensure input directory exists
 fs.mkdirSync(inputDir, { recursive: true });
@@ -43,6 +44,10 @@ function readJson(file) {
   } catch {
     return [];
   }
+}
+
+function slugify(name) {
+  return encodeURIComponent(String(name).toLowerCase().replace(/\s+/g, '-'));
 }
 
 app.get('/', (req, res) => {
@@ -97,9 +102,13 @@ app.get('/', (req, res) => {
 function run(script, file, res, msg, cleanup = []) {
   const proc = spawn('node', [script, file], { stdio: 'inherit' });
   proc.on('close', code => {
-    fs.unlinkSync(file);
+    try {
+      fs.unlinkSync(file);
+    } catch {}
     for (const p of cleanup) {
-      fs.rmSync(p, { recursive: true, force: true });
+      try {
+        fs.rmSync(p, { recursive: true, force: true });
+      } catch {}
     }
     if (code === 0) res.send(msg);
     else res.status(500).send('Error running script');
@@ -108,31 +117,101 @@ function run(script, file, res, msg, cleanup = []) {
 
 app.get('/usage', (req, res) => {
   const logs = readJson(usageFile);
-  const rows = logs
-    .map(l => `<tr><td>${l.timestamp || ''}</td><td>${l.agent || ''}</td><td>${l.action || l.provider || ''}</td><td>${l.tokens ?? ''}</td></tr>`)
+  const stats = {};
+  let totalBilling = 0;
+
+  for (const entry of logs) {
+    const agent = entry.agent || 'unknown';
+    if (!stats[agent]) stats[agent] = { count: 0, tokens: 0, last: '', billing: 0 };
+    stats[agent].count += 1;
+    if (entry.tokens) stats[agent].tokens += entry.tokens;
+    if (entry.timestamp && entry.timestamp > stats[agent].last) stats[agent].last = entry.timestamp;
+    const cost = entry.billing ?? entry.cost;
+    if (typeof cost === 'number') {
+      stats[agent].billing += cost;
+      totalBilling += cost;
+    }
+  }
+
+  const rows = Object.entries(stats)
+    .sort((a, b) => b[1].count - a[1].count)
+    .map(
+      ([agent, d]) =>
+        `<tr><td>${agent}</td><td>${d.count}</td><td>${d.tokens}</td><td>${d.last}</td><td>${d.billing.toFixed ? d.billing.toFixed(2) : d.billing}</td></tr>`
+    )
     .join('');
-  const table = `<table><tr><th>Timestamp</th><th>Agent</th><th>Action/Provider</th><th>Tokens</th></tr>${rows}</table>`;
-  const html = `<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Usage Summary</title><style>table{border-collapse:collapse}td,th{border:1px solid #ccc;padding:4px}</style></head><body><h1>Usage Summary</h1>${table}</body></html>`;
+
+  const html = `<!DOCTYPE html>
+  <html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Usage Summary</title>
+    <style>
+      body { font-family: Arial, sans-serif; margin: 40px; }
+      table { border-collapse: collapse; }
+      th, td { border: 1px solid #ccc; padding: 8px; }
+    </style>
+  </head>
+  <body>
+    <h1>Usage Summary</h1>
+    <table>
+      <tr><th>Agent</th><th>Runs</th><th>Tokens</th><th>Last Run</th><th>Billing</th></tr>
+      ${rows}
+    </table>
+    <p>Total Billing: ${totalBilling.toFixed ? totalBilling.toFixed(2) : totalBilling}</p>
+  </body>
+  </html>`;
+
   res.send(html);
 });
 
-app.get('/agents/:id', (req, res) => {
-  const agents = readJson(agentsFile);
+app.get('/agents/:id', async (req, res) => {
+  const list = readJson(marketFile);
+  const usage = readJson(usageFile);
   const id = req.params.id;
-  const agent = agents.find(a => a.name === id) || agents[parseInt(id, 10)];
+  const agent =
+    list.find(a => slugify(a.name) === id) || list[parseInt(id, 10)] || null;
   if (!agent) return res.status(404).send('Agent not found');
-  const yamlPath = agent.config || agent.file;
-  let yamlText = '';
-  if (yamlPath && fs.existsSync(yamlPath)) {
-    yamlText = fs.readFileSync(yamlPath, 'utf8');
+
+  const installCount = usage.filter(
+    u => u.agent === agent.name && u.action === 'install'
+  ).length;
+  const logs = usage.filter(u => u.agent === agent.name);
+
+  let yamlSummary = '';
+  if (agent.url && agent.url.includes('github.com')) {
+    const raw = agent.url
+      .replace('github.com/', 'raw.githubusercontent.com/')
+      .replace('/blob/', '/');
+    try {
+      const resp = await fetch(raw);
+      if (resp.ok) yamlSummary = await resp.text();
+    } catch {}
+  } else if (agent.path && fs.existsSync(path.join(repoRoot, agent.path))) {
+    yamlSummary = fs.readFileSync(path.join(repoRoot, agent.path), 'utf8');
   }
-  const logs = readJson(usageFile).filter(l => l.agent === agent.name);
-  const installs = logs.filter(l => l.action === 'install').length;
-  const logRows = logs
-    .map(l => `<tr><td>${l.timestamp || ''}</td><td>${l.action || l.provider || ''}</td><td>${l.tokens ?? ''}</td></tr>`)
-    .join('');
-  const logTable = `<table><tr><th>Timestamp</th><th>Action/Provider</th><th>Tokens</th></tr>${logRows}</table>`;
-  const html = `<!DOCTYPE html><html><head><meta charset="UTF-8"><title>${agent.name}</title><style>table{border-collapse:collapse}td,th{border:1px solid #ccc;padding:4px}</style></head><body><h1>${agent.name}</h1><p>Installed on: ${agent.installed || ''}</p><p>Install count: ${installs}</p><h2>Agent YAML</h2><pre>${yamlText}</pre><h2>Logs</h2>${logTable}</body></html>`;
+
+  const html = `<!DOCTYPE html>
+  <html>
+  <head>
+    <meta charset="UTF-8">
+    <title>${agent.name}</title>
+    <style>body{font-family:Arial,sans-serif;margin:40px;}button{margin-right:1em;}</style>
+  </head>
+  <body>
+    <h1>${agent.name}</h1>
+    <p><strong>Install count:</strong> ${installCount}</p>
+    <h2>Usage Logs</h2>
+    <pre>${JSON.stringify(logs, null, 2)}</pre>
+    <h2>YAML Summary</h2>
+    <pre>${yamlSummary}</pre>
+    <div>
+      <button onclick="location.href='/install-agent/${id}'">Install</button>
+      <button onclick="location.href='/inspect-agent/${id}'">Inspect</button>
+      <a href="${agent.url || '#'}" target="_blank"><button>View Docs</button></a>
+    </div>
+  </body>
+  </html>`;
   res.send(html);
 });
 
