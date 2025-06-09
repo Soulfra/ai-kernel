@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 const fs = require('fs');
 const path = require('path');
-const requireOrInstall = require('../kernel-slate/scripts/core/utils/requireOrInstall');
+const requireOrInstall = require('../../kernel-slate/scripts/core/utils/requireOrInstall');
 const yaml = requireOrInstall('js-yaml');
 
 
@@ -31,10 +31,8 @@ async function pushToGitHub(owner, repo, dest, content, token, branch = 'main') 
 
 async function main() {
   const [yamlPath, catArg, usage] = process.argv.slice(2);
-if (!yamlPath || !catArg || !usage) {
-  console.error('Usage: node register-agent.js path/to/agent.yaml <category> <usage-summary>');
-  process.exit(1);
-}
+  if (!yamlPath || !catArg || !usage) {
+    console.error('Usage: node register-agent.js path/to/agent.yaml <category> <usage-summary>');
     process.exit(1);
   }
   const full = path.resolve(yamlPath);
