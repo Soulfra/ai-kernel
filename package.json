@@ -3,6 +3,6 @@
     "js-yaml": "^4.1.0"
   },
   "scripts": {
-    "test": "npm --prefix kernel-slate test"
+    "test": "npm install --prefix kernel-slate && npm --prefix kernel-slate test"
   }
 }
