@@ -1,5 +1,6 @@
 #!/bin/bash
 echo "Setting up the kernel environment..."
+node kernel-slate/scripts/core/ensure-runtime.js
 npm install || true
 if [ -f requirements.txt ]; then
   pip install -r requirements.txt

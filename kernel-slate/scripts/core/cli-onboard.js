@@ -3,7 +3,8 @@ const fs = require('fs');
 const path = require('path');
 const { spawnSync } = require('child_process');
 const readline = require('readline');
-const yaml = require('js-yaml');
+const requireOrInstall = require('./utils/requireOrInstall');
+const yaml = requireOrInstall('js-yaml');
 
 const repoRoot = path.resolve(__dirname, '../..');
 const rcFile = path.join(repoRoot, '.kernelrc.json');
