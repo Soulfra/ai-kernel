@@ -64,5 +64,8 @@ release:
 
 export:
 	zip -r kernel-release.zip . \
-	    -x '*.git*' '*/node_modules/*' '*/logs/*' 'kernel-release.zip'
+	            -x '*.git*' '*/node_modules/*' '*/logs/*' 'kernel-release.zip'
+
+reprompt:
+	node scripts/agents/kernel-feedback-loop.js
 

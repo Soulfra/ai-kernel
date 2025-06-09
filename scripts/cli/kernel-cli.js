@@ -95,6 +95,7 @@ Commands:
   prune              prune unused files
   menu               launch menu interface
   release-check      verify release readiness
+  reprompt           regenerate fix prompts
   doctor             run diagnostics
   test               run npm test
   install-agent <path>  install specified agent.yaml
@@ -142,6 +143,9 @@ async function main() {
       break;
     case 'launch-ui':
       run('node scripts/ui/server.js');
+      break;
+    case 'reprompt':
+      run('node scripts/agents/kernel-feedback-loop.js');
       break;
     case 'release-check':
       await releaseCheck();
