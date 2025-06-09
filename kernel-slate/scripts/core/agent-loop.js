@@ -1,13 +1,8 @@
 #!/usr/bin/env node
 const fs = require('fs');
 const path = require('path');
-let yaml;
-try {
-  yaml = require('js-yaml');
-} catch (err) {
-  console.error("Missing dependency 'js-yaml'. Please run `npm install js-yaml`.");
-  process.exit(1);
-}
+const requireOrInstall = require('./utils/requireOrInstall');
+const yaml = requireOrInstall('js-yaml');
 const { exec } = require('child_process');
 
 const repoRoot = path.resolve(__dirname, '../..');

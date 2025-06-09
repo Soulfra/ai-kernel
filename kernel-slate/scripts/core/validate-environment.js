@@ -2,13 +2,8 @@
 const fs = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');
-let yaml;
-try {
-  yaml = require('js-yaml');
-} catch (err) {
-  console.error("Missing dependency 'js-yaml'. Please run `npm install js-yaml`.");
-  process.exit(1);
-}
+const requireOrInstall = require('./utils/requireOrInstall');
+const yaml = requireOrInstall('js-yaml');
 require('dotenv').config({ path: path.join(__dirname, '../../.env') });
 
 const repoRoot = path.resolve(__dirname, '../..');

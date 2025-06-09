@@ -3,13 +3,8 @@ const fs = require('fs');
 const path = require('path');
 const { spawnSync } = require('child_process');
 const readline = require('readline');
-let yaml;
-try {
-  yaml = require('js-yaml');
-} catch (err) {
-  console.error("Missing dependency 'js-yaml'. Please run `npm install js-yaml`.");
-  process.exit(1);
-}
+const requireOrInstall = require('./utils/requireOrInstall');
+const yaml = requireOrInstall('js-yaml');
 
 const repoRoot = path.resolve(__dirname, '../..');
 const rcFile = path.join(repoRoot, '.kernelrc.json');

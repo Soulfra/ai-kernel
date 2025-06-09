@@ -1,5 +1,6 @@
 #!/bin/bash
 echo "Setting up the kernel environment..."
+node kernel-slate/scripts/core/ensure-runtime.js
 npm install || true
 pip install -r requirements.txt || echo "No Python dependencies"
 if [ -f generate-agents-doc.js ]; then
