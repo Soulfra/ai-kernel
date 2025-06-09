@@ -14,6 +14,28 @@ function run(cmd, args, opts = {}) {
   return res.status === 0;
 }
 
+function init() {
+  return run('bash', ['setup.sh']);
+}
+
+function inspect() {
+  return run('node', ['scripts/dev/kernel-inspector.js']);
+}
+
+function test() {
+  requireOrInstall('jest');
+  return run('npm', ['test']);
+}
+
+function installAgent(pathArg) {
+  if (!pathArg) return false;
+  return run('node', ['kernel-slate/scripts/market/install-agent.js', pathArg]);
+}
+
+function launchUI() {
+  return run('node', ['scripts/ui/server.js']);
+}
+
 async function verify() {
   const runtimeOk = run('node', ['scripts/core/ensure-runtime.js']);
 
@@ -25,20 +47,38 @@ async function verify() {
   const testOk = run('npm', ['test']);
 
   const ok = runtimeOk && testOk;
-  console.log(ok ? chalk.green('\u2705') : chalk.red('\u274c'));
+  console.log(ok ? chalk.green('✅') : chalk.red('❌'));
   return ok;
 }
 
 async function main() {
   try {
-    const cmd = process.argv[2];
-    if (cmd === 'verify') {
-      const ok = await verify();
-      process.exit(ok ? 0 : 1);
-    } else {
-      usage();
-      process.exit(1);
+    const [cmd, arg] = process.argv.slice(2);
+    let ok = false;
+    switch (cmd) {
+      case 'init':
+        ok = init();
+        break;
+      case 'verify':
+        ok = await verify();
+        break;
+      case 'inspect':
+        ok = inspect();
+        break;
+      case 'test':
+        ok = test();
+        break;
+      case 'install-agent':
+        ok = installAgent(arg);
+        break;
+      case 'launch-ui':
+        ok = launchUI();
+        break;
+      default:
+        usage();
+        process.exit(1);
     }
+    process.exit(ok ? 0 : 1);
   } catch (err) {
     console.error(err.message);
     usage();
