@@ -102,83 +102,33 @@ function collectCliFiles(files, repoRoot) {
   return cli;
 }
 
-function checkCliTools(names) {
-  const out = {};
-  for (const n of names) {
-    const res = spawnSync(n, ['--version'], { encoding: 'utf8' });
-    out[n] = !res.error && res.status === 0;
-  }
-  return out;
-}
+function runFix(repoRoot, yamls, requireErrors) {
+  const results = { npmInstall: null, readmes: [], ensured: [] };
+  const npmRes = run('npm', ['install', '--ignore-scripts', '--no-audit', '--no-fund'], { cwd: repoRoot });
+  results.npmInstall = npmRes.status === 0;
 
-function parseCliCommands(file) {
-  const txt = fs.readFileSync(file, 'utf8');
-  const cmds = new Set();
-  const re = /\.command\(['"`]([^'"`\s]+)/g;
-  let m;
-  while ((m = re.exec(txt))) cmds.add(m[1].split(' ')[0]);
-  return Array.from(cmds);
-}
-
-function checkKernelCli(repoRoot) {
-  const cliFile = path.join(repoRoot, 'kernel-cli.js');
-  if (!fs.existsSync(cliFile)) return { found: false };
-  const commands = parseCliCommands(cliFile);
-  const results = {};
-  if (!commands.length) {
-    const r = run('node', [cliFile, '--help'], { cwd: repoRoot });
-    results['--help'] = r.status === 0;
-  } else {
-    for (const c of commands) {
-      const r = run('node', [cliFile, c, '--help'], { cwd: repoRoot });
-      results[c] = r.status === 0;
-    }
-  }
-  return { found: true, results };
-}
-
-function checkAgents(yamls, repoRoot) {
-  const out = [];
-  for (const yf of yamls) {
-    let doc;
-    try { doc = yaml ? yaml.load(fs.readFileSync(yf, 'utf8')) : null; } catch {}
-    const relYaml = path.relative(repoRoot, yf);
-    if (!doc || !doc.file) {
-      out.push({ yaml: relYaml, status: 'invalid_yaml' });
-      continue;
-    }
-    const file = path.resolve(path.dirname(yf), doc.file);
-    const relFile = path.relative(repoRoot, file);
-    if (!fs.existsSync(file)) {
-      out.push({ yaml: relYaml, file: relFile, status: 'missing_file' });
-      continue;
-    }
-    try { require(file); }
-    catch (err) { out.push({ yaml: relYaml, file: relFile, status: 'broken', error: err.message }); }
-  }
-  return out;
-}
-
-function findUnprotectedRequires(files, repoRoot) {
-  const warn = {};
-  for (const f of files) {
-    const lines = fs.readFileSync(f, 'utf8').split(/\r?\n/);
-    const bad = [];
-    for (let i = 0; i < lines.length; i++) {
-      const line = lines[i];
-      if (/require\([^)]*\)/.test(line) &&
-          !/requireOrInstall/.test(line) &&
-          !(lines[i - 1] && /try\s*{/.test(lines[i - 1])) &&
-          !/try\s*{/.test(line)) {
-        bad.push(i + 1);
+  if (yaml) {
+    for (const y of yamls) {
+      const readme = path.join(path.dirname(y), 'README.md');
+      if (!fs.existsSync(readme)) {
+        const r = run('node', [path.join('scripts', 'dev', 'generate-agent-readme.js'), y], { cwd: repoRoot });
+        if (r.status === 0 && fs.existsSync(readme)) {
+          results.readmes.push(path.relative(repoRoot, readme));
+        }
       }
     }
-    if (bad.length) warn[path.relative(repoRoot, f)] = bad;
   }
-  return warn;
+
+  for (const err of requireErrors) {
+    const r = run('node', [path.join('scripts', 'core', 'ensure-runtime.js')], { cwd: repoRoot });
+    results.ensured.push({ file: err.file, ok: r.status === 0 });
+  }
+
+  return results;
 }
 
 function main() {
+  const fix = process.argv.includes('--fix');
   const repoRoot = path.resolve(__dirname, '..', '..');
   const logsDir = path.join(repoRoot, 'logs');
   fs.mkdirSync(logsDir, { recursive: true });
@@ -235,11 +185,16 @@ function main() {
     installRes.readmeCreated = fs.existsSync(readmePath);
   }
 
-  const report = { structure, flagged, requireErrors, cliTools, kernelCli, agentStatus, unprotected, tests: {
+  let fixResults = null;
+  if (fix) {
+    fixResults = runFix(repoRoot, yamls, requireErrors);
+  }
+
+  const report = { structure, flagged, requireErrors, tests: {
     npmTest: tests.npmTest.status === 0,
     ensureRuntime: tests.ensureRuntime.status === 0,
     makeVerify: tests.makeVerify ? tests.makeVerify.status === 0 : null
-  }, agentInstall: installRes };
+  }, agentInstall: installRes, fixes: fixResults };
 
   fs.writeFileSync(path.join(logsDir,'kernel-inspection.json'), JSON.stringify(report, null, 2));
 
@@ -281,6 +236,18 @@ function main() {
   lines.push(`- npm test: ${report.tests.npmTest ? 'pass' : 'fail'}`);
   lines.push(`- ensure-runtime.js: ${report.tests.ensureRuntime ? 'pass' : 'fail'}`);
   if (report.tests.makeVerify !== null) lines.push(`- make verify: ${report.tests.makeVerify ? 'pass' : 'fail'}`);
+  if (fixResults) {
+    lines.push('\n## Fix Results');
+    lines.push(`- npm install: ${fixResults.npmInstall ? 'success' : 'fail'}`);
+    if (fixResults.readmes.length) {
+      lines.push('Generated READMEs:');
+      for (const r of fixResults.readmes) lines.push(`- ${r}`);
+    }
+    if (fixResults.ensured.length) {
+      lines.push('Ensured scripts:');
+      for (const e of fixResults.ensured) lines.push(`- ${e.file}: ${e.ok ? 'ok' : 'fail'}`);
+    }
+  }
   if (installRes.agent) {
     lines.push('\n## Agent Installation');
     lines.push(`- Installed: ${installRes.agent}`);

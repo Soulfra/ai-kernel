@@ -5,6 +5,20 @@ const { execSync, spawn, spawnSync } = require('child_process');
 
 const repoRoot = path.resolve(__dirname, "../../..");
 
+beforeAll(() => {
+  const rootModules = path.join(repoRoot, 'node_modules');
+  if (!fs.existsSync(path.join(rootModules, 'js-yaml'))) {
+    execSync('npm install', { cwd: repoRoot, stdio: 'inherit' });
+  }
+  const innerModules = path.join(repoRoot, 'kernel-slate', 'node_modules');
+  if (!fs.existsSync(path.join(innerModules, 'jest'))) {
+    execSync('npm install', {
+      cwd: path.join(repoRoot, 'kernel-slate'),
+      stdio: 'inherit',
+    });
+  }
+});
+
 function wait(ms) {
   return new Promise(res => setTimeout(res, ms));
 }
@@ -16,6 +30,21 @@ function startScript(script, port) {
     stdio: 'inherit'
   });
   return proc;
+}
+
+// Helper to run kernel-cli.js commands
+function runCli(args) {
+  return new Promise(resolve => {
+    const proc = spawn('node', [path.join(repoRoot, 'kernel-cli.js'), ...args], {
+      cwd: repoRoot,
+      env: { ...process.env, NODE_PATH: path.join(repoRoot, 'kernel-slate', 'node_modules') },
+    });
+    let out = '';
+    let err = '';
+    proc.stdout.on('data', d => { out += d.toString(); });
+    proc.stderr.on('data', d => { err += d.toString(); });
+    proc.on('close', code => resolve({ code, stdout: out, stderr: err }));
+  });
 }
 
 // ensure-runtime.js test
@@ -121,5 +150,40 @@ describe('server routes', () => {
     const res = await fetch('http://localhost:3051/upload', { method: 'POST' });
     expect(res.status).toBeGreaterThanOrEqual(200);
     expect(res.status).toBeLessThan(500); // accept 200 or 400
+  });
+});
+
+// kernel-cli.js integration tests
+describe('kernel-cli.js', () => {
+  const cliPath = path.join(repoRoot, 'kernel-cli.js');
+  if (!fs.existsSync(cliPath)) {
+    test.skip('kernel-cli.js missing', () => {});
+    return;
+  }
+
+  test('init command exits successfully', async () => {
+    const res = await runCli(['init']);
+    expect(res.code).toBe(0);
+  });
+
+  test('verify command exits successfully', async () => {
+    const res = await runCli(['verify']);
+    expect(res.code).toBe(0);
+  });
+
+  test('inspect command exits successfully', async () => {
+    const res = await runCli(['inspect']);
+    expect(res.code).toBe(0);
+  });
+
+  test('install-agent installs agent', async () => {
+    const agentsFile = path.join(repoRoot, 'installed-agents.json');
+    const original = fs.existsSync(agentsFile)
+      ? fs.readFileSync(agentsFile, 'utf8')
+      : '[]';
+    const res = await runCli(['install-agent', 'agent-templates/analysis-bot.yaml']);
+    expect(res.code).toBe(0);
+    expect(res.stdout).toMatch(/Installed agent/i);
+    fs.writeFileSync(agentsFile, original);
   });
 });
