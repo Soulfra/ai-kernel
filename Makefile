@@ -55,6 +55,9 @@ verify:
 inspect:
 	node scripts/dev/kernel-inspector.js
 
+standards:
+	node scripts/agents/verify-kernel-standards.js
+
 export:
 	zip -r kernel-release.zip . \
 	    -x '*.git*' '*/node_modules/*' '*/logs/*' 'kernel-release.zip'

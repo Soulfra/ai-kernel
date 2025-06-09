@@ -1,0 +1,13 @@
+# Cluster 4
+- **scripts/dev/kernel-status.js**: !/usr/bin/env node
+- **scripts/cli/kernel-cli.js**: !/usr/bin/env node
+- **kernel-slate/scripts/market/discover-github-agents.js**: !/usr/bin/env node
+- **kernel-slate/scripts/market/install-agent.js**: !/usr/bin/env node
+- **kernel-slate/scripts/features/voice-loop.js**: !/usr/bin/env node
+- **kernel-slate/scripts/docs/validate-registry.js**: !/usr/bin/env node
+- **kernel-slate/scripts/core/agent-loop.js**: !/usr/bin/env node
+- **kernel-slate/scripts/core/embedding-service.js**: 
+- **kernel-slate/scripts/core/relationship-manager.js**: 
+- **kernel-slate/scripts/core/validation-service.js**: 
+- **kernel-slate/scripts/core/utils/requireOrInstall.js**: 
+- **kernel-slate/scripts/audit/trace-decisions.js**: !/usr/bin/env node
