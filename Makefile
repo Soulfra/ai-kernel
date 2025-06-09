@@ -19,8 +19,19 @@ boot:
         @node kernel-slate/scripts/core/agent-loop.js
 
 doctor:
-	@node scripts/core/ensure-runtime.js && echo "\xE2\x9C\x85 runtime" || echo "\xE2\x9D\x8C runtime"
-	@if [ -d kernel-slate/node_modules ]; then echo "\xE2\x9C\x85 node_modules"; else echo "\xE2\x9D\x8C node_modules missing"; fi
-	@if [ -f kernel-slate/package.json ]; then echo "\xE2\x9C\x85 package.json"; else echo "\xE2\x9D\x8C package.json missing"; fi
-	@if [ -f kernel-slate/.env ]; then echo "\xE2\x9C\x85 .env"; else echo "\xE2\x9D\x8C .env missing"; fi
-	@npm test --prefix kernel-slate && echo "\xE2\x9C\x85 tests" || echo "\xE2\x9D\x8C tests failed"
+        @node scripts/core/ensure-runtime.js && echo "\xE2\x9C\x85 runtime" || echo "\xE2\x9D\x8C runtime"
+        @if [ -d kernel-slate/node_modules ]; then echo "\xE2\x9C\x85 node_modules"; else echo "\xE2\x9D\x8C node_modules missing"; fi
+        @if [ -f kernel-slate/package.json ]; then echo "\xE2\x9C\x85 package.json"; else echo "\xE2\x9D\x8C package.json missing"; fi
+        @if [ -f kernel-slate/.env ]; then echo "\xE2\x9C\x85 .env"; else echo "\xE2\x9D\x8C .env missing"; fi
+        @npm test --prefix kernel-slate && echo "\xE2\x9C\x85 tests" || echo "\xE2\x9D\x8C tests failed"
+
+test:
+	npm test
+
+verify:
+        @node scripts/core/ensure-runtime.js && echo "\xE2\x9C\x85 dependencies" || echo "\xE2\x9D\x8C dependencies"
+        @node -e "const fs=require('fs');let a=[];if(fs.existsSync('installed-agents.json')){try{a=JSON.parse(fs.readFileSync('installed-agents.json','utf8'));}catch(e){}};process.exit(a.length?0:1)" && echo "\xE2\x9C\x85 agents installed" || echo "\xE2\x9D\x8C no agents installed"
+        @if [ -f package.json ]; then echo "\xE2\x9C\x85 package.json"; else echo "\xE2\x9D\x8C package.json missing"; fi
+        @if [ -f .env ]; then echo "\xE2\x9C\x85 .env"; else echo "\xE2\x9D\x8C .env missing"; fi
+        @if [ -f kernel.json ]; then echo "\xE2\x9C\x85 kernel.json"; else echo "\xE2\x9D\x8C kernel.json missing"; fi
+        @npm test --prefix kernel-slate && echo "\xE2\x9C\x85 tests" || echo "\xE2\x9D\x8C tests failed"
