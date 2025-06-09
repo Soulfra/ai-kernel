@@ -50,7 +50,6 @@ verify:
 	@if [ -f .env ]; then echo "\xE2\x9C\x85 .env"; else echo "\xE2\x9D\x8C .env missing"; fi
 	@if [ -f kernel.json ]; then echo "\xE2\x9C\x85 kernel.json"; else echo "\xE2\x9D\x8C kernel.json missing"; fi
 	@npm test | tee logs/make-verify-output.log && echo "\xE2\x9C\x85 tests" || echo "\xE2\x9D\x8C tests failed"
-	@node ../scripts/dev/kernel-inspector.js >> logs/kernel-inspector.log && echo "\xE2\x9C\x85 kernel-inspector" || echo "\xE2\x9D\x8C kernel-inspector"
 
 inspect:
 	node ../scripts/dev/kernel-inspector.js
@@ -62,10 +61,12 @@ standards:
 release:
 	node scripts/cli/kernel-cli.js release-check
 
+release-check: release
+
 export:
 	zip -r kernel-release.zip . \
 	            -x '*.git*' '*/node_modules/*' '*/logs/*' 'kernel-release.zip'
 
 reprompt:
-	node scripts/agents/kernel-feedback-loop.js
+	node scripts/agents/kernel-feedback-loop.js --once
 

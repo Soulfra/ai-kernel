@@ -100,4 +100,10 @@ function watch() {
   update();
 }
 
-if (require.main === module) watch();
+if (require.main === module) {
+  if (process.argv.includes('--once')) {
+    update();
+  } else {
+    watch();
+  }
+}
