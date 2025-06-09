@@ -50,4 +50,8 @@ verify:
         @npm test --prefix kernel-slate && echo "\xE2\x9C\x85 tests" || echo "\xE2\x9D\x8C tests failed"
 
 inspect:
-	node scripts/dev/kernel-inspector.js
+        node scripts/dev/kernel-inspector.js
+
+export:
+	zip -r kernel-release.zip . \
+	    -x '*.git*' '*/node_modules/*' '*/logs/*' 'kernel-release.zip'
