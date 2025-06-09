@@ -1,6 +1,12 @@
 const fs = require('fs').promises;
 const path = require('path');
-const yaml = require('js-yaml');
+let yaml;
+try {
+  yaml = require('js-yaml');
+} catch (err) {
+  console.error("Missing dependency 'js-yaml'. Please run `npm install js-yaml`.");
+  process.exit(1);
+}
 const backupHelper = require('./backup-helper');
 const { execSync } = require('child_process');
 
