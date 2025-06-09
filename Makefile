@@ -9,6 +9,7 @@ report:
         @node kernel-slate/scripts/features/export-trace-report.js
 
 boot:
-        @node kernel-slate/scripts/core/validate-environment.js
-        @node kernel-slate/scripts/core/watch-agent-templates.js &
-        @node kernel-slate/scripts/core/agent-loop.js
+	@node kernel-slate/scripts/core/cli-onboard.js
+	@node kernel-slate/scripts/core/validate-environment.js
+	@node kernel-slate/scripts/core/watch-agent-templates.js &
+	@node kernel-slate/scripts/core/agent-loop.js
