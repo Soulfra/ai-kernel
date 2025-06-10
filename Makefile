@@ -104,3 +104,12 @@ load-prompt:
 
 upload-format:
         node scripts/admin/format-loader.js upload-format $(file) $(user)
+
+serve:
+	NODE_ENV=production node scripts/server/boot-server.js
+
+pair:
+	node scripts/server/pair-device.js $(user)
+	
+welcome:
+	node kernel-cli.js welcome --user $(user)
