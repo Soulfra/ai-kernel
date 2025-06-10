@@ -14,25 +14,35 @@ const { spawnSync } = require('child_process');
 const repoRoot = path.resolve(__dirname, '..', '..');
 const envPath = path.join(repoRoot, '.env');
 const keyPath = path.join(repoRoot, '.kernelkeys');
-const usageFile = path.join(repoRoot, 'usage.json');
-const activityFile = path.join(repoRoot, 'logs', 'provider-activity.json');
+let usageFile = path.join(repoRoot, 'usage.json');
+let activityFile = path.join(repoRoot, 'logs', 'provider-activity.json');
+if (process.env.KERNEL_USER) {
+  const vaultBase = path.join(repoRoot, 'vault', process.env.KERNEL_USER);
+  usageFile = path.join(vaultBase, 'usage.json');
+  activityFile = usageFile;
+}
 
 // Hosted fallback keys used when USE_BYOK is not true
 const hostedOpenAIKey = 'hosted-openai-key';
 const hostedClaudeKey = 'hosted-claude-key';
 
-// Load environment variables from .env or .kernelkeys
+// Load environment variables
+if (process.env.USE_BYOK === 'true' && process.env.KERNEL_USER) {
+  const byokPath = path.join(repoRoot, 'vault', process.env.KERNEL_USER, 'env.json');
+  if (fs.existsSync(byokPath)) {
+    try {
+      const data = JSON.parse(fs.readFileSync(byokPath, 'utf8'));
+      Object.entries(data).forEach(([k, v]) => { if (!process.env[k]) process.env[k] = v; });
+    } catch {}
+  }
+}
 if (fs.existsSync(envPath)) {
   require('dotenv').config({ path: envPath });
 } else if (fs.existsSync(keyPath)) {
   try {
     const data = JSON.parse(fs.readFileSync(keyPath, 'utf8'));
-    Object.entries(data).forEach(([k, v]) => {
-      if (!process.env[k]) process.env[k] = v;
-    });
-  } catch {
-    // ignore parse errors
-  }
+    Object.entries(data).forEach(([k, v]) => { if (!process.env[k]) process.env[k] = v; });
+  } catch {}
 }
 
 class ProviderRouter {

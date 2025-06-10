@@ -32,6 +32,16 @@ const byokIndex = rawArgs.indexOf('--use-byok');
 const useByok = byokIndex !== -1;
 if (useByok) rawArgs.splice(byokIndex, 1);
 if (useByok) process.env.USE_BYOK = 'true';
+const userIndex = rawArgs.indexOf('--user');
+let vaultUser = null;
+if (userIndex !== -1) {
+  vaultUser = rawArgs[userIndex + 1];
+  rawArgs.splice(userIndex, 2);
+  process.env.KERNEL_USER = vaultUser;
+  const { ensureUser, loadEnv } = require('./scripts/core/user-vault');
+  ensureUser(vaultUser);
+  if (useByok) loadEnv(vaultUser);
+}
 const cmd = rawArgs[0];
 const args = rawArgs.slice(1);
 
@@ -52,7 +62,7 @@ async function runIdeaCli() {
     process.exit(1);
   }
   try {
-    const res = await runIdea(target, 'cli');
+    const res = await runIdea(target, 'cli', vaultUser);
     if (res && res.success) {
       console.log(`Run complete. Promote with: node kernel-cli.js promote-idea ${res.slug}`);
     }
