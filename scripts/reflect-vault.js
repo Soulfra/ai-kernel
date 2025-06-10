@@ -20,6 +20,7 @@ function reflectVault(user) {
 
   let ideaSuggestion = lastIdeaEntry ? path.basename(lastIdeaEntry.idea || '', '.idea.yaml') : null;
   let agentSuggestion = lastAgentEntry ? lastAgentEntry.slug || lastAgentEntry.agent : null;
+  let promptImprovements = tokens < 5 ? 'Shorten prompts to save tokens' : 'Add more context to prompts';
 
   const reflection = {
     timestamp: new Date().toISOString(),
@@ -27,6 +28,7 @@ function reflectVault(user) {
     tokens,
     promote_next: ideaSuggestion,
     fine_tune_agent: agentSuggestion,
+    prompt_improvements: promptImprovements,
     low_tokens: tokens < 5
   };
 
@@ -41,7 +43,7 @@ function reflectVault(user) {
   const docDir = path.join(repoRoot, 'docs', 'vault');
   fs.mkdirSync(docDir, { recursive: true });
   const mdPath = path.join(docDir, `${user}-next.md`);
-  const md = `# Vault Reflection for ${user}\n\n- Tokens: ${tokens}\n- Promote next idea: ${ideaSuggestion || 'n/a'}\n- Agent to fine tune: ${agentSuggestion || 'n/a'}\n- Low tokens: ${reflection.low_tokens ? 'yes' : 'no'}\n`;
+  const md = `# Vault Reflection for ${user}\n\n- Tokens: ${tokens}\n- Promote next idea: ${ideaSuggestion || 'n/a'}\n- Agent to fine tune: ${agentSuggestion || 'n/a'}\n- Prompt tips: ${promptImprovements}\n- Low tokens: ${reflection.low_tokens ? 'yes' : 'no'}\n`;
   fs.writeFileSync(mdPath, md);
 
   logUsage(user, { timestamp: new Date().toISOString(), action: 'reflect-vault' });

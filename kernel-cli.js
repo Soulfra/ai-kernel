@@ -125,6 +125,22 @@ function reflectVaultCli() {
   }
 }
 
+function generateQrCli() {
+  const { generateQR } = require('./scripts/auth/qr-pairing');
+  const out = generateQR();
+  console.log(out.uri);
+}
+
+function checkPairingCli() {
+  const { checkPair } = require('./scripts/auth/qr-pairing');
+  const id = args[0];
+  if (!id) {
+    console.log('Usage: check-pairing <id>');
+    process.exit(1);
+  }
+  console.log(checkPair(id) ? 'paired' : 'pending');
+}
+
 if (cmd === 'ignite') {
   ignite();
 } else if (cmd === 'run-idea') {
@@ -135,6 +151,10 @@ if (cmd === 'ignite') {
   buildAgentFromIdeaCli();
 } else if (cmd === 'reflect-vault') {
   reflectVaultCli();
+} else if (cmd === 'generate-qr') {
+  generateQrCli();
+} else if (cmd === 'check-pairing') {
+  checkPairingCli();
 } else if (fs.existsSync(slateCli)) {
   const res = spawnSync('node', [slateCli, cmd, ...args], { cwd: repoRoot, stdio: 'inherit' });
   process.exit(res.status);

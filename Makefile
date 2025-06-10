@@ -29,7 +29,13 @@ create-user:
 	node scripts/vault-cli.js create $(username)
 
 deposit:
-	node scripts/vault-cli.js deposit $(username) $(amount)
+        node scripts/vault-cli.js deposit $(username) $(amount)
+
+generate-qr:
+        node kernel-cli.js generate-qr
+
+check-pairing:
+        node kernel-cli.js check-pairing $(id)
 
 vault-status:
         node scripts/vault-cli.js status $(username)
