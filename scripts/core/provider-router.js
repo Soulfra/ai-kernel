@@ -147,7 +147,13 @@ class ProviderRouter {
   async route(agentName, prompt, agentConfig = {}, options = {}) {
     const provider = options.provider || this.getProvider(agentName, agentConfig);
     let result;
-    if (provider === 'anthropic') {
+    if (provider === 'none' || process.env.SIMULATE === 'true') {
+      result = {
+        text: JSON.stringify({ llm_output: 'SIMULATED OUTPUT', tokens: 0, provider: 'none' }),
+        model: 'simulation',
+        endpoint: 'simulation'
+      };
+    } else if (provider === 'anthropic') {
       result = await this.callAnthropic(prompt, options.model);
     } else if (provider === 'local') {
       result = this.callLocal(prompt, options.model);
@@ -155,7 +161,7 @@ class ProviderRouter {
       result = await this.callOpenAI(prompt, options.model);
     }
     this.logUsage(agentName, provider, result.model, result.endpoint);
-    const keySource = provider === 'local' ? 'n/a' : (process.env.USE_BYOK === 'true' ? 'byok' : 'hosted');
+    const keySource = provider === 'local' || provider === 'none' ? 'n/a' : (process.env.USE_BYOK === 'true' ? 'byok' : 'hosted');
     this.logActivity(agentName, provider, result.model, result.endpoint, keySource);
     return result.text;
   }
