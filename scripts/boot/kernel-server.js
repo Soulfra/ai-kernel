@@ -189,3 +189,14 @@ app.get('/run/:cmd', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Kernel server running at http://localhost:${PORT}`);
 });
+
+process.on('exit', () => {
+  const user = process.env.KERNEL_USER;
+  if (user) {
+    try {
+      require('../reflect-vault')(user);
+      require('../scan-usage-summary').scanUsageSummary(user);
+      require('../run-jobs').runJobs(user).catch(() => {});
+    } catch {}
+  }
+});

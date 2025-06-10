@@ -40,7 +40,7 @@ async function runJobs(user) {
       job.error = err.message;
     }
     fs.writeFileSync(p, JSON.stringify(job, null, 2));
-    logUsage(user, { timestamp: new Date().toISOString(), action: 'job-run', id: job.id, tokens_used: estimate.tokens });
+    logUsage(user, { timestamp: new Date().toISOString(), action: 'job-run', id: job.id, tokens_used: estimate.tokens, status: job.status });
     logs.push({ id: job.id, status: job.status });
   }
   return logs;

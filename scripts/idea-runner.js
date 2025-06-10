@@ -15,16 +15,13 @@ function loadInjector() {
   }
 }
 
-const { loadTokens, saveTokens, logUsage, ensureUser } = require('./core/user-vault');
-const TOKEN_COST = parseInt(process.env.IDEA_TOKEN_COST || '1', 10);
+const { logUsage, ensureUser } = require('./core/user-vault');
+const { processBilling } = require('./agent/billing-agent');
 
 async function runIdea(input, origin = 'cli', user = null) {
   const repoRoot = path.resolve(__dirname, '..');
   if (user) {
     ensureUser(user);
-    const current = loadTokens(user);
-    if (current < TOKEN_COST) throw new Error('Insufficient tokens');
-    saveTokens(user, current - TOKEN_COST);
   }
   let abs;
   if (input.endsWith('.idea.yaml') || input.includes('/')) {
@@ -40,6 +37,11 @@ async function runIdea(input, origin = 'cli', user = null) {
   const injected = injector.inject(idea) || {};
   const prompt = injected.prompt || idea.description || '';
   const provider = injected.provider;
+
+  let billingCost = 0;
+  if (user) {
+    billingCost = processBilling(user, ideaPath, prompt);
+  }
 
   const router = new ProviderRouter();
   const output = await router.route(slug, prompt, { provider });
@@ -74,11 +76,12 @@ async function runIdea(input, origin = 'cli', user = null) {
   fs.writeFileSync(summaryFile, JSON.stringify(arr, null, 2));
 
   if (user) {
+    const { loadTokens } = require('./core/user-vault');
     logUsage(user, {
       timestamp: new Date().toISOString(),
       action: 'run-idea',
       idea: ideaPath,
-      tokens_used: TOKEN_COST,
+      cost: billingCost,
       remaining_tokens: loadTokens(user)
     });
   }

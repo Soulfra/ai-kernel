@@ -39,6 +39,7 @@ function promoteIdea(slug) {
     fs.mkdirSync(vaultIdeaDir, { recursive: true });
     const vaultIdea = path.join(vaultIdeaDir, `${slug}.idea.yaml`);
     fs.copyFileSync(dstIdea, vaultIdea);
+    try { require('./vault-snapshot').snapshotVault(user); } catch {}
   }
 }
 

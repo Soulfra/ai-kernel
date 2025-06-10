@@ -19,6 +19,9 @@ function ignite() {
   if (vaultUser) {
     try {
       require('./scripts/orchestration/kernel-boot')(vaultUser);
+      require('./scripts/reflect-vault')(vaultUser);
+      require('./scripts/scan-usage-summary').scanUsageSummary(vaultUser);
+      require('./scripts/run-jobs').runJobs(vaultUser).catch(() => {});
     } catch (err) {
       console.error(err.message);
     }
