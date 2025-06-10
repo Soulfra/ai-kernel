@@ -16,6 +16,13 @@ function ignite() {
   if (!run('make', ['verify'])) process.exit(1);
   run('make', ['standards']);
   run('make', ['release-check']);
+  if (vaultUser) {
+    try {
+      require('./scripts/orchestration/kernel-boot')(vaultUser);
+    } catch (err) {
+      console.error(err.message);
+    }
+  }
   const serverPath = path.join('scripts', 'boot', 'kernel-server.js');
   const child = spawn('node', [serverPath], { cwd: repoRoot, stdio: 'inherit' });
   const agents = (() => {
@@ -208,6 +215,36 @@ async function snapshotCli() {
   }
 }
 
+function syncDeviceCli() {
+  if (!vaultUser) {
+    console.log('Usage: sync-device --user <user>');
+    process.exit(1);
+  }
+  try {
+    const { syncDevice } = require('./scripts/sync-device');
+    const out = syncDevice(vaultUser);
+    console.log(JSON.stringify(out, null, 2));
+  } catch (err) {
+    console.error(err.message);
+    process.exit(1);
+  }
+}
+
+async function runJobsCli() {
+  if (!vaultUser) {
+    console.log('Usage: run-jobs --user <user>');
+    process.exit(1);
+  }
+  try {
+    const { runJobs } = require('./scripts/run-jobs');
+    const res = await runJobs(vaultUser);
+    console.log(JSON.stringify(res, null, 2));
+  } catch (err) {
+    console.error(err.message);
+    process.exit(1);
+  }
+}
+
 function checkJobCli() {
   const id = args[0];
   if (!id || !vaultUser) {
@@ -250,6 +287,10 @@ if (cmd === 'ignite') {
   snapshotCli();
 } else if (cmd === 'check-job') {
   checkJobCli();
+} else if (cmd === 'sync-device') {
+  syncDeviceCli();
+} else if (cmd === 'run-jobs') {
+  runJobsCli();
 } else if (fs.existsSync(slateCli)) {
   const res = spawnSync('node', [slateCli, cmd, ...args], { cwd: repoRoot, stdio: 'inherit' });
   process.exit(res.status);

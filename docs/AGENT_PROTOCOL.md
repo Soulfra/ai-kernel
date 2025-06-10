@@ -22,6 +22,7 @@ Users can fork agents, set a price, or whitelist buyers in `agent-registry.json`
 
 ## Mobile sync
 `make sync-vault username=<user>` updates `vault/<user>/device.json` and records history in `logs/mobile-sync-history.json`.
+Run `node kernel-cli.js sync-device --user <user>` to append device metadata to `vault/<user>/devices.json`.
 
 Background agent queues are managed with:
 ```bash
