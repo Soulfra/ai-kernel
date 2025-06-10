@@ -59,6 +59,44 @@ app.get('/api/docs', (req, res) => {
   res.type('text/markdown').send(readText(docsIndex));
 });
 
+app.get('/api/status', (req, res) => {
+  const user = req.query.user;
+  const { ensureUser, loadTokens } = require('../core/user-vault');
+  let tokens = 0;
+  let lastIdea = null;
+  let lastAgent = null;
+  let stats = {};
+  if (user) {
+    ensureUser(user);
+    tokens = loadTokens(user);
+    const usageFile = path.join(repoRoot, 'vault', user, 'usage.json');
+    if (fs.existsSync(usageFile)) {
+      try {
+        const arr = JSON.parse(fs.readFileSync(usageFile, 'utf8'));
+        const ideaEntry = [...arr].reverse().find(e => e.action === 'run-idea');
+        const agentEntry = [...arr].reverse().find(e => e.action && e.action.includes('agent'));
+        if (ideaEntry) lastIdea = ideaEntry.idea;
+        if (agentEntry) lastAgent = agentEntry.slug || agentEntry.agent;
+      } catch {}
+    }
+    const ideaDir = path.join(repoRoot, 'vault', user, 'ideas');
+    const agentDir = path.join(repoRoot, 'vault', user, 'agents');
+    stats = {
+      ideas: fs.existsSync(ideaDir) ? fs.readdirSync(ideaDir).length : 0,
+      agents: fs.existsSync(agentDir) ? fs.readdirSync(agentDir).length : 0
+    };
+  }
+  const out = { tokens, lastIdea, lastAgent, stats };
+  const logFile = path.join(logsDir, 'api-status.json');
+  let arr = [];
+  if (fs.existsSync(logFile)) {
+    try { arr = JSON.parse(fs.readFileSync(logFile, 'utf8')); } catch {}
+  }
+  arr.push({ timestamp: new Date().toISOString(), user });
+  fs.writeFileSync(logFile, JSON.stringify(arr, null, 2));
+  res.json(out);
+});
+
 app.post('/api/run', express.json(), (req, res) => {
   const cmdStr = req.body && req.body.cmd;
   if (!cmdStr) return res.status(400).json({ error: 'cmd required' });

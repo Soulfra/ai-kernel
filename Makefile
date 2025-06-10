@@ -32,4 +32,8 @@ deposit:
 	node scripts/vault-cli.js deposit $(username) $(amount)
 
 vault-status:
-	node scripts/vault-cli.js status $(username)
+        node scripts/vault-cli.js status $(username)
+
+go:
+        make vault-status username=$(username)
+        node scripts/go.js $(username)

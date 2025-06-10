@@ -42,6 +42,13 @@ if (userIndex !== -1) {
   ensureUser(vaultUser);
   if (useByok) loadEnv(vaultUser);
 }
+const simulateIndex = rawArgs.indexOf('--simulate');
+const simulate = simulateIndex !== -1;
+if (simulate) {
+  rawArgs.splice(simulateIndex, 1);
+  process.env.SIMULATE = 'true';
+  process.env.PROVIDER = 'none';
+}
 const cmd = rawArgs[0];
 const args = rawArgs.slice(1);
 
@@ -87,12 +94,47 @@ function promoteIdeaCli() {
   }
 }
 
+function buildAgentFromIdeaCli() {
+  const { buildAgentFromIdea } = require('./scripts/build-agent-from-idea');
+  const slug = args[0];
+  if (!slug || !vaultUser) {
+    console.log('Usage: build-agent-from-idea <slug> --user <user>');
+    process.exit(1);
+  }
+  try {
+    const out = buildAgentFromIdea(slug, vaultUser);
+    console.log(`Created ${out}`);
+  } catch (err) {
+    console.error(err.message);
+    process.exit(1);
+  }
+}
+
+function reflectVaultCli() {
+  const { reflectVault } = require('./scripts/reflect-vault');
+  if (!vaultUser) {
+    console.log('Usage: reflect-vault --user <user>');
+    process.exit(1);
+  }
+  try {
+    const res = reflectVault(vaultUser);
+    console.log(JSON.stringify(res, null, 2));
+  } catch (err) {
+    console.error(err.message);
+    process.exit(1);
+  }
+}
+
 if (cmd === 'ignite') {
   ignite();
 } else if (cmd === 'run-idea') {
   runIdeaCli();
 } else if (cmd === 'promote-idea') {
   promoteIdeaCli();
+} else if (cmd === 'build-agent-from-idea') {
+  buildAgentFromIdeaCli();
+} else if (cmd === 'reflect-vault') {
+  reflectVaultCli();
 } else if (fs.existsSync(slateCli)) {
   const res = spawnSync('node', [slateCli, cmd, ...args], { cwd: repoRoot, stdio: 'inherit' });
   process.exit(res.status);
