@@ -16,6 +16,9 @@ function ignite() {
   if (!run('make', ['verify'])) process.exit(1);
   run('make', ['standards']);
   run('make', ['release-check']);
+  try {
+    require('./scripts/utils/log-compiler').compile();
+  } catch {}
   if (vaultUser) {
     try {
       require('./scripts/orchestration/kernel-boot')(vaultUser);

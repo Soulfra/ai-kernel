@@ -48,6 +48,26 @@ function slugify(name) {
   return encodeURIComponent(String(name).toLowerCase().replace(/\s+/g, '-'));
 }
 
+function loadVault(user) {
+  const base = path.join(repoRoot, 'vault', user || 'demo');
+  const usage = readJson(path.join(base, 'usage.json'));
+  let tokens = 0;
+  try { tokens = readJson(path.join(base, 'tokens.json')).tokens || 0; } catch {}
+  let lastAgent = null;
+  if (Array.isArray(usage) && usage.length) {
+    const last = [...usage].reverse().find(u => u.agent || u.slug);
+    if (last) lastAgent = last.agent || last.slug;
+  }
+  const promptDir = path.join(repoRoot, 'vault-prompts', user || 'demo');
+  let suggestions = [];
+  if (fs.existsSync(path.join(promptDir, 'new-suggestions.json'))) {
+    try {
+      suggestions = JSON.parse(fs.readFileSync(path.join(promptDir, 'new-suggestions.json'), 'utf8'));
+    } catch {}
+  }
+  return { tokens, lastAgent, suggestions };
+}
+
 app.get('/', (req, res) => {
   const agents = readJson(agentsFile);
   const usage = readJson(usageFile);
@@ -174,6 +194,31 @@ app.post('/install', agentUpload.single('file'), (req, res) => {
   run(script, req.file.path, res, 'Install started');
 });
 
+app.get('/dashboard', (req, res) => {
+  const user = req.query.user || 'demo';
+  const info = loadVault(user);
+  if (req.query.json) return res.json(info);
+  const html = `<!DOCTYPE html>
+  <html><head><meta charset="UTF-8"><title>Dashboard</title>
+  <style>body{font-family:Arial,sans-serif;margin:40px;}form{margin-top:1em;}</style></head>
+  <body><h1>User Dashboard</h1>
+  <p>Tokens: ${info.tokens}</p>
+  <p>Last Agent Run: ${info.lastAgent || 'N/A'}</p>
+  <h2>Pending Suggestions</h2>
+  <pre>${JSON.stringify(info.suggestions, null, 2)}</pre>
+  <h2>Upload Files</h2>
+  <form method="post" action="/upload-chatlog" enctype="multipart/form-data">
+    <input type="file" name="file" accept=".zip" required>
+    <button>Upload Chatlog</button>
+  </form>
+  <form method="post" action="/install" enctype="multipart/form-data">
+    <input type="file" name="file" accept=".idea.yaml" required>
+    <button>Upload Idea</button>
+  </form>
+  </body></html>`;
+  res.send(html);
+});
+
 app.get('/usage', (req, res) => {
   const logs = readJson(usageFile);
   const stats = {};
@@ -222,6 +267,28 @@ app.get('/usage', (req, res) => {
   </html>`;
 
   res.send(html);
+});
+
+app.get('/vault/:user', (req, res) => {
+  const user = req.params.user;
+  const base = path.join(repoRoot, 'vault', user);
+  const out = {
+    usage: readJson(path.join(base, 'usage.json')),
+    prompts: readJson(path.join(repoRoot, 'vault-prompts', user, 'new-suggestions.json')),
+    queued: readJson(path.join(base, 'job-queue.json')),
+    billing: readJson(path.join(base, 'billing-history.json'))
+  };
+  if (req.query.json || !req.accepts('html')) return res.json(out);
+  res.send(`<pre>${JSON.stringify(out, null, 2)}</pre>`);
+});
+
+app.get('/marketplace', (req, res) => {
+  const ideasDir = path.join(repoRoot, 'ideas');
+  const files = fs.existsSync(ideasDir) ? fs.readdirSync(ideasDir).filter(f => f.endsWith('.idea.yaml')) : [];
+  const list = files.map(f => ({ name: f, cost: 1, remixAvailable: false }));
+  if (req.query.json || !req.accepts('html')) return res.json(list);
+  const rows = list.map(i => `<tr><td>${i.name}</td><td>${i.cost}</td><td>${i.remixAvailable ? 'remix' : 'locked'}</td></tr>`).join('');
+  res.send(`<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Marketplace</title></head><body><h1>Marketplace</h1><table border="1"><tr><th>Idea</th><th>Cost</th><th>Remix</th></tr>${rows}</table></body></html>`);
 });
 
 app.listen(PORT, () => {

@@ -178,6 +178,39 @@ app.get('/logs', (req, res) => {
   res.json(out);
 });
 
+app.get('/admin/rules', (req, res) => {
+  const file = path.join(repoRoot, 'rules', 'admin-rules.json');
+  if (req.query.json) res.json(readJson(file));
+  else res.type('text/plain').send(readText(file));
+});
+
+app.get('/admin/contributions', (req, res) => {
+  const file = path.join(logsDir, 'upload-contributions.json');
+  if (req.query.json) res.json(readJson(file));
+  else res.send(`<pre>${readText(file)}</pre>`);
+});
+
+app.get('/admin/flagged', (req, res) => {
+  const file = path.join(logsDir, 'flagged.json');
+  if (req.query.json) res.json(readJson(file));
+  else res.send(`<pre>${readText(file)}</pre>`);
+});
+
+app.get('/admin/users', (req, res) => {
+  const vaultRoot = path.join(repoRoot, 'vault');
+  let list = [];
+  if (fs.existsSync(vaultRoot)) {
+    for (const user of fs.readdirSync(vaultRoot)) {
+      const usage = readJson(path.join(vaultRoot, user, 'usage.json')) || [];
+      let tokens = 0;
+      try { tokens = readJson(path.join(vaultRoot, user, 'tokens.json')).tokens || 0; } catch {}
+      list.push({ user, runs: usage.length, tokens });
+    }
+  }
+  if (req.query.json) return res.json(list);
+  res.send(`<pre>${JSON.stringify(list, null, 2)}</pre>`);
+});
+
 app.get('/run/:cmd', (req, res) => {
   const cmd = req.params.cmd;
   const allowed = ['verify', 'shrinkwrap', 'devkit'];
