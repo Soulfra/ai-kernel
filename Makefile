@@ -88,3 +88,9 @@ freeze:
 
 notify:
         node scripts/notify.js
+
+rules-view:
+        node scripts/core/admin-rule-engine.js view
+
+rules-update:
+        node scripts/core/admin-rule-engine.js update $(key)

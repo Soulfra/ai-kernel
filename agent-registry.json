@@ -78,5 +78,32 @@
     "entry": "module",
     "uses": [],
     "description": "Parses chat exports and converts messages to concepts."
+  },
+  {
+    "name": "UploadRewardAgent",
+    "path": "scripts/agent/upload-reward-agent.js",
+    "type": "feature",
+    "cli": true,
+    "entry": "script",
+    "uses": ["rewardReferral", "reflectVault"],
+    "description": "Intakes uploads, scores contributions and rewards tokens."
+  },
+  {
+    "name": "AdminRuleEngine",
+    "path": "scripts/core/admin-rule-engine.js",
+    "type": "core",
+    "cli": true,
+    "entry": "module",
+    "uses": [],
+    "description": "Stores and updates admin controlled reward rules."
+  },
+  {
+    "name": "LegacyVaultParser",
+    "path": "scripts/agent/legacy-vault-parser.js",
+    "type": "feature",
+    "cli": true,
+    "entry": "script",
+    "uses": ["parseChatLog"],
+    "description": "Backfills old ideas and snapshots into the vault."
   }
 ]
