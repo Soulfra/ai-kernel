@@ -10,3 +10,4 @@ ai-kernel-slim.zip
 .env
 .runtime/
 .temp/
+scripts/internal/prompt-injector.js
