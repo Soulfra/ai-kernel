@@ -243,3 +243,37 @@ node scripts/router/vault-router.js --user $(user) --idea $(idea)
 
 unlock-agent:
 node scripts/vault-cli.js deposit $(user) $(amount)
+
+# New runtime utilities
+launch:
+./launch-agent.sh
+
+record:
+node scripts/agent/voice-reflector.js record
+
+play-last-voice:
+node scripts/agent/voice-reflector.js play
+
+whisper-idea:
+node scripts/agent/voice-reflector.js whisper
+
+mirror:
+node scripts/agent/memory-mirror.js
+
+unlock:
+node scripts/payments/stripe-hook.js unlock
+
+pay:
+node scripts/payments/stripe-hook.js pay
+
+refer:
+node scripts/payments/stripe-hook.js refer
+
+reflect:
+node scripts/agent/memory-mirror.js
+
+whisper:
+node scripts/agent/voice-reflector.js whisper
+
+remix:
+node scripts/agent/memory-mirror.js
