@@ -19,7 +19,7 @@ Welcome to the private ai-kernel runtime.
 
 See recovered ideas in [docs/ideas](./ideas/).
 
-Example idea files live under `ideas/`. Try `unified-migration-system.idea.yaml` or `chatlog-parser-feature.idea.yaml`.
+Example idea files live under `ideas/`. Try `unified-migration-system.idea.yaml`, `chatlog-parser-feature.idea.yaml`, or `advanced-logging-feature.idea.yaml`.
 
 ## Example workflow
 
