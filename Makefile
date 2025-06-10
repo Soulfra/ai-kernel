@@ -183,3 +183,12 @@ node scripts/vault/trace.js seal --file $(file)
 
 trace:
 node scripts/vault/trace.js decode --file $(file)
+
+dashboard:
+NODE_ENV=production node scripts/server/boot-server.js
+
+vault-ui:
+NODE_ENV=production node scripts/server/boot-server.js
+
+reflect-ui:
+NODE_ENV=production node scripts/server/boot-server.js

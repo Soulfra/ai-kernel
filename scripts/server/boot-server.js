@@ -14,6 +14,10 @@ const yaml = require('js-yaml');
 const repoRoot = path.resolve(__dirname, '..', '..');
 const PORT = process.env.PORT || 3080;
 const app = express();
+app.use(express.static(path.join(repoRoot, 'frontend')));
+app.use('/vault', express.static(path.join(repoRoot, 'vault')));
+app.use('/logs', express.static(path.join(repoRoot, 'logs')));
+app.use('/vault-prompts', express.static(path.join(repoRoot, 'vault-prompts')));
 const tmpDir = path.join(repoRoot, 'tmp');
 fs.mkdirSync(tmpDir, { recursive: true });
 const upload = multer({ dest: tmpDir });
@@ -54,7 +58,8 @@ app.get('/start', (req, res) => {
   ensureUser(user);
   logDevice(user, user);
   const qr = generateQR();
-  res.send(`<!DOCTYPE html><html><body><h1>Begin Here</h1><p>Vault: ${user}</p><p>Scan: ${qr.uri}</p></body></html>`);
+  if (req.query.json) return res.json({ user, qr: qr.uri });
+  res.sendFile(path.join(repoRoot, 'frontend', 'start.html'));
 });
 
 app.get('/dashboard', (req, res) => {
@@ -75,8 +80,7 @@ app.get('/dashboard', (req, res) => {
   const logs = path.join(repoRoot,'logs','chatlog-parser-events.json');
   let logCount = 0; if(fs.existsSync(logs)){ try { logCount = JSON.parse(fs.readFileSync(logs,'utf8')).length; } catch {} }
   if (req.query.json) return res.json({ user, tokens, queue, transcript, idea, logCount });
-  const unlocked = require('../agent/billing-agent').hasSpentAtLeast(user, require('../core/admin-rule-engine').loadRules().export_gate || 1);
-  res.send(`<!DOCTYPE html><html><body><h1>Dashboard</h1><p><strong>Vault:</strong> ${user}</p><p>Tokens: ${tokens}</p><p>Last Voice: ${transcript || 'none'}</p><p>Logs: ${logCount}</p><pre>${JSON.stringify(queue, null, 2)}</pre>${idea?`<h2>Suggested Idea</h2><pre>${JSON.stringify(idea,null,2)}</pre>`:''}<button onclick="fetch('/audit-vault?user=${user}',{method:'POST'}).then(()=>alert('sent'))">Send vault to Claude</button>${unlocked&&idea?`<p><a href='/marketplace/remix?slug=${idea.slug||'new'}&user=${user}'>Build Agent</a></p>`:''}</body></html>`);
+  res.sendFile(path.join(repoRoot, 'frontend', 'dashboard.html'));
 });
 
 app.get('/vault/:user', (req, res) => {
@@ -94,11 +98,11 @@ app.get('/vault/:user', (req, res) => {
       return fs.existsSync(dir)?fs.readdirSync(dir).filter(f=>f.startsWith(user)):[]; })()
   };
   if (req.query.json) return res.json(out);
-  res.send(`<pre>${JSON.stringify(out, null, 2)}</pre>`);
+  res.sendFile(path.join(repoRoot, 'frontend', 'vault.html'));
 });
 
 app.get('/upload', (req, res) => {
-  res.send(`<!DOCTYPE html><html><body><h1>Upload</h1><form method='post' enctype='multipart/form-data'><input type='file' name='files' multiple><button>Upload</button></form></body></html>`);
+  res.sendFile(path.join(repoRoot, 'frontend', 'upload.html'));
 });
 
 function slugify(name){
@@ -197,8 +201,7 @@ app.get('/marketplace', (req, res) => {
   });
   logMarket({ user, event:'view', count:list.length });
   if (req.query.json) return res.json(list);
-  const rows = list.map(i=>`<tr><td>${i.title}</td><td>${i.creator}</td><td><a href="/marketplace/remix?slug=${i.slug}&user=${user}">Start with this idea</a></td></tr>`).join('');
-  res.send(`<!DOCTYPE html><html><body><h1>Marketplace</h1><table border='1'><tr><th>Idea</th><th>Creator</th><th></th></tr>${rows}</table></body></html>`);
+  res.sendFile(path.join(repoRoot, 'frontend', 'marketplace.html'));
 });
 
 app.get('/marketplace/remix', (req,res)=>{
