@@ -1,3 +1,8 @@
 export-slim:
 	zip -r ai-kernel-slim.zip scripts docs agent.yaml Makefile package.json kernel-slate/scripts/cli/kernel-cli.js \
-	    -x 'legacy/*' 'logs/*' '.git/*' 'node_modules/*' '*test*' '*backup*'
+		-x 'legacy/*' 'logs/*' '.git/*' 'node_modules/*' '*test*' '*backup*'
+
+publish-devkit:
+	node kernel-slate/scripts/cli/kernel-cli.js devkit
+	zip -r ai-kernel-devkit.zip scripts docs agent.yaml kernel-slate/scripts/cli/kernel-cli.js \
+		-x '*logs*' '*node_modules*' '*backup*'

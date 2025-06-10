@@ -239,6 +239,47 @@ async function shrinkwrap() {
   console.log('Shrinkwrap complete');
 }
 
+async function devkit() {
+  await shrinkwrap();
+  const yaml = require('js-yaml');
+  const templatesDir = path.join(repoRoot, 'kernel-slate', 'agent-templates');
+  const agents = fs.existsSync(templatesDir)
+    ? fs.readdirSync(templatesDir).filter(f => f.endsWith('.yaml'))
+    : [];
+  fs.writeFileSync(path.join(logsDir, 'devkit-agents.json'), JSON.stringify(agents, null, 2));
+  console.log(`Exported ${agents.length} agent templates`);
+
+  const { ProviderRouter } = require(path.join(repoRoot, 'scripts', 'core', 'provider-router.js'));
+  const router = new ProviderRouter();
+  console.log('Router provider:', router.getProvider('default'));
+
+  let invalid = 0;
+  for (const a of agents) {
+    try {
+      const doc = yaml.load(fs.readFileSync(path.join(templatesDir, a), 'utf8')) || {};
+      if (!doc.name || !doc.description || !doc.file) {
+        console.log(`Invalid agent yaml: ${a}`);
+        invalid++;
+      }
+    } catch (e) {
+      console.log(`Failed to parse ${a}`);
+      invalid++;
+    }
+  }
+  if (invalid === 0) console.log('All agent yamls valid');
+
+  const envPath = path.join(repoRoot, '.env');
+  if (fs.existsSync(envPath)) {
+    require('dotenv').config({ path: envPath });
+    const required = ['OPENAI_API_KEY', 'CLAUDE_API_KEY'];
+    const missing = required.filter(k => !process.env[k]);
+    if (missing.length) console.log('Missing env keys:', missing.join(', '));
+    else console.log('Env keys present');
+  } else {
+    console.log('.env not found');
+  }
+}
+
 
 function help() {
   console.log(`Usage: node kernel-cli.js <command> [args]
@@ -255,6 +296,7 @@ Commands:
   doctor             run diagnostics
   test               run npm test
   shrinkwrap         audit bloat and generate slim package docs
+  devkit             run devkit workflow
   install-agent <path>  install specified agent.yaml
   launch-ui          run the Express server`);
 }
@@ -309,6 +351,9 @@ async function main() {
       break;
     case 'shrinkwrap':
       await shrinkwrap();
+      break;
+    case 'devkit':
+      await devkit();
       break;
     case 'run':
       if (arg === 'release-check') {

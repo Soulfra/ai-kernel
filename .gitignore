@@ -3,3 +3,5 @@ logs/
 package-lock.json
 ai-kernel-slim.zip
 *.zip
+
+.env
