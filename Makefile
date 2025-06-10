@@ -59,7 +59,7 @@ vault-restore:
         node scripts/vault-restore.js $(file)
 
 voice:
-        node scripts/agent/claude-voice.js $(file) $(user)
+        node scripts/onboarding/voice-onboard.js $(file) $(user)
 
 enrich-ideas:
         node scripts/daemon/idea-enrichment.js
@@ -261,19 +261,31 @@ mirror:
 node scripts/agent/memory-mirror.js
 
 unlock:
-node scripts/payments/stripe-hook.js unlock
+	node scripts/onboarding/devkit-unlock.js $(user)
 
 pay:
 node scripts/payments/stripe-hook.js pay
 
 refer:
-node scripts/payments/stripe-hook.js refer
+	node scripts/onboarding/referral.js $(referrer) $(new)
 
 reflect:
-node scripts/agent/memory-mirror.js
+	node scripts/onboarding/seed-idea.js $(user)
 
 whisper:
 node scripts/agent/voice-reflector.js whisper
 
 remix:
 node scripts/agent/memory-mirror.js
+
+digest:
+	node scripts/onboarding/daily-digest.js $(user)
+
+set-theme:
+	node scripts/onboarding/theme-manager.js set $(name) $(user)
+
+buy-theme:
+	node scripts/onboarding/theme-manager.js buy $(name) $(user)
+
+devkit:
+	node scripts/devkit/build-devkit.js $(user)
