@@ -143,3 +143,22 @@ vault-theme:
 
 self-test-guide:
 node scripts/onboarding/self-test-guide.js $(user)
+
+route:
+node scripts/router/vault-router.js --user $(user) --idea $(idea) --prompt $(prompt) --chatlog $(chatlog)
+
+mask:
+node scripts/agent/mask-prompts.js --file $(file) --prefix
+
+diffuse-vault:
+node scripts/diffuse-memory.js encode --user $(user) --file $(file)
+
+decode-vault:
+node scripts/diffuse-memory.js decode --file $(file)
+
+audit-transmissions:
+node scripts/admin/audit-transmissions.js
+
+admin-decrypt:
+node scripts/admin/admin-decrypt.js --session $(session) --key $(key)
+
