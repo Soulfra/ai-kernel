@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="p-4">
+  <h1 class="text-xl font-bold mb-4">Dashboard</h1>
+  <div id="info" class="mb-4"></div>
+  <div id="voice" class="mb-4"></div>
+  <div id="idea" class="mb-4"></div>
+  <div id="reflection" class="mb-4"></div>
+  <button id="reflect" class="px-2 py-1 bg-blue-500 text-white rounded">Reflect vault</button>
+  <button id="fork" class="ml-2 px-2 py-1 bg-purple-500 text-white rounded">Fork this idea</button>
+  <button id="watch" class="ml-2 px-2 py-1 bg-gray-500 text-white rounded">Watch Vault</button>
+  <button id="devkit" class="ml-2 px-2 py-1 bg-orange-500 text-white rounded">Export DevKit</button>
+  <hr class="my-4">
+  <div>
+    <h2 class="font-semibold">Voice Preview</h2>
+    <button id="record" class="px-2 py-1 bg-green-500 text-white rounded mr-2">Record</button>
+    <input type="file" id="voiceFile" accept="audio/*" class="mt-2" />
+  </div>
+  <pre id="log" class="mt-2"></pre>
+<script src="dashboard.js"></script>
+</body>
+</html>
