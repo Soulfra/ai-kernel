@@ -228,3 +228,18 @@ NODE_ENV=production node scripts/server/boot-server.js
 
 reflect-ui:
 NODE_ENV=production node scripts/server/boot-server.js
+
+curate:
+node scripts/agent/vault-curator.js $(user)
+
+reflect-nightly:
+node scripts/cron/nightly-reflection.js $(user)
+
+promote-auto:
+node scripts/promote-idea.js $(slug) && node scripts/devkit/export-devkit.js $(user) && node scripts/agent/vault-visualizer.js $(user)
+
+trust-router:
+node scripts/router/vault-router.js --user $(user) --idea $(idea)
+
+unlock-agent:
+node scripts/vault-cli.js deposit $(user) $(amount)
