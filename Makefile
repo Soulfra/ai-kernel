@@ -14,4 +14,13 @@ standards:
 	make -C kernel-slate standards
 
 release-check:
-	make -C kernel-slate release-check
+        make -C kernel-slate release-check
+
+run-ideas:
+        node scripts/run-idea-e2e.js
+
+promote-idea:
+        node kernel-cli.js promote-idea $(slug)
+
+export-approved:
+        node scripts/export-approved.js

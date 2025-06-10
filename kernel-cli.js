@@ -46,13 +46,31 @@ try {
 } catch {}
 async function runIdeaCli() {
   const { runIdea } = require('./scripts/idea-runner');
-  const ideaPath = args[0];
-  if (!ideaPath) {
-    console.log('Usage: run-idea <path/to/idea.yaml>');
+  const target = args[0];
+  if (!target) {
+    console.log('Usage: run-idea <slug|path>');
     process.exit(1);
   }
   try {
-    await runIdea(ideaPath, 'cli');
+    const res = await runIdea(target, 'cli');
+    if (res && res.success) {
+      console.log(`Run complete. Promote with: node kernel-cli.js promote-idea ${res.slug}`);
+    }
+  } catch (err) {
+    console.error(err.message);
+    process.exit(1);
+  }
+}
+
+function promoteIdeaCli() {
+  const { promoteIdea } = require('./scripts/promote-idea');
+  const slug = args[0];
+  if (!slug) {
+    console.log('Usage: promote-idea <slug>');
+    process.exit(1);
+  }
+  try {
+    promoteIdea(slug);
   } catch (err) {
     console.error(err.message);
     process.exit(1);
@@ -63,6 +81,8 @@ if (cmd === 'ignite') {
   ignite();
 } else if (cmd === 'run-idea') {
   runIdeaCli();
+} else if (cmd === 'promote-idea') {
+  promoteIdeaCli();
 } else if (fs.existsSync(slateCli)) {
   const res = spawnSync('node', [slateCli, cmd, ...args], { cwd: repoRoot, stdio: 'inherit' });
   process.exit(res.status);

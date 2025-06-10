@@ -3,16 +3,18 @@ const path = require('path');
 const { spawnSync } = require('child_process');
 
 const repoRoot = path.resolve(__dirname, '..');
-const ideaDir = path.join(repoRoot, 'ideas');
-const ideaFiles = fs
-  .readdirSync(ideaDir)
-  .filter(f => f.endsWith('.idea.yaml'))
-  .map(f => path.join(ideaDir, f));
+const ideaDir = path.join(repoRoot, 'runtime', 'ideas');
+const ideaFiles = fs.existsSync(ideaDir)
+  ? fs
+      .readdirSync(ideaDir)
+      .filter(f => f.endsWith('.idea.yaml'))
+      .map(f => path.join(ideaDir, f))
+  : [];
 const status = {};
 
 for (const file of ideaFiles) {
   const slug = path.basename(file, '.idea.yaml');
-  const res = spawnSync('node', ['kernel-cli.js', 'run-idea', file, '--use-byok'], {
+  const res = spawnSync('node', ['kernel-cli.js', 'run-idea', slug, '--use-byok'], {
     cwd: repoRoot,
     env: { ...process.env, PROVIDER: 'none', SIMULATE: 'true' },
     stdio: 'inherit'
@@ -27,6 +29,9 @@ for (const file of ideaFiles) {
     } catch {}
   }
   status[slug] = passed ? 'pass' : 'fail';
+  if (passed) {
+    console.log(`Idea ${slug} executed successfully. Promote with: node kernel-cli.js promote-idea ${slug}`);
+  }
 }
 
 fs.writeFileSync(path.join(repoRoot, 'logs', 'idea-e2e-status.json'), JSON.stringify(status, null, 2));
