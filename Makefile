@@ -132,5 +132,14 @@ node scripts/prompt-agent.js $(user) $(prompt)
 session-summary:
 node scripts/session-summary.js $(user)
 
+guide-speak:
+ node scripts/agent/glyph-agent.js speak $(user) $(message)
+
+guide-set:
+ node scripts/agent/glyph-agent.js set $(user) $(name)
+
+vault-theme:
+ node scripts/vault-theme.js $(user) $(name)
+
 self-test-guide:
 node scripts/onboarding/self-test-guide.js $(user)

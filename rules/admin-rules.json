@@ -4,5 +4,10 @@
   "referral_percent": 10,
   "export_gate": 1,
   "queue_pricing": {"priority": 1, "background": 0.1},
-  "tiers": {"free": 0, "pro": 10}
+  "tiers": {"free": 0, "pro": 10},
+  "default_guide_name": "Cal Riven",
+  "companion_name": "Arty",
+  "allow_custom_guides": true,
+  "markdown_narration_enabled": true,
+  "vault_theme_tokens": {"skin_change": 5, "voice_change": 3}
 }
