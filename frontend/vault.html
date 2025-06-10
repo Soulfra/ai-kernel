@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Vault Viewer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="p-4">
+  <h1 class="text-xl font-bold mb-4">Vault</h1>
+  <pre id="data"></pre>
+<script>
+const user = location.pathname.split('/').pop();
+fetch(`/vault/${user}?json=1`).then(r=>r.json()).then(d=>{
+  document.getElementById('data').textContent = JSON.stringify(d,null,2);
+});
+</script>
+</body>
+</html>
