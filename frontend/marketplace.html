@@ -7,10 +7,10 @@
 </head>
 <body class="p-4">
   <h1 class="text-xl font-bold mb-4">Marketplace</h1>
-  <table class="table-auto border" id="table"></table>
+<table class="table-auto border" id="table"></table>
 <script>
 fetch('/marketplace?json=1').then(r=>r.json()).then(list=>{
-  const rows = list.map(i=>`<tr><td class='border px-2'>${i.title}</td><td class='border px-2'>${i.creator}</td><td class='border px-2'><a class='text-blue-500' href='/marketplace/remix?slug=${i.slug}'>Remix</a></td></tr>`).join('');
+  const rows = list.map(i=>`<tr><td class='border px-2'>${i.title}</td><td class='border px-2'>${i.creator}</td><td class='border px-2'><a class='text-blue-500 underline' href='/template?slug=${i.slug}'>View</a></td></tr>`).join('');
   document.getElementById('table').innerHTML = `<tr><th class='border px-2'>Idea</th><th class='border px-2'>Creator</th><th class='border px-2'></th></tr>`+rows;
 });
 </script>

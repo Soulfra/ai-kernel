@@ -7,9 +7,11 @@ function renderMarkdown(text){
     .replace(/\n$/gim,'<br />');
 }
 
+let currentUser = null;
 async function load(){
   const res = await fetch('/dashboard?json=1');
   const data = await res.json();
+  currentUser = data.user;
   document.getElementById('info').innerHTML = `<p>Vault: <b>${data.user}</b></p><p>Tokens: ${data.tokens}</p>`;
   if(data.transcript) document.getElementById('voice').textContent = 'Last voice: '+data.transcript;
   if(data.idea) document.getElementById('idea').innerHTML = `<pre>${JSON.stringify(data.idea,null,2)}</pre>`;
@@ -29,6 +31,10 @@ document.getElementById('fork').onclick = async () => {
   if(!slug) return;
   await fetch('/agent-action',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({action:'fork',slug})});
   alert('forked');
+};
+document.getElementById('watch').onclick = () => { if(currentUser) window.location = '/vault/'+currentUser+'/playback'; };
+document.getElementById('devkit').onclick = () => {
+  fetch('/agent-action',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({action:'devkit',user:currentUser})}).then(()=>alert('exported'));
 };
 
 const voiceInput = document.getElementById('voiceFile');
