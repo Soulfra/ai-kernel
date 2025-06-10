@@ -52,6 +52,18 @@ sanitize:
 snapshot:
         node kernel-cli.js snapshot
 
+vault-snapshot:
+        node scripts/vault-snapshot.js $(user)
+
+vault-restore:
+        node scripts/vault-restore.js $(file)
+
+voice:
+        node scripts/agent/claude-voice.js $(file) $(user)
+
+enrich-ideas:
+        node scripts/daemon/idea-enrichment.js
+
 vault-status:
 	node scripts/vault-cli.js status $(username)
 
