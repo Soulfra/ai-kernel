@@ -15,6 +15,7 @@ Welcome to the private ai-kernel runtime.
 - `/api/run` – POST JSON `{ "cmd": "verify" }`
 - `/api/run-idea` – POST JSON `{ "path": "ideas/foo.idea.yaml" }`
   - add `?user=<name>` to charge a vault user
+- `/api/status` – vault stats for a user
 
 ## Idea Summaries
 
@@ -29,3 +30,6 @@ Example idea files live under `ideas/`. Try `unified-migration-system.idea.yaml`
 2. `curl http://localhost:3077/api/keys/status`
 3. `curl -X POST -d '{"cmd":"devkit --use-byok"}' http://localhost:3077/api/run`
 4. `curl -X POST -d '{"path":"ideas/unified-migration-system.idea.yaml"}' http://localhost:3077/api/run-idea`
+5. `make go username=<name>`
+
+User vaults live under `/vault/<name>/`.
