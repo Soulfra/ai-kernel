@@ -1,0 +1,8 @@
+{
+  "min_token_reward": 1,
+  "max_token_reward": 50,
+  "referral_percent": 10,
+  "export_gate": 1,
+  "queue_pricing": {"priority": 1, "background": 0.1},
+  "tiers": {"free": 0, "pro": 10}
+}
