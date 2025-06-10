@@ -7,3 +7,6 @@
 - `kernel-cli.js shrinkwrap` completed
 
 ✅ Kernel is ready for export
+
+Makefile indentation corrected. Latest `make verify` output stored in
+`logs/makefile-fix.log`.

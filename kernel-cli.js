@@ -12,6 +12,7 @@ function run(cmd, args) {
 }
 
 function ignite() {
+  run('node', ['scripts/setup/first-time-init.js']);
   if (!run('make', ['verify'])) process.exit(1);
   run('make', ['standards']);
   run('make', ['release-check']);
@@ -141,6 +142,23 @@ function checkPairingCli() {
   console.log(checkPair(id) ? 'paired' : 'pending');
 }
 
+async function runAgentZipCli() {
+  const zip = args[0];
+  const prompt = args.slice(1).join(' ');
+  if (!zip || !vaultUser) {
+    console.log('Usage: run-agent <path.zip> --user <user> [prompt]');
+    process.exit(1);
+  }
+  try {
+    const { runAgentZip } = require('./scripts/run-agent-zip');
+    const out = await runAgentZip(zip, prompt, vaultUser);
+    if (out) console.log(out);
+  } catch (err) {
+    console.error(err.message);
+    process.exit(1);
+  }
+}
+
 if (cmd === 'ignite') {
   ignite();
 } else if (cmd === 'run-idea') {
@@ -155,6 +173,8 @@ if (cmd === 'ignite') {
   generateQrCli();
 } else if (cmd === 'check-pairing') {
   checkPairingCli();
+} else if (cmd === 'run-agent') {
+  runAgentZipCli();
 } else if (fs.existsSync(slateCli)) {
   const res = spawnSync('node', [slateCli, cmd, ...args], { cwd: repoRoot, stdio: 'inherit' });
   process.exit(res.status);

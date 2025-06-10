@@ -14,13 +14,13 @@ standards:
 	make -C kernel-slate standards
 
 release-check:
-        make -C kernel-slate release-check
+	make -C kernel-slate release-check
 
 run-ideas:
-        node scripts/run-idea-e2e.js
+	node scripts/run-idea-e2e.js
 
 promote-idea:
-        node kernel-cli.js promote-idea $(slug)
+	node kernel-cli.js promote-idea $(slug)
 
 export-approved:
 	node scripts/export-approved.js
@@ -29,17 +29,31 @@ create-user:
 	node scripts/vault-cli.js create $(username)
 
 deposit:
-        node scripts/vault-cli.js deposit $(username) $(amount)
+	node scripts/vault-cli.js deposit $(username) $(amount)
 
 generate-qr:
-        node kernel-cli.js generate-qr
+	node kernel-cli.js generate-qr
 
 check-pairing:
-        node kernel-cli.js check-pairing $(id)
+	node kernel-cli.js check-pairing $(id)
 
 vault-status:
-        node scripts/vault-cli.js status $(username)
+	node scripts/vault-cli.js status $(username)
 
 go:
-        make vault-status username=$(username)
-        node scripts/go.js $(username)
+	make vault-status username=$(username)
+	node scripts/go.js $(username)
+
+marketplace:
+	node scripts/marketplace-preview.js
+
+reflect-vault:
+	node kernel-cli.js reflect-vault --user $(user)
+
+freeze:
+	make verify
+	make standards
+	make reflect-vault user=$(user)
+	mkdir -p build
+	zip -r build/ai-kernel-v1.zip . -x '*.git*' '*node_modules*' 'logs/*' 'build/*'
+	git tag v1.0.0-kernel
