@@ -177,6 +177,22 @@ async function snapshotCli() {
   }
 }
 
+function checkJobCli() {
+  const id = args[0];
+  if (!id || !vaultUser) {
+    console.log('Usage: check-job <id> --user <user>');
+    process.exit(1);
+  }
+  const { getVaultPath } = require('./scripts/core/user-vault');
+  const file = path.join(getVaultPath(vaultUser), 'jobs', `${id}.json`);
+  if (!fs.existsSync(file)) {
+    console.log('Job not found');
+    process.exit(1);
+  }
+  const data = JSON.parse(fs.readFileSync(file, 'utf8'));
+  console.log(JSON.stringify(data, null, 2));
+}
+
 if (cmd === 'ignite') {
   ignite();
 } else if (cmd === 'run-idea') {
@@ -197,6 +213,8 @@ if (cmd === 'ignite') {
   sanitizeCli();
 } else if (cmd === 'snapshot') {
   snapshotCli();
+} else if (cmd === 'check-job') {
+  checkJobCli();
 } else if (fs.existsSync(slateCli)) {
   const res = spawnSync('node', [slateCli, cmd, ...args], { cwd: repoRoot, stdio: 'inherit' });
   process.exit(res.status);

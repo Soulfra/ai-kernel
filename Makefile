@@ -57,9 +57,12 @@ reflect-vault:
 	node kernel-cli.js reflect-vault --user $(user)
 
 freeze:
-	make verify
-	make standards
-	make reflect-vault user=$(user)
-	mkdir -p build
-	zip -r build/ai-kernel-v1.zip . -x '*.git*' '*node_modules*' 'logs/*' 'build/*'
-	git tag v1.0.0-kernel
+        make verify
+        make standards
+        make reflect-vault user=$(user)
+        mkdir -p build
+        zip -r build/ai-kernel-v1.zip . -x '*.git*' '*node_modules*' 'logs/*' 'build/*'
+        git tag v1.0.0-kernel
+
+notify:
+        node scripts/notify.js
