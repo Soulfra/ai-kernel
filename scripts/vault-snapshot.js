@@ -13,13 +13,11 @@ function snapshotVault(user) {
     const p = path.join(base, f);
     try { data[f] = fs.readFileSync(p, 'utf8'); } catch {}
   }
-  const outDir = path.join(repoRoot, 'snapshots');
+  const outDir = path.join(repoRoot, 'vault-backups');
   fs.mkdirSync(outDir, { recursive: true });
-  fs.writeFileSync(path.join(outDir, `${user}-vault.json`), JSON.stringify({ user, timestamp: new Date().toISOString(), files: data }, null, 2));
-  const docDir = path.join(repoRoot, 'docs', 'vault');
-  fs.mkdirSync(docDir, { recursive: true });
-  const md = `# Vault Snapshot for ${user}\n\nFiles: ${files.length}\nTimestamp: ${new Date().toISOString()}\n`;
-  fs.writeFileSync(path.join(docDir, `${user}-summary.md`), md);
+  const outFile = path.join(outDir, `${user}-snapshot.json`);
+  fs.writeFileSync(outFile, JSON.stringify({ user, timestamp: new Date().toISOString(), files: data }, null, 2));
+  return outFile;
 }
 
 if (require.main === module) {
