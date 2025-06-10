@@ -1,0 +1,224 @@
+{
+  "clusters": [
+    [
+      {
+        "file": "scripts/test/test-installed-agents.js",
+        "summary": "!/usr/bin/env node"
+      },
+      {
+        "file": "scripts/docs/generate-agents-doc.js",
+        "summary": ""
+      },
+      {
+        "file": "scripts/core/backup-compliance-report.js",
+        "summary": "CLARITY_ENGINE Kernel Slate: Backup Compliance Report"
+      },
+      {
+        "file": "scripts/core/backup-dashboard.js",
+        "summary": "CLARITY_ENGINE Kernel Slate: Backup Dashboard"
+      },
+      {
+        "file": "scripts/core/embedding-service.js",
+        "summary": ""
+      },
+      {
+        "file": "scripts/core/loop-route.js",
+        "summary": "CLARITY_ENGINE Kernel Slate: load loop route JSON"
+      },
+      {
+        "file": "scripts/core/vector-store.js",
+        "summary": ""
+      },
+      {
+        "file": "scripts/agents/semantic-kernel-parser.js",
+        "summary": "!/usr/bin/env node"
+      },
+      {
+        "file": "scripts/agents/verify-kernel-standards.js",
+        "summary": "!/usr/bin/env node"
+      }
+    ],
+    [
+      {
+        "file": "scripts/payments/stripe-agent-unlock.js",
+        "summary": ""
+      },
+      {
+        "file": "scripts/core/logger.js",
+        "summary": ""
+      },
+      {
+        "file": "scripts/audit/trace-decisions.js",
+        "summary": "!/usr/bin/env node"
+      }
+    ],
+    [
+      {
+        "file": "scripts/payments/track-usage.js",
+        "summary": ""
+      },
+      {
+        "file": "scripts/core/agent-loop.js",
+        "summary": "!/usr/bin/env node"
+      },
+      {
+        "file": "scripts/core/automated-backup.js",
+        "summary": "CLARITY_ENGINE Kernel Slate: Automated Backup with Retention"
+      },
+      {
+        "file": "scripts/core/backup-orchestrator.js",
+        "summary": "CLARITY_ENGINE Kernel Slate: BackupOrchestrator"
+      },
+      {
+        "file": "scripts/core/base-agent.js",
+        "summary": ""
+      },
+      {
+        "file": "scripts/core/orchestration-agent.js",
+        "summary": ""
+      },
+      {
+        "file": "scripts/core/semantic-engine.js",
+        "summary": ""
+      },
+      {
+        "file": "scripts/core/validation-service.js",
+        "summary": ""
+      },
+      {
+        "file": "scripts/agents/kernel-feedback-loop.js",
+        "summary": "!/usr/bin/env node"
+      }
+    ],
+    [
+      {
+        "file": "scripts/market/discover-github-agents.js",
+        "summary": "!/usr/bin/env node"
+      },
+      {
+        "file": "scripts/cli/kernel-cli.js",
+        "summary": "!/usr/bin/env node"
+      }
+    ],
+    [
+      {
+        "file": "scripts/market/install-agent.js",
+        "summary": "!/usr/bin/env node"
+      },
+      {
+        "file": "scripts/features/resolve-decisions.js",
+        "summary": "!/usr/bin/env node"
+      },
+      {
+        "file": "scripts/features/chatlog-parser/from-export.js",
+        "summary": "!/usr/bin/env node"
+      },
+      {
+        "file": "scripts/core/backup-health-check.js",
+        "summary": "CLARITY_ENGINE Kernel Slate: Backup Health Check"
+      },
+      {
+        "file": "scripts/core/relationship-manager.js",
+        "summary": ""
+      },
+      {
+        "file": "scripts/agents/kernel-doc-sync.js",
+        "summary": "!/usr/bin/env node"
+      }
+    ],
+    [
+      {
+        "file": "scripts/features/build-timeline-dashboard.js",
+        "summary": "!/usr/bin/env node"
+      },
+      {
+        "file": "scripts/features/chatlog-parser/index.js",
+        "summary": ""
+      }
+    ],
+    [
+      {
+        "file": "scripts/features/chatlog-utils.js",
+        "summary": ""
+      },
+      {
+        "file": "scripts/core/provider-router.js",
+        "summary": ""
+      },
+      {
+        "file": "scripts/core/utils/requireOrInstall.js",
+        "summary": ""
+      }
+    ],
+    [
+      {
+        "file": "scripts/features/cluster-utils.js",
+        "summary": ""
+      },
+      {
+        "file": "scripts/features/import-chatlog.js",
+        "summary": "!/usr/bin/env node"
+      },
+      {
+        "file": "scripts/features/unify-trace.js",
+        "summary": "!/usr/bin/env node"
+      },
+      {
+        "file": "scripts/features/voice-loop.js",
+        "summary": "!/usr/bin/env node"
+      },
+      {
+        "file": "scripts/core/watch-agent-templates.js",
+        "summary": "!/usr/bin/env node"
+      }
+    ],
+    [
+      {
+        "file": "scripts/features/export-trace-report.js",
+        "summary": "!/usr/bin/env node"
+      },
+      {
+        "file": "scripts/features/record-voice-log.js",
+        "summary": "!/usr/bin/env node"
+      },
+      {
+        "file": "scripts/core/cli-onboard.js",
+        "summary": "!/usr/bin/env node"
+      },
+      {
+        "file": "scripts/core/validate-environment.js",
+        "summary": "!/usr/bin/env node"
+      }
+    ],
+    [
+      {
+        "file": "scripts/features/generate-chat-summary.js",
+        "summary": "!/usr/bin/env node"
+      },
+      {
+        "file": "scripts/features/link-sequential.js",
+        "summary": ""
+      },
+      {
+        "file": "scripts/features/upload-server.js",
+        "summary": "!/usr/bin/env node"
+      },
+      {
+        "file": "scripts/docs/validate-registry.js",
+        "summary": "!/usr/bin/env node"
+      },
+      {
+        "file": "scripts/core/clustering-service.js",
+        "summary": ""
+      },
+      {
+        "file": "scripts/core/ensure-runtime.js",
+        "summary": "!/usr/bin/env node"
+      },
+      {
+        "file": "scripts/core/graph-store.js",
+        "summary": ""
+      }
+    ]
+  ]
+}

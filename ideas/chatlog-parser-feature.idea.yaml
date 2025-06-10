@@ -1,0 +1,5 @@
+title: Chatlog Parser Feature
+description: Parses exported chat logs to cluster ideas and generate Markdown docs with YAML frontmatter and crosslinks.
+inputs: chatlog folder path
+agents_required: chatlog-parser
+llm_strategy: none

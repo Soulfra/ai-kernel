@@ -1,0 +1,5 @@
+title: Automation & Validation Conversation Log
+description: Persistent log capturing validation, fixing, and migration events with links to related documents.
+inputs: event details from automation
+agents_required: log-orchestrator
+llm_strategy: summarization for quick review

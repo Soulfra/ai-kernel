@@ -5,6 +5,7 @@ Welcome to the private ai-kernel runtime.
 - [Install Guide](../InstallKernel.md)
 - [Release Checklist](../RELEASE_CHECKLIST.md)
 - [Final Status](./final-kernel-status.md)
+- [Legacy Insights](./legacy-insights.md)
 
 ## API Endpoints
 
@@ -12,6 +13,10 @@ Welcome to the private ai-kernel runtime.
 - `/api/agents` – list installed agents
 - `/api/docs` – this documentation
 - `/api/run` – POST JSON `{ "cmd": "verify" }`
+
+## Idea Summaries
+
+See recovered ideas in [docs/ideas](./ideas/).
 
 ## Example workflow
 

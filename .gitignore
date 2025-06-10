@@ -8,3 +8,5 @@ ai-kernel-slim.zip
 .idea.yaml
 
 .env
+.runtime/
+.temp/
