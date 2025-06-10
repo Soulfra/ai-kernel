@@ -32,12 +32,21 @@ async function runIdea(ideaPath, origin = 'cli') {
   const runtimeDir = path.join(repoRoot, 'logs', 'idea-runtime');
   fs.mkdirSync(runtimeDir, { recursive: true });
   const runtimePath = path.join(runtimeDir, `${slug}.json`);
-  fs.writeFileSync(runtimePath, JSON.stringify({ timestamp: new Date().toISOString(), output }, null, 2));
+  const runtimeData = {
+    title: idea.title || slug,
+    executed_at: new Date().toISOString(),
+    result: output,
+    provider: router.getProvider(slug, { provider }),
+    input_summary: prompt.slice(0, 100)
+  };
+  fs.writeFileSync(runtimePath, JSON.stringify(runtimeData, null, 2));
 
   const docsDir = path.join(repoRoot, 'docs', 'ideas');
   fs.mkdirSync(docsDir, { recursive: true });
   const docPath = path.join(docsDir, `${slug}-execution.md`);
-  const md = `# ${idea.title || slug} Execution\n\n**Idea file**: ${ideaPath}\n\n## Output\n\n\n${output}\n`;
+  const relYaml = path.relative(docsDir, abs).replace(/\\/g, '/');
+  const relLog = path.relative(docsDir, runtimePath).replace(/\\/g, '/');
+  const md = `# ${idea.title || slug} Execution\n\n**Idea file**: [${ideaPath}](${relYaml})\n**Log file**: [${relLog}](${relLog})\n\n## Output\n\n${output}\n\n## Agents / Followups\n\n${idea.agents_required || 'None'}\n`;
   fs.writeFileSync(docPath, md);
 
   const summaryFile = path.join(repoRoot, 'logs', 'prompt-routing-summary.json');
