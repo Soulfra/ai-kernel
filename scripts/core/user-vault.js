@@ -62,6 +62,32 @@ function loadEnv(user) {
 function deposit(user, amount) {
   const tokens = loadTokens(user) + amount;
   saveTokens(user, tokens);
+
+  // referral reward check
+  const refFile = path.join(getVaultPath(user), 'referrer.json');
+  if (fs.existsSync(refFile)) {
+    try {
+      const refData = JSON.parse(fs.readFileSync(refFile, 'utf8'));
+      if (refData.referrer && !refData.rewarded && amount > 0) {
+        const referrer = refData.referrer;
+        ensureUser(referrer);
+        const refTokens = loadTokens(referrer) + 1;
+        saveTokens(referrer, refTokens);
+        const rfile = path.join(getVaultPath(referrer), 'referrals.json');
+        let arr = [];
+        if (fs.existsSync(rfile)) { try { arr = JSON.parse(fs.readFileSync(rfile,'utf8')); } catch {} }
+        arr.push({ timestamp: new Date().toISOString(), newUser: user, reward: 1, deposit: amount });
+        fs.writeFileSync(rfile, JSON.stringify(arr, null, 2));
+        const logPath = path.join(repoRoot, 'logs', 'referral-events.json');
+        let events = [];
+        if (fs.existsSync(logPath)) { try { events = JSON.parse(fs.readFileSync(logPath,'utf8')); } catch {} }
+        events.push({ timestamp: new Date().toISOString(), referrer, newUser: user, event: 'reward' });
+        fs.writeFileSync(logPath, JSON.stringify(events, null, 2));
+        refData.rewarded = true;
+        fs.writeFileSync(refFile, JSON.stringify(refData, null, 2));
+      }
+    } catch {}
+  }
 }
 
 function status(user) {

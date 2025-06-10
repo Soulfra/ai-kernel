@@ -97,6 +97,23 @@ app.get('/api/status', (req, res) => {
   res.json(out);
 });
 
+app.get('/api/generate-qr', (req, res) => {
+  const { generateQR } = require('../auth/qr-pairing');
+  res.json(generateQR());
+});
+
+app.post('/api/pair', express.json(), (req, res) => {
+  const { id, referrer } = req.body || {};
+  if (!id) return res.status(400).json({ error: 'id required' });
+  try {
+    const { pair } = require('../auth/qr-pairing');
+    pair(id, referrer);
+    res.json({ paired: true });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
 app.post('/api/run', express.json(), (req, res) => {
   const cmdStr = req.body && req.body.cmd;
   if (!cmdStr) return res.status(400).json({ error: 'cmd required' });
@@ -139,7 +156,12 @@ app.post('/api/run-idea', express.json(), async (req, res) => {
 });
 
 app.get('/status', (req, res) => {
-  res.type('text/markdown').send(readText(statusFile));
+  if (req.query.json) {
+    const { generateQR } = require('../auth/qr-pairing');
+    res.json({ ok: true, timestamp: new Date().toISOString(), samplePair: generateQR().uri });
+  } else {
+    res.type('text/markdown').send(readText(statusFile));
+  }
 });
 
 app.get('/agents', (req, res) => {
