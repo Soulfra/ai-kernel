@@ -15,6 +15,7 @@ const repoRoot = path.resolve(__dirname, '..', '..');
 const envPath = path.join(repoRoot, '.env');
 const keyPath = path.join(repoRoot, '.kernelkeys');
 const usageFile = path.join(repoRoot, 'usage.json');
+const activityFile = path.join(repoRoot, 'logs', 'provider-activity.json');
 
 // Load environment variables from .env or .kernelkeys
 if (fs.existsSync(envPath)) {
@@ -55,6 +56,22 @@ class ProviderRouter {
     }
     logs.push(entry);
     fs.writeFileSync(usageFile, JSON.stringify(logs, null, 2));
+  }
+
+  logActivity(agent, provider, model, endpoint) {
+    const entry = {
+      timestamp: new Date().toISOString(),
+      agent,
+      provider,
+      model,
+      endpoint
+    };
+    let arr = [];
+    if (fs.existsSync(activityFile)) {
+      try { arr = JSON.parse(fs.readFileSync(activityFile, 'utf8')); } catch {}
+    }
+    arr.push(entry);
+    fs.writeFileSync(activityFile, JSON.stringify(arr, null, 2));
   }
 
   async callOpenAI(prompt, model = 'gpt-3.5-turbo') {
@@ -109,7 +126,7 @@ class ProviderRouter {
   }
 
   async route(agentName, prompt, agentConfig = {}, options = {}) {
-    const provider = this.getProvider(agentName, agentConfig);
+    const provider = options.provider || this.getProvider(agentName, agentConfig);
     let result;
     if (provider === 'anthropic') {
       result = await this.callAnthropic(prompt, options.model);
@@ -119,6 +136,7 @@ class ProviderRouter {
       result = await this.callOpenAI(prompt, options.model);
     }
     this.logUsage(agentName, provider, result.model, result.endpoint);
+    this.logActivity(agentName, provider, result.model, result.endpoint);
     return result.text;
   }
 }
