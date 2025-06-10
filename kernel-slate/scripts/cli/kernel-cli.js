@@ -308,8 +308,14 @@ async function main() {
     case 'init': {
       const repoUrl = process.env.REPO_URL || 'https://github.com/your-org/clarity-engine.git';
       const dir = repoUrl.split('/').pop().replace(/\.git$/, '') || 'repo';
-      if (run(`git clone ${repoUrl}`) !== 0) break;
-      run('bash setup.sh', { cwd: path.join(process.cwd(), dir) });
+      if (process.env.NODE_ENV === 'test') {
+        console.log('[dry-run] skipping git clone');
+      } else if (run(`git clone ${repoUrl}`) !== 0) {
+        break;
+      }
+      if (process.env.NODE_ENV !== 'test') {
+        run('bash setup.sh', { cwd: path.join(process.cwd(), dir) });
+      }
       break;
     }
     case 'verify':

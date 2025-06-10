@@ -5,4 +5,13 @@ export-slim:
 publish-devkit:
 	node kernel-slate/scripts/cli/kernel-cli.js devkit
 	zip -r ai-kernel-devkit.zip scripts docs agent.yaml kernel-slate/scripts/cli/kernel-cli.js \
-		-x '*logs*' '*node_modules*' '*backup*'
+                -x '*logs*' '*node_modules*' '*backup*'
+
+verify:
+	make -C kernel-slate verify
+
+standards:
+	make -C kernel-slate standards
+
+release-check:
+	make -C kernel-slate release-check

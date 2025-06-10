@@ -27,8 +27,23 @@ function ignite() {
   child.on('exit', code => process.exit(code));
 }
 
-const cmd = process.argv[2];
-const args = process.argv.slice(3);
+const rawArgs = process.argv.slice(2);
+const byokIndex = rawArgs.indexOf('--use-byok');
+const useByok = byokIndex !== -1;
+if (useByok) rawArgs.splice(byokIndex, 1);
+if (useByok) process.env.USE_BYOK = 'true';
+const cmd = rawArgs[0];
+const args = rawArgs.slice(1);
+
+// log CLI flag routing
+try {
+  const logFile = path.join(repoRoot, 'logs', 'cli-flag-routing.json');
+  const entry = { timestamp: new Date().toISOString(), cmd, useByok };
+  let arr = [];
+  if (fs.existsSync(logFile)) arr = JSON.parse(fs.readFileSync(logFile, 'utf8'));
+  arr.push(entry);
+  fs.writeFileSync(logFile, JSON.stringify(arr, null, 2));
+} catch {}
 if (cmd === 'ignite') {
   ignite();
 } else if (fs.existsSync(slateCli)) {
