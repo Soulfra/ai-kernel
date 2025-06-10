@@ -15,10 +15,16 @@ function loadInjector() {
   }
 }
 
-async function runIdea(ideaPath, origin = 'cli') {
+async function runIdea(input, origin = 'cli') {
   const repoRoot = path.resolve(__dirname, '..');
-  const abs = path.resolve(repoRoot, ideaPath);
+  let abs;
+  if (input.endsWith('.idea.yaml') || input.includes('/')) {
+    abs = path.resolve(repoRoot, input);
+  } else {
+    abs = path.join(repoRoot, 'runtime', 'ideas', `${input}.idea.yaml`);
+  }
   if (!fs.existsSync(abs)) throw new Error('Idea file not found');
+  const ideaPath = path.relative(repoRoot, abs);
   const idea = yaml.load(fs.readFileSync(abs, 'utf8')) || {};
   const slug = slugify(path.basename(abs, '.idea.yaml'));
   const injector = loadInjector();
@@ -58,7 +64,8 @@ async function runIdea(ideaPath, origin = 'cli') {
   arr.push({ timestamp: new Date().toISOString(), ideaPath, provider: router.getProvider(slug, { provider }), tokens, origin });
   fs.writeFileSync(summaryFile, JSON.stringify(arr, null, 2));
 
-  return { output, slug };
+  const success = Boolean(output);
+  return { output, slug, success };
 }
 
 module.exports = { runIdea };
