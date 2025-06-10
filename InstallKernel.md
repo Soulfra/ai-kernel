@@ -37,3 +37,11 @@ Logs from the CLI are written to `logs/cli-output.json`.
 1. Visit <https://chatgpt.com/codex> and connect the repository.
 2. Use the generated logs (for example `logs/cli-output.json` and `logs/doc-sync-report.json` when present) to reason about the project state.
 3. Run CLI commands to verify or fix issues and re-sync with Codex.
+#
+### Additional Commands
+Run the devkit workflow and create a portable package:
+```bash
+node kernel-slate/scripts/cli/kernel-cli.js devkit
+make publish-devkit
+```
+Use `ai-kernel-devkit.zip` to distribute a minimal toolkit.
