@@ -1,0 +1,5 @@
+title: Unified Migration and Document Processing System
+description: Finalization plan to consolidate scripts into a safe migration system with validation, backups, and dependency analysis.
+inputs: project documents
+agents_required: unified-migration-orchestrator
+llm_strategy: summarization for docs

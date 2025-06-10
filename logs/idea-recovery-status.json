@@ -1,0 +1,9 @@
+[
+  {"file":".runtime/input/legacy-project-meta-chatlog.zip","status":"local-only"},
+  {"file":"ideas/chatlog-parser-feature.idea.yaml","status":"created"},
+  {"file":"ideas/logging-traceability-plan.idea.yaml","status":"created"},
+  {"file":"ideas/unified-migration-system.idea.yaml","status":"created"},
+  {"file":"ideas/documentation-system-consolidation.idea.yaml","status":"created"},
+  {"file":"ideas/conversation-log-router.idea.yaml","status":"created"},
+  {"verifyScript":"scripts/agents/verify-idea-format.js","status":"missing"}
+]

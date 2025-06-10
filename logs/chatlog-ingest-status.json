@@ -1,0 +1,4 @@
+[
+  {"file":".runtime/input/legacy-project-meta-chatlog.zip","status":"local-only"},
+  {"script":"kernel-slate/scripts/agents/semantic-kernel-parser.js","output":"logs/semantic-legacy-summary.json"}
+]
