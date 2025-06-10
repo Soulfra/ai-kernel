@@ -23,4 +23,13 @@ promote-idea:
         node kernel-cli.js promote-idea $(slug)
 
 export-approved:
-        node scripts/export-approved.js
+	node scripts/export-approved.js
+
+create-user:
+	node scripts/vault-cli.js create $(username)
+
+deposit:
+	node scripts/vault-cli.js deposit $(username) $(amount)
+
+vault-status:
+	node scripts/vault-cli.js status $(username)

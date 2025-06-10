@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const readline = require('readline-sync');
+const { ensureUser } = require('./core/user-vault');
 
 function promoteIdea(slug) {
   const repoRoot = path.resolve(__dirname, '..');
@@ -30,6 +31,15 @@ function promoteIdea(slug) {
   }
   arr.push({ slug, promoted_at: new Date().toISOString() });
   fs.writeFileSync(logFile, JSON.stringify(arr, null, 2));
+
+  if (process.env.KERNEL_USER) {
+    const user = process.env.KERNEL_USER;
+    ensureUser(user);
+    const vaultIdeaDir = path.join(repoRoot, 'vault', user, 'ideas');
+    fs.mkdirSync(vaultIdeaDir, { recursive: true });
+    const vaultIdea = path.join(vaultIdeaDir, `${slug}.idea.yaml`);
+    fs.copyFileSync(dstIdea, vaultIdea);
+  }
 }
 
 module.exports = { promoteIdea };

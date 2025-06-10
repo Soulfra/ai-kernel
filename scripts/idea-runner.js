@@ -15,8 +15,17 @@ function loadInjector() {
   }
 }
 
-async function runIdea(input, origin = 'cli') {
+const { loadTokens, saveTokens, logUsage, ensureUser } = require('./core/user-vault');
+const TOKEN_COST = parseInt(process.env.IDEA_TOKEN_COST || '1', 10);
+
+async function runIdea(input, origin = 'cli', user = null) {
   const repoRoot = path.resolve(__dirname, '..');
+  if (user) {
+    ensureUser(user);
+    const current = loadTokens(user);
+    if (current < TOKEN_COST) throw new Error('Insufficient tokens');
+    saveTokens(user, current - TOKEN_COST);
+  }
   let abs;
   if (input.endsWith('.idea.yaml') || input.includes('/')) {
     abs = path.resolve(repoRoot, input);
@@ -63,6 +72,16 @@ async function runIdea(input, origin = 'cli') {
   const tokens = (prompt.split(/\s+/) || []).length;
   arr.push({ timestamp: new Date().toISOString(), ideaPath, provider: router.getProvider(slug, { provider }), tokens, origin });
   fs.writeFileSync(summaryFile, JSON.stringify(arr, null, 2));
+
+  if (user) {
+    logUsage(user, {
+      timestamp: new Date().toISOString(),
+      action: 'run-idea',
+      idea: ideaPath,
+      tokens_used: TOKEN_COST,
+      remaining_tokens: loadTokens(user)
+    });
+  }
 
   const success = Boolean(output);
   return { output, slug, success };

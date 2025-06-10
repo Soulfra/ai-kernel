@@ -14,10 +14,12 @@ Welcome to the private ai-kernel runtime.
 - `/api/docs` – this documentation
 - `/api/run` – POST JSON `{ "cmd": "verify" }`
 - `/api/run-idea` – POST JSON `{ "path": "ideas/foo.idea.yaml" }`
+  - add `?user=<name>` to charge a vault user
 
 ## Idea Summaries
 
 See recovered ideas in [docs/ideas](./ideas/).
+Read about the [user vault](./VAULT.md) for token pricing (1 token per idea run) and BYOK setup.
 
 Example idea files live under `ideas/`. Try `unified-migration-system.idea.yaml`, `chatlog-parser-feature.idea.yaml`, or `advanced-logging-feature.idea.yaml`.
 

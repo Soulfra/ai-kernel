@@ -21,10 +21,10 @@ This starts the Express server on `http://localhost:3077` with routes:
 
 ### BYOK flag
 
-Use `--use-byok` to force your own API keys:
+Use `--use-byok` to force your own API keys. Combine with `--user <name>` to load from that user's vault:
 
 ```bash
-node kernel-cli.js ignite --use-byok
+node kernel-cli.js ignite --user matthew --use-byok
 ```
 
 This sets `USE_BYOK=true` so the router pulls keys from your `.env` file. Without the flag, hosted keys are used.
@@ -46,7 +46,7 @@ To publish a new agent, push the `.agent.zip` or YAML definition to a private re
 Execute a `.idea.yaml` file directly:
 
 ```bash
-node kernel-cli.js run-idea ideas/unified-migration-system.idea.yaml --use-byok
+node kernel-cli.js run-idea ideas/unified-migration-system.idea.yaml --user matthew --use-byok
 ```
 
 The same action is available remotely:
@@ -54,8 +54,9 @@ The same action is available remotely:
 ```bash
 curl -X POST -H "Content-Type: application/json" \
   -d '{"path":"ideas/unified-migration-system.idea.yaml","byok":true}' \
-  http://localhost:3077/api/run-idea
+  http://localhost:3077/api/run-idea?user=matthew
 ```
 
 Results are written under `logs/idea-runtime/` and documented in `docs/ideas/`.
 Internal templates are loaded locally via `scripts/internal/prompt-injector.js`.
+Each run deducts one token from the specified user's vault.
