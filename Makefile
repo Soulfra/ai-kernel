@@ -35,7 +35,13 @@ generate-qr:
 	node kernel-cli.js generate-qr
 
 check-pairing:
-	node kernel-cli.js check-pairing $(id)
+        node kernel-cli.js check-pairing $(id)
+
+sanitize:
+        node kernel-cli.js sanitize
+
+snapshot:
+        node kernel-cli.js snapshot
 
 vault-status:
 	node scripts/vault-cli.js status $(username)
