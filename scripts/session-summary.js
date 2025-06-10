@@ -4,6 +4,7 @@ const path = require('path');
 const { spawnSync } = require('child_process');
 const { ProviderRouter } = require('./core/provider-router');
 const { ensureUser, getVaultPath } = require('./core/user-vault');
+const { speak } = require('./agent/glyph-agent');
 
 function readJson(p){ try { return JSON.parse(fs.readFileSync(p,'utf8')); } catch { return []; } }
 
@@ -29,6 +30,7 @@ async function main() {
   const zipPath = path.join(zipDir, `vault-session-${user}.zip`);
   spawnSync('zip',['-r',zipPath, base]);
   console.log('Summary written to', mdPath);
+  try { speak(user, 'Session summary ready.'); } catch {}
 }
 
 if (require.main===module){ main().catch(err=>{ console.error(err); process.exit(1); }); }

@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const { speak } = require('../agent/glyph-agent');
 
 function readJson(p) { try { return JSON.parse(fs.readFileSync(p, 'utf8')); } catch { return null; } }
 function writeJson(p, data) { fs.mkdirSync(path.dirname(p), { recursive: true }); fs.writeFileSync(p, JSON.stringify(data, null, 2)); }
@@ -26,6 +27,7 @@ function reflect(user) {
   const log = readJson(logFile) || [];
   log.push({ user, ...suggestion });
   writeJson(logFile, log);
+  try { speak(user, 'Next step suggestion ready.'); } catch {}
   return suggestion;
 }
 

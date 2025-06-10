@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
 const { ensureUser, loadTokens, logUsage } = require('./core/user-vault');
+const { speak } = require('./agent/glyph-agent');
 
 function reflectVault(user) {
   const repoRoot = path.resolve(__dirname, '..');
@@ -46,6 +47,10 @@ function reflectVault(user) {
   const mdPath = path.join(docDir, `${user}-next.md`);
   const md = `# Vault Reflection for ${user}\n\n- Tokens: ${tokens}\n- Promote next idea: ${ideaSuggestion || 'n/a'}\n- Agent to fine tune: ${agentSuggestion || 'n/a'}\n- Prompt tips: ${promptImprovements}\n- Low tokens: ${reflection.low_tokens ? 'yes' : 'no'}\n`;
   fs.writeFileSync(mdPath, md);
+
+  try {
+    speak(user, 'Vault reflection updated.');
+  } catch {}
 
   logUsage(user, { timestamp: new Date().toISOString(), action: 'reflect-vault' });
 

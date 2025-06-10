@@ -5,6 +5,7 @@ const { randomUUID } = require('crypto');
 const { Configuration, OpenAIApi } = require('openai');
 const { reflect } = require('../agents/reflection-agent');
 const { ensureUser } = require('../core/user-vault');
+const { speak } = require('./glyph-agent');
 
 async function transcribe(file) {
   if (process.env.OPENAI_API_KEY) {
@@ -51,6 +52,7 @@ async function main() {
   fs.writeFileSync(transcripts, JSON.stringify(tarr, null, 2));
 
   console.log(JSON.stringify({ text, suggestion }, null, 2));
+  try { speak(user, 'Voice log processed.'); } catch {}
 }
 
 if (require.main === module) {
