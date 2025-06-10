@@ -159,6 +159,24 @@ async function runAgentZipCli() {
   }
 }
 
+async function sanitizeCli() {
+  try {
+    await require('./scripts/orchestration/sanitizer')();
+  } catch (err) {
+    console.error(err.message);
+    process.exit(1);
+  }
+}
+
+async function snapshotCli() {
+  try {
+    await require('./scripts/orchestration/snapshot')();
+  } catch (err) {
+    console.error(err.message);
+    process.exit(1);
+  }
+}
+
 if (cmd === 'ignite') {
   ignite();
 } else if (cmd === 'run-idea') {
@@ -175,6 +193,10 @@ if (cmd === 'ignite') {
   checkPairingCli();
 } else if (cmd === 'run-agent') {
   runAgentZipCli();
+} else if (cmd === 'sanitize') {
+  sanitizeCli();
+} else if (cmd === 'snapshot') {
+  snapshotCli();
 } else if (fs.existsSync(slateCli)) {
   const res = spawnSync('node', [slateCli, cmd, ...args], { cwd: repoRoot, stdio: 'inherit' });
   process.exit(res.status);
