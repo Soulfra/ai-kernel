@@ -9,6 +9,13 @@ const { hasSpentAtLeast } = require('./agent/billing-agent');
 function buildAgentFromIdea(slug, user) {
   const repoRoot = path.resolve(__dirname, '..');
   ensureUser(user);
+  const usageFile = path.join(repoRoot, 'vault', user, 'usage.json');
+  try {
+    const usage = JSON.parse(fs.readFileSync(usageFile, 'utf8'));
+    if (usage.some(e => e.abuse || e.unpaid)) {
+      throw new Error('Account blocked due to abuse or unpaid jobs');
+    }
+  } catch {}
   if (!hasSpentAtLeast(user, 1)) {
     const denyMsg = 'Pay $1 to unlock agent building and exporting features';
     const log = path.join(repoRoot, 'logs', 'export-denied.json');

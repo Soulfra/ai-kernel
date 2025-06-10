@@ -74,13 +74,17 @@ queue-agent:
 run-queue:
         node kernel-cli.js run-queue --user $(user)
 
+start:
+        node kernel-cli.js welcome
+
 freeze:
         make verify
         make standards
         make reflect-vault user=$(user)
+        node scripts/freeze/freeze-kernel.js
         mkdir -p build
         zip -r build/ai-kernel-v1.zip . -x '*.git*' '*node_modules*' 'logs/*' 'build/*'
-        git tag v1.0.0-kernel
+        git tag v1.0.0-devkit
 
 notify:
         node scripts/notify.js

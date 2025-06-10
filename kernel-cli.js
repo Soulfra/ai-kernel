@@ -264,6 +264,25 @@ function checkJobCli() {
   console.log(JSON.stringify(data, null, 2));
 }
 
+function welcomeCli() {
+  const user = vaultUser || 'demo';
+  const { ensureUser, deposit, loadTokens } = require('./scripts/core/user-vault');
+  const { generateQR } = require('./scripts/auth/qr-pairing');
+  ensureUser(user);
+  deposit(user, 3);
+  const qr = generateQR();
+  const ideasDir = path.join(repoRoot, 'ideas');
+  let ideas = [];
+  try { ideas = fs.readdirSync(ideasDir).filter(f => f.endsWith('.idea.yaml')).slice(0,3).map(f => path.basename(f, '.idea.yaml')); } catch {}
+  const tokens = loadTokens(user);
+  console.log('Scan this QR to pair:', qr.uri);
+  console.log("Or type 'begin here'");
+  console.log(`You have ${tokens} tokens (3 free prompts added).`);
+  console.log(`Try ideas: ${ideas.join(', ')}`);
+  console.log('Status link: http://localhost:3077/status');
+  console.log('Drop a chatlog or describe a project');
+}
+
 if (cmd === 'ignite') {
   ignite();
 } else if (cmd === 'run-idea') {
@@ -294,6 +313,8 @@ if (cmd === 'ignite') {
   syncDeviceCli();
 } else if (cmd === 'run-jobs') {
   runJobsCli();
+} else if (cmd === 'welcome') {
+  welcomeCli();
 } else if (fs.existsSync(slateCli)) {
   const res = spawnSync('node', [slateCli, cmd, ...args], { cwd: repoRoot, stdio: 'inherit' });
   process.exit(res.status);

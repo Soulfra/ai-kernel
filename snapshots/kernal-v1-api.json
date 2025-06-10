@@ -1,0 +1,64 @@
+{
+  "endpoints": [
+    {
+      "method": "get",
+      "path": "/api/keys/status"
+    },
+    {
+      "method": "get",
+      "path": "/api/agents"
+    },
+    {
+      "method": "get",
+      "path": "/api/docs"
+    },
+    {
+      "method": "get",
+      "path": "/api/status"
+    },
+    {
+      "method": "get",
+      "path": "/api/generate-qr"
+    },
+    {
+      "method": "post",
+      "path": "/api/pair"
+    },
+    {
+      "method": "post",
+      "path": "/api/run"
+    },
+    {
+      "method": "post",
+      "path": "/api/run-idea"
+    },
+    {
+      "method": "get",
+      "path": "/status"
+    },
+    {
+      "method": "get",
+      "path": "/agents"
+    },
+    {
+      "method": "get",
+      "path": "/logs"
+    },
+    {
+      "method": "get",
+      "path": "/run/:cmd"
+    }
+  ],
+  "vault": [
+    "ideas/",
+    "agents/",
+    "jobs/",
+    "zips/",
+    "tokens.json",
+    "usage.json",
+    "settings.json",
+    "subscription.json",
+    "billing-history.json",
+    "daily-summary.json"
+  ]
+}
