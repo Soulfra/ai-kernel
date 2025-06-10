@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const crypto = require('crypto');
 const { ensureUser, loadTokens, logUsage } = require('./core/user-vault');
 
 function reflectVault(user) {
@@ -47,6 +48,23 @@ function reflectVault(user) {
   fs.writeFileSync(mdPath, md);
 
   logUsage(user, { timestamp: new Date().toISOString(), action: 'reflect-vault' });
+
+  try {
+    const promptId = crypto.randomUUID();
+    const summary = {
+      id: promptId,
+      user,
+      tokens,
+      top_ideas: usage.filter(u => u.idea).slice(-3).map(u => path.basename(u.idea || '', '.idea.yaml')),
+      agents_to_build: usage.filter(u => u.slug).slice(-3).map(u => u.slug || u.agent),
+      usage_history: usage.slice(-5),
+      prompt: 'What idea should this user explore next?'
+    };
+    const dir = path.join(repoRoot, 'logs', 'vault-prompts');
+    fs.mkdirSync(dir, { recursive: true });
+    fs.writeFileSync(path.join(dir, `${promptId}.json`), JSON.stringify(summary, null, 2));
+  } catch {}
+
   return reflection;
 }
 
