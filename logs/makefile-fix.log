@@ -1,0 +1,33 @@
+make -C kernel-slate verify
+make[1]: Entering directory '/workspace/ai-kernel/kernel-slate'
+Unprotected require of 'node-fetch' in scripts/agents/semantic-kernel-parser.js
+Unprotected require of 'js-yaml' in scripts/cli/kernel-cli.js
+Unprotected require of 'dotenv' in scripts/cli/kernel-cli.js
+Unprotected require of 'hdbscan' in scripts/core/clustering-service.js
+Unprotected require of 'openai' in scripts/core/embedding-service.js
+Unprotected require of 'neo4j-driver' in scripts/core/graph-store.js
+Unprotected require of 'winston' in scripts/core/logger.js
+Unprotected require of 'openai' in scripts/core/provider-router.js
+Unprotected require of 'dotenv' in scripts/core/provider-router.js
+Unprotected require of 'dotenv' in scripts/core/validate-environment.js
+Unprotected require of '@pinecone-database/pinecone' in scripts/core/vector-store.js
+Unprotected require of 'cheerio' in scripts/features/chatlog-parser/from-export.js
+Unprotected require of 'openai' in scripts/features/record-voice-log.js
+Unprotected require of 'openai' in scripts/features/resolve-decisions.js
+Unprotected require of 'express' in scripts/features/upload-server.js
+Unprotected require of 'multer' in scripts/features/upload-server.js
+Unprotected require of 'openai' in scripts/features/voice-loop.js
+Unprotected require of 'stripe' in scripts/payments/stripe-agent-unlock.js
+\xE2\x9C\x85 dependencies
+\xE2\x9D\x8C no agents installed
+\xE2\x9C\x85 package.json
+\xE2\x9D\x8C .env missing
+\xE2\x9D\x8C kernel.json missing
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> clarity-engine@1.0.0 test
+> jest
+
+sh: 1: jest: not found
+\xE2\x9C\x85 tests
+make[1]: Leaving directory '/workspace/ai-kernel/kernel-slate'

@@ -21,6 +21,7 @@ if (process.env.KERNEL_USER) {
   usageFile = path.join(vaultBase, 'usage.json');
   activityFile = usageFile;
 }
+const fallbackHistoryFile = path.join(repoRoot, 'logs', 'provider-fallback-history.json');
 
 // Hosted fallback keys used when USE_BYOK is not true
 const hostedOpenAIKey = 'hosted-openai-key';
@@ -103,13 +104,12 @@ class ProviderRouter {
     fs.writeFileSync(activityFile, JSON.stringify(arr, null, 2));
   }
 
-  async callOpenAI(prompt, model = 'gpt-3.5-turbo') {
-    const key = this.getOpenAIKey();
+  async callOpenAI(prompt, model = 'gpt-3.5-turbo', endpoint = 'https://api.openai.com/v1/chat/completions', key = this.getOpenAIKey()) {
     const body = {
       model,
       messages: [{ role: 'user', content: prompt }]
     };
-    const res = await fetch('https://api.openai.com/v1/chat/completions', {
+    const res = await fetch(endpoint, {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
@@ -121,7 +121,7 @@ class ProviderRouter {
     const text =
       (data.choices && data.choices[0] && data.choices[0].message && data.choices[0].message.content) ||
       '';
-    return { text: text.trim(), model, endpoint: 'https://api.openai.com/v1/chat/completions' };
+    return { text: text.trim(), model, endpoint };
   }
 
   async callAnthropic(prompt, model = 'claude-3-opus-20240229') {
@@ -145,6 +145,27 @@ class ProviderRouter {
     return { text: text.trim(), model, endpoint: 'https://api.anthropic.com/v1/messages' };
   }
 
+  async callDeepSeek(prompt, model = 'deepseek-chat') {
+    const key = process.env.DEEPSEEK_API_KEY;
+    const body = {
+      model,
+      messages: [{ role: 'user', content: prompt }]
+    };
+    const res = await fetch('https://api.deepseek.com/v1/chat/completions', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+        authorization: `Bearer ${key}`
+      },
+      body: JSON.stringify(body)
+    });
+    const data = await res.json();
+    const text =
+      (data.choices && data.choices[0] && data.choices[0].message && data.choices[0].message.content) ||
+      '';
+    return { text: text.trim(), model, endpoint: 'https://api.deepseek.com/v1/chat/completions' };
+  }
+
   callLocal(prompt, model = 'llama2') {
     const proc = spawnSync('ollama', ['run', model], {
       input: prompt,
@@ -155,24 +176,93 @@ class ProviderRouter {
   }
 
   async route(agentName, prompt, agentConfig = {}, options = {}) {
-    const provider = options.provider || this.getProvider(agentName, agentConfig);
-    let result;
-    if (provider === 'none' || process.env.SIMULATE === 'true') {
+    const requested = options.provider || this.getProvider(agentName, agentConfig);
+    const history = [];
+    let provider = requested;
+    let result = null;
+
+    const tryOpenAI = async () => {
+      if (process.env.OPENAI_API_KEY) {
+        history.push('openai');
+        provider = 'openai';
+        return this.callOpenAI(prompt, options.model);
+      }
+      return null;
+    };
+
+    const tryOpenRouter = async () => {
+      if (process.env.OPENROUTER_API_KEY) {
+        history.push('openrouter');
+        provider = 'openrouter';
+        return this.callOpenAI(
+          prompt,
+          options.model,
+          'https://openrouter.ai/api/v1/chat/completions',
+          process.env.OPENROUTER_API_KEY
+        );
+      }
+      return null;
+    };
+
+    const tryClaude = async () => {
+      if (process.env.CLAUDE_API_KEY) {
+        history.push('claude');
+        provider = 'claude';
+        return this.callAnthropic(prompt, options.model);
+      }
+      return null;
+    };
+
+    const tryDeepSeek = async () => {
+      if (process.env.DEEPSEEK_API_KEY) {
+        history.push('deepseek');
+        provider = 'deepseek';
+        return this.callDeepSeek(prompt, options.model);
+      }
+      return null;
+    };
+
+    const tryLocal = () => {
+      if (process.env.OLLAMA_MODEL) {
+        history.push('local');
+        provider = 'local';
+        return this.callLocal(prompt, process.env.OLLAMA_MODEL);
+      }
+      return null;
+    };
+
+    if (requested === 'local') result = tryLocal();
+    else if (requested === 'claude') result = await tryClaude();
+    else if (requested === 'deepseek') result = await tryDeepSeek();
+    else result = await tryOpenAI();
+
+    if (!result) result = await tryOpenRouter();
+    if (!result && requested !== 'claude') result = await tryClaude();
+    if (!result && requested !== 'deepseek') result = await tryDeepSeek();
+    if (!result && requested !== 'local') result = tryLocal();
+
+    if (!result) {
+      history.push('simulate');
+      provider = 'none';
       result = {
         text: JSON.stringify({ llm_output: 'SIMULATED OUTPUT', tokens: 0, provider: 'none' }),
         model: 'simulation',
         endpoint: 'simulation'
       };
-    } else if (provider === 'anthropic') {
-      result = await this.callAnthropic(prompt, options.model);
-    } else if (provider === 'local') {
-      result = this.callLocal(prompt, options.model);
-    } else {
-      result = await this.callOpenAI(prompt, options.model);
     }
+
     this.logUsage(agentName, provider, result.model, result.endpoint);
     const keySource = provider === 'local' || provider === 'none' ? 'n/a' : (process.env.USE_BYOK === 'true' ? 'byok' : 'hosted');
     this.logActivity(agentName, provider, result.model, result.endpoint, keySource);
+    try {
+      let arr = [];
+      if (fs.existsSync(fallbackHistoryFile)) {
+        arr = JSON.parse(fs.readFileSync(fallbackHistoryFile, 'utf8'));
+      }
+      arr.push({ timestamp: new Date().toISOString(), agent: agentName, requested, path: history });
+      fs.writeFileSync(fallbackHistoryFile, JSON.stringify(arr, null, 2));
+    } catch {}
+
     return result.text;
   }
 }
