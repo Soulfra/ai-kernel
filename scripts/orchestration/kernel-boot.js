@@ -72,6 +72,7 @@ async function kernelBoot(user) {
 
   logUsage(user, { timestamp: new Date().toISOString(), action: 'kernel-boot', tokens_used: 0, remaining_tokens: tokens });
   createSummary(user);
+  try { require('../vault-snapshot').snapshotVault(user); } catch {}
   return true;
 }
 

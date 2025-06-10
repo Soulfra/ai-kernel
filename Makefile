@@ -29,7 +29,16 @@ create-user:
 	node scripts/vault-cli.js create $(username)
 
 deposit:
-	node scripts/vault-cli.js deposit $(username) $(amount)
+        node scripts/vault-cli.js deposit $(username) $(amount)
+
+topup:
+        node scripts/vault-cli.js deposit $(user) $(amount)
+
+subscribe:
+        node scripts/vault-cli.js subscribe $(user) $(plan)
+
+billing-summary:
+        node scripts/vault-cli.js billing-summary $(user)
 
 generate-qr:
 	node kernel-cli.js generate-qr

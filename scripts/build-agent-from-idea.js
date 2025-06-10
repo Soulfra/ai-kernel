@@ -4,10 +4,20 @@ const os = require('os');
 const yaml = require('js-yaml');
 const { spawnSync } = require('child_process');
 const { ensureUser, logUsage } = require('./core/user-vault');
+const { hasSpentAtLeast } = require('./agent/billing-agent');
 
 function buildAgentFromIdea(slug, user) {
   const repoRoot = path.resolve(__dirname, '..');
   ensureUser(user);
+  if (!hasSpentAtLeast(user, 1)) {
+    const denyMsg = 'Pay $1 to unlock agent building and exporting features';
+    const log = path.join(repoRoot, 'logs', 'export-denied.json');
+    let arr = [];
+    if (fs.existsSync(log)) { try { arr = JSON.parse(fs.readFileSync(log, 'utf8')); } catch {} }
+    arr.push({ timestamp: new Date().toISOString(), user, slug, reason: 'spend-requirement' });
+    fs.writeFileSync(log, JSON.stringify(arr, null, 2));
+    throw new Error(denyMsg);
+  }
   const ideaPath = path.join(repoRoot, 'vault', user, 'ideas', `${slug}.idea.yaml`);
   if (!fs.existsSync(ideaPath)) throw new Error('Idea not found');
   const idea = yaml.load(fs.readFileSync(ideaPath, 'utf8')) || {};

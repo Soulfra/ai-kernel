@@ -1,11 +1,22 @@
 const fs = require('fs');
 const path = require('path');
 const { spawnSync } = require('child_process');
+const { hasSpentAtLeast } = require('./agent/billing-agent');
 
 function exportApproved() {
   const repoRoot = path.resolve(__dirname, '..');
   const approvedDir = path.join(repoRoot, 'approved', 'ideas');
   if (!fs.existsSync(approvedDir)) return;
+  const user = process.env.KERNEL_USER;
+  if (user && !hasSpentAtLeast(user, 1)) {
+    const deny = 'Pay $1 to unlock agent building and exporting features';
+    const log = path.join(repoRoot, 'logs', 'export-denied.json');
+    let arr = [];
+    if (fs.existsSync(log)) { try { arr = JSON.parse(fs.readFileSync(log, 'utf8')); } catch {} }
+    arr.push({ timestamp: new Date().toISOString(), user, action: 'export-approved' });
+    fs.writeFileSync(log, JSON.stringify(arr, null, 2));
+    throw new Error(deny);
+  }
   const buildDir = path.join(repoRoot, 'build', 'approved-ideas');
   fs.mkdirSync(buildDir, { recursive: true });
   const files = fs.readdirSync(approvedDir).filter(f => f.endsWith('.idea.yaml'));
