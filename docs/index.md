@@ -22,6 +22,11 @@ Welcome to the private ai-kernel runtime.
 See recovered ideas in [docs/ideas](./ideas/).
 Read about the [user vault](./VAULT.md) for token pricing (1 token per idea run) and BYOK setup.
 
+### Additional Tools
+- [Vault Visualizer](./VISUALIZER.md)
+- [Agent Template Viewer](./AGENT_TEMPLATE.md)
+- [DevKit Exporter](./DEVKIT.md)
+
 Example idea files live under `ideas/`. Try `unified-migration-system.idea.yaml`, `chatlog-parser-feature.idea.yaml`, or `advanced-logging-feature.idea.yaml`.
 
 ## Example workflow

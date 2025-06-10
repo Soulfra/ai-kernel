@@ -215,7 +215,30 @@ app.get('/marketplace/remix', (req,res)=>{
   fs.mkdirSync(path.dirname(dst), { recursive: true });
   fs.copyFileSync(src,dst);
   logMarket({ user, event:'remix', slug });
+  const fFile = path.join(repoRoot,'vault',user,'template-forks.json');
+  let arr=[]; if(fs.existsSync(fFile)){ try { arr=JSON.parse(fs.readFileSync(fFile,'utf8')); } catch {} }
+  arr.push({ timestamp:new Date().toISOString(), slug });
+  fs.writeFileSync(fFile, JSON.stringify(arr,null,2));
   res.send('forked');
+});
+
+app.get('/template', (req,res)=>{
+  const slug = req.query.slug;
+  const user = req.query.user || fingerprint();
+  if(!slug) return res.status(400).send('missing');
+  const ideaPath = path.join(repoRoot,'approved','ideas',`${slug}.idea.yaml`);
+  if(!fs.existsSync(ideaPath)) return res.status(404).send('not found');
+  ensureUser(user);
+  const reflectionFile = path.join(repoRoot,'vault-prompts',user,'claude-reflection.json');
+  const usageFile = path.join(repoRoot,'vault',user,'usage.json');
+  const stats = { tokens:0, ideas:0 };
+  try { stats.tokens = JSON.parse(fs.readFileSync(usageFile,'utf8')).length; } catch {}
+  const ideaDir = path.join(repoRoot,'vault',user,'ideas');
+  try { stats.ideas = fs.readdirSync(ideaDir).filter(f=>f.endsWith('.idea.yaml')).length; } catch {}
+  const idea = fs.readFileSync(ideaPath,'utf8');
+  const reflection = fs.existsSync(reflectionFile)?fs.readFileSync(reflectionFile,'utf8'):null;
+  if(req.query.json) return res.json({ slug, idea, reflection, stats });
+  res.sendFile(path.join(repoRoot,'frontend','template.html'));
 });
 
 app.post('/agent-action', express.json(), (req,res)=>{
@@ -230,6 +253,8 @@ app.post('/agent-action', express.json(), (req,res)=>{
   fs.writeFileSync(logFile, JSON.stringify(arr,null,2));
   if(action==='promote') spawnSync('make',['promote','slug='+slug],{cwd:repoRoot});
   if(action==='export') spawnSync('make',['export-agent','slug='+slug],{cwd:repoRoot});
+  if(action==='devkit') spawnSync('make',['devkit','user='+uid],{cwd:repoRoot});
+  if(action==='vault-video') spawnSync('make',['vault-video','user='+uid],{cwd:repoRoot});
   if(action==='fork') {
     const script = path.join(__dirname,'..','fork-idea.js');
     spawnSync('node',[script,slug,uid],{cwd:repoRoot});

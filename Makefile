@@ -173,7 +173,22 @@ recall:
 node scripts/vault/expire-vault.js recall --ghost $(ghost)
 
 animate:
-node scripts/vault/visualizer.js $(user)
+node scripts/agent/vault-visualizer.js $(user)
+
+vault-video:
+node scripts/agent/vault-visualizer.js $(user)
+
+export-video:
+node scripts/agent/vault-visualizer.js $(user)
+
+devkit:
+node scripts/devkit/export-devkit.js $(user)
+
+vault-template:
+node scripts/fork-idea.js $(slug) $(user)
+
+submit-agent:
+node scripts/marketplace-preview.js
 
 sync:
 node scripts/vault/trace.js sync --input $(input) --output $(output)
