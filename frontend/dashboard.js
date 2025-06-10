@@ -1,11 +1,22 @@
+function renderMarkdown(text){
+  return text.replace(/^# (.*$)/gim,'<h1>$1</h1>')
+    .replace(/^## (.*$)/gim,'<h2>$1</h2>')
+    .replace(/^### (.*$)/gim,'<h3>$1</h3>')
+    .replace(/\*\*(.*)\*\*/gim,'<b>$1</b>')
+    .replace(/\*(.*)\*/gim,'<i>$1</i>')
+    .replace(/\n$/gim,'<br />');
+}
+
 async function load(){
   const res = await fetch('/dashboard?json=1');
   const data = await res.json();
   document.getElementById('info').innerHTML = `<p>Vault: <b>${data.user}</b></p><p>Tokens: ${data.tokens}</p>`;
   if(data.transcript) document.getElementById('voice').textContent = 'Last voice: '+data.transcript;
   if(data.idea) document.getElementById('idea').innerHTML = `<pre>${JSON.stringify(data.idea,null,2)}</pre>`;
-  fetch(`/vault-prompts/${data.user}/claude-reflection.json`).then(r=>r.ok?r.json():null).then(d=>{ if(d) document.getElementById('reflection').innerHTML=`<h2 class='font-semibold'>Claude Reflection</h2><pre>${d.response||''}</pre>`; });
-}
+  fetch(`/vault-prompts/${data.user}/claude-reflection.json`).then(r=>r.ok?r.json():null).then(d=>{
+    if(d){ document.getElementById('reflection').innerHTML = renderMarkdown(`**Cal Riven**:\n_${d.response || ''}_`); }
+  });
+  }
 
 async function reflect(){
   const res = await fetch('/audit-vault',{method:'POST'});
@@ -13,6 +24,12 @@ async function reflect(){
 }
 
 document.getElementById('reflect').onclick = reflect;
+document.getElementById('fork').onclick = async () => {
+  const slug = prompt('Idea slug to fork?');
+  if(!slug) return;
+  await fetch('/agent-action',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({action:'fork',slug})});
+  alert('forked');
+};
 
 const voiceInput = document.getElementById('voiceFile');
 voiceInput.onchange = e => uploadVoice(e.target.files[0]);

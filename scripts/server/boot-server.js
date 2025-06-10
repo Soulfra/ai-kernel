@@ -218,6 +218,42 @@ app.get('/marketplace/remix', (req,res)=>{
   res.send('forked');
 });
 
+app.post('/agent-action', express.json(), (req,res)=>{
+  const { action, slug, user } = req.body || {};
+  const uid = user || fingerprint();
+  ensureUser(uid);
+  const logFile = path.join(repoRoot,'vault',uid,'transmission-log.json');
+  let arr=[];
+  if(fs.existsSync(logFile)){ try{ arr=JSON.parse(fs.readFileSync(logFile,'utf8')); }catch{} }
+  const entry = { timestamp:new Date().toISOString(), action, slug };
+  arr.push(entry);
+  fs.writeFileSync(logFile, JSON.stringify(arr,null,2));
+  if(action==='promote') spawnSync('make',['promote','slug='+slug],{cwd:repoRoot});
+  if(action==='export') spawnSync('make',['export-agent','slug='+slug],{cwd:repoRoot});
+  if(action==='fork') {
+    const script = path.join(__dirname,'..','fork-idea.js');
+    spawnSync('node',[script,slug,uid],{cwd:repoRoot});
+  }
+  res.json({ ok:true });
+});
+
+app.get('/vault/:user/playback', (req,res)=>{
+  res.sendFile(path.join(repoRoot,'frontend','playback.html'));
+});
+
+app.get('/remote', (req,res)=>{
+  const user = req.query.user || fingerprint();
+  ensureUser(user);
+  const metaFile = path.join(repoRoot,'vault',user,'device-meta.json');
+  const entry = { timestamp:new Date().toISOString(), agent:req.headers['user-agent']||'unknown' };
+  let arr=[];
+  if(fs.existsSync(metaFile)){ try{ arr=JSON.parse(fs.readFileSync(metaFile,'utf8')); }catch{} }
+  arr.push(entry);
+  fs.writeFileSync(metaFile, JSON.stringify(arr,null,2));
+  if(req.query.json) return res.json({ user });
+  res.sendFile(path.join(repoRoot,'frontend','remote.html'));
+});
+
 app.post('/audit-vault', express.json(), async (req,res)=>{
   const user = req.query.user || fingerprint();
   ensureUser(user);

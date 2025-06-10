@@ -187,6 +187,27 @@ node scripts/vault/trace.js decode --file $(file)
 dashboard:
 NODE_ENV=production node scripts/server/boot-server.js
 
+reflect-vault:
+node kernel-cli.js reflect-vault --user $(user)
+
+promote:
+node kernel-cli.js promote-idea $(slug)
+
+fork:
+node scripts/fork-idea.js $(slug) $(user)
+
+playback:
+NODE_ENV=production node scripts/server/boot-server.js
+
+remote:
+NODE_ENV=production node scripts/server/boot-server.js
+
+narrator:
+node scripts/agent/glyph-agent.js speak $(user) $(message)
+
+night-loop:
+node scripts/cron/nightly-reflection.js $(user)
+
 vault-ui:
 NODE_ENV=production node scripts/server/boot-server.js
 

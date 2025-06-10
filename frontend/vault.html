@@ -8,11 +8,15 @@
 <body class="p-4">
   <h1 class="text-xl font-bold mb-4">Vault</h1>
   <pre id="data"></pre>
+  <div id="reflection" class="my-4"></div>
+  <a id="play" class="text-blue-500 underline" href="#">Playback</a>
 <script>
 const user = location.pathname.split('/').pop();
 fetch(`/vault/${user}?json=1`).then(r=>r.json()).then(d=>{
   document.getElementById('data').textContent = JSON.stringify(d,null,2);
 });
+document.getElementById('play').href = `/vault/${user}/playback`;
+fetch(`/vault-prompts/${user}/claude-reflection.json`).then(r=>r.ok?r.json():null).then(d=>{ if(d) document.getElementById('reflection').innerHTML = `<b>Cal Riven</b>:<br>${d.response}`; });
 </script>
 </body>
 </html>

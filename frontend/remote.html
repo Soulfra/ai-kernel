@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Phone Companion</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="p-4 text-center">
+  <h1 class="text-xl font-bold mb-4">Remote</h1>
+  <button id="record" class="px-4 py-2 bg-green-500 text-white rounded mr-2">Record voice</button>
+  <button id="reflect" class="px-4 py-2 bg-blue-500 text-white rounded mr-2">Run vault reflection</button>
+  <button id="sync" class="px-4 py-2 bg-gray-500 text-white rounded">Push log update</button>
+  <pre id="log" class="mt-4"></pre>
+<script>
+const params = new URLSearchParams(location.search);
+const user = params.get('user');
+fetch('/remote?json=1&user='+user);
+let recorder, chunks=[];
+record.onclick = async () => {
+  if(recorder && recorder.state==='recording'){ recorder.stop(); record.textContent='Record voice'; return; }
+  chunks=[];
+  const stream = await navigator.mediaDevices.getUserMedia({audio:true});
+  recorder = new MediaRecorder(stream);
+  recorder.ondataavailable = e=>chunks.push(e.data);
+  recorder.onstop = ()=>{
+    const blob = new Blob(chunks,{type:'audio/wav'});
+    const fd=new FormData(); fd.append('file',blob,'voice.wav');
+    fetch('/voice-upload?user='+user,{method:'POST',body:fd}).then(r=>r.text()).then(t=>log.textContent=t);
+  };
+  recorder.start();
+  record.textContent='Stop';
+};
+reflect.onclick = ()=>fetch('/audit-vault?user='+user,{method:'POST'}).then(r=>r.json()).then(()=>log.textContent='reflected');
+sync.onclick = ()=>fetch('/dashboard?user='+user+'&json=1').then(r=>r.json()).then(d=>log.textContent='tokens:'+d.tokens);
+</script>
+</body>
+</html>
