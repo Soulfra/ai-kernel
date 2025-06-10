@@ -162,3 +162,24 @@ node scripts/admin/audit-transmissions.js
 admin-decrypt:
 node scripts/admin/admin-decrypt.js --session $(session) --key $(key)
 
+
+rotate:
+node scripts/vault/rotate-vault.js --user $(user) --reason "$(reason)"
+
+expire:
+node scripts/vault/expire-vault.js expire --user $(user)
+
+recall:
+node scripts/vault/expire-vault.js recall --ghost $(ghost)
+
+animate:
+node scripts/vault/visualizer.js $(user)
+
+sync:
+node scripts/vault/trace.js sync --input $(input) --output $(output)
+
+seal:
+node scripts/vault/trace.js seal --file $(file)
+
+trace:
+node scripts/vault/trace.js decode --file $(file)
