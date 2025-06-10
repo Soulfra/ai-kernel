@@ -28,6 +28,15 @@ function showPreview(file, content) {
     preview.innerHTML = `<pre>${JSON.stringify(JSON.parse(content), null, 2)}</pre>`;
   } else if (ext === 'yaml' || ext === 'yml') {
     preview.innerHTML = `<pre>${content}</pre>`;
+    if(file.name.endsWith('.idea.yaml')){
+      const c = document.createElement('div');
+      c.innerHTML = `<button id="promote" class="px-2 py-1 bg-blue-500 text-white rounded mr-2">Promote</button><button id="export" class="px-2 py-1 bg-green-500 text-white rounded mr-2">Export</button><button id="fork" class="px-2 py-1 bg-purple-500 text-white rounded">Fork</button>`;
+      preview.appendChild(c);
+      c.querySelector('#promote').onclick = ()=>action('promote');
+      c.querySelector('#export').onclick = ()=>action('export');
+      c.querySelector('#fork').onclick = ()=>action('fork');
+      function action(a){ fetch('/agent-action',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({action:a,slug:file.name.replace(/\.idea\.yaml$/,'')})}).then(()=>alert(a+' sent')); }
+    }
   } else {
     preview.innerHTML = `<pre>Loaded ${file.name} (${ext})</pre>`;
   }
