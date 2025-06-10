@@ -71,7 +71,7 @@ const jobId = Date.now().toString();
 const jobDir = path.join(getVaultPath(user), 'jobs');
 fs.mkdirSync(jobDir, { recursive: true });
 const jobFile = path.join(jobDir, `${jobId}.json`);
-fs.writeFileSync(jobFile, JSON.stringify({ id: jobId, status: 'queued', prompt, tier }, null, 2));
+fs.writeFileSync(jobFile, JSON.stringify({ id: jobId, status: 'queued', prompt, tier, created_at: new Date().toISOString(), delayed: tier === 'deep' || tier === 'async' }, null, 2));
 
 const docsDir = path.join(__dirname, '..', '..', 'docs', 'jobs');
 fs.mkdirSync(docsDir, { recursive: true });
