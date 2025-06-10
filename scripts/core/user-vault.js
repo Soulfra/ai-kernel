@@ -8,9 +8,37 @@ function getVaultPath(user) {
   return path.join(vaultRoot, user);
 }
 
+function getSettingsPath(user) {
+  return path.join(getVaultPath(user), 'settings.json');
+}
+
+function ensureSettings(user) {
+  const sp = getSettingsPath(user);
+  if (!fs.existsSync(sp)) {
+    fs.writeFileSync(sp, JSON.stringify({ commission_rate: 10, referrer_id: null }, null, 2));
+  }
+}
+
+function loadSettings(user) {
+  ensureSettings(user);
+  try { return JSON.parse(fs.readFileSync(getSettingsPath(user), 'utf8')); } catch { return { commission_rate: 10, referrer_id: null }; }
+}
+
+function logEarnings(user, entry) {
+  ensureUser(user);
+  const file = path.join(getVaultPath(user), 'earnings.json');
+  let arr = [];
+  if (fs.existsSync(file)) {
+    try { arr = JSON.parse(fs.readFileSync(file, 'utf8')); } catch {}
+  }
+  arr.push(entry);
+  fs.writeFileSync(file, JSON.stringify(arr, null, 2));
+}
+
 function ensureUser(user) {
   const base = getVaultPath(user);
   fs.mkdirSync(path.join(base, 'ideas'), { recursive: true });
+  ensureSettings(user);
   const tokenFile = path.join(base, 'tokens.json');
   const usageFile = path.join(base, 'usage.json');
   if (!fs.existsSync(tokenFile)) {
@@ -45,6 +73,29 @@ function logUsage(user, entry) {
   }
   arr.push(entry);
   fs.writeFileSync(file, JSON.stringify(arr, null, 2));
+
+  try {
+    const settings = loadSettings(user);
+    if (settings.referrer_id) {
+      const rate = Number(settings.commission_rate) || 10;
+      const spent = entry.tokens_used || entry.cost || 0;
+      if (spent > 0) {
+        const reward = Math.ceil((spent * rate) / 100);
+        if (reward > 0) {
+          const referrer = settings.referrer_id;
+          ensureUser(referrer);
+          const current = loadTokens(referrer);
+          saveTokens(referrer, current + reward);
+          logEarnings(referrer, {
+            timestamp: new Date().toISOString(),
+            from: user,
+            tokens: reward,
+            usage: spent
+          });
+        }
+      }
+    }
+  } catch {}
 }
 
 function loadEnv(user) {
@@ -102,5 +153,7 @@ module.exports = {
   logUsage,
   loadEnv,
   deposit,
-  status
+  status,
+  loadSettings,
+  logEarnings
 };
