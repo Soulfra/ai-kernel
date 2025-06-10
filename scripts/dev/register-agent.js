@@ -44,8 +44,11 @@ async function pushToGitHub(owner, repo, dest, content, token, branch = 'main') 
 async function main() {
   const args = process.argv.slice(2);
   const dryIndex = args.indexOf('--dry-run');
-  const dryRun = dryIndex !== -1;
+  let dryRun = dryIndex !== -1;
   if (dryRun) args.splice(dryIndex, 1);
+  if (process.env.NODE_ENV === 'test') {
+    dryRun = true;
+  }
 
   const [yamlPath, catArg, usage] = args;
   if (!yamlPath || !catArg || !usage) {

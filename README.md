@@ -13,6 +13,10 @@ The project contains the final snapshot of the ai-kernel system. It focuses on s
 - Codex feedback loop using `kernel-slate/scripts/agents/kernel-feedback-loop.js`.
 - Logged workflow ready for export.
 
+## Key management
+
+`provider-router.js` defaults to hosted API keys. Use `--use-byok` or set `USE_BYOK=true` to prefer keys from your `.env` file.
+
 ## Documentation
 - [Install and Usage Guide](./InstallKernel.md)
 - [Release Checklist](./RELEASE_CHECKLIST.md)

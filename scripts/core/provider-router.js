@@ -17,6 +17,10 @@ const keyPath = path.join(repoRoot, '.kernelkeys');
 const usageFile = path.join(repoRoot, 'usage.json');
 const activityFile = path.join(repoRoot, 'logs', 'provider-activity.json');
 
+// Hosted fallback keys used when USE_BYOK is not true
+const hostedOpenAIKey = 'hosted-openai-key';
+const hostedClaudeKey = 'hosted-claude-key';
+
 // Load environment variables from .env or .kernelkeys
 if (fs.existsSync(envPath)) {
   require('dotenv').config({ path: envPath });
@@ -42,6 +46,20 @@ class ProviderRouter {
     );
   }
 
+  getOpenAIKey() {
+    if (process.env.USE_BYOK === 'true') {
+      return process.env.OPENAI_API_KEY;
+    }
+    return hostedOpenAIKey;
+  }
+
+  getClaudeKey() {
+    if (process.env.USE_BYOK === 'true') {
+      return process.env.CLAUDE_API_KEY;
+    }
+    return hostedClaudeKey;
+  }
+
   logUsage(agent, provider, model, endpoint) {
     const entry = {
       timestamp: new Date().toISOString(),
@@ -58,13 +76,14 @@ class ProviderRouter {
     fs.writeFileSync(usageFile, JSON.stringify(logs, null, 2));
   }
 
-  logActivity(agent, provider, model, endpoint) {
+  logActivity(agent, provider, model, endpoint, keySource) {
     const entry = {
       timestamp: new Date().toISOString(),
       agent,
       provider,
       model,
-      endpoint
+      endpoint,
+      keySource
     };
     let arr = [];
     if (fs.existsSync(activityFile)) {
@@ -75,7 +94,7 @@ class ProviderRouter {
   }
 
   async callOpenAI(prompt, model = 'gpt-3.5-turbo') {
-    const key = process.env.OPENAI_API_KEY;
+    const key = this.getOpenAIKey();
     const body = {
       model,
       messages: [{ role: 'user', content: prompt }]
@@ -96,7 +115,7 @@ class ProviderRouter {
   }
 
   async callAnthropic(prompt, model = 'claude-3-opus-20240229') {
-    const key = process.env.CLAUDE_API_KEY;
+    const key = this.getClaudeKey();
     const body = {
       model,
       max_tokens: 1024,
@@ -136,7 +155,8 @@ class ProviderRouter {
       result = await this.callOpenAI(prompt, options.model);
     }
     this.logUsage(agentName, provider, result.model, result.endpoint);
-    this.logActivity(agentName, provider, result.model, result.endpoint);
+    const keySource = provider === 'local' ? 'n/a' : (process.env.USE_BYOK === 'true' ? 'byok' : 'hosted');
+    this.logActivity(agentName, provider, result.model, result.endpoint, keySource);
     return result.text;
   }
 }

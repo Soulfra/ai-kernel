@@ -13,10 +13,21 @@ This starts the Express server on `http://localhost:3077` with routes:
 - `/agents` – installed agents list
 - `/logs` – recent log snippets
 - `/run/:cmd` – run a CLI command (`verify`, `shrinkwrap`, `devkit`)
+- `/api/*` – JSON API endpoints
 
 ## CLI vs Hosted
 
-`kernel-cli.js` can run locally or be exposed from a hosted environment. When hosted, call the `/run/:cmd` route to execute commands remotely.
+`kernel-cli.js` can run locally or be exposed from a hosted environment. When hosted, call the `/api/run` route to execute commands remotely.
+
+### BYOK flag
+
+Use `--use-byok` to force your own API keys:
+
+```bash
+node kernel-cli.js ignite --use-byok
+```
+
+This sets `USE_BYOK=true` so the router pulls keys from your `.env` file. Without the flag, hosted keys are used.
 
 ## Connecting Claude/Codex
 
