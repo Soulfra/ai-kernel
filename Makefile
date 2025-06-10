@@ -54,7 +54,16 @@ marketplace:
 	node scripts/marketplace-preview.js
 
 reflect-vault:
-	node kernel-cli.js reflect-vault --user $(user)
+        node kernel-cli.js reflect-vault --user $(user)
+
+sync-vault:
+        node scripts/sync-vault.js $(username)
+
+queue-agent:
+        node kernel-cli.js queue-agent $(path) --user $(user)
+
+run-queue:
+        node kernel-cli.js run-queue --user $(user)
 
 freeze:
         make verify

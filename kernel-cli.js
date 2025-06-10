@@ -142,6 +142,37 @@ function checkPairingCli() {
   console.log(checkPair(id) ? 'paired' : 'pending');
 }
 
+function queueAgentCli() {
+  const zip = args[0];
+  if (!zip || !vaultUser) {
+    console.log('Usage: queue-agent <path.zip> --user <user>');
+    process.exit(1);
+  }
+  try {
+    const { queueAgent } = require('./scripts/queue-agent');
+    queueAgent(zip, vaultUser);
+    console.log('queued');
+  } catch (err) {
+    console.error(err.message);
+    process.exit(1);
+  }
+}
+
+async function runQueueCli() {
+  if (!vaultUser) {
+    console.log('Usage: run-queue --user <user>');
+    process.exit(1);
+  }
+  try {
+    const { runQueue } = require('./scripts/run-queue');
+    const out = await runQueue(vaultUser);
+    console.log(JSON.stringify(out, null, 2));
+  } catch (err) {
+    console.error(err.message);
+    process.exit(1);
+  }
+}
+
 async function runAgentZipCli() {
   const zip = args[0];
   const prompt = args.slice(1).join(' ');
@@ -209,6 +240,10 @@ if (cmd === 'ignite') {
   checkPairingCli();
 } else if (cmd === 'run-agent') {
   runAgentZipCli();
+} else if (cmd === 'queue-agent') {
+  queueAgentCli();
+} else if (cmd === 'run-queue') {
+  runQueueCli();
 } else if (cmd === 'sanitize') {
   sanitizeCli();
 } else if (cmd === 'snapshot') {
