@@ -6,6 +6,8 @@ const crypto = require('crypto');
 const multer = require('multer');
 const { spawnSync } = require('child_process');
 const { ensureUser, loadTokens } = require('../core/user-vault');
+const { ProviderRouter } = require('../core/provider-router');
+const cheerio = require('cheerio');
 const { generateQR } = require('../auth/qr-pairing');
 const yaml = require('js-yaml');
 
@@ -67,8 +69,14 @@ app.get('/dashboard', (req, res) => {
   if (fs.existsSync(tFile)) {
     try { const arr = JSON.parse(fs.readFileSync(tFile, 'utf8')); transcript = arr.length ? arr[arr.length - 1].text : null; } catch {}
   }
-  if (req.query.json) return res.json({ tokens, queue, transcript });
-  res.send(`<!DOCTYPE html><html><body><h1>Dashboard</h1><p>Tokens: ${tokens}</p><p>Last Voice: ${transcript || 'none'}</p><pre>${JSON.stringify(queue, null, 2)}</pre></body></html>`);
+  const ideaFile = path.join(repoRoot,'vault',user,'suggested-next.json');
+  let idea = null;
+  if(fs.existsSync(ideaFile)){ try { idea = JSON.parse(fs.readFileSync(ideaFile,'utf8')); } catch {} }
+  const logs = path.join(repoRoot,'logs','chatlog-parser-events.json');
+  let logCount = 0; if(fs.existsSync(logs)){ try { logCount = JSON.parse(fs.readFileSync(logs,'utf8')).length; } catch {} }
+  if (req.query.json) return res.json({ user, tokens, queue, transcript, idea, logCount });
+  const unlocked = require('../agent/billing-agent').hasSpentAtLeast(user, require('../core/admin-rule-engine').loadRules().export_gate || 1);
+  res.send(`<!DOCTYPE html><html><body><h1>Dashboard</h1><p><strong>Vault:</strong> ${user}</p><p>Tokens: ${tokens}</p><p>Last Voice: ${transcript || 'none'}</p><p>Logs: ${logCount}</p><pre>${JSON.stringify(queue, null, 2)}</pre>${idea?`<h2>Suggested Idea</h2><pre>${JSON.stringify(idea,null,2)}</pre>`:''}<button onclick="fetch('/audit-vault?user=${user}',{method:'POST'}).then(()=>alert('sent'))">Send vault to Claude</button>${unlocked&&idea?`<p><a href='/marketplace/remix?slug=${idea.slug||'new'}&user=${user}'>Build Agent</a></p>`:''}</body></html>`);
 });
 
 app.get('/vault/:user', (req, res) => {
@@ -93,16 +101,67 @@ app.get('/upload', (req, res) => {
   res.send(`<!DOCTYPE html><html><body><h1>Upload</h1><form method='post' enctype='multipart/form-data'><input type='file' name='files' multiple><button>Upload</button></form></body></html>`);
 });
 
+function slugify(name){
+  return name.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'');
+}
+
+function parseJsonExport(obj){
+  const messages = [];
+  if(Array.isArray(obj)){ obj.forEach(m=>m&&m.role&&m.content&&messages.push({role:m.role.toLowerCase(),content:m.content,timestamp:m.timestamp||null})); return messages; }
+  if(obj.mapping){
+    const nodes = Object.values(obj.mapping).filter(n=>n.message);
+    nodes.sort((a,b)=>(a.message.create_time||0)-(b.message.create_time||0));
+    for(const n of nodes){ const m=n.message; if(!m.author||!m.content) continue; const content=Array.isArray(m.content.parts)?m.content.parts.join('\n'):m.content.text||''; messages.push({role:m.author.role.toLowerCase(),content,timestamp:m.create_time?new Date(m.create_time*1000).toISOString():null}); }
+    return messages;
+  }
+  return messages;
+}
+
+function parseFile(p){
+  const ext = path.extname(p).toLowerCase();
+  let text = '';
+  try { text = fs.readFileSync(p,'utf8'); } catch { return []; }
+  if(ext==='.md' || ext==='.txt'){ const util=require('../../kernel-slate/scripts/features/chatlog-utils'); return util.parseChatLog(text); }
+  if(ext==='.html' || ext==='.chatlog.html' || ext==='.htm'){ const body = cheerio.load(text)('body').text(); const util=require('../../kernel-slate/scripts/features/chatlog-utils'); return util.parseChatLog(body); }
+  if(ext==='.json'){ try { const obj=JSON.parse(text); return parseJsonExport(obj); } catch { return []; } }
+  return [];
+}
+
+function parseZip(zipPath){
+  const dir = fs.mkdtempSync(path.join(tmpDir,'zip-'));
+  spawnSync('unzip',['-o',zipPath,'-d',dir]);
+  const files = fs.readdirSync(dir);
+  let out=[];
+  for(const f of files){ out = out.concat(parseFile(path.join(dir,f))); }
+  return out;
+}
+
 app.post('/upload', upload.array('files'), (req, res) => {
   const user = req.query.user || fingerprint();
   ensureUser(user);
   const files = req.files || [];
-  const logPath = path.join(repoRoot, 'logs', 'upload-events.json');
-  let arr = [];
-  if (fs.existsSync(logPath)) { try { arr = JSON.parse(fs.readFileSync(logPath,'utf8')); } catch {} }
-  arr.push({ timestamp: new Date().toISOString(), user, files: files.map(f => f.originalname) });
-  fs.writeFileSync(logPath, JSON.stringify(arr, null, 2));
-  res.send('uploaded');
+  const logPath = path.join(repoRoot, 'logs', 'chatlog-parser-events.json');
+  let events = [];
+  if(fs.existsSync(logPath)) { try { events = JSON.parse(fs.readFileSync(logPath,'utf8')); } catch {} }
+  const results = [];
+  for(const f of files){
+    let messages = [];
+    const ext = path.extname(f.originalname).toLowerCase();
+    if(ext==='.zip') messages = parseZip(f.path); else messages = parseFile(f.path);
+    const slug = slugify(path.basename(f.originalname, ext));
+    const outPath = path.join(repoRoot,'vault',user,'uploads',`parsed-chatlog-${slug}.json`);
+    fs.mkdirSync(path.dirname(outPath),{recursive:true});
+    fs.writeFileSync(outPath, JSON.stringify(messages,null,2));
+    events.push({ timestamp:new Date().toISOString(), user, file:f.originalname, parsed: path.relative(repoRoot,outPath), count: messages.length });
+    results.push(outPath);
+  }
+  fs.writeFileSync(logPath, JSON.stringify(events, null, 2));
+  const reward = path.join(tmpDir, `upload-${Date.now()}.zip`);
+  spawnSync('zip',['-j',reward,...files.map(x=>x.path)]);
+  const agent = path.join(__dirname,'..','agent','upload-reward-agent.js');
+  spawnSync('node',[agent,reward,reward,'',user],{cwd:repoRoot});
+  require('../reflect-vault').reflectVault(user);
+  res.json({ parsed: results.map(p=>path.relative(repoRoot,p)) });
 });
 
 app.post('/voice-upload', voiceUpload.single('file'), (req, res) => {
@@ -154,6 +213,23 @@ app.get('/marketplace/remix', (req,res)=>{
   fs.copyFileSync(src,dst);
   logMarket({ user, event:'remix', slug });
   res.send('forked');
+});
+
+app.post('/audit-vault', express.json(), async (req,res)=>{
+  const user = req.query.user || fingerprint();
+  ensureUser(user);
+  const read = f=>{ try{ return JSON.parse(fs.readFileSync(f,'utf8')); } catch{ return []; } };
+  const data = {
+    usage: read(path.join(repoRoot,'vault',user,'usage.json')),
+    billing: read(path.join(repoRoot,'vault',user,'billing-history.json')),
+    logs: read(path.join(repoRoot,'logs','chatlog-parser-events.json'))
+  };
+  const router = new ProviderRouter();
+  const prompt = `Review the following logs and suggest improvements with optional .idea.yaml:\n${JSON.stringify(data).slice(0,2000)}`;
+  const { text } = await router.callAnthropic(prompt);
+  const out = path.join(repoRoot,'vault',user,'claude-audit.md');
+  fs.writeFileSync(out, text);
+  res.json({ ok:true });
 });
 
 app.listen(PORT, () => {

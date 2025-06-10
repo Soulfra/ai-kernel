@@ -125,3 +125,12 @@ pair:
 	
 welcome:
 	node kernel-cli.js welcome --user $(user)
+
+prompt-agent:
+node scripts/prompt-agent.js $(user) $(prompt)
+
+session-summary:
+node scripts/session-summary.js $(user)
+
+self-test-guide:
+node scripts/onboarding/self-test-guide.js $(user)
