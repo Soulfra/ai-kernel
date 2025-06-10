@@ -94,3 +94,13 @@ rules-view:
 
 rules-update:
         node scripts/core/admin-rule-engine.js update $(key)
+
+ignite:
+        node scripts/utils/log-compiler.js
+        node kernel-cli.js ignite
+
+load-prompt:
+        node scripts/admin/format-loader.js load-prompt $(file) $(user)
+
+upload-format:
+        node scripts/admin/format-loader.js upload-format $(file) $(user)
