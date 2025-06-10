@@ -67,6 +67,30 @@ app.post('/api/run', express.json(), (req, res) => {
   res.json({ status: proc.status, output: proc.stdout + proc.stderr });
 });
 
+app.post('/api/run-idea', express.json(), async (req, res) => {
+  const ideaPath = req.body && req.body.path;
+  if (!ideaPath) return res.status(400).json({ error: 'path required' });
+  const byok = req.body && req.body.byok;
+  const prev = process.env.USE_BYOK;
+  if (byok) process.env.USE_BYOK = 'true';
+  try {
+    const { runIdea } = require('../idea-runner');
+    const result = await runIdea(ideaPath, 'api');
+    const logFile = path.join(logsDir, 'api-executions.json');
+    let arr = [];
+    if (fs.existsSync(logFile)) {
+      try { arr = JSON.parse(fs.readFileSync(logFile, 'utf8')); } catch {}
+    }
+    arr.push({ timestamp: new Date().toISOString(), idea: ideaPath });
+    fs.writeFileSync(logFile, JSON.stringify(arr, null, 2));
+    res.json(result);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  } finally {
+    if (prev !== undefined) process.env.USE_BYOK = prev; else delete process.env.USE_BYOK;
+  }
+});
+
 app.get('/status', (req, res) => {
   res.type('text/markdown').send(readText(statusFile));
 });

@@ -44,8 +44,25 @@ try {
   arr.push(entry);
   fs.writeFileSync(logFile, JSON.stringify(arr, null, 2));
 } catch {}
+async function runIdeaCli() {
+  const { runIdea } = require('./scripts/idea-runner');
+  const ideaPath = args[0];
+  if (!ideaPath) {
+    console.log('Usage: run-idea <path/to/idea.yaml>');
+    process.exit(1);
+  }
+  try {
+    await runIdea(ideaPath, 'cli');
+  } catch (err) {
+    console.error(err.message);
+    process.exit(1);
+  }
+}
+
 if (cmd === 'ignite') {
   ignite();
+} else if (cmd === 'run-idea') {
+  runIdeaCli();
 } else if (fs.existsSync(slateCli)) {
   const res = spawnSync('node', [slateCli, cmd, ...args], { cwd: repoRoot, stdio: 'inherit' });
   process.exit(res.status);

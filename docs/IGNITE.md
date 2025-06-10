@@ -40,3 +40,22 @@ Place `.agent.zip` or `.idea.yaml` files in `input/` or `install/` before starti
 ## Publishing Agents
 
 To publish a new agent, push the `.agent.zip` or YAML definition to a private repository or marketplace of your choice. The kernel can fetch and install from these packages using the install scripts.
+
+## Running Ideas
+
+Execute a `.idea.yaml` file directly:
+
+```bash
+node kernel-cli.js run-idea ideas/unified-migration-system.idea.yaml --use-byok
+```
+
+The same action is available remotely:
+
+```bash
+curl -X POST -H "Content-Type: application/json" \
+  -d '{"path":"ideas/unified-migration-system.idea.yaml","byok":true}' \
+  http://localhost:3077/api/run-idea
+```
+
+Results are written under `logs/idea-runtime/` and documented in `docs/ideas/`.
+Internal templates are loaded locally via `scripts/internal/prompt-injector.js`.
