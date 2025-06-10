@@ -4,4 +4,7 @@ package-lock.json
 ai-kernel-slim.zip
 *.zip
 
+.agent.zip
+.idea.yaml
+
 .env
