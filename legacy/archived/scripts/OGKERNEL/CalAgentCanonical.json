@@ -1,0 +1,11 @@
+{
+  "valid_agents": [
+    "CalAgentAutoMount.js",
+    "CalLoopRunner.js",
+    "CalPresenceDaemon.js",
+    "CalNarrator.js",
+    "CalPromptRouter.js"
+  ],
+  "version": "1.0.0",
+  "trust_policy": "Tier 11.1 sealed runtime only"
+}

@@ -1,0 +1,10 @@
+%% Pipeline Flow Diagram
+flowchart TD
+    Intake[/drop/ or /input/agency/] --> Ready[/ready/]
+    Ready --> Extraction[Extraction]
+    Extraction --> Concepts[/concepts/]
+    Concepts --> Clustering[Clustering]
+    Clustering --> Clusters[/clusters/]
+    Clusters --> Indexing[Indexing]
+    Indexing --> Index[/index/]
+    Index --> Analytics[Analytics & Docs] 

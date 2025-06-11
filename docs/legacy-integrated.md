@@ -1,0 +1,57 @@
+# Legacy Integrated
+
+The following files were recovered from the legacy archives and tagged with provenance metadata.
+
+- scripts/cli/batch-meta-summarize.js
+- scripts/cli/consolidate-documentation.js
+- scripts/core/load-secrets.js
+- scripts/cli/validate-docs.js
+- scripts/orchestration/backup-helper.js
+- scripts/orchestration/file-operations-helper.js
+- scripts/orchestration/dependency-analyzer.js
+- scripts/orchestration/dependency-reporter.js
+- scripts/orchestration/dependency-validator.js
+- scripts/orchestration/manage-documentation.js
+- scripts/orchestration/auto-logger.js
+- scripts/orchestration/backup-orchestrator.js
+- scripts/orchestration/compliance-reporter.js
+- scripts/orchestration/data-flow-validator.js
+- scripts/orchestration/debug-orchestrator.js
+- scripts/orchestration/dependency-orchestrator.js
+- scripts/orchestration/documentation-orchestrator.js
+- scripts/orchestration/dry-run-manager.js
+- scripts/orchestration/finalization-dashboard-updater.js
+- scripts/orchestration/forced-wrapper.js
+- scripts/orchestration/lifecycle-orchestrator.js
+- scripts/orchestration/llm-bulkhead.js
+- scripts/orchestration/llm-router.js
+- scripts/orchestration/log-orchestrator.js
+- scripts/orchestration/mesh-feature-scaffold-orchestrator.js
+- scripts/orchestration/meta-orchestrator.js
+- scripts/orchestration/orchestration-router.js
+- scripts/orchestration/orchestrator-migration.js
+- scripts/orchestration/overseer-orchestrator.js
+- scripts/orchestration/planner-orchestrator.js
+- scripts/orchestration/plugin-orchestrator.js
+- scripts/orchestration/project-reorganization.js
+- scripts/orchestration/quality-orchestrator.js
+- scripts/orchestration/security-manager.js
+- scripts/orchestration/soulfra-standardizer.js
+- scripts/orchestration/summarizer-orchestrator.js
+- scripts/orchestration/task-deduplicator.js
+- scripts/orchestration/task-handlers.js
+- scripts/orchestration/task-lifecycle-manager.js
+- scripts/orchestration/task-logger.js
+- scripts/orchestration/task-orchestrator.js
+- scripts/orchestration/task-router.js
+- scripts/orchestration/telemetry-manager.js
+- scripts/orchestration/watchdog-orchestrator.js
+- scripts/orchestration/watcher-orchestrator.js
+- scripts/orchestration/writer-orchestrator.js
+- scripts/agents/CalEchoProtocol.js
+- scripts/agents/CalIntentEcho.js
+- scripts/core/LLMExecutor.js
+- scripts/core/LLMExecutor-core.js
+- scripts/agents/CalRuntimeEcho.js
+- scripts/agents/chatlog-parser.js
+- scripts/agents/template.js

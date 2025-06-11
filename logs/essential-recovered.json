@@ -1,0 +1,107 @@
+[
+  {"old": "legacy/archived/scripts/batch-meta-summarize.js", "new": "scripts/cli/batch-meta-summarize.js"}
+,
+  {"old": "legacy/archived/scripts/consolidate-documentation.js", "new": "scripts/cli/consolidate-documentation.js"}
+,
+  {"old": "legacy/archived/scripts/load-secrets.js", "new": "scripts/core/load-secrets.js"}
+,
+  {"old": "legacy/archived/scripts/validate-docs.js", "new": "scripts/cli/validate-docs.js"}
+,
+  {"old": "legacy/archived/scripts/unified-migration/helpers/backup-helper.js", "new": "scripts/orchestration/backup-helper.js"}
+,
+  {"old": "legacy/archived/scripts/unified-migration/helpers/file-operations-helper.js", "new": "scripts/orchestration/file-operations-helper.js"}
+,
+  {"old": "legacy/archived/scripts/unified-migration/core/dependency-analyzer.js", "new": "scripts/orchestration/dependency-analyzer.js"}
+,
+  {"old": "legacy/archived/scripts/unified-migration/core/dependency-reporter.js", "new": "scripts/orchestration/dependency-reporter.js"}
+,
+  {"old": "legacy/archived/scripts/unified-migration/core/dependency-validator.js", "new": "scripts/orchestration/dependency-validator.js"}
+,
+  {"old": "legacy/archived/scripts/documentation/manage-documentation.js", "new": "scripts/orchestration/manage-documentation.js"}
+,
+  {"old": "legacy/archived/scripts/core/auto-logger.js", "new": "scripts/orchestration/auto-logger.js"}
+,
+  {"old": "legacy/archived/scripts/core/backup-orchestrator.js", "new": "scripts/orchestration/backup-orchestrator.js"}
+,
+  {"old": "legacy/archived/scripts/core/compliance-reporter.js", "new": "scripts/orchestration/compliance-reporter.js"}
+,
+  {"old": "legacy/archived/scripts/core/data-flow-validator.js", "new": "scripts/orchestration/data-flow-validator.js"}
+,
+  {"old": "legacy/archived/scripts/core/debug-orchestrator.js", "new": "scripts/orchestration/debug-orchestrator.js"}
+,
+  {"old": "legacy/archived/scripts/core/dependency-orchestrator.js", "new": "scripts/orchestration/dependency-orchestrator.js"}
+,
+  {"old": "legacy/archived/scripts/core/documentation-orchestrator.js", "new": "scripts/orchestration/documentation-orchestrator.js"}
+,
+  {"old": "legacy/archived/scripts/core/dry-run-manager.js", "new": "scripts/orchestration/dry-run-manager.js"}
+,
+  {"old": "legacy/archived/scripts/core/finalization-dashboard-updater.js", "new": "scripts/orchestration/finalization-dashboard-updater.js"}
+,
+  {"old": "legacy/archived/scripts/core/forced-wrapper.js", "new": "scripts/orchestration/forced-wrapper.js"}
+,
+  {"old": "legacy/archived/scripts/core/lifecycle-orchestrator.js", "new": "scripts/orchestration/lifecycle-orchestrator.js"}
+,
+  {"old": "legacy/archived/scripts/core/llm-bulkhead.js", "new": "scripts/orchestration/llm-bulkhead.js"}
+,
+  {"old": "legacy/archived/scripts/core/llm-router.js", "new": "scripts/orchestration/llm-router.js"}
+,
+  {"old": "legacy/archived/scripts/core/log-orchestrator.js", "new": "scripts/orchestration/log-orchestrator.js"}
+,
+  {"old": "legacy/archived/scripts/core/mesh-feature-scaffold-orchestrator.js", "new": "scripts/orchestration/mesh-feature-scaffold-orchestrator.js"}
+,
+  {"old": "legacy/archived/scripts/core/meta-orchestrator.js", "new": "scripts/orchestration/meta-orchestrator.js"}
+,
+  {"old": "legacy/archived/scripts/core/orchestration-router.js", "new": "scripts/orchestration/orchestration-router.js"}
+,
+  {"old": "legacy/archived/scripts/core/orchestrator-migration.js", "new": "scripts/orchestration/orchestrator-migration.js"}
+,
+  {"old": "legacy/archived/scripts/core/overseer-orchestrator.js", "new": "scripts/orchestration/overseer-orchestrator.js"}
+,
+  {"old": "legacy/archived/scripts/core/planner-orchestrator.js", "new": "scripts/orchestration/planner-orchestrator.js"}
+,
+  {"old": "legacy/archived/scripts/core/plugin-orchestrator.js", "new": "scripts/orchestration/plugin-orchestrator.js"}
+,
+  {"old": "legacy/archived/scripts/core/project-reorganization.js", "new": "scripts/orchestration/project-reorganization.js"}
+,
+  {"old": "legacy/archived/scripts/core/quality-orchestrator.js", "new": "scripts/orchestration/quality-orchestrator.js"}
+,
+  {"old": "legacy/archived/scripts/core/security-manager.js", "new": "scripts/orchestration/security-manager.js"}
+,
+  {"old": "legacy/archived/scripts/core/soulfra-standardizer.js", "new": "scripts/orchestration/soulfra-standardizer.js"}
+,
+  {"old": "legacy/archived/scripts/core/summarizer-orchestrator.js", "new": "scripts/orchestration/summarizer-orchestrator.js"}
+,
+  {"old": "legacy/archived/scripts/core/task-deduplicator.js", "new": "scripts/orchestration/task-deduplicator.js"}
+,
+  {"old": "legacy/archived/scripts/core/task-handlers.js", "new": "scripts/orchestration/task-handlers.js"}
+,
+  {"old": "legacy/archived/scripts/core/task-lifecycle-manager.js", "new": "scripts/orchestration/task-lifecycle-manager.js"}
+,
+  {"old": "legacy/archived/scripts/core/task-logger.js", "new": "scripts/orchestration/task-logger.js"}
+,
+  {"old": "legacy/archived/scripts/core/task-orchestrator.js", "new": "scripts/orchestration/task-orchestrator.js"}
+,
+  {"old": "legacy/archived/scripts/core/task-router.js", "new": "scripts/orchestration/task-router.js"}
+,
+  {"old": "legacy/archived/scripts/core/telemetry-manager.js", "new": "scripts/orchestration/telemetry-manager.js"}
+,
+  {"old": "legacy/archived/scripts/core/watchdog-orchestrator.js", "new": "scripts/orchestration/watchdog-orchestrator.js"}
+,
+  {"old": "legacy/archived/scripts/core/watcher-orchestrator.js", "new": "scripts/orchestration/watcher-orchestrator.js"}
+,
+  {"old": "legacy/archived/scripts/core/writer-orchestrator.js", "new": "scripts/orchestration/writer-orchestrator.js"}
+,
+  {"old": "legacy/archived/scripts/OGKERNEL/CalEchoProtocol.js", "new": "scripts/agents/CalEchoProtocol.js"}
+,
+  {"old": "legacy/archived/scripts/OGKERNEL/CalIntentEcho.js", "new": "scripts/agents/CalIntentEcho.js"}
+,
+  {"old": "legacy/archived/scripts/OGKERNEL/LLMExecutor.js", "new": "scripts/core/LLMExecutor.js"}
+,
+  {"old": "legacy/archived/scripts/OGKERNEL/core/LLMExecutor.js", "new": "scripts/core/LLMExecutor-core.js"}
+,
+  {"old": "legacy/archived/scripts/OGKERNEL/CalTier10/CalRuntimeEcho.js", "new": "scripts/agents/CalRuntimeEcho.js"}
+,
+  {"old": "legacy/archived/features/chatlog-parser/index.js", "new": "scripts/agents/chatlog-parser.js"}
+,
+  {"old": "legacy/archived/features/_template/index.js", "new": "scripts/agents/template.js"}
+]

@@ -1,0 +1,47 @@
+{
+  "CalCoderAgent.js": {
+    "hash": "b567b6c3a2d1101d7493bc492574e23b0ea6b2ba05f15da576cf04923f8c77ab6d56af95b4d5f44e130077d9a3ec4b299f297096a0598fb417e2f076be525c90",
+    "timestamp": "2025-05-09T13:21:43.753Z",
+    "size": 840
+  },
+  "CalLoopAgentDaemon.js": {
+    "hash": "5b2e5fd85c37a3e594915d930deef9ce08096ab89b4218597012ab5024176246c275c6c0b01854758df53b43b4be602ef6b189548b72a5a4924f813620e6b80d",
+    "timestamp": "2025-05-09T13:21:43.753Z",
+    "size": 659
+  },
+  "CalLoopMeshReflector.js": {
+    "hash": "d886a6c2d4a76ee236428c1ef5735594405faac842553e3cd446f9ea16be93c68d6d45e5474b522196ef3d5e1135015ef8f256cd8ca26670a476aa690c858a4f",
+    "timestamp": "2025-05-09T13:21:43.753Z",
+    "size": 745
+  },
+  "CalNarrator.js": {
+    "hash": "420e6e1d21c0885650bc71be2377e006ef43da0e04dd136083a3f8e02e90b05092bbd53b2e8c08718d7addbce2f5f8d5957037524eb1279c4411f27485e8ecf7",
+    "timestamp": "2025-05-09T13:21:43.754Z",
+    "size": 55
+  },
+  "CalPromptRouter.js": {
+    "hash": "49d8ff3d94eccea5345842b6cccec317665eb9cf632a9a684ce893a19daad22b213e8b2a6cafb8c2b426bd20b5ab606df44cffaeb5968fa79b217bc767a1e98c",
+    "timestamp": "2025-05-09T13:21:43.754Z",
+    "size": 450
+  },
+  "CalReflectionSummarizerV2.js": {
+    "hash": "9f463b4f3b724830cb53c7995fe8395d55a29da36b45712623e9deb81d21f350f2f4268834630fbd123b5f0d05802a6f93cbd300ad78b0bcde80bafe8b217bd2",
+    "timestamp": "2025-05-09T13:21:43.754Z",
+    "size": 1170
+  },
+  "CalShellRecallAgent.js": {
+    "hash": "6060920f394b47c48c0dc20d4d65b0f3b6a06c6a0020024708c86755a92d30502cfa9fff51f531c2fc382196ab9143cc64737674605f2637389f40fb0080bfa3",
+    "timestamp": "2025-05-09T13:21:43.754Z",
+    "size": 774
+  },
+  "LLMExecutor.js": {
+    "hash": "2717e336ca88e386ff8f856b130a8817c4583f280e913a03130a7c1fd4d511a62edecbb34ae53b3348308db63d6dc5a6a35b76a3b13f90602de569b8ceac8a50",
+    "timestamp": "2025-05-09T13:21:43.754Z",
+    "size": 1231
+  },
+  "calctl-deploy-public.js": {
+    "hash": "46b08349006d7cdcc875bf9b2a11fadbdd6f3fb38f75ef22a46ac3009b6b87032310dd1305ad52b924ce0089cd5f68cae0601c7b767c73c57097c76b2161df50",
+    "timestamp": "2025-05-09T13:21:43.754Z",
+    "size": 606
+  }
+}

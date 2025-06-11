@@ -3,3 +3,18 @@ logs/
 vault/
 *.zip
 *.mp4
+# Add unique/critical ignores from remote
+package-lock.json
+ai-kernel-slim.zip
+
+.agent.zip
+.idea.yaml
+
+.env
+.runtime/
+.temp/
+scripts/internal/prompt-injector.js
+runtime/
+approved/
+build/
+!scripts/vault/

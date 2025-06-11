@@ -1,0 +1,7 @@
+# 1. Setup Guides (`/implementation/setup/`)
+
+- Environment setup
+- Dependencies
+- Configuration
+- Development tools
+

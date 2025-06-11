@@ -1,0 +1,10 @@
+name: Data Sync Agent
+description: Synchronizes files with a remote server
+file: agents/data-sync.js
+required_api_keys:
+  - SYNC_API_KEY
+install: |
+  npm install axios
+usage_hooks:
+  onSync: recordSync
+  onError: reportError

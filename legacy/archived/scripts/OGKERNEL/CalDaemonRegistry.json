@@ -1,0 +1,186 @@
+{
+  "registry_version": "2.0",
+  "timestamp": "2025-05-09T15:51:30.424Z",
+  "agents": [
+    {
+      "name": "CalAgentAutoMount.js",
+      "path": "./core/CalAgentAutoMount.js",
+      "registered_at": "2025-05-09T15:51:30.424Z",
+      "status": "hydrated"
+    },
+    {
+      "name": "CalAuditGatekeeper.js",
+      "path": "./core/CalAuditGatekeeper.js",
+      "registered_at": "2025-05-09T15:51:30.424Z",
+      "status": "hydrated"
+    },
+    {
+      "name": "CalAuditProtocolV2.js",
+      "path": "./core/CalAuditProtocolV2.js",
+      "registered_at": "2025-05-09T15:51:30.424Z",
+      "status": "hydrated"
+    },
+    {
+      "name": "CalBacktestAudit.js",
+      "path": "./core/CalBacktestAudit.js",
+      "registered_at": "2025-05-09T15:51:30.424Z",
+      "status": "hydrated"
+    },
+    {
+      "name": "CalBacktestAudit_T10_PROTOCOL.js",
+      "path": "./core/CalBacktestAudit_T10_PROTOCOL.js",
+      "registered_at": "2025-05-09T15:51:30.424Z",
+      "status": "hydrated"
+    },
+    {
+      "name": "CalCoderAgent.js",
+      "path": "./core/CalCoderAgent.js",
+      "registered_at": "2025-05-09T15:51:30.424Z",
+      "status": "hydrated"
+    },
+    {
+      "name": "CalDaemonRegistryHydratorV2.js",
+      "path": "./core/CalDaemonRegistryHydratorV2.js",
+      "registered_at": "2025-05-09T15:51:30.424Z",
+      "status": "hydrated"
+    },
+    {
+      "name": "CalEchoProtocol.js",
+      "path": "./core/CalEchoProtocol.js",
+      "registered_at": "2025-05-09T15:51:30.424Z",
+      "status": "hydrated"
+    },
+    {
+      "name": "CalEchoWitnessDaemon.js",
+      "path": "./core/CalEchoWitnessDaemon.js",
+      "registered_at": "2025-05-09T15:51:30.424Z",
+      "status": "hydrated"
+    },
+    {
+      "name": "CalFinalizer.js",
+      "path": "./core/CalFinalizer.js",
+      "registered_at": "2025-05-09T15:51:30.424Z",
+      "status": "hydrated"
+    },
+    {
+      "name": "CalHashRegistry.js",
+      "path": "./core/CalHashRegistry.js",
+      "registered_at": "2025-05-09T15:51:30.424Z",
+      "status": "hydrated"
+    },
+    {
+      "name": "CalInstallerV1.js",
+      "path": "./core/CalInstallerV1.js",
+      "registered_at": "2025-05-09T15:51:30.424Z",
+      "status": "hydrated"
+    },
+    {
+      "name": "CalIntentEcho.js",
+      "path": "./core/CalIntentEcho.js",
+      "registered_at": "2025-05-09T15:51:30.424Z",
+      "status": "hydrated"
+    },
+    {
+      "name": "CalIntentEchoWrapper.js",
+      "path": "./core/CalIntentEchoWrapper.js",
+      "registered_at": "2025-05-09T15:51:30.424Z",
+      "status": "hydrated"
+    },
+    {
+      "name": "CalLoopAgentDaemon.js",
+      "path": "./core/CalLoopAgentDaemon.js",
+      "registered_at": "2025-05-09T15:51:30.424Z",
+      "status": "hydrated"
+    },
+    {
+      "name": "CalLoopGuard.js",
+      "path": "./core/CalLoopGuard.js",
+      "registered_at": "2025-05-09T15:51:30.424Z",
+      "status": "hydrated"
+    },
+    {
+      "name": "CalLoopMeshReflector.js",
+      "path": "./core/CalLoopMeshReflector.js",
+      "registered_at": "2025-05-09T15:51:30.424Z",
+      "status": "hydrated"
+    },
+    {
+      "name": "CalLoopPulseReporter.js",
+      "path": "./core/CalLoopPulseReporter.js",
+      "registered_at": "2025-05-09T15:51:30.424Z",
+      "status": "hydrated"
+    },
+    {
+      "name": "CalLoopRunner.js",
+      "path": "./core/CalLoopRunner.js",
+      "registered_at": "2025-05-09T15:51:30.424Z",
+      "status": "hydrated"
+    },
+    {
+      "name": "CalMetaStateManager.js",
+      "path": "./core/CalMetaStateManager.js",
+      "registered_at": "2025-05-09T15:51:30.424Z",
+      "status": "hydrated"
+    },
+    {
+      "name": "CalNarrator.js",
+      "path": "./core/CalNarrator.js",
+      "registered_at": "2025-05-09T15:51:30.424Z",
+      "status": "hydrated"
+    },
+    {
+      "name": "CalPathGuardian.js",
+      "path": "./core/CalPathGuardian.js",
+      "registered_at": "2025-05-09T15:51:30.424Z",
+      "status": "hydrated"
+    },
+    {
+      "name": "CalPresenceDaemon.js",
+      "path": "./core/CalPresenceDaemon.js",
+      "registered_at": "2025-05-09T15:51:30.424Z",
+      "status": "hydrated"
+    },
+    {
+      "name": "CalPromptRouter.js",
+      "path": "./core/CalPromptRouter.js",
+      "registered_at": "2025-05-09T15:51:30.424Z",
+      "status": "hydrated"
+    },
+    {
+      "name": "CalReflectionEchoTrail.js",
+      "path": "./core/CalReflectionEchoTrail.js",
+      "registered_at": "2025-05-09T15:51:30.424Z",
+      "status": "hydrated"
+    },
+    {
+      "name": "CalReflectionSummarizerV2.js",
+      "path": "./core/CalReflectionSummarizerV2.js",
+      "registered_at": "2025-05-09T15:51:30.424Z",
+      "status": "hydrated"
+    },
+    {
+      "name": "CalRuntimeEcho.js",
+      "path": "./core/CalRuntimeEcho.js",
+      "registered_at": "2025-05-09T15:51:30.424Z",
+      "status": "hydrated"
+    },
+    {
+      "name": "CalShellRecallAgent.js",
+      "path": "./core/CalShellRecallAgent.js",
+      "registered_at": "2025-05-09T15:51:30.424Z",
+      "status": "hydrated"
+    },
+    {
+      "name": "CalWhisperV2.js",
+      "path": "./core/CalWhisperV2.js",
+      "registered_at": "2025-05-09T15:51:30.424Z",
+      "status": "hydrated"
+    },
+    {
+      "name": "LLMExecutor.js",
+      "path": "./core/LLMExecutor.js",
+      "registered_at": "2025-05-09T15:51:30.424Z",
+      "status": "hydrated"
+    }
+  ]
+}

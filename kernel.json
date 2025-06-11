@@ -1,0 +1,185 @@
+{
+  "agents": [
+    "OrchestrationAgent",
+    "SemanticEngine",
+    "BackupOrchestrator",
+    "ChatImporter",
+    "ChatLogParser",
+    "ClusterUtils",
+    "LinkSequential",
+    "ChatlogUtils",
+    "GenerateChatSummary",
+    "ChatlogParser",
+    "UploadServer",
+    "EnsureFileAndDir",
+    "GenerateRouteHash"
+  ],
+  "voiceEntries": [
+    "ARCHITECTURE-voice-personalization.md",
+    "VOICE_PROFILES-core-components.md",
+    "VOICE_PROFILES-implementation-patterns.md",
+    "VOICE_PROFILES-maintenance.md",
+    "VOICE_PROFILES-next-steps.md",
+    "VOICE_PROFILES-overview.md",
+    "VOICE_PROFILES-usage-examples.md",
+    "VOICE_PROFILES.md",
+    "VoiceProfileBasics-.md",
+    "VoiceProfileBasics-cli-interface.md",
+    "kernel-slate/scripts/features/record-voice-log.js"
+  ],
+  "chatlogHistory": [
+    {
+      "source": "decision-trace",
+      "type": "TODO",
+      "file": "docs/examples/chatlog-parser.md",
+      "snippet": "It scans for TODO items and bullet points, then creates files with YAML",
+      "action": "address TODO",
+      "ref": "docs/examples/chatlog-parser.md"
+    },
+    {
+      "source": "decision-trace",
+      "type": "undocumented",
+      "file": "scripts/features/chatlog-parser/from-export.js",
+      "snippet": "function parseJsonExport(obj) {",
+      "action": "add description",
+      "ref": "scripts/features/chatlog-parser/from-export.js"
+    },
+    {
+      "source": "decision-trace",
+      "type": "undocumented",
+      "file": "scripts/features/chatlog-parser/from-export.js",
+      "snippet": "function parseHtmlExport(html) {",
+      "action": "add description",
+      "ref": "scripts/features/chatlog-parser/from-export.js"
+    },
+    {
+      "source": "decision-trace",
+      "type": "TODO",
+      "file": "scripts/features/chatlog-parser/index.js",
+      "snippet": "* Parses chat logs to extract TODOs and bullet points.",
+      "action": "address TODO",
+      "ref": "scripts/features/chatlog-parser/index.js"
+    },
+    {
+      "source": "decision-trace",
+      "type": "undocumented",
+      "file": "scripts/features/chatlog-parser/index.js",
+      "snippet": "function parseChatlog(content) {",
+      "action": "add description",
+      "ref": "scripts/features/chatlog-parser/index.js"
+    },
+    {
+      "source": "decision-trace",
+      "type": "TODO",
+      "file": "scripts/features/chatlog-parser/index.js",
+      "snippet": "return lines.filter(l => l.match(/^(TODO:|[-*] )/i));",
+      "action": "address TODO",
+      "ref": "scripts/features/chatlog-parser/index.js"
+    },
+    {
+      "source": "decision-trace",
+      "type": "undocumented",
+      "file": "scripts/features/chatlog-parser/index.js",
+      "snippet": "function generateDoc(ideas, sourceFile) {",
+      "action": "add description",
+      "ref": "scripts/features/chatlog-parser/index.js"
+    },
+    {
+      "source": "decision-trace",
+      "type": "TODO",
+      "file": "scripts/features/chatlog-parser/index.js",
+      "snippet": "'description: Ideas and TODOs extracted from chat logs.',",
+      "action": "address TODO",
+      "ref": "scripts/features/chatlog-parser/index.js"
+    },
+    {
+      "source": "decision-trace",
+      "type": "TODO",
+      "file": "scripts/features/chatlog-parser/index.js",
+      "snippet": "'# Ideas and TODOs',",
+      "action": "address TODO",
+      "ref": "scripts/features/chatlog-parser/index.js"
+    },
+    {
+      "source": "decision-trace",
+      "type": "TODO",
+      "file": "scripts/features/chatlog-parser/index.js",
+      "snippet": "...ideas.map(i => '- ' + i.replace(/^[-*] /, '').replace(/^TODO:/i, '').trim()),",
+      "action": "address TODO",
+      "ref": "scripts/features/chatlog-parser/index.js"
+    },
+    {
+      "source": "decision-trace",
+      "type": "TODO",
+      "file": "scripts/features/chatlog-parser/README.md",
+      "snippet": "description: Parses chat logs to extract ideas and TODOs and generates Markdown documentation.",
+      "action": "address TODO",
+      "ref": "scripts/features/chatlog-parser/README.md"
+    },
+    {
+      "source": "decision-trace",
+      "type": "TODO",
+      "file": "scripts/features/chatlog-parser/README.md",
+      "snippet": "for TODO items and bullet points, then creates docs with YAML frontmatter",
+      "action": "address TODO",
+      "ref": "scripts/features/chatlog-parser/README.md"
+    },
+    {
+      "source": "decision-trace",
+      "type": "undocumented",
+      "file": "scripts/features/chatlog-utils.js",
+      "snippet": "function parseChatLog(text) {",
+      "action": "add description",
+      "ref": "scripts/features/chatlog-utils.js"
+    },
+    {
+      "source": "decision-trace",
+      "type": "undocumented",
+      "file": "scripts/features/chatlog-utils.js",
+      "snippet": "function messagesToConcepts(messages) {",
+      "action": "add description",
+      "ref": "scripts/features/chatlog-utils.js"
+    },
+    {
+      "source": "decision-trace",
+      "type": "undocumented",
+      "file": "scripts/features/import-chatlog.js",
+      "snippet": "async function run() {",
+      "action": "add description",
+      "ref": "scripts/features/import-chatlog.js"
+    },
+    {
+      "source": "decision-trace",
+      "type": "TODO",
+      "file": "tests/features/chatlog-parser.test.js",
+      "snippet": "test('extracts TODOs and bullet points', () => {",
+      "action": "address TODO",
+      "ref": "tests/features/chatlog-parser.test.js"
+    },
+    {
+      "source": "decision-trace",
+      "type": "TODO",
+      "file": "tests/features/chatlog-parser.test.js",
+      "snippet": "const chat = 'Hello\\nTODO: Refactor backup\\n- Add tests\\n* Document\\nNot a todo';",
+      "action": "address TODO",
+      "ref": "tests/features/chatlog-parser.test.js"
+    },
+    {
+      "source": "decision-trace",
+      "type": "TODO",
+      "file": "tests/features/chatlog-parser.test.js",
+      "snippet": "expect(ideas).toEqual(['TODO: Refactor backup', '- Add tests', '* Document']);",
+      "action": "address TODO",
+      "ref": "tests/features/chatlog-parser.test.js"
+    },
+    {
+      "source": "decision-trace",
+      "type": "TODO",
+      "file": "tests/features/chatlog-parser.test.js",
+      "snippet": "const ideas = ['TODO: Refactor backup', '- Add tests'];",
+      "action": "address TODO",
+      "ref": "tests/features/chatlog-parser.test.js"
+    }
+  ],
+  "clusterSummary": "# Chat Summary"
+}

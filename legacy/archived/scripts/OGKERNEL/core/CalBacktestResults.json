@@ -1,0 +1,173 @@
+[
+  {
+    "agent": "CalCoderAgent.js",
+    "exitCode": 1,
+    "stdout": "",
+    "stderr": "❌ Missing API key config.",
+    "echoRecent": false,
+    "echoDeltaMs": 984139,
+    "silent": true,
+    "diagnostic": {
+      "echo_path": "/Users/matthewmauer/Desktop/CalGenesis/core/core/last_echo.txt",
+      "hints": [
+        "Confirm require('./CalTier10/CalRuntimeEcho.js') is the last line of the file",
+        "Run this agent manually to verify it prints '✅ Agent echo committed.'",
+        "Check for early returns, uncaught exceptions, or logic branches that skip echo",
+        "If 'No whisper provided', ensure whisper flag/env is passed OR bypass logic gates",
+        "Ensure echoFile is writable (chmod 644 core/*.js before rerun)"
+      ]
+    }
+  },
+  {
+    "agent": "CalLoopAgentDaemon.js",
+    "exitCode": 0,
+    "stdout": "🧠 CalLoopAgentDaemon initializing...\n✅ ReflectAgent loaded from ./CalReflectionSummarizerV2.js\n🧠 cal_memory_summary.json regenerated.\n✅ PromptRouter loaded from ./CalPromptRouter.js\n🧭 No route matched in fallback PromptRouter.\n🟢 All loop agents active.",
+    "stderr": "",
+    "echoRecent": false,
+    "echoDeltaMs": 984307,
+    "silent": true,
+    "diagnostic": {
+      "echo_path": "/Users/matthewmauer/Desktop/CalGenesis/core/core/last_echo.txt",
+      "hints": [
+        "Confirm require('./CalTier10/CalRuntimeEcho.js') is the last line of the file",
+        "Run this agent manually to verify it prints '✅ Agent echo committed.'",
+        "Check for early returns, uncaught exceptions, or logic branches that skip echo",
+        "If 'No whisper provided', ensure whisper flag/env is passed OR bypass logic gates",
+        "Ensure echoFile is writable (chmod 644 core/*.js before rerun)"
+      ]
+    }
+  },
+  {
+    "agent": "CalLoopMeshReflector.js",
+    "exitCode": 0,
+    "stdout": "🧠 CalLoopMeshReflector running...\n✅ Found: CalLoopAgentDaemon.js\n✅ Found: CalPromptRouter.js\n✅ Found: CalReflectionSummarizerV2.js\n✅ Found: CalWhisperSpeakPersonalityBundle/CalWhisperV2.js\n✅ Found: CalCoderAgent.js\n🧩 Agent Mesh Coverage: 5/5\n🟢 Loop Mesh Status: FULLY LINKED.",
+    "stderr": "",
+    "echoRecent": false,
+    "echoDeltaMs": 984353,
+    "silent": true,
+    "diagnostic": {
+      "echo_path": "/Users/matthewmauer/Desktop/CalGenesis/core/core/last_echo.txt",
+      "hints": [
+        "Confirm require('./CalTier10/CalRuntimeEcho.js') is the last line of the file",
+        "Run this agent manually to verify it prints '✅ Agent echo committed.'",
+        "Check for early returns, uncaught exceptions, or logic branches that skip echo",
+        "If 'No whisper provided', ensure whisper flag/env is passed OR bypass logic gates",
+        "Ensure echoFile is writable (chmod 644 core/*.js before rerun)"
+      ]
+    }
+  },
+  {
+    "agent": "CalNarrator.js",
+    "exitCode": 0,
+    "stdout": "",
+    "stderr": "",
+    "echoRecent": false,
+    "echoDeltaMs": 984387,
+    "silent": true,
+    "diagnostic": {
+      "echo_path": "/Users/matthewmauer/Desktop/CalGenesis/core/core/last_echo.txt",
+      "hints": [
+        "Confirm require('./CalTier10/CalRuntimeEcho.js') is the last line of the file",
+        "Run this agent manually to verify it prints '✅ Agent echo committed.'",
+        "Check for early returns, uncaught exceptions, or logic branches that skip echo",
+        "If 'No whisper provided', ensure whisper flag/env is passed OR bypass logic gates",
+        "Ensure echoFile is writable (chmod 644 core/*.js before rerun)"
+      ]
+    }
+  },
+  {
+    "agent": "CalPromptRouter.js",
+    "exitCode": 0,
+    "stdout": "🧭 No route matched in fallback PromptRouter.",
+    "stderr": "",
+    "echoRecent": false,
+    "echoDeltaMs": 984423,
+    "silent": true,
+    "diagnostic": {
+      "echo_path": "/Users/matthewmauer/Desktop/CalGenesis/core/core/last_echo.txt",
+      "hints": [
+        "Confirm require('./CalTier10/CalRuntimeEcho.js') is the last line of the file",
+        "Run this agent manually to verify it prints '✅ Agent echo committed.'",
+        "Check for early returns, uncaught exceptions, or logic branches that skip echo",
+        "If 'No whisper provided', ensure whisper flag/env is passed OR bypass logic gates",
+        "Ensure echoFile is writable (chmod 644 core/*.js before rerun)"
+      ]
+    }
+  },
+  {
+    "agent": "CalReflectionSummarizerV2.js",
+    "exitCode": 0,
+    "stdout": "🧠 cal_memory_summary.json regenerated.",
+    "stderr": "",
+    "echoRecent": false,
+    "echoDeltaMs": 984568,
+    "silent": true,
+    "diagnostic": {
+      "echo_path": "/Users/matthewmauer/Desktop/CalGenesis/core/core/last_echo.txt",
+      "hints": [
+        "Confirm require('./CalTier10/CalRuntimeEcho.js') is the last line of the file",
+        "Run this agent manually to verify it prints '✅ Agent echo committed.'",
+        "Check for early returns, uncaught exceptions, or logic branches that skip echo",
+        "If 'No whisper provided', ensure whisper flag/env is passed OR bypass logic gates",
+        "Ensure echoFile is writable (chmod 644 core/*.js before rerun)"
+      ]
+    }
+  },
+  {
+    "agent": "CalShellRecallAgent.js",
+    "exitCode": 0,
+    "stdout": "🔁 cal_shell_recall.json generated.",
+    "stderr": "",
+    "echoRecent": false,
+    "echoDeltaMs": 984761,
+    "silent": true,
+    "diagnostic": {
+      "echo_path": "/Users/matthewmauer/Desktop/CalGenesis/core/core/last_echo.txt",
+      "hints": [
+        "Confirm require('./CalTier10/CalRuntimeEcho.js') is the last line of the file",
+        "Run this agent manually to verify it prints '✅ Agent echo committed.'",
+        "Check for early returns, uncaught exceptions, or logic branches that skip echo",
+        "If 'No whisper provided', ensure whisper flag/env is passed OR bypass logic gates",
+        "Ensure echoFile is writable (chmod 644 core/*.js before rerun)"
+      ]
+    }
+  },
+  {
+    "agent": "LLMExecutor.js",
+    "exitCode": 1,
+    "stdout": "",
+    "stderr": "❌ Missing API key config.",
+    "echoRecent": false,
+    "echoDeltaMs": 984806,
+    "silent": true,
+    "diagnostic": {
+      "echo_path": "/Users/matthewmauer/Desktop/CalGenesis/core/core/last_echo.txt",
+      "hints": [
+        "Confirm require('./CalTier10/CalRuntimeEcho.js') is the last line of the file",
+        "Run this agent manually to verify it prints '✅ Agent echo committed.'",
+        "Check for early returns, uncaught exceptions, or logic branches that skip echo",
+        "If 'No whisper provided', ensure whisper flag/env is passed OR bypass logic gates",
+        "Ensure echoFile is writable (chmod 644 core/*.js before rerun)"
+      ]
+    }
+  },
+  {
+    "agent": "calctl-deploy-public.js",
+    "exitCode": 0,
+    "stdout": "📦 Building public starter kit...\n✅ Starter kit created: ./CalGenesis_Lite.tar.gz",
+    "stderr": "a .\na ./VaultIntegrityReport.json\na ./CalKernel.js\na ./CalWhisperV2.js\na ./calctl-core.js",
+    "echoRecent": false,
+    "echoDeltaMs": 984859,
+    "silent": true,
+    "diagnostic": {
+      "echo_path": "/Users/matthewmauer/Desktop/CalGenesis/core/core/last_echo.txt",
+      "hints": [
+        "Confirm require('./CalTier10/CalRuntimeEcho.js') is the last line of the file",
+        "Run this agent manually to verify it prints '✅ Agent echo committed.'",
+        "Check for early returns, uncaught exceptions, or logic branches that skip echo",
+        "If 'No whisper provided', ensure whisper flag/env is passed OR bypass logic gates",
+        "Ensure echoFile is writable (chmod 644 core/*.js before rerun)"
+      ]
+    }
+  }
+]

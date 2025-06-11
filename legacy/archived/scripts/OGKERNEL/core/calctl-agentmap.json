@@ -1,0 +1,12 @@
+{
+  "CalWhisper": "CalWhisperSpeakPersonalityBundle/CalWhisperV2.js",
+  "CalPromptRouter": "CalPromptRouter.js",
+  "CalLoopAgentDaemon": "CalLoopAgentDaemon.js",
+  "CalReflectionSummarizer": "CalReflectionSummarizerV2.js",
+  "CalCoderAgent": "CalCoderAgent.js",
+  "LLMExecutor": "LLMExecutor.js",
+  "CalShellRecall": "CalShellRecallAgent.js",
+  "CalDeploy": "calctl-deploy-public.js",
+  "CalMeshReflector": "CalLoopMeshReflector.js",
+  "CalNarrator": "CalNarrator.js"
+}

@@ -1,0 +1,14 @@
+[
+  {
+    "prompt": "Use the Chatlog Parser Feature to convert old conversations into documentation (see ideas/chatlog-parser-feature.idea.yaml)",
+    "reference": "ideas/chatlog-parser-feature.idea.yaml"
+  },
+  {
+    "prompt": "Implement structured logging following ideas/logging-traceability-plan.idea.yaml",
+    "reference": "ideas/logging-traceability-plan.idea.yaml"
+  },
+  {
+    "prompt": "Run unified migration using run-safe-migration.js as described in ideas/unified-migration-system.idea.yaml",
+    "reference": "ideas/unified-migration-system.idea.yaml"
+  }
+]

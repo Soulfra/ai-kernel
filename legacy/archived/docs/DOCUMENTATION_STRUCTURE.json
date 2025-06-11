@@ -1,0 +1,94 @@
+{
+    "metadata": {
+        "version": "1.0.0",
+        "lastUpdated": "2024-07-27T02:00:00Z",
+        "maxLinesPerFile": 250,
+        "requiredFields": ["title", "description", "lastUpdated"],
+        "templates": {
+            "core": "templates/core.md",
+            "product": "templates/product.md",
+            "api": "templates/api.md"
+        }
+    },
+    "core": {
+        "title": "Core Documentation",
+        "description": "Core system documentation and architecture",
+        "sections": [
+            "overview",
+            "standards",
+            "components",
+            "architecture"
+        ],
+        "validation": {
+            "required": ["title", "description", "architecture"],
+            "maxLines": 250
+        }
+    },
+    "products": {
+        "title": "Product Documentation",
+        "sections": [
+            "clarity-engine",
+            "document-generator",
+            "llm-router"
+        ]
+    },
+    "development": {
+        "title": "Development Documentation",
+        "sections": [
+            "workflow",
+            "testing",
+            "deployment",
+            "integration"
+        ]
+    },
+    "maintenance": {
+        "title": "Maintenance Documentation",
+        "sections": [
+            "operations",
+            "support",
+            "monitoring",
+            "backup"
+        ]
+    },
+    "standards": {
+        "title": "Standards & Guidelines",
+        "sections": [
+            "documentation",
+            "code",
+            "testing",
+            "security"
+        ]
+    },
+    "api": {
+        "title": "API Documentation",
+        "sections": [
+            "endpoints",
+            "authentication",
+            "examples",
+            "integration"
+        ]
+    },
+    "security": {
+        "title": "Security Documentation",
+        "sections": [
+            "principles",
+            "implementation",
+            "testing",
+            "compliance"
+        ]
+    },
+    "optimization": {
+        "title": "Optimization Documentation",
+        "description": "Performance and scalability documentation",
+        "sections": [
+            "performance",
+            "scalability",
+            "monitoring",
+            "best-practices"
+        ],
+        "validation": {
+            "required": ["title", "description", "metrics"],
+            "maxLines": 250
+        }
+    }
+} 

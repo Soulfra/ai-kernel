@@ -1,0 +1,7 @@
+# 1. Infrastructure (`/deployment/infrastructure/`)
+
+- System requirements
+- Network setup
+- Security setup
+- Monitoring
+

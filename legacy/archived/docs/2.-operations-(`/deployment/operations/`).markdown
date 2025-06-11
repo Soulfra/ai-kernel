@@ -1,0 +1,9 @@
+# 2. Operations (`/deployment/operations/`)
+
+- Deployment process
+- Scaling
+- Backup/restore
+- Maintenance
+
+## Documentation Standards
+

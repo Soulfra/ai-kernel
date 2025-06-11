@@ -1,0 +1,5 @@
+title: Logging & Traceability Plan
+description: Standards for JSON logs and feedback automation in Clarity Engine.
+inputs: logs, test results
+agents_required: log-orchestrator
+llm_strategy: none

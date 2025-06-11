@@ -1,0 +1,5 @@
+title: Documentation System Consolidation
+description: Plan to merge multiple documentation orchestrators into a single source of truth with centralized logging and debugging.
+inputs: existing documentation orchestrators
+agents_required: documentation-orchestrator
+llm_strategy: N/A

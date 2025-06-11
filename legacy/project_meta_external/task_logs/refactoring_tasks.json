@@ -1,0 +1,181 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2024-03-19T00:00:00Z",
+    "totalTasks": 0,
+    "completedTasks": 0,
+    "activeTasks": 0
+  },
+  "tasks": [
+    {
+      "taskId": "ref_001",
+      "type": "refactoring",
+      "category": "file-split",
+      "name": "Split analyze-dependencies.js",
+      "description": "Break down analyze-dependencies.js into smaller modules",
+      "status": "planned",
+      "priority": "high",
+      "createdDate": "2024-03-19T00:00:00Z",
+      "lastUpdated": "2024-03-19T00:00:00Z",
+      "progress": 0,
+      "subtasks": [
+        {
+          "subtaskId": "ref_001_01",
+          "description": "Create dependency-analyzer.js for core analysis logic",
+          "status": "planned",
+          "estimatedEffort": "small"
+        },
+        {
+          "subtaskId": "ref_001_02",
+          "description": "Create dependency-reporter.js for report generation",
+          "status": "planned",
+          "estimatedEffort": "small"
+        },
+        {
+          "subtaskId": "ref_001_03",
+          "description": "Create dependency-validator.js for validation logic",
+          "status": "planned",
+          "estimatedEffort": "small"
+        }
+      ],
+      "dependencies": [],
+      "notes": []
+    },
+    {
+      "taskId": "ref_002",
+      "type": "refactoring",
+      "category": "file-split",
+      "name": "Split migration-orchestrator.js",
+      "description": "Break down migration-orchestrator.js into smaller modules",
+      "status": "planned",
+      "priority": "high",
+      "createdDate": "2024-03-19T00:00:00Z",
+      "lastUpdated": "2024-03-19T00:00:00Z",
+      "progress": 0,
+      "subtasks": [
+        {
+          "subtaskId": "ref_002_01",
+          "description": "Create migration-coordinator.js for core orchestration",
+          "status": "planned",
+          "estimatedEffort": "medium"
+        },
+        {
+          "subtaskId": "ref_002_02",
+          "description": "Create migration-validator.js for validation",
+          "status": "planned",
+          "estimatedEffort": "small"
+        },
+        {
+          "subtaskId": "ref_002_03",
+          "description": "Create migration-reporter.js for reporting",
+          "status": "planned",
+          "estimatedEffort": "small"
+        }
+      ],
+      "dependencies": ["ref_001"],
+      "notes": []
+    },
+    {
+      "taskId": "ref_003",
+      "type": "refactoring",
+      "category": "file-split",
+      "name": "Split analyze-docs.js",
+      "description": "Break down analyze-docs.js into smaller modules",
+      "status": "planned",
+      "priority": "high",
+      "createdDate": "2024-03-19T00:00:00Z",
+      "lastUpdated": "2024-03-19T00:00:00Z",
+      "progress": 0,
+      "subtasks": [
+        {
+          "subtaskId": "ref_003_01",
+          "description": "Create doc-analyzer.js for core analysis",
+          "status": "planned",
+          "estimatedEffort": "medium"
+        },
+        {
+          "subtaskId": "ref_003_02",
+          "description": "Create doc-validator.js for validation",
+          "status": "planned",
+          "estimatedEffort": "small"
+        },
+        {
+          "subtaskId": "ref_003_03",
+          "description": "Create doc-reporter.js for reporting",
+          "status": "planned",
+          "estimatedEffort": "small"
+        }
+      ],
+      "dependencies": ["ref_001", "ref_002"],
+      "notes": []
+    },
+    {
+      "taskId": "impl_001",
+      "type": "implementation",
+      "category": "database",
+      "name": "Set up Supabase Integration",
+      "description": "Implement Supabase for task and document storage",
+      "status": "planned",
+      "priority": "high",
+      "createdDate": "2024-03-19T00:00:00Z",
+      "lastUpdated": "2024-03-19T00:00:00Z",
+      "progress": 0,
+      "subtasks": [
+        {
+          "subtaskId": "impl_001_01",
+          "description": "Set up Supabase project and schema",
+          "status": "planned",
+          "estimatedEffort": "medium"
+        },
+        {
+          "subtaskId": "impl_001_02",
+          "description": "Create database models and migrations",
+          "status": "planned",
+          "estimatedEffort": "medium"
+        },
+        {
+          "subtaskId": "impl_001_03",
+          "description": "Implement data access layer",
+          "status": "planned",
+          "estimatedEffort": "medium"
+        }
+      ],
+      "dependencies": ["ref_001", "ref_002", "ref_003"],
+      "notes": []
+    },
+    {
+      "taskId": "impl_002",
+      "type": "implementation",
+      "category": "rag",
+      "name": "Implement RAG with Pinecone",
+      "description": "Set up RAG system using Pinecone for vector storage",
+      "status": "planned",
+      "priority": "high",
+      "createdDate": "2024-03-19T00:00:00Z",
+      "lastUpdated": "2024-03-19T00:00:00Z",
+      "progress": 0,
+      "subtasks": [
+        {
+          "subtaskId": "impl_002_01",
+          "description": "Set up Pinecone project and index",
+          "status": "planned",
+          "estimatedEffort": "small"
+        },
+        {
+          "subtaskId": "impl_002_02",
+          "description": "Create document embedding system",
+          "status": "planned",
+          "estimatedEffort": "medium"
+        },
+        {
+          "subtaskId": "impl_002_03",
+          "description": "Implement context-aware search",
+          "status": "planned",
+          "estimatedEffort": "medium"
+        }
+      ],
+      "dependencies": ["impl_001"],
+      "notes": []
+    }
+  ]
+} 

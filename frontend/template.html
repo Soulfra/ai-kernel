@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Template Viewer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="p-4">
+  <h1 class="text-xl font-bold mb-4">Template</h1>
+  <pre id="idea" class="mb-4"></pre>
+  <pre id="reflection" class="mb-4"></pre>
+  <pre id="stats" class="mb-4"></pre>
+  <button id="remix" class="px-2 py-1 bg-purple-500 text-white rounded mr-2">Remix</button>
+  <button id="export" class="px-2 py-1 bg-blue-500 text-white rounded mr-2">Export</button>
+  <button id="try" class="px-2 py-1 bg-green-500 text-white rounded">Try in Vault</button>
+<script>
+const params = new URLSearchParams(location.search);
+const slug = params.get('slug');
+fetch(`/template?json=1&slug=${slug}`).then(r=>r.json()).then(d=>{
+  document.getElementById('idea').textContent = d.idea || '';
+  if(d.reflection) document.getElementById('reflection').textContent = d.reflection;
+  document.getElementById('stats').textContent = JSON.stringify(d.stats,null,2);
+});
+function action(a){ fetch('/agent-action',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({action:a,slug})}).then(()=>alert('ok')); }
+ document.getElementById('remix').onclick=()=>action('fork');
+ document.getElementById('export').onclick=()=>action('devkit');
+ document.getElementById('try').onclick=()=>action('vault-video');
+</script>
+</body>
+</html>

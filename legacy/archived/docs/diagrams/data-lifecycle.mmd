@@ -1,0 +1,8 @@
+%% Data Artifact Lifecycle Diagram
+flowchart TD
+    A[New File Intake] --> B[Extraction]
+    B --> C[Clustering]
+    C --> D[Indexing]
+    D --> E[Analytics]
+    E --> F[Archival/Backup]
+    F --> G[Rollback] 

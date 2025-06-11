@@ -1,0 +1,10 @@
+# 3. Development Standards (`/core/standards/`)
+
+- Coding standards
+- Testing requirements
+- Documentation standards
+- Security guidelines
+- Performance requirements
+
+## Implementation Documentation
+

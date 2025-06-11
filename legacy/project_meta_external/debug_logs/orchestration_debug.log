@@ -1,0 +1,3 @@
+{"timestamp":"$(date -u +%Y-%m-%dT%H:%M:%SZ)","action":"moved documentation-orchestrator.js to core","from":"scripts/documentation-orchestrator.js","to":"scripts/core/documentation-orchestrator.js.bak"}
+{"timestamp":"$(date -u +%Y-%m-%dT%H:%M:%SZ)","action":"moved documentation utilities to scripts/documentation/","files":["fix-documentation.js","fix-docs.js","enhance-documentation.js","manage-documentation.js","generate-docs.js"]}
+{"timestamp":"$(date -u +%Y-%m-%dT%H:%M:%SZ)","action":"archived duplicate orchestrators from CLARITY_ENGINE_DOCS/scripts/core/","files":["log-orchestrator.js","debug-orchestrator.js","documentation-orchestrator.js","meta-orchestrator.js","quality-orchestrator.js"]}

@@ -1,0 +1,60 @@
+{
+  "registry_version": "2.0",
+  "timestamp": "2025-05-09T13:21:43.792Z",
+  "agents": [
+    {
+      "name": "CalCoderAgent.js",
+      "path": "./core/CalCoderAgent.js",
+      "registered_at": "2025-05-09T13:21:43.792Z",
+      "status": "hydrated"
+    },
+    {
+      "name": "CalLoopAgentDaemon.js",
+      "path": "./core/CalLoopAgentDaemon.js",
+      "registered_at": "2025-05-09T13:21:43.792Z",
+      "status": "hydrated"
+    },
+    {
+      "name": "CalLoopMeshReflector.js",
+      "path": "./core/CalLoopMeshReflector.js",
+      "registered_at": "2025-05-09T13:21:43.792Z",
+      "status": "hydrated"
+    },
+    {
+      "name": "CalNarrator.js",
+      "path": "./core/CalNarrator.js",
+      "registered_at": "2025-05-09T13:21:43.792Z",
+      "status": "hydrated"
+    },
+    {
+      "name": "CalPromptRouter.js",
+      "path": "./core/CalPromptRouter.js",
+      "registered_at": "2025-05-09T13:21:43.792Z",
+      "status": "hydrated"
+    },
+    {
+      "name": "CalReflectionSummarizerV2.js",
+      "path": "./core/CalReflectionSummarizerV2.js",
+      "registered_at": "2025-05-09T13:21:43.792Z",
+      "status": "hydrated"
+    },
+    {
+      "name": "CalShellRecallAgent.js",
+      "path": "./core/CalShellRecallAgent.js",
+      "registered_at": "2025-05-09T13:21:43.792Z",
+      "status": "hydrated"
+    },
+    {
+      "name": "LLMExecutor.js",
+      "path": "./core/LLMExecutor.js",
+      "registered_at": "2025-05-09T13:21:43.792Z",
+      "status": "hydrated"
+    },
+    {
+      "name": "calctl-deploy-public.js",
+      "path": "./core/calctl-deploy-public.js",
+      "registered_at": "2025-05-09T13:21:43.792Z",
+      "status": "hydrated"
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "title": "Task Plan Template",
+  "version": "1.0.0",
+  "lastUpdated": "2025-07-27T05:45:00Z",
+  "taskMetadata": {
+    "taskId": "string",
+    "description": "string",
+    "status": "planned|in-progress|completed|archived",
+    "priority": "high|medium|low",
+    "createdDate": "datetime",
+    "lastUpdated": "datetime",
+    "relatedPlanId": "string",
+    "assignedTo": "string (userId)",
+    "tags": ["string"]
+  },
+  "context": {
+    "relatedSection": "string",
+    "dependencies": ["taskId"],
+    "linkedDocs": ["docId"],
+    "notes": "string"
+  },
+  "subtasks": [
+    {
+      "subtaskId": "string",
+      "description": "string",
+      "status": "planned|in-progress|completed|archived",
+      "assignedTo": "string (userId)",
+      "notes": "string"
+    }
+  ],
+  "blockers": [
+    {
+      "blockerId": "string",
+      "description": "string",
+      "status": "open|resolved",
+      "proposedSolution": "string",
+      "resolvedBy": "string (userId)",
+      "resolvedDate": "datetime"
+    }
+  ],
+  "progress": {
+    "percentComplete": 0,
+    "milestones": [
+      {
+        "milestoneId": "string",
+        "description": "string",
+        "status": "planned|in-progress|completed",
+        "targetDate": "datetime",
+        "completedDate": "datetime"
+      }
+    ],
+    "changelog": [
+      {
+        "date": "datetime",
+        "change": "string",
+        "userId": "string"
+      }
+    ]
+  },
+  "feedback": [
+    {
+      "feedbackId": "string",
+      "userId": "string",
+      "type": "positive|negative|bug|suggestion",
+      "message": "string",
+      "timestamp": "datetime"
+    }
+  ],
+  "lessonsLearned": [
+    {
+      "lessonId": "string",
+      "summary": "string",
+      "details": "string",
+      "timestamp": "datetime",
+      "userId": "string"
+    }
+  ],
+  "archival": {
+    "archived": false,
+    "archivedDate": null,
+    "archiveReason": "string"
+  },
+  "notes": "Fill out each section with task-specific details before marking as completed or archived."
+} 

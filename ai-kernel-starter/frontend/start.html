@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Begin</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="p-4 text-center">
+  <h1 class="text-xl font-bold mb-4">Start</h1>
+  <div id="qr" class="mb-4"></div>
+  <p id="vault" class="mb-4"></p>
+  <button id="begin" class="px-4 py-2 bg-blue-500 text-white rounded">Begin</button>
+<script>
+async function load(){
+  const res = await fetch('/start?json=1');
+  const data = await res.json();
+  document.getElementById('vault').textContent = 'Vault: '+data.user;
+  document.getElementById('qr').innerHTML = '<img class="mx-auto" src="'+data.qr+'"/>';
+  document.getElementById('begin').onclick = () => location.href = '/dashboard?user='+data.user;
+}
+load();
+</script>
+</body>
+</html>

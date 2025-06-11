@@ -1,0 +1,11 @@
+# Cluster 0
+- **scripts/test/test-installed-agents.js**: !/usr/bin/env node
+- **scripts/docs/generate-agents-doc.js**: 
+- **scripts/core/backup-compliance-report.js**: CLARITY_ENGINE Kernel Slate: Backup Compliance Report
+- **scripts/core/backup-dashboard.js**: CLARITY_ENGINE Kernel Slate: Backup Dashboard
+- **scripts/core/embedding-service.js**: 
+- **scripts/core/loop-route.js**: CLARITY_ENGINE Kernel Slate: load loop route JSON
+- **scripts/core/vector-store.js**: 
+- **scripts/agents/kernel-feedback-loop.js**: !/usr/bin/env node
+- **scripts/agents/semantic-kernel-parser.js**: !/usr/bin/env node
+- **scripts/agents/verify-kernel-standards.js**: !/usr/bin/env node

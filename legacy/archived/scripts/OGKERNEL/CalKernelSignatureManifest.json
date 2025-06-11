@@ -1,0 +1,10 @@
+{
+  "standard": "Soulfra Signature v1.1",
+  "hash_algorithms": [
+    "SHA256",
+    "SHA512",
+    "BLAKE2b"
+  ],
+  "trust_version": "3.5.1-dev",
+  "kernel_signature_manifest": []
+}

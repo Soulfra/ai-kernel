@@ -1,0 +1,89 @@
+[
+  {
+    "id": "migration-batch-1",
+    "type": "migration",
+    "batch": "Orchestrator/Core Tests",
+    "actions": [
+      {
+        "from": "scripts/core/tests/debug-orchestrator.test.js",
+        "to": "tests/unit/debug-orchestrator.test.js"
+      },
+      {
+        "from": "scripts/core/tests/documentation-orchestrator.test.js",
+        "to": "tests/unit/documentation-orchestrator.test.js"
+      },
+      {
+        "from": "scripts/core/tests/log-orchestrator.test.js",
+        "to": "tests/unit/log-orchestrator.test.js"
+      },
+      {
+        "from": "scripts/core/tests/meta-orchestrator.test.js",
+        "to": "tests/unit/meta-orchestrator.test.js"
+      },
+      {
+        "from": "scripts/core/tests/orchestration.test.js",
+        "to": "tests/unit/orchestration.test.js"
+      },
+      {
+        "from": "scripts/core/tests/quality-orchestrator.test.js",
+        "to": "tests/unit/quality-orchestrator.test.js"
+      },
+      {
+        "from": "scripts/core/tests/task-orchestrator.test.js",
+        "to": "tests/unit/task-orchestrator.test.js"
+      },
+      {
+        "from": "scripts/core/tests/task-system.test.js",
+        "to": "tests/unit/task-system.test.js"
+      }
+    ],
+    "user": "matthewmauer",
+    "status": "pending"
+  },
+  {
+    "id": "migration-batch-2",
+    "type": "migration",
+    "batch": "Core Tests",
+    "actions": [
+      {
+        "from": "tests/core/debug-orchestrator.test.js",
+        "to": "tests/unit/debug-orchestrator.test.js"
+      },
+      {
+        "from": "tests/core/documentation-orchestrator.test.js",
+        "to": "tests/unit/documentation-orchestrator.test.js"
+      },
+      {
+        "from": "tests/core/log-orchestrator.test.js",
+        "to": "tests/unit/log-orchestrator.test.js"
+      },
+      {
+        "from": "tests/core/quality-orchestrator.test.js",
+        "to": "tests/unit/quality-orchestrator.test.js"
+      },
+      {
+        "from": "tests/core/task-deduplicator.test.js",
+        "to": "tests/unit/task-deduplicator.test.js"
+      }
+    ],
+    "user": "matthewmauer",
+    "status": "pending"
+  },
+  {
+    "id": "migration-batch-3",
+    "type": "migration",
+    "batch": "CLI Tests",
+    "actions": [
+      {
+        "from": "tests/cli/base-command.test.js",
+        "to": "tests/cli/base-command.test.js"
+      },
+      {
+        "from": "tests/cli/progress-bar.test.js",
+        "to": "tests/cli/progress-bar.test.js"
+      }
+    ],
+    "user": "matthewmauer",
+    "status": "pending"
+  }
+]

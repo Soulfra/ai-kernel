@@ -1,0 +1,39 @@
+{
+  "Command failed": {
+    "count": 1,
+    "example": "Command failed: node scripts/run-migration-orchestration.js",
+    "sources": [
+      {
+        "id": "Processing batches with orchestrator",
+        "user": null,
+        "source": "pipeline",
+        "timestamp": "2025-06-04T02:34:57.973Z"
+      }
+    ],
+    "firstOccurrence": "2025-06-04T02:34:57.973Z",
+    "lastOccurrence": "2025-06-04T02:34:57.973Z",
+    "recommendation": "Review error details."
+  },
+  "ENOENT": {
+    "count": 3,
+    "example": "ENOENT: no such file or directory, open 'scripts/unified-migration/core/document-processor.js'",
+    "sources": [
+      {
+        "file": "/Users/matthewmauer/Desktop/CLARITY_ENGINE/logs/consolidation/consolidation-report-1748951989723.json",
+        "path": "scripts/unified-migration/core/document-processor.js",
+        "source": "consolidation"
+      },
+      {
+        "file": "/Users/matthewmauer/Desktop/CLARITY_ENGINE/logs/consolidation/consolidation-report-1748951989723.json",
+        "path": "scripts/generation/orchestration/document-orchestrator.js",
+        "source": "consolidation"
+      },
+      {
+        "file": "/Users/matthewmauer/Desktop/CLARITY_ENGINE/logs/consolidation/consolidation-report-1748951989723.json",
+        "path": "scripts/unified-migration/orchestrator.js",
+        "source": "consolidation"
+      }
+    ],
+    "recommendation": "Check for missing or misnamed files."
+  }
+}
