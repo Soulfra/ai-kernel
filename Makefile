@@ -42,7 +42,7 @@ diagnostics:
 	@echo "Running ESLint..."
 	@npx eslint . > logs/lint-errors.txt 2>&1 || true
 	@echo "Running tests..."
-	@npx jest --silent > logs/test-output.log 2>&1 || true
+	@npx jest --silent --passWithNoTests > logs/test-output.log 2>&1 || true
 	@echo "Generating vault summary..."
 	@node scripts/api/vault-summary.js > logs/vault-summary.json 2>/dev/null || true
 	@echo "Diagnostics complete. Check logs/ directory for results."
@@ -64,4 +64,8 @@ standards:
 	@npx eslint . --fix
 	@npx prettier --write "**/*.{js,json,md,yaml,yml}"
 
-.PHONY: launch serve voice unlock refer reflect digest promote animate devkit set-theme diagnostics redact verify test standards
+activate:
+	@echo "Activating kernel workspace..."
+	@./scripts/activate-kernel.sh
+
+.PHONY: launch serve voice unlock refer reflect digest promote animate devkit set-theme diagnostics redact verify test standards activate
